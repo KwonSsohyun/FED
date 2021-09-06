@@ -35,6 +35,12 @@
     figcaption{
       font-size: 9px;
     }
+
+    /* '백신'글자만 빨간색 */
+    span{
+      color: red;
+    }
+
   </style>
   <!-- 
     style 요소 : css 문법 구역
@@ -72,8 +78,12 @@
     <!-- hr요소 : 가로구분선(CSS디자인시 사용안함:보더로씀) -->
     <!-- 3.메인컨텐츠 -->
     <main>
+      <!-- 언론사 정보영역 -->
+      <div> 
+        <img src="./images/at1-1.png" alt="연합뉴스로고">
+      </div>
       <!-- 1. 기사제목 -->
-      <h2>김총리, 삼성바이오 방문…"백신주권 확보 역할 당부"</h2>
+      <h2>김총리, 삼성바이오 방문…"<span>백신</span>주권 확보 역할 당부"</h2>
 
       <!-- 2. 기사이미지 -->
       <figure>
@@ -81,19 +91,19 @@
       
         <figcaption>삼성바이오로직스
           둘러보는 김부겸 총리
-          (인천=연합뉴스) 김승두 기자 = 김부겸 국무총리(앞줄 가운데)가 3일 오후 코로나19 백신 위탁생산 현장인
+          (인천=연합뉴스) 김승두 기자 = 김부겸 국무총리(앞줄 가운데)가 3일 오후 코로나19 <span>백신</span> 위탁생산 현장인
           인천시 송도 삼성바이오로직스를 방문해 존림 대표이사(맨 오른쪽) 등과 함께 홍보관을 둘러보고 있다. 2021.9.3 kimsdoo@yna.co.kr
         </figcaption>
       </figure>
 
       <!-- 3. 기사내용 -->
-      <p>(서울=연합뉴스) 조민정 기자 = 김부겸 국무총리는 3일 오후 인천 연수구 삼성바이오로직스 본사를 찾아 <b>백신·치료제 생산</b> 현장을 둘러봤다.<abbr title="아주잘봄">아잘봄</abbr></p>
+      <p>(서울=연합뉴스) 조민정 기자 = 김부겸 국무총리는 3일 오후 인천 연수구 삼성바이오로직스 본사를 찾아 <b><span>백신</span>·치료제 생산</b> 현장을 둘러봤다.<abbr title="아주잘봄">아잘봄</abbr></p>
 
-      <p>삼성바이오로직스<sup>①</sup>는 <strong>한미 정상회담을 계기</strong>로 모더나와 백신 <i>위탁생산 계약</i>을 체결한 바 있다.</p>
+      <p>삼성바이오로직스<sup>①</sup>는 <strong>한미 정상회담을 계기</strong>로 모더나와 <span>백신</span> <i>위탁생산 계약</i>을 체결한 바 있다.</p>
 
       <p><mark>김 총리</mark>는 이 자리에서 <q>
-        국민의 삶을 보호하기 위해 <em><ins>코로나</ins> 백신이 얼마나 중요한지</em> 절감하고 있다.</p>
-        삼성바이오로직스가 우리나라의 백신 주권 확보를 위해 적극적인 역할을 해주시기를 바란다
+        국민의 삶을 보호하기 위해 <em><ins>코로나</ins> <span>백신</span>이 얼마나 중요한지</em> 절감하고 있다.</p>
+        삼성바이오로직스가 우리나라의 <span>백신</span> 주권 확보를 위해 적극적인 역할을 해주시기를 바란다
       </q>고 말했다.
 
       <p><mark>김 총리</mark>는 <q>삼성그룹이 바이오산업에서의 높은 성취를 이뤄 젊은 세대의 일자리<sub>job</sub>를 만들겠다는 야심 찬 비전을 보여줬다</q>며</p>
@@ -126,6 +136,7 @@
       <hr>
 
       <h3>연합뉴스 주요뉴스</h3>
+      <!-- 순서없는 리스트 -->
         <ul>
           <li>
             <a href="http://yna.kr/AKR20210903035600005?source=1195p" target="_blank">
@@ -139,12 +150,116 @@
           </li>
           <li>
             <a href="http://yna.kr/AKR20210903096900056?source=1195p" target="_blank">
-              "교사 꿈꾸던 딸, 백신 맞고 숨졌는데…정부는 무책임"
+              "교사 꿈꾸던 딸, <span>백신</span> 맞고 숨졌는데…정부는 무책임"
             </a>
           </li>
         </ul>
 
+        <hr>
 
+        <h3>연합뉴스 랭킹순위</h3>
+        <!-- 순서있는 리스트 -->
+        <ol>
+          <li>
+            <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=001&aid=0012644450&rankingType=RANKING" target="_blank">
+              베트남 총리, 삼성전자 찾아 "한국 정부가 백신 확보 도와 …
+            </a>
+          </li>
+          <li>
+            <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=001&aid=0012644381&rankingType=RANKING" target="_blank">
+              탈레반, 아프간 여대생에 니캅 착용 명령…눈만 노출(종합)
+            </a>
+          </li>
+          <li>
+            <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=001&aid=0012643664&rankingType=RANKING" target="_blank">
+              코로나 국민지원금 오늘부터 접수…카드사 홈페이지서 신청 가 …
+            </a>
+          </li>
+        </ol>
+
+        <hr>
+
+        <h3>분야별 주요뉴스</h3>
+        <!-- 용어설명리스트 -->
+        <dl>
+          <dt>정치</dt>
+          <dd>
+            <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=100&oid=016&aid=0001883728" target="_blank" >
+              北美 기싸움…北 “美 아프간 조소거리”·美 글로벌호크 정찰비행
+            </a>
+          </dd>
+          <dd>
+            <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=100&oid=422&aid=0000503041" target="_blank" >
+              "유엔 안보리, 대북제재 완화 논의…코로나19 고려"
+            </a>
+          </dd>
+          <dt>경제</dt>
+          <dd>
+            <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=101&oid=055&aid=0000919140" target="_blank">
+              대기업 68%, 채용 미정 또는 안한다
+            </a>
+          </dd>
+          <dd>
+            <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=101&oid=011&aid=0003959030" target="_blank">
+              10% 부담하면 내 집···'누구나집' 무주택 희망될까
+            </a>
+          </dd>
+          <dt>사회</dt>
+          <dd>
+            <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=102&oid=057&aid=0001605327" target="_blank">
+              인천 병원서 냉장 유효 기한 지난 화이자 21명 접종해
+            </a>
+          </dd>
+          <dd>
+            <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=102&oid=005&aid=0001468800" target="_blank">
+              대학병원서도 오접종 사고… “사후관리 더 강화해야”
+            </a>
+          </dd>
+        </dl>
+        
+        <hr>
+
+        <h3>언론사별 가장 많이 본 뉴스</h3>
+        <!-- 테이블 요소 : 2열 3행 -->
+        <table>
+          <tr> <!-- 1행 -->
+            <td>
+              <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=437&aid=0000275463&rankingType=RANKING" target="_blank">
+                마이크 발로 찬 강윤성, 이번엔 유치장 문 열린 틈타 경찰 밀치고 욕설
+              </a>
+            </td>
+            
+            <td>
+              <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=437&aid=0000275463&rankingType=RANKING" target="_blank">
+                <img src="https://mimgnews.pstatic.net/image/origin/437/2021/09/06/275463.jpg?type=nf88_60" alt="기사사진" style="width: 88px;height: 60px;">
+              </a>
+            </td>
+          </tr>
+          <tr> <!-- 2행 -->
+            <td>
+              <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=025&aid=0003132729&rankingType=RANKING" target="_blank">
+                "연봉 같은데 난 왜 지원금 탈락?" 이들을 위한 5대 체 …
+              </a>
+            </td>
+            <td>
+            <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=025&aid=0003132729&rankingType=RANKING" target="_blank">
+              <img src="https://mimgnews.pstatic.net/image/origin/025/2021/09/06/3132729.jpg?type=nf88_60" alt="기사사진" style="width: 88px;height: 60px;">
+            </a>
+          </td>
+        </tr>
+        <tr> <!-- 3행 -->
+          <td>
+            <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=082&aid=0001117618&rankingType=RANKING" target="_blank">
+              [속보] "수도권 유행 다시 확산…추석 이동으로 비수도권  …
+            </a>
+          </td>
+          <td>
+              <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=082&aid=0001117618&rankingType=RANKING" target="_blank">
+                <img src="https://mimgnews.pstatic.net/image/origin/082/2021/09/06/1117618.jpg?type=nf88_60" alt="기사사진" style="width: 88px;height: 60px;">
+              </a>
+            </td>
+          </tr>
+        </table>
 
     </main>
     <hr>
