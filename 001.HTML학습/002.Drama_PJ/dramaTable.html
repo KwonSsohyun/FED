@@ -8,11 +8,61 @@
             #drama{
                 font-family: "궁서체", "굴림체";
                 /* 글자체 - 순서대로 있는체를 적용함 */
-                font-size: 14px;
+                font-size: 24px;
                 /* 글자크기 - 기본값은 16px (단위:px,em,rem,%) */
                 color: #222;
                 /* 글자색 */
+
+                /* 테이블 td사이 공백없애기 */
+                border-collapse: collapse;
+                /* 
+                    기본값이 separate이고 사이 간극이 존재함
+                    이것을 없애려면 collapse로 설정함!
+                    (테이블 디자인시 필수셋팅!)
+                */
+
+                /* 테이블 가로중앙 정렬 : auto(등분할해서 가운데) */
+                margin: 0 auto;
+                /* 
+                    블럭요소의 가로 중앙정렬시 마영오!
+                    테이블도 기본속성이 block과 유사함
+                    (옆에 못옴!)
+                    
+                    블록요소와 테이블요소의 차이점
+                    블록은 width를 안주면
+                    width : auto로써 부모요소 끝까지 차지함
+
+                    >>> 테이블은 내용만큼만 늘어남
+                        테이블의 특징 중 하나는 부모요소의 가로크기가
+                    >>> 자기가 만든 자동크기보다 작아지면 같이 작아짐
+                        여기서는 가로크기를 지정함
+                */
+                width: 1000px;
+
             }
+
+            /* 테이블 제목 */
+            #drama caption{
+                font-size: 35px;
+                font-weight: bold;
+                letter-spacing: 5px; /* 글자 간격 */
+                word-spacing: 5px; /* 단어 간격 */
+
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+
+            /* td와 th에 패딩 */
+            #drama td, th {
+                padding: 8px 10px;
+            }
+
+            /* td에 밑줄 넣기 - 테이블 본문만 적용 */
+            #drama tbody td {
+                border-bottom: 1px solid #ccc;
+            }
+
+
 
         </style>
     </head>
