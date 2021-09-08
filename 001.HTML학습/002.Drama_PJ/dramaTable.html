@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>한국 최신 드라마 리스트</title>
-        <style>
 
-            #drama{
-                font-family: "궁서체", "굴림체";
-                /* 글자체 - 순서대로 있는체를 적용함 */
-                font-size: 24px;
-                /* 글자크기 - 기본값은 16px (단위:px,em,rem,%) */
-                color: #222;
-                /* 글자색 */
+<head>
+    <meta charset="utf-8">
+    <title>한국 최신 드라마 리스트</title>
+    <style>
+        /* 테이블 공통 */
+        .tbl {
+            font-family: "궁서체", "굴림체";
+            /* 글자체 - 순서대로 있는체를 적용함 */
 
-                /* 테이블 td사이 공백없애기 */
-                border-collapse: collapse;
-                /* 
-                    기본값이 separate이고 사이 간극이 존재함
-                    이것을 없애려면 collapse로 설정함!
-                    (테이블 디자인시 필수셋팅!)
-                */
+            color: #222;
+            /* 글자색 */
 
-                /* 테이블 가로중앙 정렬 : auto(등분할해서 가운데) */
-                margin: 0 auto;
-                /* 
+            /* 테이블 td사이 공백없애기 */
+            border-collapse: collapse;
+            /* 
+                기본값이 separate이고 사이 간극이 존재함
+                이것을 없애려면 collapse로 설정함!
+                (테이블 디자인시 필수셋팅!)
+            */
+        }
+
+        /* 드라마 리스트 테이블 */
+        #drama {
+
+            font-size: 24px;
+            /* 글자크기 - 기본값은 16px (단위:px,em,rem,%) */
+
+            /* 테이블 가로중앙 정렬 : auto(등분할해서 가운데) */
+            margin: 0 auto;
+            /* 
                     블럭요소의 가로 중앙정렬시 마영오!
                     테이블도 기본속성이 block과 유사함
                     (옆에 못옴!)
@@ -36,172 +43,257 @@
                         테이블의 특징 중 하나는 부모요소의 가로크기가
                     >>> 자기가 만든 자동크기보다 작아지면 같이 작아짐
                         여기서는 가로크기를 지정함
-                */
-                width: 1000px;
+            */
+            width: 1000px;
 
-            }
+        }
 
-            /* 테이블 제목 */
-            #drama caption{
-                font-size: 35px;
-                font-weight: bold;
-                letter-spacing: 5px; /* 글자 간격 */
-                word-spacing: 5px; /* 단어 간격 */
+        /* 테이블 제목 */
+        #drama caption {
+            font-size: 35px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            /* 글자 간격 */
+            word-spacing: 5px;
+            /* 단어 간격 */
 
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
 
-            /* td와 th에 패딩 */
-            #drama td, th {
-                padding: 8px 10px;
-            }
+        /* td와 th에 패딩 */
+        #drama td,
+        th {
+            padding: 8px 10px;
+        }
 
-            /* td에 밑줄 넣기 - 테이블 본문만 적용 */
-            #drama tbody td {
-                border-bottom: 1px solid #ccc;
-            }
+        /* td에 밑줄 넣기 - 테이블 본문만 적용 */
+        #drama tbody td {
+            border-bottom: 1px solid #ccc;
+        }
 
+        /* th에 윗줄 두껍게 넣기 */
+        #drama thead th {
+            border-top: 2px solid #555;
+        }
 
+        /* 중앙부분 마지막 td에 아랫줄 두껍게 */
+        /* :last-child 가상클래스 - 마지막자식요소 선택 (tr중에 마지막 선택해줘) */
+        #drama tbody tr:last-child td {
+            border-bottom: 2px solid #555;
+        }
 
-        </style>
-    </head>
-    <body>
-        <!-- 한국 최신 드라마 리스트 테이블 -->
-        <table id="drama" class="tbl">
-            <!-- 테이블 제목 -->
-            <caption>한국 최신 드라마 리스트</caption>
-            <!-- 테이블 머릿부분 : thead -->
-            <thead>
-                <tr>
-                    <!-- th는 td대신 머릿줄에 사용 -->
-                    <th>번호</th>
-                    <th>드라마명</th>
-                    <th>주연</th>
-                    <th>제작사</th>
-                    <th>구분</th>
-                    <th>방영시간</th>
-                    <th>방영횟수</th>
-                </tr>
-            </thead>
+        /* 중앙부분 첫번째 td에 윗줄 두껍게 */
+        /* :first-child 가상클래스 - 첫번째요소 선택 */
+        #drama tbody tr:first-child td {
+            border-top: 2px solid #555;
+        }
 
-            <!-- 테이블 하단부분 : tfoot -->
-            <tfoot>
-                <tr>
-                    <td colspan="7">
-                        ◀ 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 ▶
-                    </td>
-                    <!-- 
+        /* 중앙부분 몇 번쨰 요소에 글자색 변경 */
+        /* nth-child(순번) */
+        #drama tbody tr:nth-child(7) {
+            color: red;
+        }
+
+        /* 중앙부분 짝수번째 요소 배경색 넣기 */
+        /* even 짝수, odd 홀수 */
+        #drama tbody tr:nth-child(even) td {
+            background: rgb(192, 192, 192);
+        }
+
+        /* 하단부분 */
+        #drama tfoot td {
+            text-align: center;
+            padding: 45px 0;
+            /* 위아래 45px 양쪽 0(px 0값일땐 안적어도됨) */
+        }
+
+        /* 구분 테이블 박스 */
+        .gubun {
+            width: 1000px;
+            margin: 0px auto;
+            /* 마영오! 중앙! */
+        }
+
+        /* 구분테이블 */
+        #gubun{
+            font-size: 20px;
+            border: 1px solid #999;
+        }
+        #gubun td{
+            padding: 10px;
+        }
+
+        #gubun tr{
+            border: 1px dotted #999;
+        }
+
+        #gubun td:nth-child(1) {
+            border: 1px dotted #999;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 한국 최신 드라마 리스트 테이블 -->
+    <table id="drama" class="tbl">
+        <!-- 테이블 제목 -->
+        <caption>한국 최신 드라마 리스트</caption>
+        <!-- 테이블 머릿부분 : thead -->
+        <thead>
+            <tr>
+                <!-- th는 td대신 머릿줄에 사용 -->
+                <th>번호</th>
+                <th>드라마명</th>
+                <th>주연</th>
+                <th>제작사</th>
+                <th>구분</th>
+                <th>방영시간</th>
+                <th>방영횟수</th>
+            </tr>
+        </thead>
+
+        <!-- 테이블 하단부분 : tfoot -->
+        <tfoot>
+            <tr>
+                <td colspan="7">
+                    ◀ 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 ▶
+                </td>
+                <!-- 
                         colspan 속성은 기본적으로 td를 합칠 때 사용함
                         상단의 td(th)가 7개이고 이것을 합치려면
                         7개를 하나로 통합하는 값을 설정해 준다!
                         여기서 col은 column 컬럼(기둥)의 뜻
                         span은 "범위"라는 의미임                    
                     -->
-                </tr>
-            </tfoot>
-    
-            <!-- 테이블 중앙내용 부분 : tboby -->
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>경찰수업</td>
-                    <td>진영, 차태현</td>
-                    <td>KBS</td>
-                    <td>월화</td>
-                    <td>오후 09:30</td>
-                    <td>16부작</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>홍천기</td>
-                    <td>안효섭, 김유정</td>
-                    <td>SBS</td>
-                    <td>월화</td>
-                    <td>오후 10:00</td>
-                    <td>12부작</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>더 로드 : 1의 비극</td>
-                    <td>지진희, 윤세아</td>
-                    <td>tvN</td>
-                    <td>수목</td>
-                    <td>오후 10:50</td>
-                    <td>20부작</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>아름다운 세상</td>
-                    <td>지진희, 윤세아</td>
-                    <td>tvN</td>
-                    <td>수목</td>
-                    <td>오후 10:50</td>
-                    <td>20부작</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>엽기적인 그녀</td>
-                    <td>지진희, 윤세아</td>
-                    <td>tvN</td>
-                    <td>수목</td>
-                    <td>오후 10:50</td>
-                    <td>20부작</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>봄날</td>
-                    <td>지진희, 윤세아</td>
-                    <td>tvN</td>
-                    <td>수목</td>
-                    <td>오후 10:50</td>
-                    <td>20부작</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>밥잘사주는 예쁜 누나</td>
-                    <td>지진희, 윤세아</td>
-                    <td>tvN</td>
-                    <td>수목</td>
-                    <td>오후 10:50</td>
-                    <td>20부작</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>벚꽃엔딩</td>
-                    <td>지진희, 윤세아</td>
-                    <td>tvN</td>
-                    <td>수목</td>
-                    <td>오후 10:50</td>
-                    <td>20부작</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>콩순이</td>
-                    <td>지진희, 윤세아</td>
-                    <td>tvN</td>
-                    <td>수목</td>
-                    <td>오후 10:50</td>
-                    <td>20부작</td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>토순이와 토심이</td>
-                    <td>지진희, 윤세아</td>
-                    <td>tvN</td>
-                    <td>수목</td>
-                    <td>오후 10:50</td>
-                    <td>20부작</td>
-                </tr>
-            </tbody>
+            </tr>
+        </tfoot>
 
-      
+        <!-- 테이블 중앙내용 부분 : tboby -->
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>경찰수업</td>
+                <td>진영, 차태현</td>
+                <td>KBS</td>
+                <td>월화</td>
+                <td>오후 09:30</td>
+                <td>16부작</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>홍천기</td>
+                <td>안효섭, 김유정</td>
+                <td>SBS</td>
+                <td>월화</td>
+                <td>오후 10:00</td>
+                <td>12부작</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>더 로드 : 1의 비극</td>
+                <td>지진희, 윤세아</td>
+                <td>tvN</td>
+                <td>수목</td>
+                <td>오후 10:50</td>
+                <td>20부작</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>아름다운 세상</td>
+                <td>지진희, 윤세아</td>
+                <td>tvN</td>
+                <td>수목</td>
+                <td>오후 10:50</td>
+                <td>20부작</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>엽기적인 그녀</td>
+                <td>지진희, 윤세아</td>
+                <td>tvN</td>
+                <td>수목</td>
+                <td>오후 10:50</td>
+                <td>20부작</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>봄날</td>
+                <td>지진희, 윤세아</td>
+                <td>tvN</td>
+                <td>수목</td>
+                <td>오후 10:50</td>
+                <td>20부작</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>밥잘사주는 예쁜 누나</td>
+                <td>지진희, 윤세아</td>
+                <td>tvN</td>
+                <td>수목</td>
+                <td>오후 10:50</td>
+                <td>20부작</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>벚꽃엔딩</td>
+                <td>지진희, 윤세아</td>
+                <td>tvN</td>
+                <td>수목</td>
+                <td>오후 10:50</td>
+                <td>20부작</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>콩순이</td>
+                <td>지진희, 윤세아</td>
+                <td>tvN</td>
+                <td>수목</td>
+                <td>오후 10:50</td>
+                <td>20부작</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>토순이와 토심이</td>
+                <td>토순이, 토심이</td>
+                <td>tvN</td>
+                <td>수목</td>
+                <td>오후 10:50</td>
+                <td>20부작</td>
+            </tr>
+        </tbody>
 
+
+
+    </table>
+
+
+    <!-- 구분테이블 -->
+    <div class="gubun">
+        <table id="gubun" class="tbl">
+            <tr>
+                <td rowspan="4">구분</td>
+                <td>월화:월화드라마</td>
+            </tr>
+            <tr>
+                <td>수목:수목드라마</td>
+            </tr>
+            <tr>
+                <td>금토:금토드라마</td>
+            </tr>
+            <tr>
+                <td>토일:토일드라마</td>
+            </tr>
         </table>
+        <!-- 
+                rowspan 속성은 위아래 행을 합치는 속성
+                여기서는 4줄을 합치므로 값을 4로 설정함
+             -->
+
+    </div>
 
 
+</body>
 
-
-
-    </body>
 </html>
