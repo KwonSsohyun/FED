@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>001.배경넣기 연습</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* 보이는 화면에 높이값 채우기 */
+
+            overflow: hidden; /* 넘치는 자식요소 숨기기 설정!
+            이걸 왜 했나? 
+            1) 첫번째 블록요소의 마진 top 값이 
+               부모요소 바깥으로 나가는 기본 설정을 막기위해
+               넘치는 자식요소 숨기기를 하면 자식요소의
+               마진 top이 부모요소에 포함된다! */
+        }
+
+        h1{
+            text-align :center; /* 글자중앙 - 박스내부에 인라인요소, 글자 중앙*/
+        }
+
+        body{
+            /* 배경이미지 한번에 셋팅
+            background: 색이반고윙/크;  
+
+            -> 배경이미지를 한번에 셋팅하면 여러개의 
+               이미지를 셋팅할 수 있다.
+               방법 : 콤마(,)로 각 세팅을 구분 
+            
+            -> 배경이미지 크기 지정시 값을 하나만 쓰면 가로크기만 지정됨
+               세로크기는 자동임! 300px (하나만 적어도 된다. 앞이 가로값이라서)
+               세로를 크게하고 싶으면 auto 350px (auto를 앞에 쓰면 가로 비율유지됨)
+
+            -> 이미지 위치 순서는 첫번째 제일 위! 순서대로! (레이어 순서와 똑같다.)
+
+            */
+            
+            background: 
+                url(./imgs/dc1.png) no-repeat center/400px, /* 뒤에 꼭 컴마 적고 다음 적는다. */
+                url(./imgs/dc2.png) no-repeat right top/350px,
+                url(./imgs/dc3.png) no-repeat bottom/300px,  /* 위에 center가 있기 때문에 기준이 생겨서 bottom 적어도 가운데 아래로 배치됨 */
+                url(./imgs/dc4.png) no-repeat right bottom/auto 350px,
+                url(./imgs/bg_logo_a_01.png) no-repeat 200px 100px,
+                url(./imgs/bg_mainvisual.jpg) no-repeat center 10%/50%;
+
+            /* 배경이미지 순서
+               색 이 반 고 윙/크
+               
+               background-color: #fff;
+               background-image: url();
+               background-repeat: no-repeat;
+               background-attachment: fixed;
+               background-position: 가로 세로;
+               background-size: 가로 세로;            
+                  
+               */
+            
+
+        
+        }
+
+    </style>
+</head>
+<body>
+    <h1>001.배경넣기 연습</h1>
+    
+</body>
+</html>
