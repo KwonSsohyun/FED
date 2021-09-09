@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>003.블록요소의 float</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        /* 부모박스 */
+        .wrap {
+            border: 5px dashed rgb(98, 63, 255);
+            margin: 10px;
+            padding: 10px;
+        }
+
+        /* 블록박스 공통 디자인 */
+        .bx {
+            width: 300px;
+            height: 200px;
+            border: 5px ridge #ccc;
+
+
+            /* 배경이미지공통 */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        /* 개별 디자인 */
+        .bx1 {
+            background-image: url(./imgs/dc1.png);
+        }
+
+        .bx2 {
+            background-image: url(./imgs/dc2.png);
+        }
+
+        .bx3 {
+            background-image: url(./imgs/dc3.png);
+        }
+
+        .bx4 {
+            background-image: url(./imgs/dc4.png);
+        }
+
+        /* 플롯관련 class */
+        .fll{
+            float: left;
+            /* 나는 왼쪽에 너는 오른쪽에 */
+        }
+        .flr{
+            float: right;
+            /* 나는 오른쪽에 너는 왼쪽에 */
+        }
+        .clb{
+            clear: both;
+            /* 양쪽 다 지워! */
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>003.블록요소의 float</h1>
+
+    <div class="wrap">
+        <div class="bx bx1"></div>
+        <div class="bx bx2"></div>
+        <div class="bx bx3"></div>
+        <div class="bx bx4"></div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
