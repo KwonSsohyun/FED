@@ -47,23 +47,23 @@
 [ 웹 색상표기법 ]
 
 1. 해시코드 : #6자리숫자
-    (두자리가 같을 경우 3자리로 축약표현가능)
-    - 16진수로 표기함(0~f)
-    - 해시코드로 투명도를 주려면 뒤에 2자리를 추가하여
+   (두 자리가 같을 경우 3자리로 축약표현가능)
+   - 16진수로 표기함(0~f)
+   - 해시코드로 투명도를 주려면 뒤에 2자리를 추가하여
       8자리 숫자로 투명하게 표현함
 
 2. RGB 코드 : rgba(red,green,blue,알파값)
-- 0~255 까지 숫자중 사용
-- red, green, blue
-- 마지막 a는 alpha값 즉, 투명도 -> 없으면 생략!
-(0~1사이의 소숫점값들 사용)
+   - 0~255 까지 숫자중 사용
+   - red, green, blue
+   - 마지막 a는 alpha값 즉, 투명도 -> 없으면 생략!
+     (0~1사이의 소숫점값들 사용)
 
 3. HSL 코드 : hsla(hue,saturation,lightness,알파값)
-- hue(색상), saturation(채도), lightness(명도)
-- hue는 색상번호, 채도와 명도는 0~100%값 범위로 사용
-- 마지막은 alpha값 -> 역시 없으면 생략!
+   - hue(색상), saturation(채도), lightness(명도)
+   - hue는 색상번호, 채도와 명도는 0~100%값 범위로 사용
+   - 마지막은 alpha값 -> 역시 없으면 생략!
 
 4. 웹색상명: 지정된 컬러명으로 색생을 셋팅
-예) red, green, blue, pink, navy, 등
-- 모든 색상은 w3schools.com의 색상참조로 가서확인!
-https://www.w3schools.com/css/css_colors.asp
+   예) red, green, blue, pink, navy, 등
+   - 모든 색상은 w3schools.com의 색상참조로 가서확인!
+   https://www.w3schools.com/css/css_colors.asp
