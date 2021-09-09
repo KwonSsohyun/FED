@@ -48,6 +48,25 @@
     #tbl{width: 312px; border: 1px solid #ccc;/* 테두리 */
     padding: 5px;}
 
+
+    /* dd에 "가상요소"로 아이콘 넣기 */
+    dd::before{ /* 앞에 넣기 */
+      content: "♣";
+      color:orange;
+    }
+
+    dd::after{ /* 뒤에 넣기 */
+      content: "★";
+      color:rgb(0, 153, 255);
+    }
+
+    dl dd:nth-last-child(2)::before{ /* 순서지정해서 넣기 */
+      content: "♥";
+      color:rgb(255, 0, 0);
+    }
+
+    
+
   </style>
   <!-- 
     style 요소 : css 문법 구역

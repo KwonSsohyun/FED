@@ -5,6 +5,54 @@
     <meta charset="UTF-8">
     <title>003.블록요소의 float</title>
     <style>
+
+        /* 
+           [ 블록요소의 float ]
+           - 필요성 : 블록요소는 옆에 다른요소가 올 수 없다.
+                      그래서 옆으로 흐르게 하는 속성셋팅이 필요!
+
+           - float 속성값 (반대로 온다고 생각)
+             1) left -> 설정요소는 '왼쪽'에 다른요소는 
+                        '오른쪽'으로 흐르게 해줌
+             2) right-> 설정요소는 '오른쪽'에 다른요소는 
+                        '왼쪽'으로 흐르게 해줌
+
+           [ float만 설정한 경우 생기는 문제! ]
+           - 하위요소가 float설정된 요소를 인지하지 못해 위로 올라오게됨
+           - 이것을 위해 다음 속성셋팅 필수!
+           - 대상 : float을 끊어줄 '블록'요소
+           - clear 속성값
+             1) left -> 이전 요소가 float:left 일때
+             2) right -> 이전 요소가 float:right 일때
+             3) both -> 이전 요소가 float:left/right 무엇이든 가능
+
+             -> 일반적으로 이전요소의 
+                float을 적용받지 않을 요소에게 
+                clear:both를 준다! (경우1)
+           
+           [ 부모요소가 자식요소의 float때문에 망가질 때 ]
+             1) 마지막 블록자식요소를 넣고 clear:both를 함 (경우2)
+             
+             2) 가상요소 ::after로 clear:both 설정함 (경우3★) 
+             
+             3) float된 자식요소의 부모박스에
+                overflow:hidden 처리를 함
+                -> 자식요소 숨기기를 할 경우
+                   float으로 요소가 유동적인 상태를
+                   마무리하는 속성 내부적 셋팅됨!
+                -> 단점 : 만약 자식요소가 부모요소 바깥으로 나가야 할 경우 
+                          숨겨져서 보이는 제약이 따르게됨
+                          이럴경우 위의 1,2번을 쓸것!
+                          특히 2번 추천!! (경우 3번)
+             
+             4) 높이값을 강제로 주는 방법도 있음 (비추!)
+        ____________________________________________________________
+
+            [ 기존에 float셋팅된 요소 없애기 ]
+            float:none;
+
+        */
+
         h1 {
             text-align: center;
         }
@@ -61,20 +109,90 @@
             /* 양쪽 다 지워! */
         }
 
+        .cll{
+            clear: left;
+            /* 왼쪽 float 지워 */
+        }
+
+        .clr{
+            clear: right;
+            /* 오른쪽 float 지워 */
+        }
+
+        /* float해제용 가상요소 */
+        .flclb::after{
+            content: ""; /* 마치 span태그 쓴거 같음(인라인)(빈태그와 같음)('클리어보뜨' 못함) */
+            display: block; /* 마치 div태그 쓴거 같음(블록 처리를 해줘야 '클리어보뜨'설정할 수 있다.) */
+            clear: both; /* float해제! */
+        }
+
+        /* 
+           가상요소란?
+           : 어떤요소의 내부에 자식요소로 직접 태그를 쓰지않고 요소를 넣는 방법 (::)
+
+           ※형식
+           요소::before{
+               content: "나야나";
+           }
+
+           -> 콜론을 두개 쓰는 이유?
+              가상클래스와 구분하기 위해!(가상클래스는 :)
+
+           1) ::before 맨앞에 넣기
+           2) ::after 맨뒤에 넣기
+           -> 필수속성으로 content: 값;
+           -> content값으로 url()을 쓰면 이미지
+              글자를 쓰면 문자데이터가 들어간다!
+           -> 마치 span태그를 넣은 것과 같아짐
+              display:block로 쓰면 마치 div를 쓴것과 같아짐!
+        */
+
+        /* 경우4 */
+        .case4{
+            overflow: hidden;
+        }
+        .case4 .bx{
+            float: left;
+        }
+        
+
     </style>
 </head>
 
 <body>
     <h1>003.블록요소의 float</h1>
 
+    <h2>경우1</h2>
     <div class="wrap">
+        <div class="bx bx1 fll"></div>
+        <div class="bx bx2 flr"></div>
+        <div class="bx bx3 clb"></div>
+        <div class="bx bx4"></div>
+    </div>
+
+    <h2>경우2</h2>
+    <div class="wrap">
+        <div class="bx bx1 fll"></div>
+        <div class="bx bx2 flr"></div>
+        <div class="bx bx3 clb fll"></div>
+        <div class="bx bx4 flr"></div>
+        <div class="clb"></div>
+    </div>
+
+    <h2>경우3</h2>
+    <div class="wrap flclb">
+        <div class="bx bx1 fll"></div>
+        <div class="bx bx2 flr"></div>
+        <div class="bx bx3 clb fll"></div>
+        <div class="bx bx4 flr"></div>
+    </div>
+
+    <h2>경우4</h2>
+    <div class="wrap case4">
         <div class="bx bx1"></div>
         <div class="bx bx2"></div>
         <div class="bx bx3"></div>
         <div class="bx bx4"></div>
-
-
-
     </div>
 
 
