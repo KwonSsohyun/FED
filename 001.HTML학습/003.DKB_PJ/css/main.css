@@ -115,20 +115,24 @@ body{
 .cd p{
     padding: 10px;
 
-    /* 스타일 */
+    font: 14px/2 '맑은 고딕', '돋움', arial;
+
+    /* 스타일
     font-style: italic; 
-    /* 두께 */
+    두께
     font-weight: bold;
-    /* 크기 */
+    크기
     font-size: 18px;
-    /* 줄간격 */
+    줄간격
     line-height: 2;
-    /* 글자체 */
+    글자체
     font-family: 궁서체;
-    
+     */
     /* 
         font: 스타일 두께 크기/줄간격 글자체;
         font: 스 두 크/줄 체; 
     */
+
+    text-align: justify; /* 텍스트 양쪽 정렬 */
 
 }
