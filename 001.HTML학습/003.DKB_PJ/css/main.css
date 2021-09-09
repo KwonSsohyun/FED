@@ -116,23 +116,26 @@ body{
     padding: 10px;
 
     font: 14px/2 '맑은 고딕', '돋움', arial;
-
-    /* 스타일
+    /* font 스타일
     font-style: italic; 
+    
     두께
     font-weight: bold;
+    
     크기
     font-size: 18px;
+    
     줄간격
-    line-height: 2;
+    line-height: 2; (설정된 글자크기의 배 - 2니까 글자폰트 18px의 2배)
+    
     글자체
     font-family: 궁서체;
-     */
-    /* 
+     
         font: 스타일 두께 크기/줄간격 글자체;
         font: 스 두 크/줄 체; 
+
     */
 
-    text-align: justify; /* 텍스트 양쪽 정렬 */
+    text-align: justify; /* 텍스트 양쪽 정렬(책 쓸때 처럼 양쪽 딱 떨어져 맞는것) */
 
 }
