@@ -36,7 +36,7 @@ body{
        높이값이 없을때 높이값이 안나옴!
     */
     margin: 0 auto; /* 마영오! 가로중앙정렬 */
-    outline: 5px dashed lime;
+    /* outline: 5px dashed lime; -> 영역박스 외곽선 표시*/
 }
 
 /* 가상요소로 float해제 */
@@ -63,7 +63,7 @@ body{
     /* 마진, 패딩 포함하기 속성 (bxb)*/
     box-sizing: border-box;
 
-    outline: 2px dotted blue;
+    /* outline: 2px dotted blue; -> 영역박스 외곽선 표시 */
 }
 
 /* 캐릭터 이미지 */
@@ -99,4 +99,36 @@ body{
 /* 캐릭터 이름 마지막 이미지 숨기기 */
 .cat:hover .ci span img:last-child{
     display: none;
+}
+
+/* 캐릭터 설명 박스 */
+.cd {
+    background: url(../images/eachBG.jpg) no-repeat center/cover;
+}
+
+/* 캐릭터설명 타이틀 */
+.cd h3{
+    padding: 20px;
+}
+
+/* 캐릭터설명 문단 */
+.cd p{
+    padding: 10px;
+
+    /* 스타일 */
+    font-style: italic; 
+    /* 두께 */
+    font-weight: bold;
+    /* 크기 */
+    font-size: 18px;
+    /* 줄간격 */
+    line-height: 2;
+    /* 글자체 */
+    font-family: 궁서체;
+    
+    /* 
+        font: 스타일 두께 크기/줄간격 글자체;
+        font: 스 두 크/줄 체; 
+    */
+
 }
