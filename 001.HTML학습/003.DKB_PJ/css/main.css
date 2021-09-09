@@ -29,10 +29,21 @@ body{
 
 /* 캐릭터 박스 */
 #cbx{
-    width: 80%;
-    height: 300px;
+    width: 90%;
+    /* height: 300px;
+       자식요소 float때문에
+       자식요소를 인식하지 못함!
+       높이값이 없을때 높이값이 안나옴!
+    */
     margin: 0 auto; /* 마영오! 가로중앙정렬 */
     outline: 5px dashed lime;
+}
+
+/* 가상요소로 float해제 */
+.clb::after{
+    content: "";
+    display: block;
+    clear: both;
 }
 
 /* 개별 캐릭터 박스 공통 */
@@ -45,10 +56,47 @@ body{
     float: left; /* 블록요소가 옆으로 흐르게함 */
     /* left값을 주면 나는 왼쪽 
     다른요소는 오른쪽에 올 수 있게 함 */
+
+    /* 안쪽여백 */
+    padding: 5px; /* 안쪽값을 주면서 박스가 커짐 */
+
+    /* 마진, 패딩 포함하기 속성 (bxb)*/
+    box-sizing: border-box;
+
     outline: 2px dotted blue;
 }
 
 /* 캐릭터 이미지 */
-.cat>img {
+.ci>img { /* 직계자식 이미지만!(>) (띄어쓰기는 포함이고, >는 직계) */
     width: 100%; /* 이미지의 height는 자동(비율유지) */
+}
+
+/* 캐릭터 이름 */
+.ci span{
+    display:block; /* span은 인라인요소라 컨텐츠만 영역이되서 블락요소로 바꾼다 */
+    text-align: center; /* 가로중앙 적용! 이미지도 텍스트얼라인으로 정렬함! */
+    margin-top: -22%; /* 비율로 이미지가 변경되므로 마진도 상대적으로 변경되게함 */
+}
+
+/* 캐릭터 이름 이미지 */
+.ci span img {
+    width: 40%;
+}
+
+/* 캐릭터 이름 첫번째 이미지 숨기기 */
+/* display:none 사용 */
+.ci span img:first-child{display: none;}
+
+/* .cat박스에 마우스 오버시 */
+/* 캐릭터 이름 첫번째 이미지 보이기 */
+/* 원래 이미지는 display:inline */
+/* 이미지 태그 자체가 인라인요소이기 때문에 */
+.cat:hover .ci span img:first-child{
+    display: inline;
+}
+
+/* .cat박스에 마우스 오버시 */
+/* 캐릭터 이름 마지막 이미지 숨기기 */
+.cat:hover .ci span img:last-child{
+    display: none;
 }
