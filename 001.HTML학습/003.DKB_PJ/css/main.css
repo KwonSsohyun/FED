@@ -17,6 +17,21 @@ body{
     no-repeat fixed center/cover;
 }
 
+/* 스크롤바 트랙 변경하기 (클래스 .scbar 설정함) */
+/* -webkit- 벤더사명(크롬,사파리) 접두어 */
+.scbar::-webkit-scrollbar{ /* 전체 스크롤바 크기 */
+    width: 7px;
+}
+.scbar::-webkit-scrollbar-thumb{ /* 스크롤바 */
+    background-color: #666;
+    border-radius: 5px; /* 옆에 외곽 둥글게 */
+}
+.scbar::-webkit-scrollbar-track{ /* 스크롤바 트렉 */
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+
 /* 1. 상단영역 */
 
 /* 로고 */
@@ -105,12 +120,34 @@ body{
 
 /* 캐릭터 설명 박스 */
 .cd {
+    height: 0px; /* 마우스오버시 250px */
+    overflow: auto; /* 넘치면 스크롤바 */
+    margin-top: 15px;
+    border-radius: 20px 0 0 20px; /* 오른쪽위, 오른쪽아래 */
+    /* 
+     둥근 모서리 방향별로 주기!
+     boder-radius: 왼위 오른위 오른아래 왼아래;
+     (왼쪽위 부터 시계방향 설정)
+    */
     background: url(../images/eachBG.jpg) no-repeat center/cover;
+
+    /* 
+     트렌지션으로 애니메이션 설정하기 
+     transition: 속성명 시간 이징 지연시간;
+    */
+    transition: 1s;
 }
+
+/* 캐릭터개별박스(.cat)에 마우스 오버시 .cd높이값 변경 */
+.cat:hover .cd{
+    height: 250px;
+}
+
+
 
 /* 캐릭터설명 타이틀 */
 .cd h3{
-    padding: 20px;
+    padding: 5px 10px 0px;
 }
 
 /* 캐릭터설명 문단 */
