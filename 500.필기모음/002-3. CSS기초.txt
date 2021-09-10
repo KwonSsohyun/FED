@@ -38,7 +38,7 @@
 
 
 6. CSS 적용 우선순위
-   인라인 > id > class > type
+   인라인 코드(body안에 해당부분 직접 style쓰는 것) > id > class > type
    -만약 !important를 값 뒤에 쓰면
     가장 우선순위로 적용됨! (신중히 쓸 것)
 
