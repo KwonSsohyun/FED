@@ -156,7 +156,7 @@
             font-family: "궁서";
             color: orangered;
         }
-        /* 오버시 */
+        /* 오버 시 */
         ul.part1 li:nth-child(4)~li:hover { /* (4)뒤에 li를 더 붙혀서 이게 더 세졌으니 */
             font-size: 28px;
             color: blue;
@@ -175,6 +175,8 @@
             font-size: 40px; 
             font-family: "맑은 고딕";
             color: coral;
+            /* 오버 시 (:hover)는 따로 설정을 안줬기 때문에 바로 위에 있는 오버시를 따른다.
+               위에서 ':nth-child(4)~li:hover' 5번째부터 뒤까지 오버시는 이렇게 해줘 라고 설정을 했기 때문에 */
         }
 
 
