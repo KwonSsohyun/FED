@@ -21,16 +21,16 @@
             color: hotpink;
             text-decoration: none; /* 밑줄없앰 */
             text-shadow: 2px 2px 2px #777;
+            /* 
+               글자그림자
+               text-shadow: x축 y축 블러 색;
+            */
         }
 
         /* :hover 마우스 오버상태 */
         h2 a:hover{
             color: red;
             text-decoration: overline; 
-            /* 
-               글자그림자
-               text-shadow: x축 y축 블러 색;
-            */
         }
 
         /* :active 마우스로 눌려진 상태(클)
@@ -65,9 +65,9 @@
                              1) 같은 클래스명인데 요소별로 다른 셋팅을 할떄
                              2) 클래스나 아이디의 요소명을 밝히고 싶을 때
                                 (나중에 클래스명만 보고는 헷갈릴 수 있으니 
-                                 앞에 어디 소속인지까지 구체적으로 밝히는 것)
-        
+                                 앞에 어디 소속인지까지 구체적으로 밝히는 것)      
         */
+
         ul.part1{
           /* ul기본 3가지 없애기 (ul=순서없는 리스트) */
           margin: 0;
@@ -81,7 +81,6 @@
           border-radius: 20px;
           padding: 20px 0;
           text-align: center;
-
         }
 
 
@@ -91,7 +90,7 @@
             font-family: "궁서";
             color: red;
         }
-        /* 1번 li - 오버시 : 뒤에 호버만 붙히면 된다. */
+        /* 1번 li - 오버 시 : 뒤에 호버(:hover)만 붙히면 된다. */
         ul.part1 li:first-child:hover{
             font-size: 50px;
             font-family: "궁서";
@@ -106,7 +105,7 @@
             color: blueviolet;
             font-weight: bold;
         }
-        /* 2번째 li - 오버시 : 달라지는 속성만 적으면 된다.(덮어쓴다) */
+        /* 2번째 li - 오버 시 : 오버시 전이랑 달라지는 속성만 적으면 된다.(덮어쓴다) */
         ul.part1 li:nth-child(2):hover{
             color: skyblue;
         }
@@ -120,7 +119,7 @@
             font-weight: bold;
             font-style: italic;
         }
-        /* 3번째 li - 오버시 */
+        /* 3번째 li - 오버 시 */
         ul.part1 li:nth-child(3):hover{
             font-style: normal;
         }
