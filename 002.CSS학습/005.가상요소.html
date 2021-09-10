@@ -52,7 +52,8 @@
                - 선택요소 내부의 글자 중 '첫번째 줄'만 
                  마치 태그로 싼 것처럼 디자인을 적용할 수 있다!
                -> 특징: 기존의 첫번째 줄이었던 글자가 내려가면 적용이 사라짐
-                        무조건 첫번째 줄에 온 글자만 적용된다!
+                        무조건 첫번째 줄에 온 글자만 적용된다! 
+                        (유동적 창 움직이면)
 
 
         */
@@ -88,7 +89,7 @@
             width: 50px;
             height: 25px;
             margin-left: 20px;
-            vertical-align: -5px;
+            vertical-align: -5px; /* 세로 정렬 */
 
             background: url(./imgs/blogo.png) no-repeat center/cover;
             outline: 2px dotted red;
@@ -98,23 +99,62 @@
         /* dl요소 디자인 */
         dl {
             width: 800px;
-            max-width: 90%;
+            max-width: 90%; /* 가로크기는 800px인데, 화면에 최대 90%를 차지했을때 안으로 떨어짐 */
             /* 설정 크기보다 화면이 작아지면 90%적용 */
+            /* 폭(w)이랑 max-width(%)같이 씀 */
+
             font-size: 24px;
             margin-left: 50px;
         }
 
         /* 반복되는 요소의 앞에 아이콘 가상요소로 넣기 */
+        dl dt::before{
+            content: '♣';
+            color: blue;
+            vertical-align: 2px;
+            margin-right: 5px;
+        }
         
 
         /* dd전체와 dd.story>h3에 가상요소 before적용하기 */
-        
+            dl dd::before,
+            dd.story>h3::before{
+                content: '♥';
+                color: red;
+                vertical-align: 2px;
+                margin-right: 5px;
+            }
 
-        /* 스토리의 dd는 가상요소 없애기 */
         
-        /* .story의 첫번째 p태그의 첫번째 글자 디자인 변경하기 */
+        /* 스토리의 dd는 가상요소 없애기 */
+        dd.story::before{
+            display: none;
+        }
+        
+        /* .story의 첫번째 p태그의 첫번째 글자 디자인 변경하기(창의 유동적으로 바뀜) 
+           (섞여있어서 퍼스트오브타입)(첫번째글자 - 퍼스트레터) */
+        dd.story p:first-of-type::first-letter{
+            font-size: 50px;
+            font-weight: bold;
+            color: hotpink;
+        }
         
         /* .story의 첫번째 p태그의 첫번째줄 디자인 변경하기 */
+        dd.story p:first-of-type::first-line{
+            color:blue;
+        }
+
+        /* 두번째 p태그는 태그로 첫번째 글자(b태그), 첫번째 줄(span)변경 (유동적이지 않다.) */
+        dd.story p:last-of-type b{
+            font-size: 50px;
+            font-weight: bold;
+            color: hotpink;
+        }
+        
+        dd.story p:last-of-type span{
+            color: blue;
+        }
+        
         
 
         
