@@ -4,7 +4,117 @@
     <meta charset="UTF-8">
     <title>004.가상클래스</title>
     <style>
+        h1,h2{
+            text-align: center;
+        }
+
+        /* a요소 가상클래스 주기 */
+
+        /* :link 링크최초상태
+        h2 a:link{ 
+            color: red;
+            text-decoration: none;} 
+        */
+
+        /* 일반적으로 a요소 자체 디자인을 잡는다! */
+        h2 a{
+            color: hotpink;
+            text-decoration: none; /* 밑줄없앰 */
+            text-shadow: 2px 2px 2px #777;
+        }
+
+        /* :hover 마우스 오버상태 */
+        h2 a:hover{
+            color: red;
+            text-decoration: overline; 
+            /* 
+               글자그림자
+               text-shadow: x축 y축 블러 색;
+            */
+        }
+
+        /* :active 마우스로 눌려진 상태(클)
+        h2 a:active{
+            color: blue;} 
+        */
+
+        /* :visited 링크 방문 후 (한번클릭 후 멍든색 없애기)
+        h2 a:visited {
+            color: mediumaquamarine;} 
+        */
+
+        /* :focus 요소를 클릭하여 초점이 올때 이벤트 일어남 : 가상클래스 */
+        h2 a:focus {
+            outline: 10px dotted orangered; /* 아웃라인은 요소에 영향을 주지 않는다. */
+        }
+
+        /* 시인이름 */
+        h3{
+            width: 800px;
+            margin: 0 auto;
+            /* 마영오! - 블록가로중앙 (마영오를 쓸때는 위에 폭값이랑 텍스트얼라인 써야 한다.) */
+            text-align: right;
+            padding-right: 50px;
+        }
+
+        /* 첫번째 파트 */
+        /* 요소명.클래스명 -> 종속선택자 
+                          -> 종속선택자를 언제 쓰는가?
+                             1) 같은 클래스명인데 요소별로 다른 셋팅을 할떄
+                             2) 클래스나 아이디의 요소명을 밝히고 싶을 때
+                                (나중에 클래스명만 보고는 헷갈릴 수 있으니 
+                                 앞에 어디 소속인지까지 구체적으로 밝히는 것)
         
+        */
+        ul.part1{
+            /* ul기본 3가지 없애기 */
+          margin: 0;
+          padding: 0;
+          list-style: none; /* 블릿(li 리스트에 앞에 땡땡 나오는거) 없앰 */
+
+          width: 800px;
+          margin: 0 auto; /* 마영오! */
+          margin-top: 20px;
+          border: 2px solid #ccc; /* 보더 */
+          border-radius: 20px;
+          padding: 20px 0;
+          text-align: center;
+
+        }
+
+        /* 1번 li */
+        ul.part1 li:first-child{
+            font-size: 40px;
+            font-family: "궁서";
+            color: red;
+        }
+        /* 1번 li - 오버시 : 뒤에 호버만 붙히면 된다. */
+        ul.part1 li:first-child:hover{
+            font-size: 50px;
+            font-family: "궁서";
+            color: blue;
+        }
+
+
+        /* 2번째 li */
+        ul.part1 li:nth-child(2){
+            font-size: 30px;
+            font-family: "굴림";
+            color: blueviolet;
+            font-weight: bold;
+        }
+        /* 2번째 li - 오버시 : 달라지는 속성만 적으면 된다.(덮어쓴다) */
+        ul.part1 li:nth-child(2):hover{
+            color: skyblue;
+        }
+
+
+
+
+
+
+
+
 
 
 
