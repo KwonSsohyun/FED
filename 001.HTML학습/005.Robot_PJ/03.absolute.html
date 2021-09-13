@@ -38,7 +38,8 @@
                   2) 위치 이동값을 사용한 경우
                      - 위치이동값을 사용한 부분에 대하여서만!!!(top,left,right,bottom)
                        앱솔루트가 위치를 잡을 때 부모요소는....???
-                       static이 아닌 포지션을 가진요소가 부모다!!!
+                      
+                       ★ static이 아닌 포지션을 가진요소가 부모다!!!
                        -> static이 아닌 포지션이란?
                           : relative / absolute / fixed
 
@@ -109,19 +110,20 @@
            /* position: relative; */
         }
         .s8{
-           /* position: relative; */
+           position: relative; /* 가장 먼저 부모! */
         }
 
-        a2{
+        .a2{
            position: absolute;
            top: 0;
            left: 0;
-           /* 나의 부모는 누구인가? : 앱솔루트를 잡으면 무조건 물어본다. */
+           /* 나의 부모는 누구인가? : 앱솔루트를 잡으면 무조건 물어본다.
+              static만 아니면 부모가 된다! */
            background-color: red;
         }
-        a3{
+        .a3{
            position: absolute;
-           top: 0;
+           bottom: 0;
            right: 0;
            /* 나의 부모는 누구인가? */
            background-color: pink;
