@@ -54,6 +54,26 @@ li{
     border: 1px solid #ccc;  /* 하단구분선 */
 } 
 
+ /* 햄버거버튼 */
+ .ham {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 50px;
+    height: 70px;
+    font-size: 40px;
+
+    border: none;
+    background-color: transparent;
+    /* 배경없애기(투명) */
+
+    cursor: pointer;
+    /* (클릭) 손가락모양 */
+
+    display: none; /* 처음엔 안보임 */
+}
+
 /* 로고 */
 h1.logo{ /* 이렇게 해줘야 딱 달라붙어서 띄어지는 간격 없이 보인다. */
     margin: 0;

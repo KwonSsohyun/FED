@@ -25,12 +25,43 @@ ex) h1.logo{margin: 0;} 을 준 CSS이다.
 */
 
 
-
 @media only screen and (max-width:800px) { /* 800px아래일때 적용됨 */
     /* 1. GNB없애기 */ 
     .gnb{
         display: none;
     }
+
+    /* 2. 상단영역 */
+    .top{
+    padding-bottom: 20px;
+    } 
+
+    /* 3. 햄버거버튼 보이기 */
+    .ham {
+    display: block; /* 보이기 */
+    }
+    
+    /* 4. 개별 캐릭터 박스 공통 */
+    .cat{
+        width: 100%;
+    }
+
+    /* 5. 캐릭터 박스 */
+    #cbx{
+        position: static;
+         /* relative 포지션 해제! */
+    }
+
+    /* 6. 캐릭터개별박스(.cat)에 마우스 오버시 마진top 없애기 */
+    .cat:hover{
+        margin-top: 0;
+    }
+
+    /* 7. 하단링크 없애기 */
+    ul.bm{
+        display: none;
+    }
+
 }
 
 
