@@ -13,8 +13,9 @@ body{
     /* 배경 한번에 셋팅하기!
     background: 색 이미지 반복 고정 위치/크기;
     background: 색이반고윙/크;   */
-    background: url(../images/bg_mainvisual.jpg)
-    no-repeat fixed center/cover;
+    background: 
+    url(../images/bg_logo_a_01.png) no-repeat fixed 10% 20%/10%, /* 먼저쓴게 우선 */ /* 배경이미지에 넣는걸로 변경 */    
+    url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
 }
 
 /* 스크롤바 트랙 변경하기 (클래스 .scbar 설정함) */
@@ -50,8 +51,16 @@ li{
 
 
 /* 1. 상단영역 */
+.top{
+    position: relative; /* 아래 absolute 부모 잡아준거임 */
+    /* 부모자격 - .gnb */
+}
 
 /* 로고 */
+.logo{ /* 이렇게 해줘야 딱 달라붙어서 띄어지는 간격 없이 보인다. */
+    margin: 0;
+    padding: 0; 
+}
 .logo img { /* 이미지 마진 위치 조정 */
     margin-top: 45px;
     margin-left: 70px;
@@ -61,15 +70,25 @@ li{
 /* GNB 메뉴 */
 .gnb{
     position: absolute;
-    
+    top: 0; /* 위치값 쓰는 순간? : 나의 부모는? */
+    /* width,Height 안주면 컨텐츠만큼만 영역잡음 */
 
+    width: 635px;
+    left: calc(50% - 317px);
+    /* calc(%수치 - 특정px);
+       -> 앱솔루트로 가로 중앙정렬
+    */
+
+    background-color: #fff;
 }
+
 .gnb>ul{
 
 }
 
 .gnb>ul>li{
-    padding-right: 34px; /* li 안쪽 공간 줌 : 글자사이 간격*/
+    padding: 0 17px; /* li 안쪽 공간 줌 : 글자사이 간격*/
+    /* 양쪽을 동일하게 밀고 사이간격은 34px */
 }
 
 .gnb>ul>li>a{
