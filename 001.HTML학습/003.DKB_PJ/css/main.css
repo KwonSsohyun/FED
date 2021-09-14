@@ -54,11 +54,12 @@ li{
 /* 1. 상단영역 */
 .top{
     position: relative; /* 아래 absolute 부모 잡아준거임 */
-    /* 부모자격 - .gnb */
+    /* 부모자격 - .gnb>ul>li::after */
     
     background-color: #fff;
-    padding-top: 20px;
-}
+    padding-top: 20px;   
+    border: 1px solid #ccc;  /* 하단구분선 */
+} 
 
 /* 로고 */
 h1.logo{ /* 이렇게 해줘야 딱 달라붙어서 띄어지는 간격 없이 보인다. */
@@ -95,7 +96,7 @@ h1.logo img { /* 이미지 마진 위치 조정 */
 
 .gnb>ul>li>a{
     display: block; /* 높이값 적용위해 */
-    height: 54px; /* 인라인 요소여서 적용안됨 */
+    height: 54px; /* 인라인 요소여서 적용안됨 *//* 보더,패딩 내부로 포함 : 그래야 클릭했을때 펄쩍거리지 않는다. */
     
     color: #000;
     text-decoration: none; /* 밑줄 없앰 */
@@ -105,19 +106,75 @@ h1.logo img { /* 이미지 마진 위치 조정 */
     box-sizing: border-box; /* 보더,패딩 내부로 포함 : 그래야 클릭했을때 펄쩍거리지 않는다. */
 }
 
+/* 상위메뉴 오버시 보더로 밑줄 만들기 */
 .gnb>ul>li>a:hover{
     border-bottom: 4px solid red; /* 선택시 아래 직선 적용 */
 }
 
-/* 상위메뉴에 마우스 오버시 밑줄 만들기 */
-
-
 
 /* 서브메뉴 */
 .smenu{ 
-    display: none; /* 지금은 복잡스러우니까 눈 감긴다. */
+    /* display: none; 지금은 복잡스러우니까 눈 감긴다. */
+    position: absolute; /* 위에 설정한 값은 그대로 잘 보인다 (젠틀앱솔루트) */
+    /* background-color: #fff; -> 회색 구분선 가리니까 주석처리*/  
+    
+    /* 서브메뉴 숨기기 */
+    height: 0;
+    overflow: hidden;
+
+    /* ★ 부모li 가상요소 앱솔루트 보다 위로! */
+    z-index: 1;
+
+    /* 트랜지션: 속시이지 */
+    transition: height .4s ease-out;
+}
+.smenu li{
+    float: none; /* 플롯없앰 : 그래야 밑으로 툭툭 떨어짐 */
+}
+.smenu a{
+    color: #000;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 30px; /* 줄간격 */
 }
 
+/* 상위메뉴 마우스 오버시 서브메뉴 보이기 */
+.gnb>ul>li:first-child:hover .smenu{ /* 1번째 탭 : .semu가 각각 있기때문에 넣은거 - 높이가 달라서 따로 설정함*/
+    height: 90px;
+} 
+.gnb>ul>li:first-child:hover::after{ /* 1번째 탭에 : 선택했을때 마우스 오버시 보이게 하려고*/
+    height: 100px;
+    border-bottom: 2px solid red; /* 마우스 오버시에만 보이게 하려고 */
+} 
+.gnb>ul>li:nth-child(3):hover .smenu{ /* 3번째 탭 */
+    height: 120px;
+} 
+.gnb>ul>li:nth-child(4):hover .smenu{ /* 4번째 탭 */
+    height: 60px;
+} 
+
+
+/* JS없이 가상요소로 - 서브메뉴 전체 흰색 배경 깔아주기 */
+/* top값 없이 젠틀하게하려고 ::after를 사용함! */
+
+.gnb>ul>li::after { /* 비포로 하면 앱솔루트로 하면 위에만 존중하고 아래는 존중안해서 top값 따로 줘야해서 */
+    content: "";
+    display: block; /* 습관적코딩(명시적 블럭코딩) - 앱솔루트 주면 자동 블록 되지만 */
+    position: absolute;  /* 앱솔루트는 자동 block! */
+    left: 0; /* 나의 부모는? = .top (relative 썼기때문에) */
+    width: 100%; /* 부모요소를 꽉채움! */
+
+    height: 0px; /* 처음에는 안보여야 되니까 */
+ 
+    /* border-bottom: 2px solid red;  ->  마우스 오버시에만 보이게 하려고 */
+    background-color: #fff;
+
+    /* 부모요서 .top의 하단 보더 보이게 하기 위해 마진탑 이동! */
+    margin-top: 1px;
+
+    /* 트랜지션: 속시이지 - .smenu와 동일!(가속도가 달라지면 막 보일 수 있기에) */
+    transition: height .4s ease-out;
+}
 
 
 
