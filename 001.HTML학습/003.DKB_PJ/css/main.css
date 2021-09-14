@@ -32,6 +32,23 @@ body{
 }
 
 
+/* 공통 초기화 - 3無 */
+ul,ol{ 
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/* float 해제 */
+ul::after, ol::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+li{
+    float: left; /* 옆으로 흐르게 */
+}
+
+
 /* 1. 상단영역 */
 
 /* 로고 */
@@ -39,6 +56,38 @@ body{
     margin-top: 45px;
     margin-left: 70px;
 }
+
+
+/* GNB 메뉴 */
+.gnb{
+    position: absolute;
+    
+
+}
+.gnb>ul{
+
+}
+
+.gnb>ul>li{
+    padding-right: 34px; /* li 안쪽 공간 줌 : 글자사이 간격*/
+}
+
+.gnb>ul>li>a{
+    color: #000;
+    text-decoration: none; /* 밑줄 없앰 */
+    font-size: 13px;
+
+}
+
+/* 서브메뉴 */
+.smenu{ 
+    display: none; /* 지금은 복잡스러우니까 눈 감긴다. */
+}
+
+
+
+
+
 
 /* 2. 메인영역 */
 
