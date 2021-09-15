@@ -155,4 +155,21 @@
          · main.css (메인통합CSS - 나머지css와 merging합친다.)
          · reset.css (공통적으로 해야하는 초기화 설정값 설정)
          · core.css (공통핵심 설정)
+
+   _________________________________________________________________________________________
+
+   4. 각 파일에 기술해야 하는 세부사항 정리
+      
+      [ HTML ]
+      · index.html
+
+        <head>
+        <link rel="stylesheet" href="css/main.css"> → 여러개의 CSS파일을 합친, 메인 CSS하나만 가져온다.
+        </head>
+
+        <body> 
+
+
+
+        </body> 
           
