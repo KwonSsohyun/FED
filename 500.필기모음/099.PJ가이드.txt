@@ -166,7 +166,7 @@
       --------------------------------------------------------------------------------------
 
         <head>
-        <link rel="stylesheet" href="css/main.css"> → 여러개의 CSS파일을 합친, 메인 CSS하나만 가져온다.
+        <link rel="stylesheet" href="css/main.css">  →  여러개의 CSS파일을 합친, 메인 CSS하나만 가져온다.
         </head>
 
         <body> 
