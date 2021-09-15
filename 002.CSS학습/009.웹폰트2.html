@@ -4,11 +4,15 @@
 <head>
     <meta charset="utf-8">
     <title>웹폰트 CDN방식으로 적용하기</title>
+    <!-- <link>방식 CDN 웹폰트 -->
     <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300&family=Poiret+One&display=swap" rel="stylesheet">
-    <!-- font-family: 'Karantina', cursive;
-         font-family: 'Poiret One', cursive; -->
+    <!-- 
+         font-family: 'Karantina', cursive;
+         font-family: 'Poiret One', cursive; 
+    -->
 
     <style>
+        /* @import방식 CDN 웹폰트 */
         @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200&family=Yellowtail&display=swap');
         /* 
             font-family: 'Changa', sans-serif;
@@ -22,11 +26,11 @@
               즉, 컨텐트(웹폰트파일)를 가져와 네트워크로!
 
             - 호출방식:
-            1. external 방식으로 불러오기
+            1. external 방식으로 불러오기 : <link>
                - link요소를 사용하여 html 상단에 넣는다
                  예) <link rel="stylesheet" href="cdn주소">
 
-            2. import 방식으로 불러오기
+            2. import 방식으로 불러오기 : @import
                - @import 를 사용하여 css코딩구역 상단에 넣는다
                  예) @import url(cdn주소)
 
@@ -41,64 +45,68 @@
             1. 구글폰트 사이트에서 사용할 웹폰트를 선택한다.
             2. 폰트보고 마음에 들면 (+ select this style) 클릭
             3. 장바구니처럼 사이드바에 추가가 된걸 볼 수 있다. 
-               (오른쪽 상단에 사각형박스 3개 합쳐진거 보이는데 클릭하면 사이드바 열고 닫을 수 있다.)
+               (오른쪽 윗 상단에 사각형박스 3개 합쳐진거 보이는데 클릭하면 사이드바 열고 닫을 수 있다.)
             4. 사이드바를 열어서 보면
                "Use on the web" 영역안에
-               ¤ <link>  /  ¤ @import
+               ✓ <link>  /  ✓ @import
                2가지를 선택할 수 있다.
 
             2. link태그 방식 / @import방식 중 선택하여 소스에 붙여 넣는다.
-               ¤ <link>
-               - 아래 보면 
-                 <link rel="preconnect" href="https://fonts.googleapis.com">
-                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                 ★ <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nanum+Gothic&display=swap" rel="stylesheet">
-                 이렇게 3줄이 보이는데 이중 맨 아래를 복사해서
-                 -> html문서 <title> //// <style> 사이에 붙혀 넣는다.
+               
+               1) link 방식
+                  ✓ <link> 선택 후 태그가 아래 적혀 있는데
+                     <link rel="preconnect" href="https://fonts.googleapis.com">
+                     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                     ★ <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nanum+Gothic&display=swap" rel="stylesheet">
+                 
+                  이렇게 3줄이 보이는데 이중 맨 아랫줄 태그를 복사해서
+                  -> html문서 <title> //// <style> 사이에 붙혀 넣는다.
 
-                    그리고 아래 또 보면
-                    CSS rules to specify families 
-                    이것 또한 복사해서 html 아까 붙혔더 아래 주석 처리를 해서 붙혀넣는다.
+                  다시 구글 창으로 가서 아래를 보면
+                  ✓ CSS rules to specify families 
+                    -> 또한 아래 태그 적혀있는 것 복사해서 html문서에 아까 링크 붙혔던 바로 아래 주석 처리를 해서 붙혀넣는다.
 
-                    그리고 해당 적용하고 싶은 부분에 
-                    주석처리한 부분 "font-family: 'Poiret One', cursive;" 이렇게 붙혀 넣으면 된다.
-
-
-
-             ¤ @import
-             아래 코드가 보이는데
-             <style> 빼고 그 사이만 복사해서 가져온다.
-                ex) @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nanum+Gothic&display=swap');
-
-                이때 꼭 CSS파일 혹은 <style>안에 맨 상단에 위치하게 붙혀넣는다.
-
-
-                    똑같이 CSS rules to specify families 내용 가져와서 주석달고 
-                    적용하고 싶은 부분에 CSS혹은 <style>에 해당 구역에 코드 붙혀넣으면 된다.
-             
+                  다음으로 아까 주석처리한 부분에서, 적용하고 싶은 부분에 적용할 폰트인지 확인 후 코드 붙혀넣는다. 
+                  ex) font-family: 'Poiret One', cursive; 
+                      -> 이렇게 css파일 혹은 <style>시트에 해당하는 영역에 붙혀 넣으면 된다.
 
 
 
-            3. 지정된 CDN 웹폰트 이름으로 적용한다
+              2) @import 방식
+                 ✓ @import 선택 후 태그가 아래 적혀 있는데
+                    <style> //// </style> 빼고 그 사이만 코드 복사해서 가져온다.
+                    ex) @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nanum+Gothic&display=swap');
+
+                   외부에 CSS를 쓰는 익스터널의 방식이면 -> CSS파일에
+                   혹은
+                   내부 인터널 방식이면 -> <style> //// </style> 안에 
+                   "맨 상단" 에 위치하게 붙혀넣는다.
+
+                   다시 구글 창으로 가서 아래를 보면
+                   ✓ CSS rules to specify families 
+                     -> 또한 아래 태그 적혀있는 것 복사해서 html문서에 아까 링크 붙혔던 바로 아래 주석 처리를 해서 붙혀넣는다.
+
+                  다음으로 아까 주석처리한 부분에서, 적용하고 싶은 부분에 적용할 폰트인지 확인 후 코드 붙혀넣는다. 
+                  ex) font-family: 'Poiret One', cursive; 
+                      -> 이렇게 css파일 혹은 <style>시트에 해당하는 영역에 붙혀 넣으면 된다.
+
+
+
+            3. 지정된 CDN 웹폰트 이름으로 적용한다. (위에서 설명한 주석처리한 그대로가 구글에서 지원하는 정식폰트명이기에 정확히 쓰라는것)
 
         __________________________________________________________________________________
           
             [ link방식과 @import방식 중 어떤 것을 더 많이 쓰나? ]
             - 외부 CSS를 사용한다면 그 파일에서 @import하여 하나의 파일로 만든 후
               html파일에서 한번만 link방식으로 호출하면 효율성이 좋아지므로
-              @import 방식을 더 많이 쓴다~!
+              
+              -> ★ @import 방식을 더 많이 쓴다~!
 
-              + 
-              나중에 메인, 랜딩 등 많아질 경우
-              외부 CSS 합친다
-              @import url(common.css);
+              +) 나중에 메인, 랜딩 등 많아질 경우 외부 CSS 합친다
+                 @import url(common.css);
 
             
         */
-
-
-        /* import방식 CDN 웹폰트 */
-
 
 
         /* CDN 웹폰트 적용하기 */

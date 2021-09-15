@@ -46,11 +46,13 @@
                 url(경로/글꼴명.eot) format("eot");
             }
 
-            -> ★ 간단히 쓰기
+
+            -> ★ 간단히 쓰기 ★
             @font-face{
                 font-family: 웹폰트명(내가지은이름);
                 src: url(경로/글꼴명.woff) format("woff");
             }
+
 
                 - 웹폰트의 글꼴명은 자유롭게 지정할 수 있다
                 - src 에는 같은 글꼴을 여러형식으로 셋팅할 수 있다
@@ -65,10 +67,15 @@
 
             2. ★ 웹폰트 변환 프로그램으로 파일을 변환한다
                - ttf(otf) -> 'woff' 로 변환
+                 하는법 : 'font변환툴' -> 'woff변환툴' 
+                          -> 'sfnt2woff.exe'에 내가 사용할 폴더 끌어와서 틱 얹혀주면 바로 변환됨!)
+
                - 온라인 웹폰트 변환 사이트도 있다
                  (onlinefontconverter.com 등)
 
             3. 실제 적용할 요소에 CSS 웹폰트 설정을 통해 셋팅한다
+
+        __________________________________________________________________________________
 
             [ 웹폰트가 안나오는 경우 ]
             1. font-face 설정에서 src경로가 부정확할때
@@ -102,7 +109,7 @@
 
             /* 웹폰트 설정 */
             @font-face {
-                font-family: sday;
+                font-family: sday; /* 'sday' -> 내가 정하고 싶은 이름(막써도됨) / 만약 띄어쓰기 할꺼면 ex) 's day' 따옴표 꼭 써야함 묶어줘야 하니까 */
                 src: url(./fonts/SingleDay-Regular.woff) format("woff");
             }
 
@@ -135,7 +142,7 @@
 
             /* 적용하기 */
             .wf1{
-                font-family: sday;
+                font-family: sday; /* 아까 내가 정한 폰트 이름명 똑같이 적어준다. */
                 color: purple;
             }
             .wf2{
