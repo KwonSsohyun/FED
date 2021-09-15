@@ -261,25 +261,112 @@
         }
 
 
-        
+
         /* 로봇 설명 박스 */
-        #rdesc{
-            width: 800px;           
-            margin: 350px auto 100px; /* 위 / 양쪽(중앙) / 아래 */
+        #rdesc {
+            width: 800px;
+            margin: 350px auto 100px;
+            /* 위 / 양쪽(중앙) / 아래 */
             border: 3px solid #fff;
             border-radius: 20px;
             padding: 15px 30px;
+            /* 패딩 : 위아래 양쪽 */
 
             color: #fff;
+            /* 글자색 */
+            text-shadow: 1px 1px 1px #000;
+            /* 글자그림자: x y 블러 색 */
+            background-color: #00000085;
+            /* 반투명 배경색 */
+
+            box-shadow: inset 0 0 60px cyan;
+            /* 안쪽 이너 글로우 : 박스내부그림자 글로우효과 */
         }
 
+        /* 로봇 설명제목 */
+        #rdesc h2 {
+            color: lime;
+            /* 글자색 */
+            font-size: 35px;
+            /* 글자크기 */
+            text-align: center;
+            /* 글자정렬중앙 */
+        }
+
+        /* 설명출처 */
+        #rdesc small {
+            display: block;
+            /* small태그는 인라인이라 텍스트얼라인이 안먹으니 블락요소로 만듬 */
+            text-align: center;
+            color: #ff0;
+        }
+
+        /* 설명문단 */
+        #rdesc p {
+            font-size: 15px;
+            /* 글자크기 - 16px 기본 */
+            line-height: 25px;
+            /* 줄간격 */
+            letter-spacing: 1px;
+            /* 자간너비 */
+            word-spacing: 2px;
+            /* 단어사이 너비 */
+
+            /* ★ 가독성을 위한 다단설정 */
+            /* 
+
+               [ 다단 표기 (다중열 속성) ]  
+               column-count: 3; 
+               -> 다중열 개수 (3줄로 옆으로 다단이 나온다)
+
+               [ 다중열 구분선 ]
+               column-rule: 5px dotted #000;
+               -> 값설정은 보더와 방식이 같음 (두께 종류 색상)
+
+               [ 다중열 사이간격 ]
+               column-gap: 50px;
+               -> 구분선 오른쪽 간격 조정
+
+               [ 텍스트 양쪽 정렬 ]
+               text-align: justify; 
+    
+               [ 양쪽정렬하니 단어사이가 듬성듬성 없애기 ]
+               word-break: break-all;
+               -> 단어깨기-다깨! : 단어단위로 붙어있는 것을 철자 하나씩 깸
+
+               [ 첫줄 들여쓰기 ]
+               text-indent: 20px;
+               -> 마이너스는 반대방향
+
+               [ 첫 글자 크게 하기 ] 
+               -> 가상요소::first-letter
+
+               #rdesc p::first-letter{
+                   font-size: 30px;
+                   font-weight: bold;
+                   color: lightsalmon; }
 
 
+            */
+
+            column-count: 3;
+            column-rule: 5px dotted #000;
+            column-gap: 50px;
+
+            text-align: justify;
+            word-break: break-all;
+
+            text-indent: 20px;
 
 
+        }
 
-
-
+        
+        #rdesc p::first-letter {
+            font-size: 30px;
+            font-weight: bold;
+            color: lightsalmon;
+        }
 
 
 
