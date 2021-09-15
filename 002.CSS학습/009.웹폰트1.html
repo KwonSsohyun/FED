@@ -117,8 +117,18 @@
             }
 
             @font-face {
-                font-family: 'medi';
-                src: url(./fonts/MedievalSharp-Regular.woff2) format("woff2");
+                font-family: medi;
+                src: url(./fonts/MedievalSharp-Regular.woff2) format("woff2"); /* 폰트 포맷팅을 woff2로 했으면, format에도 똑같이 적기! */
+            }
+
+            @font-face {
+                font-family: libre;
+                src: url(./fonts/LibreBaskerville-Italic.woff2) format("woff2");
+            }
+
+            @font-face {
+                font-family: shadow;
+                src: url(./fonts/ShadowsIntoLight-Regular.woff2) format("woff2");
             }
 
 
@@ -141,13 +151,14 @@
                 color: rgb(184, 3, 144);
             }
             .wf5{
-                
+                font-family: libre;
                 color: rgb(0, 197, 231);
             }
             .wf6{
-                
+                font-family: shadow;
                 color: rgb(247, 99, 0);
-                font-weight: normal;
+                font-weight: normal; /* 폰트두께설정하려면 100~900까지 숫자써도 되고 / ligher등 쓰면된다. */
+                /* 글자체마다 지원이 안될 수도 있다. */
             }
 
 
