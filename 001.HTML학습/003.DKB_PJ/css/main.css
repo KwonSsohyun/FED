@@ -1,6 +1,14 @@
 @charset "utf-8";
 /* 도깨비 메인 CSS - main.css */
 
+/* 웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Gugi&family=Nanum+Gothic&display=swap');
+    /* font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Gugi', cursive;
+    font-family: 'Nanum Gothic', sans-serif; */
+
+
+
 /* 초기화 셋팅 */
 html, body {
     margin: 0;
@@ -116,6 +124,7 @@ h1.logo img { /* 이미지 마진 위치 조정 */
     color: #000;
     text-decoration: none; /* 밑줄 없앰 */
     font-size: 13px;
+    font-family: 'Nanum Gothic', sans-serif; /* 폰트체 적용 */
 
     line-height: 54px; /* 밑을 밀기에 네비게이터 아래 바짝 붙지않게 해준다. */
     box-sizing: border-box; /* 보더,패딩 내부로 포함 : 그래야 클릭했을때 펄쩍거리지 않는다. */
@@ -325,6 +334,10 @@ h1.logo img { /* 이미지 마진 위치 조정 */
     overflow: auto; /* 넘치면 스크롤바 */
     margin-top: 15px;
     border-radius: 20px 0 0 20px; /* 오른쪽위, 오른쪽아래 */
+
+    font-family: 'East Sea Dokdo', cursive; /* 웹폰트 적용 */
+    font-size: 30px;
+
     /* 
      둥근 모서리 방향별로 주기!
      boder-radius: 왼위 오른위 오른아래 왼아래;
