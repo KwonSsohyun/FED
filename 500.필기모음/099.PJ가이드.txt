@@ -152,7 +152,7 @@
          · index.html (메인페이지 - main이라 쓰지 않는 이유는 서버연관)     
              
       2) [ CSS ]  
-         · main.css (메인통합CSS - 나머지css와 merging합친다.)
+         · main.css (메인통합CSS - 다른 외부css와 merging합친다.)
          · reset.css (공통적으로 해야하는 초기화 설정값 설정)
          · core.css (공통핵심 설정)
 
@@ -161,15 +161,77 @@
    4. 각 파일에 기술해야 하는 세부사항 정리
       
       [ HTML ]
-      · index.html
+      · index.html → 큰 영역별로 3개로 나눠서 적어준다.
+
+      --------------------------------------------------------------------------------------
 
         <head>
         <link rel="stylesheet" href="css/main.css"> → 여러개의 CSS파일을 합친, 메인 CSS하나만 가져온다.
         </head>
 
         <body> 
+        <!-- 1. 상단영역 -->
+        <header id="top" class="part"> </header> 
 
+        <!-- 2. 메인영역 -->
+        <main id="cont" class="part"> </main>
 
+        <!-- 3. 하단영역 -->
+        <footer id="info" class="part"> </footer>
 
         </body> 
-          
+
+   _________________________________________________________________________________________          
+
+      [ CSS ]  
+      · main.css 
+        → 메인통합CSS (다른 외부CSS와 merging한다.)
+        → <body> 전체 배경색 설정
+        → .part (상단/메인/하단 : 공통 class) - 레이아웃 공통 설정 + 아웃라인 박스로 구역 설정
+        → GUI디자인 가이드를 토대로 기본틀 설정
+          1. 상단영역
+          2. 메인영역
+          3. 하단영역
+      --------------------------------------------------------------------------------------    
+
+      @charset "utf-8";  
+      /* CGV PJ 메인 CSS - main.css */  →  맨상단에 CSS선언 + 어떤 파일인지 명시
+
+
+      /* 외부CSS 파일 합치기 (머징:merging) */
+      @import url(./reset.css);
+      @import url(./core.css);
+
+      body{ 
+         background-color: #000;  →  컨텐츠 전체 배경색 지정
+      }
+
+
+      /* 레이아웃 공통 클래스 
+      → 상단/메인/하단을 공통적으로 class = part를 줌
+      → 한번에 같이 설정 */   
+      .part{ 
+         width: 1200px; → 컨텐츠 폭 너비값 설정
+         margin: 0 auto; → 가로중앙
+         outline: 3px dotted yellow; → 컨텐츠 들어갈 영역을 박스로 보이게 해서 구역을 확인
+      }
+
+
+      /* 1. 상단영역 → GUI 디자인 가이드를 보며 가이드 잡은대로 섹션을 우선 잡는다. */
+      #top{
+         height: 80px;  →  위에 레이아웃 공통 클래스에서 폭값은 전체 잡았으니 높이값만 잡아준다.
+      }
+
+
+      /* 2. 메인영역 → 메인영역인만큼 이미지가 들어가면 넣어준다.*/
+      #cont{ 
+         height: 788px;
+         background: url(../images/bg.jpg) no-repeat; /* 백그라운드 이미지 
+         : 이미지 사이즈가 맞으면 조정할 필요 없음 (no-repeat 뒤에 사이즈 적어야함) */
+      }
+
+
+      /* 3. 하단영역 */
+      #info{
+         height: 100px;
+      }
