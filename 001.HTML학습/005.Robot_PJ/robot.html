@@ -36,7 +36,16 @@
 
             font-family: "Vladimir Script";
             font-size: 60px;
-            text-shadow: 2px 2px 2px #000;
+            
+            text-shadow: 2px 2px 2px #000; /* 글자 그림자 */
+            box-shadow: 0 0 20px 5px pink; /* 박스 그림자 - 10px 경계선 번쩍 */ 
+            /* 
+                [ 박스 그림자 ] - 밝은색을 쓰면 glow 효과임!
+                box-shadow: x축 y축 blur(그림자경계선 흐림) spread(그림자크기) 색;
+                           - blur : 그림자 경계선 흐림
+                           - spread : 그림자 크기 (생략가능)
+                           
+            */
 
             background: pink url(./images/robot_03.png) no-repeat;
             background-position: center 10px; /* 가로축 세로축 */
