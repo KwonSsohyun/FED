@@ -4,50 +4,83 @@
 <head>
     <meta charset="utf-8">
     <title>웹폰트 CDN방식으로 적용하기</title>
+    <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300&family=Poiret+One&display=swap" rel="stylesheet">
+    <!-- font-family: 'Karantina', cursive;
+         font-family: 'Poiret One', cursive; -->
+
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200&family=Yellowtail&display=swap');
+        /* 
+            font-family: 'Changa', sans-serif;
+            font-family: 'Yellowtail', cursive;
+        */
+
+
         /* 
             [ CDN 방식으로 웹폰트 불러오기 ]
             - Content Delivery Network
-            즉, 컨텐트(웹폰트파일)를 가져와 네트워크로!
+              즉, 컨텐트(웹폰트파일)를 가져와 네트워크로!
 
             - 호출방식:
             1. external 방식으로 불러오기
-            - link요소를 사용하여 html 상단에 넣는다
-            예) <link rel="stylesheet" href="cdn주소">
+               - link요소를 사용하여 html 상단에 넣는다
+                 예) <link rel="stylesheet" href="cdn주소">
 
             2. import 방식으로 불러오기
-            - @import 를 사용하여 css코딩구역 상단에 넣는다
-            예) @import url(cdn주소)
+               - @import 를 사용하여 css코딩구역 상단에 넣는다
+                 예) @import url(cdn주소)
 
             -> 결론적으로 위의 2가지 방식을 사용하면
-            @font-face를 사용할 필요가 없다! 왜?
-            불러온 파일에 이미 셋팅이 되어 있으므로!!!
+               @font-face를 사용할 필요가 없다! 왜?
+               불러온 파일에 이미 셋팅이 되어 있으므로!!!
+
+        __________________________________________________________________________________    
+
 
             [ 구글폰트로 CDN하기 ]
             1. 구글폰트 사이트에서 사용할 웹폰트를 선택한다
             2. link태그 방식 / @import방식 중 선택하여
-            소스에 붙여 넣는다
+               소스에 붙여 넣는다
             3. 지정된 CDN 웹폰트 이름으로 적용한다
+
+        __________________________________________________________________________________
+          
+            [ link방식과 @import방식 중 어떤 것을 더 많이 쓰나? ]
+            - 외부 CSS를 사용한다면 그 파일에서 @import하여 하나의 파일로 만든 후
+              html파일에서 한번만 link방식으로 호출하면 효율성이 좋아지므로
+              @import 방식을 더 많이 쓴다~!
+
+              + 
+              나중에 메인, 랜딩 등 많아질 경우
+              외부 CSS 합친다
+              @import url(common.css);
+
             
-             */
+        */
+
+
         /* import방식 CDN 웹폰트 */
 
 
 
         /* CDN 웹폰트 적용하기 */
         .cdn1 {
+            font-family: 'Karantina', cursive;
             color: darkviolet;
         }
 
         .cdn2 {
+            font-family: 'Poiret One', cursive;
             color: darkgreen;
         }
-
+ㄴ
         .cdn3 {
+            font-family: 'Changa', sans-serif;
             color: darkred;
         }
 
         .cdn4 {
+            font-family: 'Yellowtail', cursive;
             color: darkcyan;
         }
     </style>
