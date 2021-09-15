@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robot PJ</title>
     <style>
+        html, body{ /* 초기화 셋팅 */
+            margin: 0;
+            padding: 0;
+
+            overflow-x: hidden; /* 가로 스크롤 숨기기(스크롤 안보임) */
+        }
+
         body {
             /* 배경: 색이반고윙/크; */
             background: url(./images/bg.jpg) no-repeat fixed top/cover;
@@ -77,6 +84,8 @@
         #head {
             position: relative;
             /* #eye1 : 부모자격 줌 */
+
+            left: 100%; /* 머리 -> 화면 바깥으로 나가있음! (가로스크롤 안생기게 위에서 설정함) */
 
             width: 250px;
             height: 250px;
@@ -161,6 +170,11 @@
         #body {
             position: relative;
             /* 부모자격 */
+
+            left: -100px; /* 몸통 - 화면왼쪽에 나가있음 */
+            /* 이래서 렐러티브가 좋은거 0하면 원래 위치로 돌아옴 */
+            /* 사라져도 자기자리를 지킴! - 만약 앱솔루트면 밑에 있는 설명이 없는 줄 알고 올라옴 */
+
             width: 250px;
             height: 300px;
             margin: 0 auto;
@@ -341,10 +355,10 @@
                [ 첫 글자 크게 하기 ] 
                -> 가상요소::first-letter
 
-               #rdesc p::first-letter{
-                   font-size: 30px;
-                   font-weight: bold;
-                   color: lightsalmon; }
+                  #rdesc p::first-letter{
+                      font-size: 30px;
+                      font-weight: bold;
+                      color: lightsalmon; }
 
 
             */
@@ -361,12 +375,62 @@
 
         }
 
-        
+
         #rdesc p::first-letter {
             font-size: 30px;
             font-weight: bold;
             color: lightsalmon;
         }
+
+
+        /* 
+        
+            [ CSS로 애니메이션 하기! ]
+            - 시간에 따라 CSS설정을 변경하여 애니메이션을 하도록
+              키프레임을 설정하고 이것을 호출함으로 의도된 연출을 
+              구현하는 것이 'CSS 애니메이션' 이다!
+
+            [ 애니메이션 키프레임 만들기 ]
+
+            1. 두장면 키프레임
+
+            @keyframes 키프레임이름 {
+                from{시작 CSS설정}
+                to{끝나는 CSS설정}
+            }       
+            _________________________ or _________________________
+
+            @keyframes 키프레임이름 {
+                0%{시작 CSS설정}
+                100%{끝나는 CSS설정}
+            }
+
+            -> 만약 from설정과 초기설정이 같다면 from은 생략가능!
+               (시작점을 애초에 설정해놨다면 마지막 장면만 주면 된다.)
+
+            _______________________________________________________  
+
+
+            2. 여러장면 키프레임
+
+              @keyframes 키프레임이름 {
+                0%{CSS설정}
+                10%{CSS설정}
+                20%{CSS설정}
+                ...
+                90%{CSS설정}
+                100%{CSS설정}
+            }
+
+
+            -> 장면에 대한 시간 계산은? 
+               전체시간 * %소수점변경수치
+                
+               - 전체시간은 호출시 설정함!
+        
+        
+            
+        */
 
 
 
@@ -376,9 +440,6 @@
 <body>
     <!-- 로봇 페이지 로고 -->
     <h1 id="logo">R2D2</h1>
-
-
-
 
 
     <!-- 로봇 머리 -->
