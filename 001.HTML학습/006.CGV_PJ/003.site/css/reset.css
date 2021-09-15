@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CGV PJ 리셋 CSS - reset.css */
+
+/* 1. 마진, 패딩 없애기 (블록요소 초기화 설정) */
+html,body,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd,p{ 
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. a요소 리셋 */
+a {
+    color: #fff; /* 글자색 : 배경이 지금할게 검정이어서 글자 흰색으로 함 */
+    text-decoration: none; /* 밑줄 : 없앰 */
+}
+
+/* 3. ul,ol 리셋 */
+ul,ol{
+    list-style: none; /* 앞에 땡땡땡(블릿), 숫자제거 */
+}
+
+/* 4. li 플롯 */
+li{
+    float: left; /* 옆으로 흐르게 하는거 */
+}
+
+/* 5. float 지우기 */ 
+/* 
+   .clb::after는 float을 지울 필요가 있는 요소가 있을 경우 클래스를 주면 가상요소가 셋팅된다.
+   나중에 끊어야 되는게 나오면, class clb를 쓰면 된다. (미리 셋팅하는것)
+*/
+ul::after, ol::after, .clb::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
