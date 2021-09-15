@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CGV PJ 메인 CSS - main.css */
 
-/* 외부CSS 파일 합치기 (머징:merging) */
+/* ★ 외부CSS 파일 합치기 (머징:merging) */
 @import url(./reset.css);
 @import url(./core.css);
 
@@ -16,3 +16,34 @@
 */
 
 
+body{
+    background-color: #000; /* 전체 검정색 배경 */
+}
+
+/* 레이아웃 공통 클래스 */
+.part{
+    width: 1200px;
+    margin: 0 auto; /* 가로중앙 */
+    outline: 3px dotted yellow;
+}
+
+
+/* 1. 상단영역 */
+#top{
+    height: 80px;
+
+}
+
+
+/* 2. 메인영역 */
+#cont{
+    height: 788px;
+    background: url(../images/bg.jpg) no-repeat; /* 백그라운드 이미지 
+    : 크기 사이즈가 맞으면 조정할 필요 없음 (no-repeat 뒤에 사이즈 적어야함) */
+}
+
+
+/* 3. 하단영역 */
+#info{
+    height: 100px;
+}
