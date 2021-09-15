@@ -37,10 +37,48 @@
         __________________________________________________________________________________    
 
 
-            [ 구글폰트로 CDN하기 ]
-            1. 구글폰트 사이트에서 사용할 웹폰트를 선택한다
-            2. link태그 방식 / @import방식 중 선택하여
-               소스에 붙여 넣는다
+            [ ★ 구글폰트로 CDN하기 ]
+            1. 구글폰트 사이트에서 사용할 웹폰트를 선택한다.
+            2. 폰트보고 마음에 들면 (+ select this style) 클릭
+            3. 장바구니처럼 사이드바에 추가가 된걸 볼 수 있다. 
+               (오른쪽 상단에 사각형박스 3개 합쳐진거 보이는데 클릭하면 사이드바 열고 닫을 수 있다.)
+            4. 사이드바를 열어서 보면
+               "Use on the web" 영역안에
+               ¤ <link>  /  ¤ @import
+               2가지를 선택할 수 있다.
+
+            2. link태그 방식 / @import방식 중 선택하여 소스에 붙여 넣는다.
+               ¤ <link>
+               - 아래 보면 
+                 <link rel="preconnect" href="https://fonts.googleapis.com">
+                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                 ★ <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nanum+Gothic&display=swap" rel="stylesheet">
+                 이렇게 3줄이 보이는데 이중 맨 아래를 복사해서
+                 -> html문서 <title> //// <style> 사이에 붙혀 넣는다.
+
+                    그리고 아래 또 보면
+                    CSS rules to specify families 
+                    이것 또한 복사해서 html 아까 붙혔더 아래 주석 처리를 해서 붙혀넣는다.
+
+                    그리고 해당 적용하고 싶은 부분에 
+                    주석처리한 부분 "font-family: 'Poiret One', cursive;" 이렇게 붙혀 넣으면 된다.
+
+
+
+             ¤ @import
+             아래 코드가 보이는데
+             <style> 빼고 그 사이만 복사해서 가져온다.
+                ex) @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nanum+Gothic&display=swap');
+
+                이때 꼭 CSS파일 혹은 <style>안에 맨 상단에 위치하게 붙혀넣는다.
+
+
+                    똑같이 CSS rules to specify families 내용 가져와서 주석달고 
+                    적용하고 싶은 부분에 CSS혹은 <style>에 해당 구역에 코드 붙혀넣으면 된다.
+             
+
+
+
             3. 지정된 CDN 웹폰트 이름으로 적용한다
 
         __________________________________________________________________________________
