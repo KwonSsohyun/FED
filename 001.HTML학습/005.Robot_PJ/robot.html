@@ -14,6 +14,44 @@
             outline: 5px dashed lime;
         } */
 
+
+        /* 로봇 페이지 로고 */
+        h1#logo{
+            position: fixed;
+            top: 50px;
+            left: 50px;
+            /* fixed -> 무조건 보이는 화면기준!!! */
+
+            width: 200px;
+            height: 200px;
+            border: 2px solid #ccc;
+            border-radius: 50%; /* 원 */
+            box-sizing: border-box; /* 패딩,보더 포함 - 크기유지됨 */
+
+            /* 글자 중앙 */
+            text-align: center;
+            color: #fff;
+            line-height: 196px; /* 박스사이징을 줘서 보더 안쪽으로 생겨서 높이 200px똑같이 줘도 중간이 안됨 */
+            /* 보더가 4px이므로 뺌 ( box-sizing: border-box 줘서 보더 안쪽이 늘어나서) */
+
+            font-family: "Vladimir Script";
+            font-size: 60px;
+            text-shadow: 2px 2px 2px #000;
+
+            background: pink url(./images/robot_03.png) no-repeat;
+            background-position: center 10px; /* 가로축 세로축 */
+            background-size: 160px auto; /* 가로 세로 */
+
+            margin: 0;
+            padding: 0;
+
+        }
+
+
+
+
+
+
         /* 로봇 머리 */
         #head{
             position: relative;
@@ -195,6 +233,13 @@
     </style>
 </head>
 <body>
+    <!-- 로봇 페이지 로고 -->
+    <h1 id="logo">R2D2</h1>
+
+
+
+
+
     <!-- 로봇 머리 -->
     <div id="head">
         <!-- 눈1 -->
