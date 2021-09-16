@@ -283,7 +283,30 @@
         /* 오른팔 */
         #arm2 {
             right: -50px;
-        }
+            transform-origin: top; /* 팔상단으로 기준점 변경 - 윗쪽으로 줌 */
+
+            /* 애니메이션: 이시이지반방마 */
+            animation: armAni1 .8s ease-in-out 4s forwards,
+                       armAni2 .3s ease-in-out 4.8s infinite alternate;
+                      }
+
+        /* 처음에 팔 올리기 키프레임 */
+        @keyframes armAni1 { 
+            to{
+                transform: rotate(-140deg); /* 각도 잡아줌 */
+            }            
+        } /* 키프레임 */
+
+        /* 팔 안녕 흔들기 키프레임 */
+        @keyframes armAni2 { 
+            from{ /* 값이 중간에 변경되어서 from필요 */
+                transform: rotate(-140deg); /* 각도 잡아줌 */
+            }            
+            to{
+                transform: rotate(-170deg); /* 각도 잡아줌 */
+            }            
+        } /* 키프레임 */
+
 
         /* 왼다리 */
         #leg1 {
