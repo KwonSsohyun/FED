@@ -14,7 +14,7 @@
 10. font 한번에 쓰기
     -> font: 스타일 두께 크기/줄간격 글자체;
     -> font: 스두크/줄체;
-11. text-shadow : 글자그림자
+11. text-shadow : 글자그림자 (glow효과도 가능)
     text-shadow: x축 y축 블러 색;  
 
 
