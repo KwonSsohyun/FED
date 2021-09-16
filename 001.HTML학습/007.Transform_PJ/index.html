@@ -103,6 +103,7 @@
             - 선택요소의 크기, 회전, 이동, 기울임 등 변형을 하기위한 속성
             - 2D, 3D 지원됨
 
+
             1. rotateY(각도deg) - Y축회전
             - deg는 각도의 단위(도:degree)
          */
@@ -110,11 +111,14 @@
              transform: rotateY(180deg);
          }
         /* 
-            2. rotateX(각도deg) - X축회전
-         */
+
+            
+        /* 2. rotateX(각도deg) - X축회전 */
          #trans2:hover img{
              transform: rotateX(180deg);
          }
+
+
          /* 
             3. translateX(거리) - X축이동
             - 단위: px, %
@@ -126,6 +130,8 @@
           #trans3:hover img{
               transform: translateX(-100%); /* 자기 폭! 크기만큼 이동(100%) 자기 폭! 크기의 반만큼 이동(50%) */
           }
+
+
           /* 
             4. translateY(거리) - Y축이동
             - 단위: px, %
@@ -137,6 +143,8 @@
           #trans4:hover img{
               transform: translateY(100%); 
           }
+
+
            /* 
             5. translate(X축거리,Y축거리) - X,Y축이동(컴마 쓰면됨)
             - 단위: px, %
@@ -150,6 +158,8 @@
           #trans5:hover img{
               transform: translate(-200%, 100%);
           }
+
+
           /* 
             6. rotate(★각도deg) - 원형회전
             - 각도의 숫자가 양수면 시계방향
@@ -158,11 +168,11 @@
                 (변경가능: transform-origin)
            */
            #trans6:hover img{
-               transform: rotate(5423deg); /* 시계방향으로 돈다 */
+               transform: rotate(5423deg); /* 각도를 너무 크게 줘서 원뱅뱅 : 시계방향으로 돈다 */
                transition-duration: 10s; /* 트랜지션 시간 변경하기 - 10초동안 돈다. */
            }
 
-           /* 회전축 변경하기 - 미세조정할때 ex)나무흔들기 */
+           /* 회전축 변경하기 - 미세조정할때 ex)나무흔들기 -> 여기서 축 조정하고 호버시에서 각도선택(deg) */
            #trans6 img{
                transform-origin: 25% 75%;  /* 사각형 전체가 100%니까 : 가로 25% 세로 75% */
                /* right bottom : 오른쪽 아래 축을 기준으로 돈다. */
@@ -176,6 +186,8 @@
                   - 기본값은 center임!
                */
            }
+
+
            /* 
                 7. skew(각도deg) - x,y축 기울임 (찌그러트림)
                 - skewX(각도deg), skewY(각도deg)
@@ -198,6 +210,8 @@
                  transform: scale(2);
                  /* 2배 -> 확대 */
              }
+
+
              /* 
                 9. 복합적용하기 
                 transform: 속성1 속성2 속성3 .....;
@@ -211,11 +225,11 @@
 
 
               /* 
-                10. 앞뒤로 있는 이미지 뒤집기
-                - 셋팅: 한박스 안에 이미지가 2장 있으므로 겹쳐지게 하기위해 이미지
-                포지션을 absolute로 준다!
-                - 앱솔루트 끼리는 서로 겹쳐진다
-                - 순서는 나중에 그려진요소가 위에 온다
+                10. ★ 앞뒤로 있는 이미지 뒤집기
+                    - 셋팅: 한박스 안에 이미지가 2장 있으므로 겹쳐지게 하기위해 이미지
+                            포지션을 absolute로 준다!
+                    - 앱솔루트 끼리는 서로 겹쳐진다
+                    - 순서는 나중에 그려진요소가 위에 온다
                */
                /* 2개의 이미지를 겹치게한다 */
                #trans10 img{
@@ -224,8 +238,7 @@
                    /* 가로크기가 100%이므로 변경 */
                    /* 
                         앱솔루트는 
-                        위치이동값(top,left등)을
-                        잡거나
+                        위치이동값(top,left등)을 잡거나
                         크기를 잡으면 부모요소를 
                         찾아서 그 기준에 맞춘다!
 
@@ -237,8 +250,7 @@
                         어떤 박스안에 있다면 
                         그 박스안에 그대로 있는 것!
 
-                        -> 여기서는 위치값을
-                        쓰지말고 젠틀하게 쓰자!
+                        -> 여기서는 위치값을 쓰지말고 젠틀하게 쓰자!
                     */
                }
 
@@ -246,16 +258,16 @@
                /* 1. 보거미 처음상태(돌아옴) */
                /* Y축 0도로 돌아옴 - 0.4초 기다림 */
                #trans10 img:last-child{
-                    transform: rotateY(0deg);
+                    transform: rotateY(0deg); /* y축으로 0도니까 보임 */
                     /* 트랜지션 : 속시이지 */
-                    transition: transform .4s .4s; /* 애니메이션시간 -> 기다리는 시간 */
+                    transition: transform .4s .4s; /* 애니메이션시간(총 4초동안 움직여) -> 기다리는 시간(4초기다렸다 움직여) */
                }
                /* 2. 보거미 오버상태 */
                /* Y축 90도회전 - 회전후 안보임*/
                #trans10:hover img:last-child{
-                   transform: rotateY(90deg);
+                   transform: rotateY(90deg); /* y축으로 90도니까 안보임 */
                    /* 트랜지션 : 속시이지 */
-                   transition: transform .4s; /* 애니메이션시간 */
+                   transition: transform .4s; /* 애니메이션시간(총 4초동안 움직여) */
                }
                /* 3. 유정이 처음상태(돌아옴) */
                /* 처음에 이미 Y축 90도 회전상태 - 안보임 */
