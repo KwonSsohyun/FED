@@ -141,6 +141,17 @@ ________________________________________________________________________________
             [ 2. 변경사항 ]
                  → Html, Css에서 변경
 
+            <main id="cont" class="part">
+              <div id="screen">
+                 <iframe id="tg" src="https://www.youtube.com/embed/2hnkUpo_2yg?autoplay=1&start=1&end=30;&loop=1&playlist=2hnkUpo_2yg" allow="autoplay"></iframe> 
+              </div>
+
+              <nav class="mlist">
+                 <ul>
+                   <li> 
+                     <a href="#" onclick="gogo('p6j5IqJw5Ck')"><img src="./images/m1.jpg" alt="비와 당신의 이야기"></a>
+                   </li>
+
      
 
 
