@@ -80,10 +80,46 @@
             color: red;
             text-decoration: underline;
         }
-             
-            
 
-   
+8. 위로 버튼을 만들어서 클릭하면 상단으로 이동 (+스크롤시 부드럽게)
+                HTML
+        <!-- 위로 이동버튼 -->
+        <a href="#" class="btnTop">TOP</a>
+        
+★ href값으로 "#"은 맨위로 이동함!
+      
+↓  
+     CSS에서 세부설정
+
+     
+        /* 위로가기 버튼 - 스크롤 부드럽게 상단에 전체 적용*/
+
+         html{
+            scroll-behavior: smooth;
+            /* a요소 #위치 이동시 스크로 애니메이션 설정 */
+        }
+
+        
+        .btnTop{
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 50%;
+            background-color: #ccc;
+            color: blue;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .btnTop:hover{
+            background: #ff0;
+            color: red;
+        }
+
 
    
 

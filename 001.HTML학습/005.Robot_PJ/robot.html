@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robot PJ</title>
     <style>
+        html{
+            scroll-behavior: smooth;
+            /* a요소 #위치 이동시 스크로 애니메이션 설정 */
+        }
         html, body{ /* 초기화 셋팅 */
             margin: 0;
             padding: 0;
@@ -589,6 +593,27 @@
             text-decoration: underline;
         }
 
+        /* 위로가기 버튼 - 스크롤 부드럽게 상단에 전체 적용*/
+        .btnTop{
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 50%;
+            background-color: #ccc;
+            color: blue;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .btnTop:hover{
+            background: #ff0;
+            color: red;
+        }
+
     </style>
 </head>
 
@@ -650,6 +675,10 @@
                  -->
             </div>
         </div>
+
+        <!-- 위로 이동버튼 -->
+        <a href="#" class="btnTop">TOP</a>
+        <!-- href값으로 "#"은 맨위로 이동함! -->
 
     </div>
 
