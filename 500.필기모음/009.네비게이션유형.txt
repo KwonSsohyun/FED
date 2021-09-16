@@ -22,32 +22,33 @@
            lnb는 Local Navigation Bar의 약자임
            지역 네비게이션 바라는 의미로써 서브페이지에서만 나오는 메뉴에 사용한다.
 
+_______________________________________________________________________________________________________ 
 
 
 [ 네비게이션 유형별 예시 ]
 
-1. 가로네비 서브별 드롭다운 세로형
-   https://www.sajosfmall.co.kr/
+  1. 가로네비 서브별 드롭다운 세로형
+     https://www.sajosfmall.co.kr/
 
-2. 가로네비 서브별 드롭다운 가로형
-   https://web2002.co.kr/
+  2. 가로네비 서브별 드롭다운 가로형
+     https://web2002.co.kr/
 
-3. 가로네비 서브 전체 드롭다운 전체창
-   https://www.cellreturn.com/KR/main/main.php
+  3. 가로네비 서브 전체 드롭다운 전체창
+     https://www.cellreturn.com/KR/main/main.php
 
-4. 세로네비 서브별 드롭다운 세로형
-   https://www.kari.re.kr/kor.do (서브메뉴에 있음)(밀고 내려오고)
+  4. 세로네비 서브별 드롭다운 세로형
+     https://www.kari.re.kr/kor.do (서브메뉴에 있음)(밀고 내려오고)
 
-5. 세로네비 서브별 드롭다운 사이드형
-   https://www.kari.re.kr/kor.do
+  5. 세로네비 서브별 드롭다운 사이드형
+     https://www.kari.re.kr/kor.do
 
-6. 가로네비 서브별 드롭다운 전체창
-   https://chicor.com/main (별도로 구성한 메뉴 - 3번하고 다름)
+  6. 가로네비 서브별 드롭다운 전체창
+     https://chicor.com/main (별도로 구성한 메뉴 - 3번하고 다름)
 
-7. 가로네비 서브없는 디자인형
-   https://www.apple.com/
+  7. 가로네비 서브없는 디자인형
+     https://www.apple.com/
 
-8. 숨긴네비 고정전체창형
-   전체창 fix메뉴 (햄버거 메뉴 누르면 나오는 것)
-   -> 최신 사이트 대부분~!
+  8. 숨긴네비 고정전체창형
+     전체창 fix메뉴 (햄버거 메뉴 누르면 나오는 것)
+     -> 최신 사이트 대부분~!
    
