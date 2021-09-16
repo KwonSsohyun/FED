@@ -571,8 +571,23 @@
                                                    
             
         */
-
-
+    
+        /* 글박스 유도 링크 */
+        .link{
+            position: absolute; /* 부모가 없으니까 윈도우 화면기준 */
+            top: 100px;
+            right: 50px;
+            font-size: 40px;
+            text-shadow: 2px 2px 2px #000;
+        }
+        .link a{
+            color: #fff;
+            text-decoration: none;
+        }
+        .link a:hover{
+            color: red;
+            text-decoration: underline;
+        }
 
     </style>
 </head>
@@ -580,6 +595,18 @@
 <body>
     <!-- 로봇 페이지 로고 -->
     <h1 id="logo">R2D2</h1>
+
+    <!-- 내용보기 링크 타이틀 -->
+    <h2 class="link">
+        <a href="#rdesc">what is Robot?</a> 
+        <!-- 
+             a요소에 href 속성값으로 "#아이디명"을 사용하면
+             같은 페이지 안에 있는 id요소 박스의 상단 라인으로
+             스크롤이 이동된다! (id만 된다!!!)
+             -> 기본기능  
+            
+        -->
+    </h2>
 
 
     <!-- 로봇 머리 -->
