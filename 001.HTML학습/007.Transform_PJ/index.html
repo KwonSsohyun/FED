@@ -108,16 +108,28 @@
             - deg는 각도의 단위(도:degree)
          */
          #trans1:hover img{ /* ★ 박스에 호버를 주고(이벤트가 안정적으로 된다.) img에 트랜지션 위에서 준다. */
-             transform: rotateY(180deg);
+             transform: rotateY(180deg); /* 180도니까 뒤집기 */
+             filter: grayscale(100%); /* 이미지변경 필터(흑백) */
          }
         /* 
 
             
         /* 2. rotateX(각도deg) - X축회전 */
          #trans2:hover img{
-             transform: rotateX(180deg);
+             transform: rotateX(180deg); 
+             filter: blur(2px); /* 이미지변경 필터(블러-흐림효과) */
          }
 
+         /* 
+         
+            [ CSS 필터속성 ]
+            - 흑백, 흐림, 세피아, 명암, 채도 등 
+              출력이미지를 변경하고자 할때 사용하는 속성
+
+            -> 소스참고
+               https://www.w3schools.com/cssref/playit.asp?filename=playcss_filter&preval=blur(5px)
+
+         */
 
          /* 
             3. translateX(거리) - X축이동
@@ -260,21 +272,23 @@
                #trans10 img:last-child{
                     transform: rotateY(0deg); /* y축으로 0도니까 보임 */
                     /* 트랜지션 : 속시이지 */
-                    transition: transform .4s .4s; /* 애니메이션시간(총 0.4초동안 움직여) -> 기다리는 시간(0.4초기다렸다 움직여) */
+                    transition: transform .4s ease-out .4s; /* 애니메이션시간(총 0.4초동안 움직여) -> 기다리는 시간(0.4초기다렸다 움직여) */
                }
                /* 2. 보거미 오버상태 */
                /* Y축 90도회전 - 회전후 안보임*/
                #trans10:hover img:last-child{
                    transform: rotateY(90deg); /* y축으로 90도니까 안보임 */
                    /* 트랜지션 : 속시이지 */
-                   transition: transform .4s; /* 애니메이션시간(총 0.4초동안 움직여) */
+                   transition: transform .4s ease-in; /* 애니메이션시간(총 0.4초동안 움직여) */
+                   /* ease-in : 처음에 천천히하면서 가속도 붙고 */
                }
                /* 3. 유정이 처음상태(돌아옴) */
                /* 처음에 이미 Y축 90도 회전상태 - 안보임 */
                #trans10 img:first-child{
                    transform: rotateY(90deg);
                    /* 트랜지션 : 속시이지 */
-                   transition: transform .4s;
+                   transition: transform .4s ease-in; 
+ 
                 }
                /* 4. 유정이 오버상태 */
                /* Y축 0도로 회전 
@@ -282,7 +296,8 @@
                #trans10:hover img:first-child{
                    transform: rotateY(0deg);
                    /* 트랜지션 : 속시이지 */
-                   transition: transform .4s .4s;
+                   transition: transform .4s ease-out .4s;
+                    /* ease-out : 속도 붙은걸 받아서 빠르게 돈다. */
                 }
 
                 /* 
@@ -309,8 +324,9 @@
 
 
                     6. cubic-bezier : 자유로운 가속도
-                        - 설정은 브라우저에서 가속도
-                        곡선을 변경하여 수치를 생성한다
+                        - 설정은 브라우저에서 가속도 곡선을 변경하여 수치를 생성한다
+                        - 일일히 수치를 내가 입력해서 알 수 없기에 브라우저에서 f12에서 그래프 조절해서 보다.
+                        - 생성된 코드를 복사하여 사용한다!
 
                     (6번 예시)
                     https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_transition-timing-function3
