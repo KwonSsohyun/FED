@@ -47,6 +47,44 @@
    -만약 !important를 값 뒤에 쓰면
     가장 우선순위로 적용됨! (신중히 쓸 것)
 
+
+
+7. 같은 페이지 안에서 클릭 이동
+   a요소에 href 속성값으로 "#아이디명"을 사용하면
+   같은 페이지 안에 있는 id요소 박스의 상단 라인으로
+   스크롤이 이동된다! (id만 된다!!!)
+   -> 기본기능  
+
+   ex)
+   HTML에서 ID로 만들어서 이동하게 잡고
+      <body>
+          <h2 class="link">
+            <a href="#rdesc">what is Robot?</a>  -> "#rdesc" 해당역역 ID값 입력
+          </h2>
+
+   ↓   
+   CSS에서 세부설정
+   /* 글박스 유도 링크 */
+        .link{
+            position: absolute; /* 부모가 없으니까 윈도우 화면기준 */
+            top: 100px;
+            right: 50px;
+            font-size: 40px;
+            text-shadow: 2px 2px 2px #000;
+        }
+        .link a{
+            color: #fff;
+            text-decoration: none;
+        }
+        .link a:hover{
+            color: red;
+            text-decoration: underline;
+        }
+             
+            
+
+   
+
    
 
 [ 웹 색상표기법 ]
