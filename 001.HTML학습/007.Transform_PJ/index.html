@@ -17,6 +17,7 @@
             border-radius: 50px;
            
             /* 그림자를 이용한 글자테두리 만들기 */
+            /* https://www.w3schools.com/css/css3_shadows.asp */
             text-shadow: 2px 0 #000,-2px 0 #000,
                         0 2px #000, 0 -2px #000; /* 글자테두리 : 쉐도우를 4방향 다주면 됨(x축/-x축/y축/-y축) */
             background-color: rgba(0, 0, 0, 0.459);
@@ -25,12 +26,12 @@
         /* 전체부모박스 */
         .cont{
             width: 1500px;
-            max-width: 80%;
+            max-width: 80%; /* 폭이 1500px의 80%보다 작아지면 조정됨 */
             box-sizing: border-box;
             padding: 20px;
             border: 10px solid lime;
             border-radius: 20px;
-            margin: 100px auto;
+            margin: 100px auto; /* 위아래 -> 100px / 양쪽이 가운데 */
             /* 블록가로중앙 - 마영오 */
         }
         /* 가상요소로 float해제하기 - 부모요소가 자식요소 높이값인식*/
@@ -50,8 +51,8 @@
         /* 이미지 맞춤 */
         .cont>div>img{
             width: 100%;
-            border-radius: 50%;/* 원 */
-            -webkit-border-radius: 50%;
+            border-radius: 50%;/* 원 */ /* 이미지 동그랗게 하기 */
+            -webkit-border-radius: 50%; /* 브라우저 제조사별(밴더사) 지원별로 W3C 보고 적는다. */
             -moz-border-radius: 50%;
             /* 
                 [ 밴더 프레픽스(Vender Prefix) ]
@@ -68,52 +69,76 @@
                 -o- : 오페라
                 -ms- : 익스플로러
              */
+        
+            /* 
+        _________________________________________________________________________________________________
 
-            /* 트랜지션: 속시이지 */
+        
+            [★ Transform 적용 순서]
+
+            1) HTML에서
+               div블럭요소로 id값을 줘서 박스블록을 만들고, 그 태그 사이에 img태그 넣는다.
+
+            2) CSS에서
+               ".cont>div>img"적용할 이미지에 
+               트랜지션(CSS속성값이 변경되는 과정을 애니메이션으로 보여주는 속성)을 적용한다.
+            
+            트랜지션: 속시이지 - 중간변화과정 보여주려고 확확 안하게 하려고 */
             transition: transform .6s;
+            
+
+            /* 
+            3) 아까 이미지를 감싼 id에 호버를 주고 img도 같이 잡아서 트렌스폼 적용한다.
+               #trans1:hover img{ 
+                    transform: rotateY(180deg);
+               }
+            
+            */
+         
         }
+
+
         /* 
-            [ Transform 효과주기 ]
-            - 선택요소의 크기, 회전, 이동, 기울임
-            등 변형을 하기위한 속성
+            [ ★ Transform 효과주기 ]
+            - 선택요소의 크기, 회전, 이동, 기울임 등 변형을 하기위한 속성
             - 2D, 3D 지원됨
 
             1. rotateY(각도deg) - Y축회전
             - deg는 각도의 단위(도:degree)
          */
-         #trans1:hover img{
-             
+         #trans1:hover img{ /* ★ 박스에 호버를 주고(이벤트가 안정적으로 된다.) img에 트랜지션 위에서 준다. */
+             transform: rotateY(180deg);
          }
         /* 
             2. rotateX(각도deg) - X축회전
          */
          #trans2:hover img{
-             
+             transform: rotateX(180deg);
          }
          /* 
             3. translateX(거리) - X축이동
             - 단위: px, %
             - 현재 위치로부터 이동
             - 기준점은 요소의 왼쪽
-            - % 단위를 쓸 경우 기준은 요소의 width
+            - ★ % 단위를 쓸 경우, 기준은 요소의 width (가로! : -100% 왼쪽으로 가고 / 100%는 오른쪽 가고 / 50%는 자기 크기의 절반) ※기준은 왼쪽 (네모스테이션으로 생각)
             - 이동방향: + 는 오른쪽, - 는 왼쪽
           */
           #trans3:hover img{
-              
+              transform: translateX(-100%); /* 자기 폭! 크기만큼 이동(100%) 자기 폭! 크기의 반만큼 이동(50%) */
           }
           /* 
             4. translateY(거리) - Y축이동
             - 단위: px, %
             - 현재 위치로부터 이동
             - 기준점은 요소의 윗선
-            - % 단위를 쓸 경우 기준은 요소의 height
+            - ★ % 단위를 쓸 경우 기준은 요소의 height (높이! : -100% 위로 가고 / 100%는 아래로 가고 / 50%는 자기 크기의 절반) ※기준은 머리
             - 이동방향: + 는 아랫쪽, - 는 윗쪽
           */
           #trans4:hover img{
-              
+              transform: translateY(100%); 
           }
            /* 
-            5. translate(X축거리,Y축거리) - X,Y축이동
+            5. translate(X축거리,Y축거리) - X,Y축이동(컴마 쓰면됨)
             - 단위: px, %
             - 현재 위치로부터 이동
             - 기준점은 요소의 왼쪽선과 윗선
@@ -123,35 +148,41 @@
                         - 는 왼쪽/윗쪽
           */
           #trans5:hover img{
-              
+              transform: translate(-200%, 100%);
           }
           /* 
-            6. rotate(각도deg) - 원형회전
+            6. rotate(★각도deg) - 원형회전
             - 각도의 숫자가 양수면 시계방향
                 (음수는 반시계)
             - 기본회전축은 정중앙
                 (변경가능: transform-origin)
            */
            #trans6:hover img{
-               
+               transform: rotate(5423deg); /* 시계방향으로 돈다 */
+               transition-duration: 10s; /* 트랜지션 시간 변경하기 - 10초동안 돈다. */
            }
-           /* 회전축 변경하기 */
+
+           /* 회전축 변경하기 - 미세조정할때 ex)나무흔들기 */
            #trans6 img{
+               transform-origin: 25% 75%;  /* 사각형 전체가 100%니까 : 가로 25% 세로 75% */
+               /* right bottom : 오른쪽 아래 축을 기준으로 돈다. */
+               /* 기본값은 center */
                
                /* 
+                  [ 트랜스폼 축 변경 속성 ]
                   transform-origin: 가로값 세로값;
-                  - 가로값: left, right, center, 몇px, 몇%
+                  - 가로값: left, right, center, 몇px, 몇% (50%는 절반 / 25% 절반의 절반 기준축으로 돈다.)
                   - 세로값: top, bottom, center, 몇px, 몇%
                   - 기본값은 center임!
                */
            }
            /* 
-                7. skew(각도deg) - x,y축 기울임
+                7. skew(각도deg) - x,y축 기울임 (찌그러트림)
                 - skewX(각도deg), skewY(각도deg)
                 - 각도가 양수/음수에 따라 기울임 방향달라짐                
             */
             #trans7:hover img{
-                
+                transform: skewX(30deg);
             }
             /* 
                8. scale(배수)
@@ -160,20 +191,24 @@
                - 값이 0이면 사라짐
              */
              #trans8 img{
-                 
+                 transform: scale(.5);
                  /* 0.5배 -> 축소 */
              }
              #trans8:hover img{
-                 
+                 transform: scale(2);
                  /* 2배 -> 확대 */
              }
              /* 
-                9. 복합적용하기
+                9. 복합적용하기 
                 transform: 속성1 속성2 속성3 .....;
               */
               #trans9:hover img{
-                  
+                  transform: scale(2) translate(-200%,-100%) rotateX(1400deg) skew(50deg) rotateX(5300deg);
+                  transition-duration: 20s;
               }
+
+
+
 
               /* 
                 10. 앞뒤로 있는 이미지 뒤집기
@@ -207,26 +242,35 @@
                     */
                }
 
+
                /* 1. 보거미 처음상태(돌아옴) */
                /* Y축 0도로 돌아옴 - 0.4초 기다림 */
                #trans10 img:last-child{
-                    
+                    transform: rotateY(0deg);
+                    /* 트랜지션 : 속시이지 */
+                    transition: transform .4s .4s; /* 애니메이션시간 -> 기다리는 시간 */
                }
                /* 2. 보거미 오버상태 */
                /* Y축 90도회전 - 회전후 안보임*/
                #trans10:hover img:last-child{
-                   
+                   transform: rotateY(90deg);
+                   /* 트랜지션 : 속시이지 */
+                   transition: transform .4s; /* 애니메이션시간 */
                }
                /* 3. 유정이 처음상태(돌아옴) */
                /* 처음에 이미 Y축 90도 회전상태 - 안보임 */
                #trans10 img:first-child{
-                   
+                   transform: rotateY(90deg);
+                   /* 트랜지션 : 속시이지 */
+                   transition: transform .4s;
                 }
                /* 4. 유정이 오버상태 */
                /* Y축 0도로 회전 
                - 보거미 0.4초 돌동안 기다렸가 0.4초돌기 */
                #trans10:hover img:first-child{
-                   
+                   transform: rotateY(0deg);
+                   /* 트랜지션 : 속시이지 */
+                   transition: transform .4s .4s;
                 }
 
                 /* 
