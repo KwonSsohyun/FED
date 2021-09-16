@@ -78,7 +78,9 @@
             padding: 0;
 
             /* 애니메이션: 이시이지반방마 */
-            animation: logoAni 2s ease-in-out 1s forwards;
+            animation: logoAni 2s ease-in-out 1s forwards, 
+                        logoAni2 1s ease-in-out 3s infinite
+                        alternate;
             /* "logoAni" - 내가 아까 설정한 이름 "호출!" */
             /* 1초 후에 2초간 처음과 마지막에 천천히 애니 후 끝상태유지
                (포야드 앞에 아무것도 안쓰면 반복 : 기본값은 1번만 실행) */
@@ -103,6 +105,21 @@
                 left: 50px;
             }           
         }/* 키프레임 */
+
+
+
+        /* 추가 키프레임 */
+        @keyframes logoAni2 {
+            from{
+                transform: rotate(30deg);
+            }            
+            to{
+                transform: rotate(-30deg);
+            }
+        }/* 키프레임 */
+
+
+
 
 
 
