@@ -76,6 +76,22 @@ body{
     bottom: none;
 }
 
+/* 2-2. 예고편선택메뉴 */
+.mlist{
+    position: absolute;
+    bottom: 56px;
+    left: 252px;
+}
+/* li 디자인 */
+.mlist ul>li{
+    margin: 0 10px;
+    /* li 바깥쪽 양쪽밀기 */
+}
+/* 영화포스터 사이즈 조절 */
+.mlist img{
+    width: 99px;
+    height: 140px;
+}
 
 
 /* 3. 하단영역 */
