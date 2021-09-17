@@ -38,6 +38,19 @@ body{
 
 }
 
+/* 1-1. 페이지 타이틀 */
+.tit{
+    font-family: 'Jua', sans-serif; 
+    color: aquamarine;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+
+    /* 그림자를 이용한 Glow효과 */
+    text-shadow: 0 0 10px aquamarine;
+
+}
+
 /* 1-2. 전체메뉴(GNB) */
 .gnb{
     position: absolute;
@@ -64,31 +77,56 @@ body{
     left: 50%; /* 부모가로크기의 절반만큼 밀어준다! */
     transform: translateX(-50%); /* 자기자신 크기의 절반을 왼쪽으로 이동! */
 
+    width: 120px;
+    /* 특정크기를 주지 않고, auto일 경우 부모크기로 한정됨!
+       따라서 특정크기를 줘야하는 케이스임! */
 
     background: url(../images/bg_smenu.png) no-repeat center/cover;
+
+    border-radius: 5px; /* 둥근모서리 */
+    box-shadow: 0 0 5px #fff; /* 박스글로우 */ /* x축 y축 blur (spread) 색 */
     padding: 6px;
-  
+
+    margin-top: 5px; /* 상단밀기 위치조정 */
 }
+
+
+/* 가상요소로 삼각형모양(말풍선 꼭지) 만들기 */
+.smenu::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    /* 부모는 .smenu */
+    transform: translateX(-50%); /* left 50%가고 내거에서 x축으로 -50% */
+
+    /* 삼각형 만들기 */
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #353535;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    /* transparent : 투명 */
+    /* 아래쪽주고, 오른쪽 왼쪽 투명으로 주면 삼각형됨 */
+
+    /* 역삼각형은 border-bottom대신 border-top을 사용! */
+    /* transparent는 투명색! - 다른표현은 rgba(0,0,0,0) */
+}
+
+
+
 .smenu li{
     float: none; /* float해제 */
     font-size: 12px;
+    line-height: 2; /* 폰트사이즈의 2배 - 미디어쿼리에서 자동적용됨 2배로 */
 }
 
 
 
-
-
-/* 1-1. 페이지 타이틀 */
-.tit{
-    font-family: 'Jua', sans-serif; 
-    color: aquamarine;
-    font-size: 40px;
-    line-height: 80px;
-    text-align: center;
-
-    /* 그림자를 이용한 Glow효과 */
-    text-shadow: 0 0 10px aquamarine;
-
+/* 탑 보더 클래스 */
+.tbar{
+    border-top: 1px solid #ccc;
 }
 
 
