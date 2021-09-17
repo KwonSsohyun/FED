@@ -85,7 +85,7 @@ body{
 
     border-radius: 5px; /* 둥근모서리 */
     box-shadow: 0 0 5px #fff; /* 박스글로우 */ /* x축 y축 blur (spread) 색 */
-    padding: 6px;
+    padding: 3px;
 
     margin-top: 5px; /* 상단밀기 위치조정 */
 }
@@ -115,6 +115,11 @@ body{
 }
 
 
+.smenu ol{
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
 
 .smenu li{
     float: none; /* float해제 */
@@ -122,10 +127,26 @@ body{
     line-height: 2; /* 폰트사이즈의 2배 - 미디어쿼리에서 자동적용됨 2배로 */
 }
 
+/* 서브메뉴 a요소 오버시 */
+.smenu a:hover{
+    color: red;
+}
+
+/* 서브메뉴 a요소 오버시 가상요소로 손가락 모양 */
+.smenu a:hover::after{
+    content: "☞"; /* 손가락모양 */
+    padding-right: 2px;
+    font-weight: bold;
+    float: right; /* 인라인요소 오른쪽 끝! 그래야 오른쪽으로 끝으로 붙은걸 볼 수 있다. */
+}
+
+
+}
+
 
 
 /* 탑 보더 클래스 */
-.tbar{
+.tbar{ /* 해당부분에 클래스명 붙혀넣는다. */
     border-top: 1px solid #ccc;
 }
 
