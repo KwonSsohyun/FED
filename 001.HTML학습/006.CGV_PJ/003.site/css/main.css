@@ -24,7 +24,7 @@ body{
 .part{
     width: 1200px;
     margin: 0 auto; /* 가로중앙 */
-    outline: 3px dotted yellow;
+   /*  outline: 3px dotted yellow; 영역 섹션별로 구분해서 보려고 외곽라인 준거임 */
 }
 
 
@@ -47,9 +47,19 @@ body{
     text-align: center;
 
     /* 그림자를 이용한 Glow효과 */
-    text-shadow: 0 0 10px aquamarine;
+    text-shadow: 0 0 12px aquamarine;
+
+    /* 애니메이션 이시이지반방마 */
+    animation: titAni 1s ease-in-out infinite alternate;
 
 }
+
+/* 타이틀 글로우 효과 애니메이션 키프레임 */
+@keyframes titAni {
+        to{
+            text-shadow: 0 0 5px aquamarine;
+        }    
+}/* 키프레임 */
 
 /* 1-2. 전체메뉴(GNB) */
 .gnb{
@@ -343,4 +353,25 @@ body{
 /****************************** 3. 하단영역 ******************************/
 #info{
     height: 100px;
+}
+
+/* 3-1. 회사정보박스 */
+#info address{
+    color: #fff;
+    font-style: normal; /* 이탤릭해제 */
+    font-family: 'Cute Font', cursive;
+    font-size: 18px;
+    line-height: 20px;
+
+    /* 안쪽여백 */
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+/* 하단로고 이미지 */
+#info img{
+    float: left;
+    /* 이미지는 왼쪽에 글자는 오른쪽으로 흐르게 */
+
+    margin-right: 20px; /* 이미지기준 오른쪽 여백 */
 }
