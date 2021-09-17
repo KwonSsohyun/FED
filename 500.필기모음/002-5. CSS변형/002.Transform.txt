@@ -1,256 +1,275 @@
-            [★ Transform 적용 순서]
+[★ Transform 적용 순서]
 
-            1) HTML에서
-               div블럭요소로 id값을 줘서 박스블록을 만들고, 그 태그 사이에 img태그 넣는다.
+[ 쉽게 생각하기 ]
+- 안쪽은 (+) / 바깥쪽은 (-)
 
-            2) CSS에서
-               ".cont>div>img"적용할 이미지에 
-               트랜지션(CSS속성값이 변경되는 과정을 애니메이션으로 보여주는 속성)을 적용한다.
-            
-            트랜지션: 속시이지 - 중간변화과정 보여주려고 확확 안하게 하려고 */
-            transition: transform .6s;
-            
+사각형이 있다고 하자.
+top(Y축 윗쪽기준), letf(X축 왼쪽기준)
+-
+left왼쪽(x축) 기준으로 
+▶ 왼쪽으로 밀면 -100% : 사각형 바깥방향에서 움직이는 것
+▶ 오른쪽으로 밀면 100% : 사각형 안쪽방향에서 움직이는 것
+-
+top윗쪽(y축) 기준으로
+▶ 윗쪽으로 밀면 -100% : 사각형 바깥방향에서 움직이는 것
+▶ 아래쪽으로 밀면 100% : 사각형 안쪽방양에서 움직이는 것
 
-            /* 
-            3) 아까 이미지를 감싼 id에 호버를 주고 img도 같이 잡아서 트렌스폼 적용한다.
-               #trans1:hover img{ 
-                    transform: rotateY(180deg);
-               }
-            
-            */
-         
-        }
+_______________________________________________________________________________________________________ 
 
+[ 트랜스폼 정의 ]
+: 변형하는 것
 
-        /* 
-            [ ★ Transform 효과주기 ]
-            - 선택요소의 크기, 회전, 이동, 기울임 등 변형을 하기위한 속성
-            - 2D, 3D 지원됨
+1) HTML에서
+div블럭요소로 id값을 줘서 박스블록을 만들고, 그 태그 사이에 img태그 넣는다.
 
+2) CSS에서
+".cont>div>img"적용할 이미지에 
+트랜지션(CSS속성값이 변경되는 과정을 애니메이션으로 보여주는 속성)을 적용한다.
 
-            1. rotateY(각도deg) - Y축회전
-            - deg는 각도의 단위(도:degree)
-         */
-         #trans1:hover img{ /* ★ 박스에 호버를 주고(이벤트가 안정적으로 된다.) img에 트랜지션 위에서 준다. */
-             transform: rotateY(180deg); /* 180도니까 뒤집기 */
-             filter: grayscale(100%); /* 이미지변경 필터(흑백) */
-         }
-        /* 
-
-            
-        /* 2. rotateX(각도deg) - X축회전 */
-         #trans2:hover img{
-             transform: rotateX(180deg); 
-             filter: blur(2px); /* 이미지변경 필터(블러-흐림효과) */
-         }
-
-         /* 
-         
-            [ CSS 필터속성 ]
-            - 흑백, 흐림, 세피아, 명암, 채도 등 
-              출력이미지를 변경하고자 할때 사용하는 속성
-
-            -> 소스참고
-               https://www.w3schools.com/cssref/playit.asp?filename=playcss_filter&preval=blur(5px)
-
-         */
-
-         /* 
-            3. translateX(거리) - X축이동
-            - 단위: px, %
-            - 현재 위치로부터 이동
-            - 기준점은 요소의 왼쪽
-            - ★ % 단위를 쓸 경우, 기준은 요소의 width (가로! : -100% 왼쪽으로 가고 / 100%는 오른쪽 가고 / 50%는 자기 크기의 절반) ※기준은 왼쪽 (네모스테이션으로 생각)
-            - 이동방향: + 는 오른쪽, - 는 왼쪽
-          */
-          #trans3:hover img{
-              transform: translateX(-100%); /* 자기 폭! 크기만큼 이동(100%) 자기 폭! 크기의 반만큼 이동(50%) */
-          }
+트랜지션: 속시이지 - 중간변화과정 보여주려고 확확 안하게 하려고 */
+transition: transform .6s;
 
 
-          /* 
-            4. translateY(거리) - Y축이동
-            - 단위: px, %
-            - 현재 위치로부터 이동
-            - 기준점은 요소의 윗선
-            - ★ % 단위를 쓸 경우 기준은 요소의 height (높이! : -100% 위로 가고 / 100%는 아래로 가고 / 50%는 자기 크기의 절반) ※기준은 머리
-            - 이동방향: + 는 아랫쪽, - 는 윗쪽
-          */
-          #trans4:hover img{
-              transform: translateY(100%); 
-          }
+/* 
+3) 아까 이미지를 감싼 id에 호버를 주고 img도 같이 잡아서 트렌스폼 적용한다.
+#trans1:hover img{ 
+    transform: rotateY(180deg);
+}
+
+*/
+
+}
 
 
-           /* 
-            5. translate(X축거리,Y축거리) - X,Y축이동(컴마 쓰면됨)
-            - 단위: px, %
-            - 현재 위치로부터 이동
-            - 기준점은 요소의 왼쪽선과 윗선
-            - % 단위를 쓸 경우 기준은 
-                요소의 width와 height
-            - 이동방향: + 는 오른쪽/아랫쪽, 
-                        - 는 왼쪽/윗쪽
-          */
-          #trans5:hover img{
-              transform: translate(-200%, 100%);
-          }
+/* 
+[ ★ Transform 효과주기 ]
+- 선택요소의 크기, 회전, 이동, 기울임 등 변형을 하기위한 속성
+- 2D, 3D 지원됨
 
 
-          /* 
-            6. rotate(★각도deg) - 원형회전
-            - 각도의 숫자가 양수면 시계방향
-                (음수는 반시계)
-            - 기본회전축은 정중앙
-                (변경가능: transform-origin)
-           */
-           #trans6:hover img{
-               transform: rotate(5423deg); /* 각도를 너무 크게 줘서 원뱅뱅 : 시계방향으로 돈다 */
-               transition-duration: 10s; /* 트랜지션 시간 변경하기 - 10초동안 돈다. */
-           }
-
-           /* 회전축 변경하기 - 미세조정할때 ex)나무흔들기 -> 여기서 축 조정하고 호버시에서 각도선택(deg) */
-           #trans6 img{
-               transform-origin: 25% 75%;  /* 사각형 전체가 100%니까 : 가로 25% 세로 75% */
-               /* right bottom : 오른쪽 아래 축을 기준으로 돈다. */
-               /* 기본값은 center */
-               
-               /* 
-                  [ 트랜스폼 축 변경 속성 ]
-                  transform-origin: 가로값 세로값;
-                  - 가로값: left, right, center, 몇px, 몇% (50%는 절반 / 25% 절반의 절반 기준축으로 돈다.)
-                  - 세로값: top, bottom, center, 몇px, 몇%
-                  - 기본값은 center임!
-               */
-           }
+1. rotateY(각도deg) - Y축회전
+- deg는 각도의 단위(도:degree)
+*/
+#trans1:hover img{ /* ★ 박스에 호버를 주고(이벤트가 안정적으로 된다.) img에 트랜지션 위에서 준다. */
+transform: rotateY(180deg); /* 180도니까 뒤집기 */
+filter: grayscale(100%); /* 이미지변경 필터(흑백) */
+}
+/* 
 
 
-           /* 
-                7. skew(각도deg) - x,y축 기울임 (찌그러트림)
-                - skewX(각도deg), skewY(각도deg)
-                - 각도가 양수/음수에 따라 기울임 방향달라짐                
-            */
-            #trans7:hover img{
-                transform: skewX(30deg);
-            }
-            /* 
-               8. scale(배수)
-               - 배수가 1보다 크면 확대, 작으면 축소
-               - scaleX(배수), scaleY(배수) - x,y축별
-               - 값이 0이면 사라짐
-             */
-             #trans8 img{
-                 transform: scale(.5);
-                 /* 0.5배 -> 축소 */
-             }
-             #trans8:hover img{
-                 transform: scale(2);
-                 /* 2배 -> 확대 */
-             }
+/* 2. rotateX(각도deg) - X축회전 */
+#trans2:hover img{
+transform: rotateX(180deg); 
+filter: blur(2px); /* 이미지변경 필터(블러-흐림효과) */
+}
+
+/* 
+
+[ CSS 필터속성 ]
+- 흑백, 흐림, 세피아, 명암, 채도 등 
+출력이미지를 변경하고자 할때 사용하는 속성
+
+-> 소스참고
+https://www.w3schools.com/cssref/playit.asp?filename=playcss_filter&preval=blur(5px)
+
+*/
+
+/* 
+3. translateX(거리) - X축이동
+- 단위: px, %
+- 현재 위치로부터 이동
+- 기준점은 요소의 왼쪽
+- ★ % 단위를 쓸 경우, 기준은 요소의 width (가로! : -100% 왼쪽으로 가고 / 100%는 오른쪽 가고 / 50%는 자기 크기의 절반) ※기준은 왼쪽 (네모스테이션으로 생각)
+- 이동방향: + 는 오른쪽, - 는 왼쪽
+*/
+#trans3:hover img{
+transform: translateX(-100%); /* 자기 폭! 크기만큼 이동(100%) 자기 폭! 크기의 반만큼 이동(50%) */
+}
 
 
-             /* 
-                9. 복합적용하기 
-                transform: 속성1 속성2 속성3 .....;
-              */
-              #trans9:hover img{
-                  transform: scale(2) translate(-200%,-100%) rotateX(1400deg) skew(50deg) rotateX(5300deg);
-                  transition-duration: 20s;
-              }
+/* 
+4. translateY(거리) - Y축이동
+- 단위: px, %
+- 현재 위치로부터 이동
+- 기준점은 요소의 윗선
+- ★ % 단위를 쓸 경우 기준은 요소의 height (높이! : -100% 위로 가고 / 100%는 아래로 가고 / 50%는 자기 크기의 절반) ※기준은 머리
+- 이동방향: + 는 아랫쪽, - 는 윗쪽
+*/
+#trans4:hover img{
+transform: translateY(100%); 
+}
+
+
+/* 
+5. translate(X축거리,Y축거리) - X,Y축이동(컴마 쓰면됨)
+- 단위: px, %
+- 현재 위치로부터 이동
+- 기준점은 요소의 왼쪽선과 윗선
+- % 단위를 쓸 경우 기준은 
+요소의 width와 height
+- 이동방향: + 는 오른쪽/아랫쪽, 
+        - 는 왼쪽/윗쪽
+*/
+#trans5:hover img{
+transform: translate(-200%, 100%);
+}
+
+
+/* 
+6. rotate(★각도deg) - 원형회전
+- 각도의 숫자가 양수면 시계방향
+(음수는 반시계)
+- 기본회전축은 정중앙
+(변경가능: transform-origin)
+*/
+#trans6:hover img{
+transform: rotate(5423deg); /* 각도를 너무 크게 줘서 원뱅뱅 : 시계방향으로 돈다 */
+transition-duration: 10s; /* 트랜지션 시간 변경하기 - 10초동안 돈다. */
+}
+
+/* 회전축 변경하기 - 미세조정할때 ex)나무흔들기 -> 여기서 축 조정하고 호버시에서 각도선택(deg) */
+#trans6 img{
+transform-origin: 25% 75%;  /* 사각형 전체가 100%니까 : 가로 25% 세로 75% */
+/* right bottom : 오른쪽 아래 축을 기준으로 돈다. */
+/* 기본값은 center */
+
+/* 
+    [ 트랜스폼 축 변경 속성 ]
+    transform-origin: 가로값 세로값;
+    - 가로값: left, right, center, 몇px, 몇% (50%는 절반 / 25% 절반의 절반 기준축으로 돈다.)
+    - 세로값: top, bottom, center, 몇px, 몇%
+    - 기본값은 center임!
+*/
+}
+
+
+/* 
+7. skew(각도deg) - x,y축 기울임 (찌그러트림)
+- skewX(각도deg), skewY(각도deg)
+- 각도가 양수/음수에 따라 기울임 방향달라짐                
+*/
+#trans7:hover img{
+transform: skewX(30deg);
+}
+/* 
+8. scale(배수)
+- 배수가 1보다 크면 확대, 작으면 축소
+- scaleX(배수), scaleY(배수) - x,y축별
+- 값이 0이면 사라짐
+*/
+#trans8 img{
+    transform: scale(.5);
+    /* 0.5배 -> 축소 */
+}
+#trans8:hover img{
+    transform: scale(2);
+    /* 2배 -> 확대 */
+}
+
+
+/* 
+9. 복합적용하기 
+transform: 속성1 속성2 속성3 .....;
+*/
+#trans9:hover img{
+    transform: scale(2) translate(-200%,-100%) rotateX(1400deg) skew(50deg) rotateX(5300deg);
+    transition-duration: 20s;
+}
 
 
 
 
-              /* 
-                10. ★ 앞뒤로 있는 이미지 뒤집기
-                    - 셋팅: 한박스 안에 이미지가 2장 있으므로 겹쳐지게 하기위해 이미지
-                            포지션을 absolute로 준다!
-                    - 앱솔루트 끼리는 서로 겹쳐진다
-                    - 순서는 나중에 그려진요소가 위에 온다
-               */
-               /* 2개의 이미지를 겹치게한다 */
-               #trans10 img{
-                   position: absolute;
-                   width: 200px;
-                   /* 가로크기가 100%이므로 변경 */
-                   /* 
-                        앱솔루트는 
-                        위치이동값(top,left등)을 잡거나
-                        크기를 잡으면 부모요소를 
-                        찾아서 그 기준에 맞춘다!
+/* 
+10. ★ 앞뒤로 있는 이미지 뒤집기
+    - 셋팅: 한박스 안에 이미지가 2장 있으므로 겹쳐지게 하기위해 이미지
+            포지션을 absolute로 준다!
+    - 앱솔루트 끼리는 서로 겹쳐진다
+    - 순서는 나중에 그려진요소가 위에 온다
+*/
+/* 2개의 이미지를 겹치게한다 */
+#trans10 img{
+    position: absolute;
+    width: 200px;
+    /* 가로크기가 100%이므로 변경 */
+    /* 
+        앱솔루트는 
+        위치이동값(top,left등)을 잡거나
+        크기를 잡으면 부모요소를 
+        찾아서 그 기준에 맞춘다!
 
-                        반면!!!!!!!!
-                        위치값을 안주면 젠틀하다!!!
-                        젠틀하다는 의미는....
-                        앱솔루트 위의 스테틱요소를
-                        존중하여 그 아래에 위치하거나
-                        어떤 박스안에 있다면 
-                        그 박스안에 그대로 있는 것!
+        반면!!!!!!!!
+        위치값을 안주면 젠틀하다!!!
+        젠틀하다는 의미는....
+        앱솔루트 위의 스테틱요소를
+        존중하여 그 아래에 위치하거나
+        어떤 박스안에 있다면 
+        그 박스안에 그대로 있는 것!
 
-                        -> 여기서는 위치값을 쓰지말고 젠틀하게 쓰자!
-                    */
-               }
-
-
-               /* 1. 보거미 처음상태(돌아옴) */
-               /* Y축 0도로 돌아옴 - 0.4초 기다림 */
-               #trans10 img:last-child{
-                    transform: rotateY(0deg); /* y축으로 0도니까 보임 */
-                    /* 트랜지션 : 속시이지 */
-                    transition: transform .4s ease-out .4s; /* 애니메이션시간(총 0.4초동안 움직여) -> 기다리는 시간(0.4초기다렸다 움직여) */
-               }
-               /* 2. 보거미 오버상태 */
-               /* Y축 90도회전 - 회전후 안보임*/
-               #trans10:hover img:last-child{
-                   transform: rotateY(90deg); /* y축으로 90도니까 안보임 */
-                   /* 트랜지션 : 속시이지 */
-                   transition: transform .4s ease-in; /* 애니메이션시간(총 0.4초동안 움직여) */
-                   /* ease-in : 처음에 천천히하면서 가속도 붙고 */
-               }
-               /* 3. 유정이 처음상태(돌아옴) */
-               /* 처음에 이미 Y축 90도 회전상태 - 안보임 */
-               #trans10 img:first-child{
-                   transform: rotateY(90deg);
-                   /* 트랜지션 : 속시이지 */
-                   transition: transform .4s ease-in; 
- 
-                }
-               /* 4. 유정이 오버상태 */
-               /* Y축 0도로 회전 
-               - 보거미 0.4초 돌동안 기다렸가 0.4초돌기 */
-               #trans10:hover img:first-child{
-                   transform: rotateY(0deg);
-                   /* 트랜지션 : 속시이지 */
-                   transition: transform .4s ease-out .4s;
-                    /* ease-out : 속도 붙은걸 받아서 빠르게 돈다. */
-                }
-
-                /* 
-                    [ 트랜지션 이징(easing) 가속도 ]
-                    - transition-timing-function
-                    - 설정에 따라 빠르기를 조정함
-                    1. ease : 기본값
-                        - 애니메이션 전후에 약간 느려짐
-                    2. ease-in
-                        - 처음에 천천히 마지막에 원속도
-                    3. ease-out
-                        - 처음에 원속도 마지막에 천천히
-                    4. ease-in-out
-                        - 처음과 마지막에 천천히
-                        (ease보다 가속도가 강하다)
-                    5. linear
-                        - 일정한 속도
-
-                    (1~5 예시)
-                    https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_transition-timing-function2
-                    body:hover div{
-                    width: 300px;
-                    }
+        -> 여기서는 위치값을 쓰지말고 젠틀하게 쓰자!
+    */
+}
 
 
-                    6. cubic-bezier : 자유로운 가속도
-                        - 설정은 브라우저에서 가속도 곡선을 변경하여 수치를 생성한다
-                        - 일일히 수치를 내가 입력해서 알 수 없기에 브라우저에서 f12에서 그래프 조절해서 보다.
-                        - 생성된 코드를 복사하여 사용한다!
+/* 1. 보거미 처음상태(돌아옴) */
+/* Y축 0도로 돌아옴 - 0.4초 기다림 */
+#trans10 img:last-child{
+    transform: rotateY(0deg); /* y축으로 0도니까 보임 */
+    /* 트랜지션 : 속시이지 */
+    transition: transform .4s ease-out .4s; /* 애니메이션시간(총 0.4초동안 움직여) -> 기다리는 시간(0.4초기다렸다 움직여) */
+}
+/* 2. 보거미 오버상태 */
+/* Y축 90도회전 - 회전후 안보임*/
+#trans10:hover img:last-child{
+    transform: rotateY(90deg); /* y축으로 90도니까 안보임 */
+    /* 트랜지션 : 속시이지 */
+    transition: transform .4s ease-in; /* 애니메이션시간(총 0.4초동안 움직여) */
+    /* ease-in : 처음에 천천히하면서 가속도 붙고 */
+}
+/* 3. 유정이 처음상태(돌아옴) */
+/* 처음에 이미 Y축 90도 회전상태 - 안보임 */
+#trans10 img:first-child{
+    transform: rotateY(90deg);
+    /* 트랜지션 : 속시이지 */
+    transition: transform .4s ease-in; 
 
-                    (6번 예시)
-                    https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_transition-timing-function3
+}
+/* 4. 유정이 오버상태 */
+/* Y축 0도로 회전 
+- 보거미 0.4초 돌동안 기다렸가 0.4초돌기 */
+#trans10:hover img:first-child{
+    transform: rotateY(0deg);
+    /* 트랜지션 : 속시이지 */
+    transition: transform .4s ease-out .4s;
+    /* ease-out : 속도 붙은걸 받아서 빠르게 돈다. */
+}
+
+/* 
+    [ 트랜지션 이징(easing) 가속도 ]
+    - transition-timing-function
+    - 설정에 따라 빠르기를 조정함
+    1. ease : 기본값
+        - 애니메이션 전후에 약간 느려짐
+    2. ease-in
+        - 처음에 천천히 마지막에 원속도
+    3. ease-out
+        - 처음에 원속도 마지막에 천천히
+    4. ease-in-out
+        - 처음과 마지막에 천천히
+        (ease보다 가속도가 강하다)
+    5. linear
+        - 일정한 속도
+
+    (1~5 예시)
+    https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_transition-timing-function2
+    body:hover div{
+    width: 300px;
+    }
+
+
+    6. cubic-bezier : 자유로운 가속도
+        - 설정은 브라우저에서 가속도 곡선을 변경하여 수치를 생성한다
+        - 일일히 수치를 내가 입력해서 알 수 없기에 브라우저에서 f12에서 그래프 조절해서 보다.
+        - 생성된 코드를 복사하여 사용한다!
+
+    (6번 예시)
+    https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_transition-timing-function3
