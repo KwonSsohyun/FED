@@ -97,6 +97,76 @@
         <!-- 1-1. 페이지 타이틀 -->
         <h1 class="tit">CGV 예고편 상영관</h1>
 
+        <!-- 1-2. 전체메뉴(GNB) -->
+        <nav class="gnb">
+            <ul>
+                <li>
+                    <a href="#">영화</a>
+                    <!-- 서브메뉴 -->
+                    <div class="smenu">
+                        <ol>
+                            <li>
+                                <a href="#">무비차트</a>
+                            </li>
+                            <li>
+                                <a href="#">HD 트레일러</a>
+                            </li>
+                            <li>
+                                <a href="#">무비파인더</a>
+                            </li>
+                            <li>
+                                <a href="#">CGV아트하우스</a>
+                            </li>
+                        </ol>
+                    </div>              
+                </li>
+                <li>
+                    <a href="#">예매</a>
+                    <!-- 서브메뉴 -->
+                    <div class="smenu">
+                        <ol>
+                            <li>
+                                <a href="#">빠른예매</a>
+                            </li>
+                            <li>
+                                <a href="#">상영시간표</a>
+                            </li>
+                        </ol>
+                    </div>                   
+                </li>
+                <li><a href="#">극장</a>
+                <div class="smenu">
+                    <ol>
+                        <li>
+                            <a href="#">CGV 극장</a>
+                        </li>
+                        <li>
+                            <a href="#">특별관</a>
+                        </li>
+                        <li>
+                            <a href="#">CLUB 서비스</a>
+                        </li>
+                    </ol>
+                </div>
+                </li>
+                <li><a href="#">이벤트&amp;컬처</a>
+                    <div class="smenu">
+                        <ol>
+                            <li>
+                                <a href="#">이벤트</a>
+                            </li>
+                            <li>
+                                <a href="#">기프트샵</a>
+                            </li>
+                            <li>
+                                <a href="#">매거진</a>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
 
     </header>
     
@@ -121,7 +191,13 @@
                     <!-- p6j5IqJw5Ck 유투브 주소링크에 =뒤에 값 붙혀넣는다. 그게 동영상 고유값 -->
                     <!-- <a href="#" onclick="gogo('비와 당신의 이야기')"><img src="./images/m1.jpg" alt="비와 당신의 이야기"></a> -->
                     <a href="#" onclick="gogo('p6j5IqJw5Ck');return false;">
-                        <!-- ;return false; : 실행할때 다른거 작동하지마  a가 이동하는 속성이 안되게 막는것 -->
+                        <!-- 
+                            ;return false; 
+                            : 실행할때 다른거 작동하지마  a가 이동하는 속성이 안되게 막는것
+                            : a요소 클릭시 #으로 인한 페이지 상단이동을 막기위해 JS호출 시 
+                              return false코드를 추가한다!
+                        
+                        -->
                         <!-- 포스터 -->
                         <img src="./images/m1.jpg" alt="비와 당신의 이야기">
                         <!-- 영화정보 -->
@@ -133,7 +209,7 @@
                     </a> 
                 </li>
                 <li>
-                    <a href="#" onclick="gogo('O0s8Btiv_Dg')">
+                    <a href="#" onclick="gogo('O0s8Btiv_Dg');return false;">
                         <!-- 포스터 -->
                         <img src="./images/m2.jpg" alt="서복">
                         <!-- 영화정보 -->
@@ -145,7 +221,7 @@
                     </a> 
                 </li>
                 <li>
-                    <a href="#" onclick="gogo('TMwaYs4H7yI')">
+                    <a href="#" onclick="gogo('TMwaYs4H7yI');return false;">
                         <!-- 포스터 -->                        
                         <img src="./images/m3.jpg" alt="미나리">
                                 <!-- 영화정보 -->
@@ -158,7 +234,7 @@
 
                 </li>
                 <li>
-                    <a href="#" onclick="gogo('Qh4bQK_PY90')">
+                    <a href="#" onclick="gogo('Qh4bQK_PY90');return false;">
                         <!-- 포스터 -->                    
                         <img src="./images/m4.jpg" alt="더스파이">
                                 <!-- 영화정보 -->
@@ -170,7 +246,7 @@
                             </a> 
                 </li>
                 <li>
-                    <a href="#" onclick="gogo('tfmRVC_GADw')">
+                    <a href="#" onclick="gogo('tfmRVC_GADw');return false;">
                         <!-- 포스터 -->                        
                         <img src="./images/m5.jpg" alt="노메드랜드">
                                 <!-- 영화정보 -->
@@ -182,7 +258,7 @@
                             </a> 
                 </li>
                 <li>
-                    <a href="#" onclick="gogo('Dt5hFexM5BI')">
+                    <a href="#" onclick="gogo('Dt5hFexM5BI');return false;">
                         <!-- 포스터 -->                        
                         <img src="./images/m6.jpg" alt="라라랜드">
                                 <!-- 영화정보 -->
