@@ -96,42 +96,47 @@
             /* 
                 원하는 px은 14px
 
-                원하는 px /÷ 상속된 px
+                원하는 px ÷ 상속된 px
 
                 14px ÷ 24px = 0.58em
              */
         }
 
+
+
         /* 
             rem 단위 : 상속된 글자크기로 계산하기 불편해서
             root인 html의 글자크기를 기준해서 계산하는 상대단위방식
 
-            [ rem 계산법 ]
-            원하는 px / html px (기본값 16px)
+            [ ★ rem 계산법 ]
+            원하는 px ÷ html px (★기본값 16px)
 
          */
-         .rf1{/* 32px / 16px = 2rem */
-             
+         .rf1{/* 32px ÷ 16px = 2rem */
+            font-size: 2rem; 
          }
-         .rf2{/* 24px / 16px = 1.5rem */
-             
+         .rf2{/* 24px ÷ 16px = 1.5rem */
+             font-size: 1.5rem;
          }
-         .rf3{/* 14px / 16px = 0.87rem */
-             
+         .rf3{/* 14px ÷ 16px = 0.87rem */
+             font-size: 0.87rem;
          }
 
+
+
+         
          /* 
             % 단위 : em단위 계산법에 100을 곱한 것과 같다!
             즉, 부모요소에서 상속된 글자 크기의 상대적인 크기단위다!
           */
           .pf1{/* 2em === 200% */
-              
+              font-size: 200%;
           }
           .pf2{/* 0.75em === 75% */
-              
+              font-size: 75%;
           }
           .pf3{/* 0.58em === 58% */
-              
+              font-size: 58%;
           }
 
           /* 미디어쿼리 */
