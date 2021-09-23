@@ -251,6 +251,7 @@
           - 변수 사용법 : var 변수명 = 값  (tip:여기를 봐~)
                          -> ★ 변수는 따옴표로 싸지 않는 문자다!!!
                          -> 안싸면 무조건 변수 / 싸면 문자데이터 
+                         -> 값은 입주민이 변수명에 살게 해주는 것.
 
 
 
@@ -290,11 +291,22 @@
 
         
         //    3. CSS 변경하기
+        //       대상선정 : .pbox
+        //       대상을 변수에 담아서 재사용한다!
+        var tg = document.getElementsByClassName("pbox").item(0);
+        //   var는 variable(변수)에서 나온말. 선언시 사용한다!
+        //   var "tg"라고 내가 지은 이름에 = document.getElementsByClassName("pbox").item(0); 가 살고 있는거다.
+        //   1511호에 살고 있는데(tg) -> 그 안에 권소현 사는데 / 이사가면 다른 사람이 또 그 안에 사는거
+        //   tg(주소지) = 입주해서 살고 있는 것
+
+
         //       (2) 글자색 변경하기
         //           대상선정 : .pbox ("pbox").item(0) -> 클래스가 한개여도 아이탬 몇번째인지 지정!
         //           변경내용 : 글자색 라임색
 
-        document.getElementsByClassName("pbox").item(0).style.color = "lime";
+        // document.getElementsByClassName("pbox").item(0).style.color = "lime";
+        // 위에서 "var tg"로 선정했기 때문에 tg만 적어도 거기가 잡힌다.
+        tg.style.color = "lime";
         // JS에다가 CSS변경을 했기때문에, 원래는 인라인 CSS가 쎈데 -> 이게 우선순위 먹는다!
 
 
@@ -302,6 +314,8 @@
         //            대상선정 : .pbox
         //            변경내용 : 글자크기 50px
         //            한번만 불러오고 계속 설정하고 싶으면 변수!
+        tg.style.fontSize = "50px"
+
 
  
 
