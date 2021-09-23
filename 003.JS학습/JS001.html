@@ -314,7 +314,49 @@
         //            대상선정 : .pbox
         //            변경내용 : 글자크기 50px
         //            한번만 불러오고 계속 설정하고 싶으면 변수!
-        tg.style.fontSize = "50px"
+        tg.style.fontSize = "50px";
+
+
+        //        (4) 트랜지션 주기(2초)
+        tg.style.transition = "2s";
+
+
+        //         (5) 배경이미지 넣기
+        tg.style.background = "url(./images/kimbs.jpg) no-repeat top/cover";
+        //  경로 가져올때 url 여기서는 미리보기로 안되니 해당 CSS영역에서 쳐서 가져온다! (복붙!)
+
+        //          (6) 원모양만들기
+        tg.style.borderRadius = "50%";
+
+        //           (7) 글자중앙정렬
+        tg.style.textAlign = "center";
+
+        //           (8) 줄간격 변경
+        tg.style.lineHeight = "300px";
+
+        //           (9) 회전,축소하기 - transform:rotate() scale()
+        //               + 트랜스폼 중앙이동 -> translate(-50%,-50%)
+        tg.style.transform = "translate(-50%,-50%) rotate(360deg) scale(.7) ";
+        //  순서도 중요하다. 트랜스레이트부터 한다음 돌게 한다.
+        //  트랜스레이트를 먼저 써야 중앙이동이 잘 적용됨!
+
+
+        //           (10) 정중앙 보내기 위한 top,left 변경
+        tg.style.top = "50%";
+        tg.style.left = "50%";
+
+
+
+        //  (11) 전체배경색 변경하기
+        //       대상 : body
+        //       JS에서 body 특별히 취급하여 
+        //       document.body 라고 선택함
+        //       선택대상을 변수에 담는다! -> var bd = document.body; (여러개 중복 선택해 적용할거라서)
+        var bd = document.body;
+        bd.style.backgroundColor = "orange";
+        bd.style.transition = "5s";
+       
+ 
 
 
  
@@ -326,12 +368,21 @@
 
     <style>
         .pbox{
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            /* p태그 마진,패딩0 */
+            margin: 0; 
+            padding: 0;
+
             font-size: 24px;
             width: 700px;
             height: 600px;
             border: 4px solid purple;
             color: #ff0;
             text-shadow: 1px 1px 1px #000;
+            /* background: url(./images/kimbs.jpg) no-repeat top/cover; */
         }
     </style>
 </head>
