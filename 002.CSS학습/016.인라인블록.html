@@ -23,6 +23,7 @@
             line-height: 150px;
 
             /* float: left; */
+            display: inline-block; /* 엔터 다음줄 넣으면 간극이 있어서 띄어진다.(엔터간극) */
 
             /* 
                 li박스를 옆으로 보내기 위한 2가지방법
@@ -53,8 +54,8 @@
 
 <body>
     <ul class="menu">
-        <li>메뉴임</li>
-        <li>메뉴임</li>
+        <li>메뉴임</li><!--  끝과 끝을 잡고 alt+shift+a하면 되긴한데 이렇게 쓰진 않는다. (간극이 사라지긴 한다.)
+         --><li>메뉴임</li>
         <li>메뉴임</li>
         <li>메뉴임</li>
     </ul>
