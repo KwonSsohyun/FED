@@ -239,8 +239,9 @@
                           -> 브라우저에게 CSS선택자로 질의한다! 요소를 선택한다!
 
 
-                   (2) 여러개의 요소를 선택하는 방법
+                   (2) 여러개의 요소를 선택하는 방법 
                        document.querySelectorAll(CSS 선택자)
+                       -> 여러개 다룰때만 쓰자!
                        -> id도 쓸 수 있긴 한다. 어차피 id는 하나인데 [0]이라고 굳이 선택해야하는거 귀찮아서 "querySelector" 쓰는거
                        -> class가 여러개를 가져올 필요가 있을때 -> querySelector'All'
                        -> class 그중 하나 선택할거면 세부 번호 선택!
@@ -451,8 +452,20 @@
         // 2. 대상선정 : #rect
         //    해당선택을 여러개 다중 효과 줄때 계속 번복해서 안주기 위해 이름 지어줌!
         var rt = document.querySelector("#rect");
+        // var rt = document.getElementById("rect");  ->  ("rect")안에 "#rect" 쓰면 안된다는 것
 
         // 3. 변경내용 : top, 트랜지션, width, height
+        rt.style.top = "0";
+        rt.style.borderRadius = "0";
+        rt.style.width = "100%";
+        rt.style.height = "100%";
+        rt.style.transition = "3s 1s, top 1s 0s";
+        // 트랜지션 top값만 1초, 나머지는 1초 후 3초간 변경
+
+        
+        //  4. 추가변경 : 글자넣기
+        rt.innerText = "축하합니다~!!";
+
 
 
 
@@ -510,6 +523,11 @@
         #rect{
             top: 40%;
             background-image: url(./images/04.png);
+            font-size: 40px;
+            text-align: center;
+            color: red;
+            line-height: 200px;
+            white-space: nowrap; /* 줄바꿈 방지! */
         }
 
     </style>
