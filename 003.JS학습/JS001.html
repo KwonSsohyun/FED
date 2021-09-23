@@ -224,6 +224,7 @@
              4. ★ CSS선택자를 그대로 사용하는 선택법!
                    (1) 하나의 요소를 선택하는 법
                        document.querySelector(CSS 선택자)
+                       -> id건 class건 하나만 선택할거면 "querySelector"
                        -> 무조건 선택요소가 여러개여도 처음 만나는 것 하나만 선택!
                        -> 위에걸로는 계속 타고 들어오고 클래스에서는 아이템 번수까지 해야하는 번거로움 해소
 
@@ -240,6 +241,7 @@
 
                    (2) 여러개의 요소를 선택하는 방법
                        document.querySelectorAll(CSS 선택자)
+                       -> class가 여러개이고 그 중 다 선택하거나 콕 집어 선택하면 -> querySelector'All'
                        -> 선택시 컬렉션 집합에 결과를 담는다!
                        -> 따라서 요소가 하나일지라도 순번으로 선택한다!
                        방법 : .item(순번)  또는  [순번]
@@ -398,15 +400,67 @@
         var bd = document.body;
         bd.style.backgroundColor = "orange";
         bd.style.transition = "5s";
-       
- 
-
-
- 
 
       }//////////////////// showMe 함수 ////////////////////
       /////////////////////////////////////////////////////
  
+
+
+      /*///////////////////////////////////////////  
+
+            함수명 : circle
+            기능 : 선택요소 중앙으로 보내기!
+      
+      *//////////////////////////////////////////// 
+      function circle(num){ /* seq 순번전달변수(아무거나써도됨)(외국은 seq 시퀀스 순번임) */
+        // 1. 함수호출확인 및 전달값 확인
+        console.log(num+"나야나");
+
+        // 2. 대상선정 : .circle
+        //    해당선택을 여러개 다중 효과 줄때 계속 번복해서 안주기 위해 이름 지어줌!
+        var cc = document.querySelectorAll(".circle");
+
+        // 3. 변경내용 : 트랜지션으로 화면 중앙으로 이동하기!
+        console.log("개수:"+cc.length);
+
+        // 트랜지션
+        cc.item(num).style.transition = "2s ease-out";
+        // 화면 중앙 이동
+        cc.item(num).style.top = "50%";
+        cc.item(num).style.right = "50%";
+        cc.item(num).style.transform = "translate(50%,-50%)";
+
+      }//////////////////// circle 함수 ////////////////////
+      /////////////////////////////////////////////////////
+
+
+
+
+
+      /*///////////////////////////////////////////  
+            함수명 : rect
+            기능 : 오른쪽 상단으로 이동하여 사각형으로 전체 채우기
+      *///////////////////////////////////////////  
+      function rect(){
+        // 1. 함수 호출 확인
+        console.log("사각사각");
+
+        // 2. 대상선정 : #rect
+        //    해당선택을 여러개 다중 효과 줄때 계속 번복해서 안주기 위해 이름 지어줌!
+        var rt = document.querySelector("#rect");
+
+        // 3. 변경내용 : top, 트랜지션, width, height
+
+
+
+
+
+      }//////////////////// rect 함수 ////////////////////
+      /////////////////////////////////////////////////////
+
+
+
+
     </script>
 
     <style>
@@ -427,6 +481,34 @@
             text-shadow: 1px 1px 1px #000;
             /* background: url(./images/kimbs.jpg) no-repeat top/cover; */
         }
+
+
+        .circle, #rect{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .circle:first-of-type{
+            background-image: url(./images/01.png);
+        }
+        .circle:nth-of-type(2){
+            background-image: url(./images/02.png);
+        }
+        .circle:nth-of-type(3){
+            background-image: url(./images/03.png);
+        }
+
+        #rect{
+            top: 40%;
+            background-image: url(./images/04.png);
+        }
+
     </style>
 </head>
 <body>
@@ -434,6 +516,13 @@
         나는 요즘 매일 생각한다! <br>
         도대체 <span id="name"></span>
     </p>
+
+
+    <div class="circle" onclick="circle(0)"></div>
+    <div class="circle" onclick="circle(1)"></div>
+    <div class="circle" onclick="circle(2)"></div>
+
+    <div id="rect" onclick="rect()"></div>
     
 
 
