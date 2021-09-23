@@ -31,8 +31,9 @@
             }
 
             /* 글자관련 클래스 */
-            /* 클래스명은 숫자를 뒤에 쓸 수 있으나
+            /* ★ 클래스명은 숫자를 뒤에 쓸 수 있으나
             숫자로 시작할 수 없다(숫자로 시작하면 적용안됨!) */
+            /* 1fcls 이렇게 하면 안된다는것 */
             .fcls1{
                 font-weight: bold;
                 color: red;
@@ -56,7 +57,7 @@
             /* 보더관련 클래스 */
             /* 상위요소로 기존에 셋팅되어서 하위요소 class적용이 되지않는다
             따라서 상위요소를 위에 써주면 적용된다(우선순위) */
-            .bx .bd1{
+            .bx .bd1{ /* 앞에 .bx라고 안적으면 li스타일이 적용되서 적용안됨! */
                 border-style: dotted;
                 border-color: purple;
             }
@@ -95,13 +96,13 @@
         <h1>클래스 다중적용</h1>
         <ul class="bx">
             <li>클래스적용1</li>
-            <li class="">클래스적용2</li>
+            <li class="fcls2">클래스적용2</li>
             <li>클래스적용3</li>
-            <li class="">클래스적용4</li>
-            <li class="">클래스적용5</li>
-            <li class="">클래스적용6</li>
-            <li class="">클래스적용7</li>
-            <li class="">클래스적용8</li>
+            <li class="fcls3 bd1 fz1">클래스적용4</li>
+            <li class="fcls1 bd3">클래스적용5</li>
+            <li class="fcls2">클래스적용6</li>
+            <li class="fcls1 bd2">클래스적용7</li>
+            <li class="fcls3 bd3">클래스적용8</li>
             <li>클래스적용9</li>
         </ul>
     </body>
