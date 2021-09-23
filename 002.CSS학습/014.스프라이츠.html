@@ -39,6 +39,11 @@
                 /* sns이미지 6개가 한꺼번에 저장된 
                 배경이미지임(한개당 가로,세로 128px) */
 
+                /* 전체 이미지 사이즈 : 384x256px
+                   가로 : 384 ÷ 3 = 128px
+                   세로 : 256 ÷ 2 = 128px
+                */
+
                 outline: 1px solid red;
             }
 
@@ -46,32 +51,32 @@
 
             /* 트위터 */
             .icons li:nth-child(1){
-
+                background-position: 0 0;
             }
 
             /* 트위터 오버시 */
             .icons li:nth-child(1):hover{
-
+                background-position: 0 -128px;
             }
 
             /* 인스타 */
             .icons li:nth-child(2){
-
+                background-position: -128px 0;
             }
 
             /* 인스타 오버시 */
             .icons li:nth-child(2):hover{
-
+                background-position: -128px -128px;
             }
             
             /* 페북 */
             .icons li:nth-child(3){
-
+                background-position: -256px 0;
             }
 
             /* 페북 오버시 */
             .icons li:nth-child(3):hover{
-
+                background-position: -256px -128px;
             }
 
 
@@ -111,7 +116,7 @@
             */
 
             /* IR 숨기기 class */
-            
+
             /* display:none으로 숨기면 리더기가 못읽음! */
             
 
