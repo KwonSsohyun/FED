@@ -11,6 +11,7 @@
 */
 
 /* IR(Image Replacement) 클래스 */
+/* 스프라이츠(Sprites) 설명안내 글자 안보이게 하기 */
 .bld{
     display: block;
     width: 0;
