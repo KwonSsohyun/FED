@@ -112,6 +112,7 @@
           - 이벤트와 함수를 연결하려면 html 요소 속성에
             이벤트 속성이 이미 만들어져 있다!!!
             이 속성값으로 함수를 호출한다!
+            -> 현재 html내려보면 class에 onclick이 되어있는걸 얘기함
 
 
         [ HTML 이벤트 속성 ]
@@ -225,6 +226,7 @@
           선택요소.innerHTML = html코드
           -> 선택요소 내부 자식으로 html코드를 집어 넣는다!
           -> HTML 전체 대문자!
+          -> HTML 요소를 넣을거면 innerHTML이고 / 진짜 텍스트만 보이게 하고 싶으면 innerText이다.
 
         [ JS에서 요소 선택 후 텍스트 변경하기 ]
           선택요소.innerText = 글자
@@ -279,6 +281,7 @@
         //      (1) html내용 넣기
         //          대상선정 : span#name
         //          변경내용 : html 이미지 태그 넣기 -> innerHTML 사용!
+        //                    html안에 span태그 안에 아무것도 없는데 넣었기 때문에 -> innerHTML 사용!
         document.getElementById("name").innerHTML = 
         '<img src="./images/kim.png" alt="김비서가 왜 그럴까?">'; /* html안에서 똑같은 이미지 삽입코드와 같음 */
 
