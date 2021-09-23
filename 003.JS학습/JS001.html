@@ -153,6 +153,8 @@
                           개발자가 직접 세미콜론을 넣어주는게 좋다! 
 
 
+
+                          
         [ JS에서 요소를 선택하는 방법! ]
 
           - document 객체 : html문서 전체를 담고 있는 DOM객체 (html지도!)
@@ -170,7 +172,51 @@
                   -> Element : 요소 하나를
                   -> By Id : 아이디에 의한 것으로
 
-             2. '클래스'요소 선택법
+
+
+             2. '클래스'요소 선택법 - getElementsByClassName() 메서드
+                 document.getElementsByClassName(클래스명)
+                 - html요소 중 클래스요소는 여러개 올 수 있기 때문에
+                   컬렉션 집합을 만들어서 관리하므로 순번으로 선택해야함!
+                 - 클래스는 여러개기 때문에 's' 엘러먼츠'들'이라 하는 것!
+                 - .item(순번) 또는 [순번]
+                 - 순번은 0부터!
+
+                 - 메서드 이름 분석
+                   -> get : 가져와라
+                   -> Elements : 요소들을
+                   -> By Class Name : 클래스명에 의한 것으로
+
+                   예)
+                   해당 클래스명을 가진 요소 중 첫번째 것 선택
+                   document.getElementsByClassName(클래스명).item(0)
+                   document.getElementsByClassName(클래스명)[0]
+                   -> 위 아래 같은 것임
+                   
+                   -> ★ 주의사항 : 클랙스를 단 하나만 썼어도 '순번선택 필수'!!!!
+
+
+
+             3. '태그'요소 선택법 - getElementsByTagName() 메서드
+                 document.getElementsByTagName(요소명)
+                 - html요소 중 태그요소는 여러개 올 수 있기 때문에
+                   컬렉션 집합을 만들어서 관리하므로 순번으로 선택해야함!
+                 - 태그는 여러개기 때문에 's' 엘러먼츠'들'이라 하는 것!
+                 - .item(순번) 또는 [순번]
+                 - 순번은 0부터!
+
+                 - 메서드 이름 분석
+                   -> get : 가져와라
+                   -> Elements : 요소들을
+                   -> By Tag Name : 태그명에 의한 것으로
+
+                   예)
+                   해당 태그명을 가진 요소 중 첫번째 것 선택
+                   document.getElementsByTagName(태그명).item(0)
+                   document.getElementsByTagName(태그명)[0]
+                   -> 위 아래 같은 것임
+
+                   -> ★ 주의사항 : 태그를 단 하나만 썼어도 '순번선택 필수'!!!!
 
 
 
