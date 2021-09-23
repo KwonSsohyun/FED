@@ -423,6 +423,16 @@ body{
 }
 
 /* SNS a요소 확장 */
+/* a박스 사이즈가 ".sns li"보면 width: 34px / height: 34px인데
+   이게 지금 0*0이라서 없다 (core.css에서 스프라이츠 설명내용 지워서)
+   그걸 지금은 인라인요소라서 내용이 없어서 0인데
+   블럭요소로 만들고 width: 100% / height: 100% 줘서 
+   width: 34px / height: 34px 꽉차게 되서 그 영역에 데면 손가락 나오면서 선택이 되는것
+
+   굳이 a태그를 쓴 이유는 -> 링크로 가기 위해서
+   cursor: pointer; 로 사실 CSS로 손가락 나오게 할 수도 있지만
+   링크 이동때문에 a태그 쓰고 -> a요소 확장한 것이다.
+*/
 .sns a{
     display: block;
     width: 100%;

@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGV 인트로 페이지</title>
+    <link rel="stylesheet" href="css/intro.css">
 </head>
 <body>
-    <h1>
-        <a href="index.html">메인페이지</a>
-    </h1>
+    <!-- 1. 배경비디오 넣기 -->
+    <!-- autoplay쓰고 muted를 안쓰면 심장발작으로 갑자기 소리나서 문제 생긴적이 있어서 이게 세트가 되야 자동재생이 된다.(대신 음소거) -->
+    <!-- controls는 몇초이동 할건지 하는 조절컨트롤러 생성됨 + 이것만 쓰면 영상을 내가 재생을 직접하는거라 소리나오면서 재생은 된다. -->
+    <video src="./images/cgv.mp4" autoplay muted controls></video>
+
+
+
 </body>
 </html>
