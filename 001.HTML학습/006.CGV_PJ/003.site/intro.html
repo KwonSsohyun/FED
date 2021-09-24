@@ -8,15 +8,65 @@
 </head>
 <body>
     <!-- 1. 배경비디오 넣기 -->
+    <video id="myvid" src="./images/cgv.mp4" autoplay muted loop></video>
+    
     <!-- 
-        autoplay쓰고 muted를 안쓰면 심장발작으로 갑자기 소리나서 
-        문제 생긴적이 있어서 이게 세트가 되야 자동재생이 된다.(대신 음소거) -->
-    <!-- 
-        controls는 몇초이동 할건지 하는 조절컨트롤러 생성됨 
-        + 이것만 쓰면 영상을 내가 재생을 직접하는거라 소리나오면서 재생은 된다. -->
-        
-    <video src="./images/cgv.mp4" autoplay muted controls></video>
+            [ video 요소 : html5에서 지원하는 비디오 재생요소 ]
+                           -> img태그와 비슷하게 쉽게 비디오를 삽입하도록 등장!
 
+
+            [ 속성들 ]
+              <video src="./images/cgv.mp4" autoplay muted controls loop></video>
+              - src: 파일경로
+              - controls : 동영상 제어버튼 바
+              - autoplay : 자동재생(소리없음에서 작동)
+              - muted : 소리없음
+              - loop : 무한반복재생
+
+              <video src="./images/cgv.mp4" controls poster="./images/poster2.png"></video>
+              - poster : 비디오가 멈춤상태일 때 첫 화면 이미지
+
+
+
+            [ 비디오 압축형식 ]
+            1. mp4 - 최신 브라우저에서 지원하는 가장 보편적인 비디오 압축형식
+                     (오디오 전용은 mp3)
+            2. ogg - 오픈 표준파일 형식 Xiph.org 재단에서 개발
+            3. webm - 개방형 미디어 컨테이너. 높은 비디오 재생품질
+
+            -> mkv, mov, avi 등과 같이 기존에 사용하던
+               일반 압축형식은 브라우저에서 지원하지 않는 경우가 많다.
+            -> 따라서 비디오를 mp4 형식으로 변환하여 올리는게 좋다!
+
+        
+    -->
+
+    <!--    : autoplay쓰고 muted를 안쓰면 심장발작으로 갑자기 소리나서 
+              문제 생긴적이 있어서 이게 세트가 되야 자동재생이 된다.(대신 음소거) 
+            : controls는 몇초이동 할건지 하는 조절컨트롤러 생성됨 
+              + 이것만 쓰면 영상을 내가 재생을 직접하는거라 소리나오면서 재생은 된다.
+            : loop 끝나도 자동재생됨
+    -->
+
+
+    <!-- 
+        [ 비디오지원 형식에 대한 옵션 ]
+          video 하위 source요소 : 비디오 지원형식별 셋팅요소
+
+          - 이런형식을 쓰는 이유는 같은 비디오가 브라우저에서 지원되는 형식을 맞추는데 목적이 있다.
+          - 모든 형식을 지원하지 않는 경우 마지막 글자가 출력
+            (mp4가 지원이 안될때 -> ogg -> webm 대체순서대로 나옴)    
+
+    <video>
+        <source src="./images/cgv.mp4" type="video/mp4">
+        <source src="./images/cgv.ogg" type="video/ogg">
+        <source src="./images/cgv.webm" type="video/webm">
+        당신의 브라우저는 본 비디오를 재생할 수 없습니다.
+    </video>
+
+    -->
+
+   
 
 
 </body>
