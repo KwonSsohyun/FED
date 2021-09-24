@@ -4,11 +4,17 @@
 /* 웹폰트, 공용 클래스 */
 
 /* 웹폰트 */
-@import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Jua&family=Audiowide&display=swap');
+/* 기존에 있는거에 신규폰트 합쳐줄때 
+   <link> 그 링크에서
+   "family=Audiowide&"만 가져오고 앞에 "&"붙혀주면 된다. */
 /* 
     font-family: 'Cute Font', cursive;
     font-family: 'Jua', sans-serif; 
+    font-family: 'Audiowide', cursive;
 */
+
+
 
 /* IR(Image Replacement) 클래스 */
 /* 스프라이츠(Sprites) 설명안내 글자 안보이게 하기 */
