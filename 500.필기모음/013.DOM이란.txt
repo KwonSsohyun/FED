@@ -1,5 +1,5 @@
-DOM 이란 무엇인가?
-(Document Object Model)
+[ DOM 이란 무엇인가? ]
+  (Document Object Model)
 
 - 로딩된 html문서는 트리구조의 형태로 html요소의 
 부모자식 관계를 파악하여 객체접근 모델링을 제공함.
@@ -10,6 +10,14 @@ DOM 이란 무엇인가?
 DOM은 프로그램 및 스크립트 문서의 내용, 구조 및 스타일을
 동적으로 엑세스하고 업데이트할 수 있게 해주는 플렛폼 및
 언어 중립적 인터페이스다.
+
+인터페이스 : 접하는 면 (계면)
+            소통이 이루어지는 장소
+            가져갈 수 있도록 방법을 제공해주는 것. 기능을 쓸 수 있게 공개해 놓은 것.
+            ex) 내 시스템에 기상청 홈페이지에서 오늘의 날씨만 특정한 부분에 나오는걸 가져올 수 있는 것
+
+
+
 
 [1] DOM의 모든 접근 및 변경을 가능하게 하는 html문서 객체는?
 - document : 현재 html문서의 모든 구성요소 접근법 및
@@ -36,7 +44,7 @@ DOM은 프로그램 및 스크립트 문서의 내용, 구조 및 스타일을
 복수형 이름이 사용된다.
 - 여러개를 집합으로 사용하므로 반드시 item(순번) / [순번]
 을 사용하여 구체적인 선택을 한다.
-- 집합의 개수를 가져올 수 있다 -> length
+- 집합의 개수를 가져올 수 있다 -> length (몇개를 너 가지고 있니)
 
 (4) CSS 선택자 코드로 접근하기
     1) document.querySelector(선택자)
@@ -48,7 +56,7 @@ DOM은 프로그램 및 스크립트 문서의 내용, 구조 및 스타일을
     - CSS 선택자로 선택된 결과가 컬렉션 집합에 담긴다
     - 반드시 순번 선택으로 구체적인 요소를 선택한다!
         item(순번) / [순번]
-    - 선택된 요소의 개수 얻기 -> length
+    - 선택된 요소의 개수 얻기 -> length 
 
 ※ 위의 5가지 선택법 중 다중요소 선택일 경우 컬렉션이 생성되어
 선택방법이 세분화된다!
@@ -63,17 +71,19 @@ DOM은 프로그램 및 스크립트 문서의 내용, 구조 및 스타일을
 
 [3] DOM으로 각 요소 변경방법:
 
-(1) 선택요소 내부의 html 변경하기 : innerHTML
+(1) 선택요소 내부의 html 변경하기 : innerHTML (inner내부)
     예) document.getElementById("my")
         .innerHTML = "<div>my</div>";
 
-(2) 선택요소 내부의 데이터 변경하기 : innerText
+(2) 선택요소 내부의 데이터 변경하기 : innerText (태그넣으면 태그 그 자체 택스트로 인식해서 나옴)
     예) document.getElementById("my")
         .innerText = "나야나!";
 
 (3) 선택요소 속성 변경하기
     1) 선택요소.속성명 = 값
     예) document.getElementById("my").title = "안녕!";
+        
+        -> document.getElementById("my") 선택하고 나면    -> 그 안에 있는 것들을 이렇게 .title 딱 선택할 수 있다. (속성명)
     
     2) 선택요소.setAttribute(속성명,속성값)
     예) document.getElementById("my")
@@ -88,13 +98,13 @@ DOM은 프로그램 및 스크립트 문서의 내용, 구조 및 스타일을
     예) var tt = document.getElementById("my")
                 .getAttribute("title");
 
-(4) 선택요소 스타일시트 변경하기 : style
+(4) 선택요소 스타일시트 변경하기 : style -> .style 뒤에 CSS처럼 적용해주면됨
     - 선택요소.style.스타일시트속성명 = 값
     예) document.getElementById("my")
         .style.left = "20px";
     - 각 스타일시트 속성명을 이미 변수형으로 모두 등록함!
     - 2음절 이상일 경우에 데쉬(-)를 빼고 대문자로 표시함
-    예) "font-size" -> fontSize
+    예) "font-size" -> fontSize 
 
 [4] DOM으로 선택한 요소에 이벤트 적용하기
 
