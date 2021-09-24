@@ -81,7 +81,19 @@ body::after{
     /* 폰트 */
     font: bold  34px/40px "Audiowide";
     /* font: 스두크/줄체; */
+
+    transition: all .4s ease-out .2s; /* "all"로 하면 마우스를 올리면 오버시와 둘다 지연시간 먹는다. */
+    /* transition: transform .4s ease-out .2s;  -> 마우스올리면 바로 라임색 으로 글자 바뀌고*/
+    /* 트랜지션 지연시간 0.2초 설정(양방향) */
 }
+
+/* 박스에 오버시 span 변형하기 */
+#enter:hover span{
+    transform: scale(2);
+    color: chartreuse;
+}
+
+
 
 
 /* 로고 이미지 */
@@ -96,4 +108,5 @@ body::after{
 #enter:hover img{
     transform: rotate(-15deg) scale(1.5);
 }
+
 
