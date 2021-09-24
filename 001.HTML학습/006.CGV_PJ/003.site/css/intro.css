@@ -65,7 +65,7 @@ body::after{
     transform: translate(-50%, -50%); /* tft = 중앙이동!!!(마오마오%) */
     /* 박스크기의 절반씩 왼쪽과 위쪽으로 이동(정중앙이동!) */
 
-    /* outline: 10px dotted lime; */
+    /* outline: 10px dotted lime; */ 
     z-index: 1; /* 아까 검은색 배경깐 가상요소보다 위! */
 
     /* h1요소의 리셋은 resrt.css에서 함!!!(없으면 해줘야함) */
@@ -83,4 +83,17 @@ body::after{
     /* font: 스두크/줄체; */
 }
 
-#enter span:hover
+
+/* 로고 이미지 */
+#enter img{
+    transition: transform .4s ease-out;
+    /* 트랜지션: 속시이지 */
+    /* 원본에 트랜지션 주면 오버시에도 트렌지션이 유지된다.
+       오버시에도 준것과 같다. 오버시에 다르게 가고 싶으면 따로 설정한다. */
+}
+
+/* 박스에 마우스 오버시 로고이미지 변형하기 */
+#enter:hover img{
+    transform: rotate(-15deg) scale(1.5);
+}
+
