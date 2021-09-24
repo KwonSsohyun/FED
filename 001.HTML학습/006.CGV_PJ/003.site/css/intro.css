@@ -53,3 +53,28 @@ body::after{
     background-color: #000;
     opacity: 0.5; /* 투명도(0~1) */
 }
+
+
+/* 들어가기 버튼박스 */
+#enter{
+    position: absolute; /* 아래 스크롤 생겨서 없애려고 */
+    top: 50%;
+    left: 50%;
+    /* 부모는? 화면 */
+
+    transform: translate(-50%, -50%); /* tft = 중앙이동!!!(마오마오%) */
+    /* 박스크기의 절반씩 왼쪽과 위쪽으로 이동(정중앙이동!) */
+
+    outline: 10px dotted lime;
+    z-index: 1; /* 아까 검은색 배경깐 가상요소보다 위! */
+
+    /* h1요소의 리셋은 resrt.css에서 함!!!(없으면 해줘야함) */
+}
+
+
+/* Click Here! 글자박스 -> 로고이미지 아래로 떨어지게 하기 */
+#enter span{
+    display: block;
+    /* 옆에 아무도 못오고 width 끝까지 간다. */
+    text-align: center; /* 글자중앙 */
+}
