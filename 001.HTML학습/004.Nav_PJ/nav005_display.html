@@ -87,23 +87,23 @@
             width: 200px;
 
             background-color: hsl(128, 100%, 27%);
-            height: 0; /* 디스플레이 none으로 하면 높이값안줄 수도 있다. (대신 트랜지션 안먹음) */ 
-            overflow: hidden; /* 우선 안보이게 하고 + 높이 0*/
+            /* height: 0; /* 디스플레이 none으로 하면 높이값안줄 수도 있다. (대신 트랜지션 안먹음) */ 
+            /* overflow: hidden; 우선 안보이게 하고 + 높이 0 */
+            display: none; 
+            /* ★유형변경4: display 속성활용 (높이랑 오버플로우 주석하고 디스플레이 넌함!) (이상태에서 트렌지션 달라하면 못주고, 오퍼시티 해야함)*/
 
             /* 트랜지션 : 속시이지 */
-            transition: height .4s ease-out; 
+            /* transition: height .4s ease-out;  */
             /* ★유형변경4 : 옵션에 따라 트랜지션이 없는 유형이 많다.(주석처리를 하면 바로 튀어나오게 된다!) */
         }
 
         /* 상위메뉴 li에 마우스 오버시 하위메뉴 보이기 */
-        /* 두번째 메뉴 */
-        .gnb>ul>li:nth-child(2):hover .smenu{
-            height: 200px;
+        /* display:block 으로 오버시 보이기 */
+        .gnb>ul>li:hover .smenu{
+            /* height: 100px;  -> 놓이값을 줄 필요없이 디스플레이 블록하면 해당크기만큼 바로 보임!*/
+            display: block;
         }
-        /* 세번째 메뉴 */
-        .gnb>ul>li:nth-child(3):hover .smenu{
-            height: 100px;
-        }
+  
 
         /* 상위메뉴 오버시 하위메뉴 a 글자색, 배경색 */
         .smenu a:hover{
@@ -118,6 +118,7 @@
 </head>
 <body>
     <h1>유형5. 세로네비 서브별 드롭다운 사이드형</h1>
+    <h2>display:none 을 활용한 방법</h2>
     <!-- 
 
         [ 네비게이션 구현의 일반원칙 ]
