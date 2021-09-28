@@ -368,6 +368,7 @@
 
 
     </script>
+
     <style>
         /* 칭찬스티커 */
         #jshow {
@@ -396,6 +397,17 @@
             width: 0;
             height: 0;
             overflow: hidden;
+        }
+
+
+
+        /* 구구단 출력박스 */
+        .gugu{
+            width: 300px;
+            height: 300px;
+            overflow-y: scroll; /* 세로스크롤바 생김! - y축 스크롤 */
+            border: 2px dashed blue;
+            text-align: center;
         }
     </style>
 </head>
@@ -499,10 +511,11 @@
         <option value="20">20단</option>
       </select>
 
+
       <!-- 구구단 출력박스 -->
+      <div class="gugu"></div>
 
 
-      
 
       <!-- 
             [ ★ select 요소 ]
