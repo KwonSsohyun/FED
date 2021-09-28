@@ -88,7 +88,17 @@
 
     <!-- 선택버튼박스 -->
     <div class="btnbx">
-        <button class="btns" onclick="chgImg()">포스터</button>
+        <button class="btns" onclick="chgImg(this)">포스터</button> <!-- this : 나 자신을 부른다. -->
+        <!-- 
+             [ ★ this 키워드 ★ ]
+                  따옴표로 안싸고, this를 보내면
+                  버튼 자신을 보낸다는 의미!
+                  보낸 요소의 정보를 함수에서 알아낼 수 있다!
+            
+                  ※ 요소의 정보란?
+                     속성의 값, 데이터 등
+
+         -->
         <button class="btns" onclick="">장면1</button>
         <button class="btns" onclick="">장면2</button>
         <button class="btns" onclick="">장면3</button>
