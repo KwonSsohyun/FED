@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>유형5. 세로네비 서브별 드롭다운 사이드형</title> <!-- 유형4번 복사한거라, "ctrl+F"해서 "유형변경" 검색해서 변경된 달라진 부분만 확인해볼 것 -->
+    <style>
+
+        /* ul, ol 초기화 셋팅 */
+        ul,ol{
+            /* 3無 */
+            margin: 0;
+            padding: 0;
+            list-style: none; /* 블릿, 앞에 땡땡 숫자 없앰 */
+        }
+
+
+        /* 가상요소 float해제 */
+        ul::after, /* 컴마(,) 그룹선택 */
+        ol::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        li{
+            float: left;
+        }
+
+
+        /* GNB메뉴 */
+        .gnb{
+            width: 200px; /* ★유형변경 1 : 가로폭 설정! */
+            background-color: rgb(40, 24, 255);
+        }
+        .gnb>ul{
+           /* ★유형변경 2 : 가로폭 auto로! 부모 따라가는 것! .gnb -> width: 200px; */
+           /* width: 800px; /* 총 4개 메뉴 200씩x4개니까 -> 전에 설정한거 주석처리함(필요없음) */ 
+          
+            margin: 0 auto; /* 가운데정렬 : 마영오! */
+        }
+
+        .gnb>ul>li{ /* 섬세하게 잡아준다. */
+            position: relative; /* ★유형변경3 : 부모자격 - .smenu */
+
+            width: 200px;
+            text-align: center;
+            outline: 2px dashed red;
+        }
+
+
+        /* a요소 - 글자색, 밑줄처리 */
+        .gnb>ul>li a{ /* '>a'로 하면 해당만 되기때문에 띄어쓰면 'a'는 다 적용된다. */
+            /* 뜻 -> a는 .smenu의 a까지 모두 선택! */
+            display: block; /* 크기디자인때문에 - 글선택말고 박스전체 클릭 */
+            width: 200px;
+            height: 50px;
+
+            /* 글자색, 밑줄없앰(li) */
+            color: #fff;
+            text-decoration: none;
+
+            /* 글자세로 중앙은 줄간격을 사용 
+            -> 높이값과 동일하면 그 높이의 중간에 옴!*/
+            line-height: 50px; /* 높이값이랑 같은수치랑 줘야 그 가운데로 배치 */
+
+            font-weight: bold; /* 글자 두껍게 */
+            font-size: 14px;
+
+            /* 트랜지션: 속시이지 */
+            transition: .4s;
+        }
+
+        /* 상위메뉴에 마우스 오버시 글자색, 배경색 변경 */
+        .gnb>ul>li:hover>a{
+            color: red;
+            background-color: rgb(5, 255, 59);
+        }
+
+
+        /* 서브메뉴 */
+        .smenu{
+            /* ★유형변경 3 : top,left 위치설정 + 싸고 있는 li부모자격  */
+            position: absolute;
+            top: 0;
+            left: 100%; /* 부모크기를 100으로 봤을때 부모크기(기준)만큼 오른쪽 바깥으로 밀어냄 */
+
+            
+            width: 200px;
+
+            background-color: hsl(128, 100%, 27%);
+            height: 0; /* 디스플레이 none으로 하면 높이값안줄 수도 있다. (대신 트랜지션 안먹음) */ 
+            overflow: hidden; /* 우선 안보이게 하고 + 높이 0*/
+
+            /* 트랜지션 : 속시이지 */
+            /* transition: height .4s ease-out; */ 
+            /* ★유형변경4 : 옵션에 따라 트랜지션이 없는 유형이 많다.(주석처리를 함으로써 바로 튀어나오게!) */
+        }
+
+        /* 상위메뉴 li에 마우스 오버시 하위메뉴 보이기 */
+        /* 두번째 메뉴 */
+        .gnb>ul>li:nth-child(2):hover .smenu{
+            height: 200px;
+        }
+        /* 세번째 메뉴 */
+        .gnb>ul>li:nth-child(3):hover .smenu{
+            height: 100px;
+        }
+
+        /* 상위메뉴 오버시 하위메뉴 a 글자색, 배경색 */
+        .smenu a:hover{
+            color: navy;
+            background-color: lightcoral;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <h1>유형5. 세로네비 서브별 드롭다운 사이드형</h1>
+    <!-- 
+
+        [ 네비게이션 구현의 일반원칙 ]
+        
+        1. 네비게이션은 nav태그에 넣는 것을 추천
+           nav요소는 네비게이션을 넣는 시멘틱 태그다!
+        
+        2. 네비게이션은 사이트의 흐름을 한번에 제공하는
+           역할을 하므로 하나로 묶어서 보여줘야 하므로
+           ul>li / ol>li / dl>dt+dd 같은 그룹요소를 사용하여 표현한다.
+
+        3. 메뉴는 접근성 원칙에 따라 스크린리더기가 읽을 수 있도록 
+           a요소로 구성해야만 한다!
+           또한 메뉴는 tab버튼을 눌러서 선택이동 할 수 있어야 하므로
+           a요소는 필수다!!!
+
+        참고)
+        메인 메뉴가 gnb 라고 이름지어지는 이유는?
+        gnb는 Global Navigation Bar의 약자임
+        전역 네비게이션 바라는 의미로써
+        사이트의 어느 페이지에서도 항상 보이기 때문이다.
+
+        -> lnb 라는 이름도 많이 쓰임
+           lnb는 Local Navigation Bar의 약자임
+           지역 네비게이션 바라는 의미로써
+           서브페이지에서만 나오는 메뉴에 사용한다.
+        
+     -->
+
+     <nav class="gnb">
+         <ul>
+             <li><a href="#">Home</a></li>
+             <li>
+                 <a href="#">웹개발</a>
+                 <!-- 서브메뉴 -->
+                 <ol class="smenu">
+                     <li>
+                         <a href="#">웹디자인</a>
+                     </li>
+                     <li>
+                         <a href="#">HTML5+CSS3</a>
+                     </li>
+                     <li>
+                         <a href="#">jQuery</a>
+                     </li>
+                     <li>
+                         <a href="#">웹+모바일</a>
+                     </li>
+                 </ol>
+            </li>
+             <li>
+                 <a href="#">게시판</a>
+                 <!-- 서브메뉴 -->
+                 <ol class="smenu">
+                     <li>
+                         <a href="#">Q&amp;A</a> 
+                         <!-- &amp;는 &의 특수문자처리 -->
+                         <!-- '&'을 그냥 쓰면 안되서 &특수문자코드 쓴다 -->
+                     </li>
+                     <li>
+                         <a href="#">방명록</a>
+                     </li>
+                 </ol>
+
+
+            </li>
+             <li><a href="#">프로필</a></li>
+         </ul>
+     </nav>
+
+
+</body>
+</html>
