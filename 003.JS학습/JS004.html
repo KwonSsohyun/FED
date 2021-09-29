@@ -101,6 +101,7 @@
 
             [ 배열(Array) 변수란? ]
               (변수) = 주소지
+              - 값 여러개 나열
               - 여러개의 데이터를 묶음으로 변수 하나에 저장함
               - 각 데이터를 하나의 이름으로 호출할 수 있는 메모리 공간
                 (예컨데 묶음은 계란한판, 아파트 각 호수 등)
@@ -157,6 +158,7 @@
 
 
             [ 객체(Object)란? ]
+              - 값을 묶어주고, 값을 정해줄 수 있는 것.
               - 독립된 속성과 메서드를 가지는 프로그램 단위체
               - 속성은 명사적특징, 메서드는 동사적 특징
 
@@ -212,18 +214,10 @@
                         객체명["속성명"]
                         예) obj["name"] -> 반드시 변수를 따옴표로!
 
-            --------------------------------------------------------------------------------------------------------------------
 
 
 
 
-
-
-            
-            
-            
-            
-            
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         /* 예제 1 : 배열변수명 = new Array(값1,값2,값3,...); */            
@@ -610,7 +604,51 @@
             ratings:"전체관람가",
 
             // 6. 예고편
-            trailer: function(){
+            trailer: function(){ /* function은 무조건 호출해줘야 된다! (바로 실행되지 XXX) */
+
+                // 1. 호출확인
+                console.log("예고편!");
+
+                // 2. 영화박스 만들고 iframe 넣기
+                //    대상 : body 끝에 추가! += 대입연산자 중요!!!
+                /* 
+                      ★★★★★ += 안쓰고 ★★★★★
+                      = 쓰면 다 날아감 
+
+                      innerHTML =>> 문자형으로 읽어와서 인식한다. " "싸야한다!
+                    
+                */
+                document.body.innerHTML += 
+                '<div id="mv">' +
+                '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/U6DRitYfJQM?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
+                '<span class="cbtn">x</span>' +
+                '</div>';
+
+                // 삽입된 동영상 박스 CSS설정하기
+                var mv = document.getElementById("mv");
+                mv.style.position = "fixed";
+                mv.style.top = "50%";
+                mv.style.left = "50%";
+                mv.style.transform = "translate(-50%,-50%)";
+                mv.style.width = "700px";
+                mv.style.height = "450px";
+                
+
+                // 닫기버튼 셋팅
+                var cbtn = document.querySelector(".cbtn");
+                cbtn.style.position = "absolute";
+                cbtn.style.top = "0";
+                cbtn.style.right = "-70px";
+                cbtn.style.width = "50px";
+                cbtn.style.height = "50px";
+                cbtn.style.backgroundColor = "blue";
+                cbtn.style.textAlign = "center";
+                cbtn.style.fontSize = "40px";
+                cbtn.style.fontWeight = "bold";
+                cbtn.style.Color = "white";
+                cbtn.style.boderRadius = "50%";
+                cbtn.style.cursor = "pointer";
+                cbtn.style.lineHeight = "40px";
 
 
             }/////// trailer 메서드 ///////
@@ -644,6 +682,19 @@
              ->> 똑같이 불러온다.
         */
 
+
+        // 마우스 오버시 툴팁과 손가락 모양
+        txt6.title = "클릭하시면 " +myMovie.title+ " 예고편을 보실 수 있습니다.";
+        txt6.style.cursor = "pointer";
+
+
+        // 트레일러 함수 호출하기
+        // #txt6를 클릭시
+        txt6.onclick = function(){
+
+            myMovie.trailer();
+            
+        };////// click 이벤트 함수 //////
 
 
 
