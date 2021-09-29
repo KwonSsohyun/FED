@@ -668,11 +668,11 @@
                 '<div id="mv">' + /* 태그 만들어서 집어넣음 */
                 '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/U6DRitYfJQM?autoplay=1&loop=1&playlist=U6DRitYfJQM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
                 /* ?autoplay=1&loop=1&playlist=U6DRitYfJQM(동영상주소값)" -> 동영상 "" url따옴표 안에 써주면 된다! : 반복재생!*/
-                '<span class="cbtn">x</span>' +
+                '<span class="cbtn">x</span>' + /* 태그 만들어서 집어넣음 */
                 '</div>';
 
                 // 삽입된 동영상 박스 CSS설정하기
-                var mv = document.getElementById("mv");
+                var mv = document.getElementById("mv"); /* 바로 위에서 태그 만들어서 여기서 선택할 수 있는거임 */
                 mv.style.position = "fixed";
                 mv.style.top = "50%";
                 mv.style.left = "50%";
@@ -682,7 +682,7 @@
                 
 
                 // 닫기버튼 셋팅
-                var cbtn = document.querySelector(".cbtn");
+                var cbtn = document.querySelector(".cbtn"); /* 바로 위에서 태그 만들어서 여기서 선택할 수 있는거임 */
                 cbtn.style.position = "absolute";
                 cbtn.style.top = "0";
                 cbtn.style.right = "-70px";
