@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>비율유지박스(Ratio Box)</title>
     <style>
-        /* 1. 가로크기 %로 준 높이값 없는 블록박스 */
+
+        /* 1. 가로크기가 유동적인 높이값 없는 블록박스 */
         .rbx{
             position: relative; /* 비율유지 속박스의 부모자격! */
-            width: 50%;
+            width: 50%; /* (max-width: 1300px;)로 줘도됨 (유동적인 %또는 auto인 상태) */
+
             /* height: 400px; body는 높이값이 없으니 %로 안된다. */
 
             /* 
@@ -31,6 +33,7 @@
             margin: 0 auto;
         }
 
+
         /* 2. 가상요소로 비율 만들기 */
         .rbx::before{
             content: "";
@@ -49,6 +52,7 @@
             */
         }
 
+
         /* 3. 가상요소 패딩으로 속박스 필수!!! */
         .rbxIn{
             position: absolute;
@@ -58,7 +62,6 @@
             right: 0; /* 앱솔루트 사방으로 채우기 */
             /* 부모는 반드시 .rbx여야함!!! */
         }
-
 
 
         /* 내용셋팅 */
