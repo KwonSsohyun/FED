@@ -33,17 +33,33 @@
 
                 if(num===1 && (i===4||i===7)) continue; /* continue : 4번,7번에서 걸리고 위로 올라가는거다. */
                 /* 
-                    [ continue 키워드 ]
+                    [ continue 키워드 - for문안에서만!!!! ]
                       - for문 안에서 continue 키워드를 만나면 아래쪽 코드를 실행하지 않고
                         for문 증감파트로 다시 올라감 
                         -> 다음 조건 실행!               
                 */
 
+
+                // num이 2이면 6번부터 안나오게 하기!
+                if(num===2 && i===6) break;
+                /*  
+                    [ break 키워드 ]
+                      - for문 안에서 break를 만나면 for문을 빠져나감
+                        참고 : switch case문에서도 사용함
+
+                      - 제어문용!!! 그 해당하는 for문을 빠져나간다. 
+
+                      - return키워드는 함수를 아예 빠져나갈때 사용함!!! (함수용)(더 큰 개념)
+                */
+
+
+
+
                 // 이미지 대상에 넣기
                 tg[num].innerHTML += 
                 '<img src="images/num/num_0'+i+'.png" alt="숫자이미지">'
 
-                 /* [순번] : getElementsByClassName / getElementsByTagName /querySelectorAll 
+                 /* [순번] : getElementsByClassName / getElementsByTagName /querySelectorAll  (배열이 아님!!!!)
                     클래스는 다중사용이 가능하므로 갯수 여러개 아이템순번
                     다중요소 선택일 경우 컬렉션이 생성되어 선택방법이 세분화된다.
         
