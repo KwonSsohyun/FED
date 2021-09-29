@@ -620,7 +620,8 @@
                 */
                 document.body.innerHTML += 
                 '<div id="mv">' +
-                '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/U6DRitYfJQM?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
+                '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/U6DRitYfJQM?autoplay=1&loop=1&playlist=U6DRitYfJQM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
+                /* ?autoplay=1&loop=1&playlist=U6DRitYfJQM(동영상주소값)" -> 동영상 "" url따옴표 안에 써주면 된다! : 반복재생!*/
                 '<span class="cbtn">x</span>' +
                 '</div>';
 
@@ -645,10 +646,20 @@
                 cbtn.style.textAlign = "center";
                 cbtn.style.fontSize = "40px";
                 cbtn.style.fontWeight = "bold";
-                cbtn.style.Color = "white";
-                cbtn.style.boderRadius = "50%";
+                cbtn.style.color = "white";
+                cbtn.style.borderRadius = "50%";
                 cbtn.style.cursor = "pointer";
                 cbtn.style.lineHeight = "40px";
+
+
+                // 닫기버튼 클릭시 리로드!
+                cbtn.onclick = function(){
+
+                    window.location.reload(); /* 페이지 새로고침 */
+                    /* location.reload()로 줄여쓰기도함 */
+
+                }/////// click 이벤트 함수 ///////
+
 
 
             }/////// trailer 메서드 ///////
