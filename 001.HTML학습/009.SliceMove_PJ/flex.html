@@ -91,6 +91,21 @@
                                 글자 아래쪽 기준선으로 정렬됨
                                 (글자의 line-height를 변경해 보면 됨!)
 
+                ------------------------------------------------------------
+
+                ★ flex-wrap 속성
+                   - 박스 가로크기보다 아이템 요소가 많을 경우
+                     아랫줄로 줄바꿈 하려면 wrap으로 설정한다!
+                   - 기본값은 nowrap임
+
+                   ->> 이설정을 하지 않으면?
+                       : 자동적으로 가로크기를 줄여서 한줄에 나온다!(아주 붙어서 망가지면서 붙어서 나온다.)
+                       -> 이유는? 
+                          자식요소의 flex속성값으로 
+                          flex-shrink가 1로 기본 설정되어있기 때문이다!
+                          그렇다고 자식요소에 flex-shrink 0을 주면 부모밖을 나가면서 한줄에 나옴.
+
+                ------------------------------------------------------------
 
             
             
@@ -122,7 +137,7 @@
                      : 1 or 0 
                      : 커질래? 0 -> 아니 / 1 -> 응
 
-                  3) flex-shrink
+                  3) flex-shrink (설정을 따로 안해도 기본값이 1)
                      - 부모박스 크기가 작아질때 같이 작아질지 여부
                      : 1 or 0 
                      : 작아질래? 0 -> 아니 / 1 -> 응
@@ -188,7 +203,69 @@
             align-items: stretch;
         }
 
+        /* 타이틀 2 */
+        .t2{
+            top: 20%;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline; /* 글자 아랫줄을 기준으로 수직 정렬함! */
+        }
+        .t2 li:nth-child(2){
+            line-height: 80px;
+        }
+        .t2 li:nth-child(4){
+            line-height: 30px;
+        }
 
+
+
+        /* ★ 타이틀박스 3 : 메뉴 만들때 서로 떨어져있게 할때*/
+        .t3{
+            top: 35%;
+
+            display: flex;
+            align-items: center; /* 수직중앙정렬 */
+        }
+        /* 3번째부터 li를 오른쪽 끝으로 보내기 */
+        /* ->> 왼쪽마진을 auto로 설정!!! */
+        .t3>li:nth-child(3){
+            margin-left: auto; /* 3번째에서 왼쪽 공간을 민거임 - 밀수있을 만큼 민다. auto! */
+        }
+
+
+        /* 타이틀박스 4 */
+        .t4{
+            top: 5%;
+            left: 10%;
+            width: 150px;
+            height: 600px;
+
+            /* flex 박스 설정 */
+            display: flex;
+            flex-direction: column; /* 진행방향 세로! */
+            align-items: center; /* 지금 수직정렬로 되어있어서 align-items쓴거 */
+            /* 진행방향에 따라 가로/세로의 정렬방향이 바뀐다. */
+        }
+        /* 4번째 li를 아래쪽 끝으로 보내기 */
+        .t4>li:nth-child(4){
+            margin-top: auto; /* 위쪽마진을 자동으로 밀면서 아래쪽으로 이동 */
+            /* 스탭틱이니까 뒤에는 같이 밀리는 것 */
+        }
+
+
+        /* 타이틀박스 5 */
+        /* flex 여러줄 설정하기 */
+        .t5{
+            top: 50%;
+            height: 300px;
+
+            /* flex박스 설정 */
+            display: flex;
+
+            /* flex옵션 - 랩핑 */
+            flex-wrap: wrap;
+
+        }
 
 
 
@@ -218,6 +295,57 @@
             <li>T</li>
             <li>T</li>
             <li>E</li>
+        </ol>
+
+        <!-- 타이틀 박스 2 -->
+        <ol class="tit t2">
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+
+        <!-- 타이틀 박스 3 -->
+        <ol class="tit t3">
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+
+        <!-- 타이틀 박스 4 -->
+        <ol class="tit t4">
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+
+        <!-- 타이틀 박스 5 -->
+        <ol class="tit t5">
+            <li>L</li>
+            <li>O</li>
+            <li>T</li>
+            <li>T</li>
+            <li>E</li>
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+            <li>L</li>
+            <li>O</li>
+            <li>T</li>
+            <li>T</li>
+            <li>E</li>
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
         </ol>
 
 
