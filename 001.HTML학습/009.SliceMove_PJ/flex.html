@@ -52,12 +52,45 @@
 
                 ------------------------------------------------------------
 
-                [ 속성 : 부모한테 주는 것 ]
+                [ ★★★★ 1) 속성 : 부모한테 주는 것 ]
                   flex-direction : 진행방향과 순서를 정함
                   1) row : 좌 -> 우 (기본값)
                   2) row-reverse : 우 -> 좌 (순서반대로)
                   3) column : 위 -> 아래
                   4) column-reverse : 아래 -> 위
+
+                ____________________________________________________________
+
+                [ ++++ flex 옵션 : 부모한테 주는 것 ]
+
+                  justify-content 속성
+                  - 수평정렬 속성 (justify 양쪽정렬의 뜻)
+
+                    1) flex-start : 왼쪽 끝 (기본값)
+                    2) flex-end : 오른쪽 끝        
+                    3) center : 중앙
+
+                    4) space-around : 아이템 요소 양쪽에 같은 간격 (주변 일정하다. 서로서로 양쪽으로 5를 미니 겹쳐지면 10이 밀어지는것...)
+                    5) space-between : 아이템 요소 사이간격 일정
+                                       (대신, 처음과 끝이 구석에 붙어나옴)
+                    6) ★ space-evenly : 아이템 요소의 양쪽과 사이간격이 모두 일정함!!
+
+                ------------------------------------------------------------
+
+                  align-items 속성
+                  - 한줄 수직정렬 속성
+
+                  1) flex-start : 맨 위 (기본값)
+                  2) flex-end : 맨 아래
+                  3) center : 세로중앙
+
+                  4) stretch : 세로방향 꽉채워서 늘림
+                               (단, height 크기가 auto 여야함!!!)
+                               
+                  5) baseline : 각 요소에 글자가 있다면
+                                글자 아래쪽 기준선으로 정렬됨
+                                (글자의 line-height를 변경해 보면 됨!)
+
 
             
             
@@ -76,7 +109,7 @@
             flex: 1; /* 등분할 */
 
             /* 
-               [ 속성 : 자식한테 주는 것 ] 
+               [ ★★★★ 2) 속성 : 자식한테 주는 것 ] 
                       : 플랙스 자식요소에 주는 속성
 
                   1) flex (2쓰면 2배 등등)
@@ -129,6 +162,30 @@
             width: 500px;
             height: 100px;
             border: 5px double #fff;
+        }
+        /* 타이틀 하위 li 공통 */
+        .tit>li{
+            width: 50px;
+            height: 50px;
+            border: 3px solid #fff;
+            border-radius: 50%; /* 원 */
+            background-color: #f00;
+            font: bold 14px/50px Verdana;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* 타이틀 1 */
+        .t1{
+            top: 5%;
+
+            /* flex box 설정 */
+            display: flex;
+
+            /* flex 옵션 */
+            justify-content: space-evenly;
+
+            align-items: stretch;
         }
 
 
