@@ -31,7 +31,7 @@
 }
 
 
-/*//// 스타일별 비율밀기 ////*/
+/*//////////// 스타일별 비율밀기 ////////////*/
 /* 이미지 하나짜리 */
 .pt1.rbx::before{
     padding-top: 50%;
@@ -55,4 +55,12 @@
 .cbx{
     height: 100%; /* 가로를 안쓰면 auto로 끝까지 간다. 높이값만 줌 -> 부모박스를 채움 */
     /* 부모박스를 채움 */
+}
+
+
+/* 배경이미지 공통 */
+.bgi{ /* 꽉채우는 이미지 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
