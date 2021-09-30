@@ -98,6 +98,8 @@
                      아랫줄로 줄바꿈 하려면 wrap으로 설정한다!
                    - 기본값은 nowrap임
 
+                   ->> flex-wrap: wrap;
+
                    ->> 이설정을 하지 않으면?
                        : 자동적으로 가로크기를 줄여서 한줄에 나온다!(아주 붙어서 망가지면서 붙어서 나온다.)
                        -> 이유는? 
@@ -107,8 +109,17 @@
 
                 ------------------------------------------------------------
 
-            
-            
+                ★ align-content 속성 (컨텐트는 여러개라는 뜻)
+                   - 여러줄일 때 수직정렬 (기준 방향에 따라 다름)
+
+                    1) flex-start : 맨 위 (기본값)
+                    2) flex-end : 맨 아래      
+                    3) center : 세로방향중앙
+
+                    4) space-around : 아이템 요소 상하에 같은 간격
+                    5) space-between : 아이템 요소 상하간격 일정
+                                       (대신, 처음과 끝이 구석에 붙어나옴)
+                    6) ★ space-evenly : 아이템 요소의 상하와 사이간격이 모두 일정함!
             
             
             */
@@ -263,13 +274,48 @@
             display: flex;
 
             /* flex옵션 - 랩핑 */
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* 이거 해서 줄바꿈되서 나오는거임 */
 
+            justify-content: space-around; /* 수평정렬 - 여기서 이걸 주면 윗줄끼리 사이정렬하고 아래는 갯수가 별로 없으니 그 줄에서만 또 사이정렬 */
+
+            /* 수평정렬 */
+            align-content: space-evenly;
+        }
+        /* 글자수를 맞추기 위해 li에 마진을 설정 */
+        #wrap .t5>li{  /* 위에서 뭐 안잡았으면 .t5>li만 적어도됨  */
+            margin: 0 15px; /* 위아래로 15px */
         }
 
 
 
+        /* 타이틀박스 6 */
+        /* 플렉스 랩핑박스에서 "특정위치" 에서 줄바꿈하기 */
+        .t6{
+            top: 87%;
+            height: auto;
 
+            /* flex 박스설정 */
+            display: flex;
+            flex-wrap: wrap; /* 자동 줄바꿈 */
+            justify-content: space-between; /* 사이간격 일정 */
+
+
+            /* 
+                W에서 떨구고 싶어!!!! 
+                : 줄바꿈할 곳에 li를 넣고
+                  flex-basis를 100%로
+                  줄 바꿈 역할을 해준다!
+
+                  ->> 단, 안보이게 처리할 것!
+            */
+
+        }
+
+        .tit .brk{
+            flex-basis: 100%; /* width를 100% 준 효과와 동일 -> 그럼 그게 한줄을 다 차지하고*/
+            height: 0; /* 높이값을 0을 주니 안보이죠~ */
+            border: none; /*  display: none; 완전치워버리는 거니까 안되고! ->> border: none; 눈에만 안보이게~*/
+        }
 
 
 
@@ -341,6 +387,22 @@
             <li>T</li>
             <li>T</li>
             <li>E</li>
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+
+
+        <!-- 타이틀 박스 6 -->
+        <ol class="tit t6">
+            <li>L</li>
+            <li>O</li>
+            <li>T</li>
+            <li>T</li>
+            <li>E</li>
+            <li class="brk"></li> <!-- 줄바꿈 역할함! -->
             <li>W</li>
             <li>O</li>
             <li>R</li>
