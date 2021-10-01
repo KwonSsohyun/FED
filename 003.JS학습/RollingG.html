@@ -44,6 +44,20 @@
             color: red;
             text-shadow: 1px 1px 1px #777;
         }
+
+        /* 자동넘김 버튼박스 */
+        .abtn{
+            text-align: center;
+        }
+        .abtn button{
+            font-size: 1.5rem; /* 기본크기에 1.5배(상대단위) */
+        }
+
+        /* 처음에 멈춤버튼 안보이기 */
+        .end{
+            display: none; /* 태그는 있는데, 안보이는것 */
+        }
+
     </style>
 
     <script>
@@ -205,9 +219,42 @@
             }; ////////// chgImg 함수 //////////
             ///////////////////////////////////
 
+            // 자동넘김 버튼 대상 : .abtn
+            var abtn = document.querySelectorAll(".abtn button");
+            console.log("자동버튼:"+abtn.length);
+
+            // 자동넘김 버튼 클릭시
+            abtn[0].onclick = function(){ /* button -> html의 2개중 1번째거 잡으니까 -> 0부터 시작이니까 -> 0 */
+
+                // 호출확인!
+                console.log("자동넘김!");
+
+            };//////////// click 이벤트 함수 ////////////
+            ////////////////////////////////////////////
 
 
+            
+            /* 
 
+                [ JS 타이밍 함수 : Timing function ]
+                  1. setInterval(함수,시간)
+                     - 일정시간 간격으로 함수를 호출!
+                     - 시간은 1/1000초임, 단위없음 (1000 -> 1초)
+                     
+                     ->> 인터발함수를 지울때는 변수에 담고, 아래 함수를 호출한다!
+                         clearInterval(변수) 
+                         
+                _______________________________________________________________________
+
+                  2. setTimeout(함수,시간)
+                     - 일정시간 후 한번만 함수를 호출함!
+                     - 시간 : 1/1000초, 단위없음
+                     
+                     ->> 타임아웃함수를 지울때는 변수에 담고 아래 함수를 호출한다!
+                         clearTimeout(변수)
+            
+
+            */
 
 
 
@@ -258,6 +305,13 @@
     <h2 class="imgtxt"> <!-- "배열"써서 복사할거다. -->
         노랑잉꼬가 먹이를 꼭꼭 찍어먹어요~
     </h2>
+
+
+    <!-- 자동넘김 버튼박스 -->
+    <div class="abtn">
+        <button class="start">자동넘김</button>
+        <button class="end">멈춤</button>
+    </div>
 
 
 </body>
