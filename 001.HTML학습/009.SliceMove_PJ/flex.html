@@ -314,7 +314,13 @@
         .tit .brk{
             flex-basis: 100%; /* width를 100% 준 효과와 동일 -> 그럼 그게 한줄을 다 차지하고 */
             height: 0; /* 높이값을 0을 주니 안보이죠~ */
-            border: none; /*  display: none; 완전치워버리는 거니까 안되고! ->> border: none; 눈에만 안보이게~*/
+            border: none; /*  display: none; 완전치워버리는 거니까 안되고! ->> border: none; 눈에만 안보이게~
+            이게 무슨 소리냐면?
+            .tit에 border: 5px double #fff; 를 줬기 때문에
+            이 보더값을 없애서 눈에만 안보이게 한거다.  height: 0;까지 줘서 눈에서 안보이게 한거고
+
+            display: none;을 주면 태그만 살아있지 아무 역할을 안하기 때문에 이렇게 한것임
+            */
         }
 
 

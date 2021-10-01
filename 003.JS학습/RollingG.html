@@ -219,21 +219,51 @@
             }; ////////// chgImg 함수 //////////
             ///////////////////////////////////
 
-            // 자동넘김 버튼 대상 : .abtn
+
+            /* ★★★★★★★★★★★★★★★★★★ 
+               자동넘김 버튼 대상 : .abtn */
             var abtn = document.querySelectorAll(".abtn button");
             console.log("자동버튼:"+abtn.length);
 
-            // 자동넘김 버튼 클릭시
+
+            // 자동넘김 버튼 클릭시 !!!! 
             abtn[0].onclick = function(){ /* button -> html의 2개중 1번째거 잡으니까 -> 0부터 시작이니까 -> 0 */
 
                 // 호출확인!
                 console.log("자동넘김!");
 
+                // 1. 인터발함수로 이미지넘김함수 호출!
+                setInterval(function(){
+
+                    // num 1씩 증가, 한계수 체크
+                    num++;
+                    if(num>7) num=1;
+                    // 이미지넘김함수
+                    chgImg();
+
+                },2000); /* 2초마다 넘겨짐 */
+
+                // 2. 멈춤버튼 보이기
+                /* ★ 위에서 자동넘김 버튼 대상을 보면 var abtn = document.querySelectorAll(".abtn button"); 변수에 담겼기 때문에 선택을 할 수있는거임
+                      그래서 선택을 할 수 있으니
+                      abtn[0].onclick ->> 1번째인 자동넘김을 눌렀을때 (0번부터 시작하니까)
+
+                      abtn[1].style.display = "inline-block"; ->> 줘서 2번인 멈춤이 보이는것이다.
+                      직접태그에 넣어지는 인라인요소이기 때문에, 아까 css에서 none준게 안먹는것이다.
+                */    
+
+                abtn[1].style.display = "inline-block"; /* 직접태그에 넣어지는 인라인요소이기 때문에, 아까 css에서 none준게 안먹는다. */
+    
+                // 3. 자기자신(자동넘김버튼) 숨기기
+                this.style.display = "none";
+
             };//////////// click 이벤트 함수 ////////////
             ////////////////////////////////////////////
 
 
-            
+
+
+
             /* 
 
                 [ JS 타이밍 함수 : Timing function ]
