@@ -22,7 +22,7 @@
 
         /* 갤러리 부모박스 */
         #wrap{
-            position: absolute; /* 부모자격 #mini */
+            position: relative; /* 부모자격 #mini */
             width: 520px;
             margin: 0 auto;
             text-align: center;
@@ -31,8 +31,15 @@
         }
 
         /* 미니언즈 */
+        #mini{
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 부모는? #wrap */
+            width: 150px;
+        }
 
-        
+
 
         /* 메인 이미지박스 */
         #mbox{
@@ -316,8 +323,10 @@
 
 
             /* 
+                _______________________________________________________________________
 
-                [ JS 타이밍 함수 : Timing function ]
+                [ JS 타이밍 함수 : Timing function : 일정시간마다 반복하기 위해서 사용하는 함수 ]
+
                   1. setInterval(함수,시간)
                      - 일정시간 간격으로 함수를 호출!
                      - 시간은 1/1000초임, 단위없음 (1000 -> 1초)
@@ -380,6 +389,12 @@
         <a href="#" class="btn rb">
             <img src="./images/right_btn.png" alt="오른쪽버튼">
         </a>
+
+        <!-- 미니언즈 -->
+        <img src="./images/Minions.png" alt="미니언즈" id="mini">
+
+
+
     </div>
 
     <!-- 이미지별 설명 텍스트 출력박스 -->
