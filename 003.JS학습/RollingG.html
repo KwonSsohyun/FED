@@ -223,16 +223,16 @@
             /* ★★★★★★★★★★★★★★★★★★ 
                자동넘김 버튼 대상 : .abtn */
             var abtn = document.querySelectorAll(".abtn button");
-            console.log("자동버튼:"+abtn.length);
+            console.log("자동버튼:"+abtn.length); /* 확인용 */
 
 
             // 자동넘김 버튼 클릭시 !!!! 
-            abtn[0].onclick = function(){ /* button -> html의 2개중 1번째거 잡으니까 -> 0부터 시작이니까 -> 0 */
+            abtn[0].onclick = function(){ /* button -> html의 2개중 1번째거 잡으니까 -> 0부터 시작이니까 -> 0 */ /* abtn[0].onclick = function() ->  자동넘김을 클릭했을때~ */
 
                 // 호출확인!
                 console.log("자동넘김!");
 
-                // 1. 인터발함수로 이미지넘김함수 호출!
+                // 1. 인터발함수로 이미지넘김함수 호출! (JS 타이밍 함수) : setInterval(함수,시간)
                 setInterval(function(){
 
                     // num 1씩 증가, 한계수 체크
