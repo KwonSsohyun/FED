@@ -106,8 +106,8 @@ window.addEventListener("load",()=>{
 
               -> for문 앞에 선언된 변수는 배열/컬렉션 자신임(하나씩!)
 
-              -> 미지수 X 를 쓴거임 (X안에 순서대로 하나씩 담는다. indic)
-                 (for문에서 i쓰는거랑 같음)
+              -> 미지수 X 를 쓴거임 (X안에 순서대로 하나씩 담는다. indic) (미지수기 때문에 x를 씀)
+                 (for문에서 i쓰는거랑 같음 i는 초기값이니까)
         */
         for(let x of indic){ /* 초기화 */
             x.classList.remove("on");
