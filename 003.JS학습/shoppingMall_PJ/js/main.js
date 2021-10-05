@@ -16,9 +16,10 @@ window.addEventListener("load",()=>{
 
     //   변경대상 : #slide
     let slide = document.querySelector("#slide");
+
     // 슬라이드 개수(마지막번호 계산에 사용!)
     let scnt = slide.querySelectorAll("li").length; /* 위에서 slide를 정의했기 때문에 .slide의 내부의 li갯수(메모리상 유리) */
-    console.log("슬라이드개수:"+scnt);
+    // console.log("슬라이드개수:"+scnt);
 
     // 슬라이드 순번변수(click함수 바깥!)
     let snum = 0; /* 주소지만 바깥에 놓은거임 
@@ -28,6 +29,10 @@ window.addEventListener("load",()=>{
 
     length 기준으로 곱하기
     */
+
+    // 변경대상 블릿li
+    let indic = document.querySelectorAll(".indic li");
+    // console.log("블릿개수:"+indic.length);
 
 
     ////// 오른쪽 버튼 클릭시
@@ -52,7 +57,7 @@ window.addEventListener("load",()=>{
         dir : 버튼방향(1->오른쪽, 0->왼쪽)
               ->> 1은 true와 같으므로 if문에 편리하다! (0은 false)
         */
-       /* 익명함수 abtn[1].onclick 온클릭이기 때문에 나중에 호출됬기 때문에 상관이 없다.*/
+       /* 이미 다 만들어진 할당한 익명함수. 위에 온클릭이어서 위에서 호출해도 상관없음  abtn[1].onclick = ()=>goSlide(1); */
   
         // 1. 호출확인, 전달값 확인
         console.log("나야나!"+dir);
@@ -83,6 +88,40 @@ window.addEventListener("load",()=>{
         //    이동원리 : -100% 이면 두번째 슬라이드 -> -100 × 슬라이드 순번(0부터)
         slide.style.left = (-100*snum)+"%";
         slide.style.transition = "left .8s ease-in-out";
+
+        
+        // 4. 블릿변경하기
+
+        // 4-1. 모든 블릿 li class 지우기!
+        //      for문으로 지움!
+        /* 
+            [ 배열이나 컬렉션을 위한 for of문 ]
+              -> ES6에서 새로 추가된 for문
+                 
+              베열이나 컬렉션(다수의 요소를 담은 집합)을 변수에 담고
+              그 갯수만큼 "자동" 으로 돌아주는 for문!!!
+
+              ->> for of문!!!
+              형식 : for(변수 of 배열/컬렉션){실행문}
+
+              -> for문 앞에 선언된 변수는 배열/컬렉션 자신임(하나씩!)
+
+              -> 미지수 X 를 쓴거임 (X안에 순서대로 하나씩 담는다. indic)
+        */
+        for(let x of indic){ /* 초기화 */
+            x.classList.remove("on");
+        }////// for of문 //////
+
+
+        // 4-2. 해당순번 블릿에 class="on" 넣기
+        //      블릿순번 === 슬라이드 순번 === snum
+        indic[snum].classList.add("on"); /* 넣기 */
+        /*   
+            [ 클래스 조작 메서드 ]
+              classList.add(클래스명) : 넣기
+              classList.remove(클래스명) : 뺴기
+              classList.toggle(클래스명) : 넣거나빼기(반대로!) 
+        */
 
 
 
