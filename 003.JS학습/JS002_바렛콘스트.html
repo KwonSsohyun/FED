@@ -4,6 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>변수 var / let, 상수 const</title>
+    <script>
+        /* 
+            변수는 바.렛.콘스트!!!
+
+            [ var ]
+              1. 전역, 지역 모두 따로 사용가능
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        */
+
+        //////// 전역변수 ////////
+        var seoul = "서울";
+        var jeju = "제주도";
+
+        // JS에서 중괄호{}는 "코드구역"을 나타낸다!
+        // -> 함수에서 코드를 중괄호로 싸면 코드지역이 분할된다!
+
+        ////////////////////////////////////////////////////////////////
+
+        {   
+            /// 전역변수를 지역변수에서 찍어보기 
+            console.log("전역변수를 지역에서 확인:");
+            console.log("seoul:"+seoul);
+
+            //////// 지역변수 ////////
+            var seoul = "강남구";
+            // -> 전역변수 var를 다시 var로 선언할당함!
+
+
+            /// 지역변수를 지역에서 찍어보기 
+            console.log("지역변수를 지역에서 확인:");
+            console.log("seoul:"+seoul);
+
+
+
+        } ////////////////////////////////////////////////////////////////
+
+
+        /// 전역변수를 전역에서 찍어보기 
+        console.log("전역변수를 전역에서 확인:");
+        console.log("seoul:"+seoul);
+
+
+
+
+
+
+    </script>
 </head>
 <body>
     
