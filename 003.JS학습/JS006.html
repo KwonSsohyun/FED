@@ -107,7 +107,7 @@
                 tt[4].innerText = noon;
 
                 // 시간출력
-                tt[5].innerText = H;
+                tt[5].innerText = addZero(H);
                 /* 
                     getHours() : 24시간제 시간을 리턴함 
                     -----------------------------------------
@@ -116,7 +116,7 @@
 
 
                 // 7. 분 출력
-                tt[6].innerText = today.getMinutes();
+                tt[6].innerText = addZero(today.getMinutes());
                 /* 
                     getMinutes() : 분을 리턴함
                     -----------------------------------------
@@ -124,7 +124,7 @@
 
 
                 // 8. 초 출력
-                tt[7].innerText = today.getSeconds();
+                tt[7].innerText = addZero(today.getSeconds());
                 /* 
                     getSeconds() : 초를 리턴함
                     -----------------------------------------
@@ -141,20 +141,20 @@
             *///////////////////////////////////////////////////////////
             let addZero = num=>{
 
-                let val; //리턴값
-
                 // 10미만이면 앞에 0을 붙혀준다.
-                if(num<10) val = "0"+num;
+                if(num<10) num = "0"+num;
+                // 만약 10이상이면 넘어온 num이 그대로 리턴됨
 
                 // 호출한 곳으로 리턴한다!
-                return val;
+                return num;
 
             };/////////////// addZero 함수 /////////////////////////////
             ///////////////////////////////////////////////////////////
 
 
 
-
+            // 최초호출
+            showTime(); /* 만나자마자 바로 호출되서 바로 나옴 */
 
             /* 
                [ 시간함수 인터발 호출! ]
