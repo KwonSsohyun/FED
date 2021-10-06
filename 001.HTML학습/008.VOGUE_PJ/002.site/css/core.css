@@ -3,6 +3,13 @@
 
 /* 공통 class */
 
+/* 배경이미지 설명(또는 숨길글자) 클래스 */
+.ir{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
 
 /* 속박스 */ 
 /* 현재는 겉박스 손볼거 없어서 따로 설정안함 */
