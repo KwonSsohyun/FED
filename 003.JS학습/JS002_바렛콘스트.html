@@ -297,7 +297,7 @@
 
                 // 링크생성하기  -> 발생했을때만 실행하게 function 익명함수 씀
                 varit[i].onclick = function(){
-                    console.log("i변수전달:"+i); /* function(){console.log("i변수전달:"+i); ->> 익명함수 내부로 지역변수 for문이 돌릴때 값이 안들어감 */
+                    console.log("i변수전달:"+i); /* function(){console.log("i변수전달:"+i);} ->> var는 익명함수 내부로 지역변수 for문이 돌릴때 값이 안들어감 */
 
                 }///////////// click 함수 /////////////
             }///////////// for문 /////////////
