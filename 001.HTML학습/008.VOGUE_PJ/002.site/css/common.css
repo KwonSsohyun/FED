@@ -93,3 +93,41 @@ body * {
     font-size: 12px;
     color: #747474;
 }
+
+/* 사이트메뉴 서브메뉴 */
+.smsub{
+    position: absolute; /* 젠트앱솔루트! */
+    width: 120px;
+    border: 1px solid #e5e5e5; 
+    box-sizing: border-box; /* 보더,패딩 포함 크기유지 박스 */
+
+    opacity: 0;
+    /* 투명하기 때문에 아래있어서 숨김 ->> 길가던 사람 몰라서 교통사고 생각하면됨 */
+    height: 0;
+    overflow: hidden; /* 넘치는 li들을 숨김 */
+    /* display: none; */ /* display: none -> block으로 하면 트랜지션 안먹음 ->> 그래서 height: 0; / overflow: hidden; -> height: auto; */
+    /* 트랜지션: 속시이지 */
+    transition: opacity .4s ease-in-out;
+}
+/* 상위 메뉴에 마우스 오버시 서브메뉴 보이기 */
+.smbx>li:hover .smsub{
+    opacity: 1;
+    height: auto; /* 내용만큼 늘어남 (기본값) - 트랜지션 안됨 */
+}
+.smsub a{
+    display: block;
+    padding: 7px 10px;
+
+    font-family: 'NanumBarunGothic', sans-serif;
+    font-size: 12px;
+    color: #747474; /* 반복되는건 2숫자가 반복되면 1번만 쓰도록 허용해줌 333333 -> 333 */
+    background-color: #fff;
+
+    /* 트랜지션: 속시이지 */
+    transition: all .2s ease-in-out; /* 오버시 양쪽 설정됨(상속됨) */
+}
+/* a에 오버시 : 메뉴에 오버됬을때 */
+.smsub a:hover{
+    color: #333;
+    background-color: #fafafa;
+}
