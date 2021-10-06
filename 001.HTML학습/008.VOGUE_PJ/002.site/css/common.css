@@ -37,8 +37,19 @@ body * {
 
     /* 위치조정 */
     margin-top: 15px; /* 아이콘 상단에 붙어있는 것, 아래로 떨어뜨리기 */
-    margin-right: 15px; /* 아이콘 간격 벌리기 */
+    margin-right: 16px; /* 아이콘 간격 벌리기 */
+
+    /* 트랜지션: 속시이지 */
+    transition: opacity .2s;
 }
+
+/* sns메뉴 클릭했을때 흐리게 하기 */
+/* a요소 마우스 오버시 */
+.sns a:hover{
+    opacity: 0.8;
+}
+
+
 
 /* 트위터 아이콘 박스 - 너무커서 박스 바깥으로 나가서 설정 */
 .sns a.fi-twitter{
