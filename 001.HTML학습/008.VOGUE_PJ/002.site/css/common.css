@@ -98,7 +98,7 @@ body * {
 .smsub{
     position: absolute; /* 젠트앱솔루트! */
     width: 120px;
-    border: 1px solid #e5e5e5; /* .smbx>li:hover .smsub에 transition을 줘서 닫았을때 직선이 안보이는거임! */
+    border: 1px solid #e5e5e5; /* .smbx>li:hover .smsub에 transition을 줘서 닫았을때 직선이 안보이는거임! -> .smsub에 transition을 주면 직선이 보이는것임 ㅠㅠ */
     /* 원래는 박스에 보더나 패딩을 안주는게 좋긴함 왜냐하면? 닫았을때 깨끗하게 닫히는게 아니라 보더, 패딩 영역 틈새가 보이게 닫혀지니까욤 : 숨겨지고 싶을때 (보더나 패딩이 없어야 한다) */
     box-sizing: border-box; /* 보더,패딩 포함 크기유지 박스 */
 
