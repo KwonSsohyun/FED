@@ -10,7 +10,7 @@ body * {
     outline: 1px dashed rgb(177, 177, 177);
 }
 
-/* 1-1. 상단메뉴 */
+/* 1-1. 상단메뉴 ///////////////////////////////////////////////////////////////////*/
 .tmenu{
     display: flex; /* 플렉스 박스 */
     max-width: 970px; /* 최대 970px, 줄어들면 auto */
@@ -23,7 +23,7 @@ body * {
     flex:1; /* flex 등분할시 높이값은 자동채우기됨! (height:100%를 안해도됨) */
 }
 
-/* 1-1-1. sns 박스 */
+/* 1-1-1. sns 박스 ///////////////////////////////////////////////////////////////////*/
 /* sns박스 a */
 .sns a{
     display: inline-block; /* 맨 마지막 카카오스토리 때문에 준것 *//* 디자인 적용위해! */
@@ -64,4 +64,31 @@ body * {
 /* sns 마지막 a요소에 카스 이미지 넣기 */
 .sns a:last-child{
     background: url(../images/sns_kakao.png) center/auto 100%;
+}
+
+
+
+/* 1-1-2. 사이드 메뉴 ///////////////////////////////////////////////////////////////////*/
+.sideMenu{
+    position: relative; /* 부모자격주고~ */
+}
+/* 사이드메뉴 내용 박스 */
+.smbx{
+    position: absolute; /* 부모는? .sideMenu */
+    right: 0; /* 오른쪽으로 붙힘 */
+    display: flex; /* 플렉스박스 */
+}
+.smbx>li{
+ 
+
+}
+/* a 요소 - 손가락 포인터 만들기 */
+.smbx>li>a{
+    display: block;
+    padding: 0 13px; /* 간격주기 */
+    line-height: 44px;
+
+    font-family: 'Roboto', sans-serif; 
+    font-size: 12px;
+    color: #747474;
 }
