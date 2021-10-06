@@ -4,3 +4,26 @@
     공통기능 : 상단영역 (로고, 메뉴, GNB)
               하단영역 (하단로고, 회사정보)
 */
+
+/* 공사중 외곽선 - 내용이 없어도 보이게 하려고*/
+body * {
+    outline: 3px dotted rgb(177, 177, 177);
+}
+
+/* 1-1. 상단메뉴 */
+.tmenu{
+    display: flex; /* 플렉스 박스 */
+    max-width: 970px; /* 최대 970px, 줄어들면 auto */
+    height: 45px;
+    margin: 0 auto;
+}
+
+/* 상단메뉴 하위 박스 등분할 */
+.tmenu>div{
+    flex:1; /* flex 등분할시 높이값은 자동채우기됨! (height:100%를 안해도됨) */
+}
+
+/* 1-1-1. sns 박스 */
+.sns{
+    
+}
