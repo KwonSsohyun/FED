@@ -79,9 +79,9 @@ body * {
     right: 0; /* 오른쪽으로 붙힘 */
     display: flex; /* 플렉스박스 */
 }
-.smbx>li{
- 
-
+/* 구분선 넣기 */
+.smbx>li:first-child{
+    border-right: 1px solid #e5e5e5;
 }
 /* a 요소 - 손가락 포인터 만들기 */
 .smbx>li>a{
@@ -98,7 +98,8 @@ body * {
 .smsub{
     position: absolute; /* 젠트앱솔루트! */
     width: 120px;
-    border: 1px solid #e5e5e5; 
+    border: 1px solid #e5e5e5; /* .smbx>li:hover .smsub에 transition을 줘서 닫았을때 직선이 안보이는거임! */
+    /* 원래는 박스에 보더나 패딩을 안주는게 좋긴함 왜냐하면? 닫았을때 깨끗하게 닫히는게 아니라 보더, 패딩 영역 틈새가 보이게 닫혀지니까욤 : 숨겨지고 싶을때 (보더나 패딩이 없어야 한다) */
     box-sizing: border-box; /* 보더,패딩 포함 크기유지 박스 */
 
     opacity: 0;
@@ -106,13 +107,15 @@ body * {
     height: 0;
     overflow: hidden; /* 넘치는 li들을 숨김 */
     /* display: none; */ /* display: none -> block으로 하면 트랜지션 안먹음 ->> 그래서 height: 0; / overflow: hidden; -> height: auto; */
-    /* 트랜지션: 속시이지 */
-    transition: opacity .4s ease-in-out;
+    
 }
 /* 상위 메뉴에 마우스 오버시 서브메뉴 보이기 */
 .smbx>li:hover .smsub{
     opacity: 1;
-    height: auto; /* 내용만큼 늘어남 (기본값) - 트랜지션 안됨 */
+    height: auto; /* 내용만큼 늘어남 (기본값) - 트랜지션 안됨 특정크기가 아니라서*/
+    
+    /* 트랜지션: 속시이지 */
+    transition: opacity .4s ease-in-out; /* 특정요소만 먹어라 opacity만 먹지만 여기서는 height: auto;가 있기에 안먹는다. */
 }
 .smsub a{
     display: block;
@@ -131,3 +134,12 @@ body * {
     color: #333;
     background-color: #fafafa;
 }
+
+/* 첫번째 사이드 메뉴 마우스오버시 커서 모양 text로 바꾸기 */
+/* 참고 : https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor */
+.smbx>li:first-child>a{
+    cursor: text;
+}
+
+
+/* 1-2. 로고 박스 //////////////////////////////////////////////////////////////////////*/
