@@ -33,7 +33,39 @@
 
                 x.onclick = () => { /* 여기서는 ()=>{}; function 줄여쓰면 안된다. 화살표함수를 쓰면 윈도우대상을 읽어들인다.  */
                     let obj = event.currentTarget; /* ()=>{}; 쓰면 아까 윈도우 대상을 읽어들여서 this쓰면 언디파인드 나와서 let으로 대상을 잡고 (this.innerText) 를 obj를 입력 */
-                    console.log(obj.innerText); /* 아래서 onclick이런거 안주고, 텍스트를 읽어야 하니 "this"자기자신을 한다! : 클릭된 대상 */
+                    // 화살표함수 사용시 this대신 
+
+                    // console.log(obj.innerText); /* 아래서 onclick이런거 안주고, 텍스트를 읽어야 하니 "this"자기자신을 한다! : 클릭된 대상 */
+
+                    // 1. 버튼텍스트 읽어오기
+                    let txt = obj.innerText;
+
+                    // 데이터 타겟 변수
+                    let tg;
+
+                    // 2. 버튼별 데이터 구분하기
+                    switch(txt){
+                        case "조제": tg = mv1; break;
+                        case "원더 우먼 1984": tg = mv2; break;
+                        case "도굴": tg = mv3; break;
+
+                    }//////// switch case 문 //////////
+
+                    // console.log(tg);
+
+                    // 3. 해당요소에 배열값 넣기
+                    //    for of 문 사용!
+                    //    for of 문 해석 : tg의 배열 순서대로 하나씩 x에 넣고 for문 돌기
+                    let num = 0; // 영화정보박스 순서
+                    for(let x of tg){
+                        minfo[num].innerHTML = x; /* 0,1,2 순서대로 num 돌아라 */
+                        num++; // 순서증가
+                    }///////// for of 문 //////////////
+
+
+
+
+
 
                 }; //// 클릭함수 ////
 
