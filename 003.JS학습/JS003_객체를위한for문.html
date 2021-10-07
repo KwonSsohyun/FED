@@ -103,12 +103,12 @@
                     // console.log(seti);
 
                     // 3. 각 해당요소의 객체의 데이터를 넣어주기
-                    for (let x in seti) {
+                    for (let x in seti) { 
                         //console.log("x는 속성명: "+x);
                         //console.log("속성값: "+seti[x]);
 
                         // 각 속성명에 해당하는 작업분기하기
-                        switch (x) { /* x속성명에 따라 나옴 */
+                        switch (x) { /* x속성명에 따라 나옴 */ /* 일괄적으로 쓸때는 switch */
                             // 1. 포스터넣기
                             case "포스터": 
                                 document.querySelector(".photo").innerHTML = '<img src="'+ seti[x] +'" alt="포스터">';
@@ -136,8 +136,30 @@
                         // for of문을 사용해서 문자데이터 한 글자씩 span태그로 싸서 해당요소에 넣는다!
                         if(x==="문구"){
 
-                        }///////////// if 문 //////
+                            // 문자 데이터 변수
+                            let show = "";
+                            // "문구" 속성값 변수
+                            let tg = seti[x];
+                            // console.log("문구:"+tg);
 
+                            // 한글자씩 span으로 싼다!
+                            for (let x of tg){ // x는 한글자씩!
+
+                                // 공백일 경우처리
+                                if(x === " "){ /* 빈칸이니까 " " 한칸 띄어야함! */
+                                    // 공백특수문자처리 : &nbsp;
+                                    show += "&nbsp";"&nbsp";"&nbsp";
+                                }////// if 문 /////
+                
+                                else{
+                                show += "<span>" + x +"</span>";
+                                }////// else 문 /////
+                            }///// for of 문 ////
+
+                            // 넣을 대상에 html 넣기
+                            document.querySelector(".show").innerHTML = show;
+
+                        }///////////// if 문 //////
 
 
                     } ///////////// for in 문 /////
@@ -169,9 +191,24 @@
 
              _________________________________________________________________________________
 
-              [ 비교 ]
-                · for ...of // 배열/컬렉션/문자데이터 값 순환
-                · for ...in // 객체 순환
+                 [ 비교 ]
+                   · for ...of // 배열/컬렉션/문자데이터 값 순환
+                   · for ...in // 객체 순환
+
+                -------------------------------------------------------------------------------
+
+                   ◆ for ... of (배열/컬렉션/문자데이터 값 순환)
+                      const arr = ['a', 'b', 'c'];
+                      for(const item of arr){
+	                        console.log(item);
+                      }
+
+
+                    ◆ for ... in (객체 순환)
+                       const obj = { a:1, b:2, c:3};
+                       for(const item in obj){
+	                        console.log(item);
+                       }
 
             ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
         */
