@@ -42,8 +42,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         /// 영화정보 객체 ////
-        let mvi = {  /* 오브젝트안에 객체 */
-            "조제": { /* 객체안에 객체 -> "조제":{} */
+        let mvi = {
+            /* 오브젝트안에 객체 */
+            "조제": {
+                /* 객체안에 객체 -> "조제":{} */
                 "포스터": "https://movie-phinf.pstatic.net/20201116_276/1605491658399poUOC_JPEG/movie_image.jpg?type=m99_141_2",
                 "제목": "조제",
                 "개요": "멜로/로맨스, 드라마",
@@ -70,7 +72,7 @@
         }; ///////////////// mvi 객체 //////////////////////
 
         ///////// 로드구역 ////////////////////////////////////
-        window.addEventListener("load",()=>{
+        window.addEventListener("load", () => {
 
             console.log("로딩완료");
 
@@ -89,33 +91,75 @@
             // console.log("버튼개수:"+btn.length);
 
             // 버튼 개수만큼 for of문으로 click이벤트 함수 만들기!
-            for(let x of btn){ // x는 개별 버튼요소 
+            for (let x of btn) { // x는 개별 버튼요소 
                 // let으로 선언된 x변수는 for문 내부의 익명함수 안으로 변수를 전달할 수 있다!(var는 불가)
-                x.onclick = ()=>{
+                x.onclick = () => {
                     // 1. 버튼 텍스트 읽어오기
                     let txt = x.innerText;
-                    console.log("버튼텍스트:"+txt);
+                    console.log("버튼텍스트:" + txt);
 
                     // 2. 버튼 텍스트에 해당하는 객체 할당하기
                     let seti = mvi[txt]; /* 1번에 셋팅한 변수 집어넣으면 해당하는 내용 나온다. */
                     // console.log(seti);
 
+                    // 3. 각 해당요소의 객체의 데이터를 넣어주기
+                    for (let x in seti) {
+                        //console.log("x는 속성명: "+x);
+                        //console.log("속성값: "+seti[x]);
 
-                };////// click 이벤트 함수 /////
+                        // 각 속성명에 해당하는 작업분기하기
+                        switch (x) { /* x속성명에 따라 나옴 */
+                            // 1. 포스터넣기
+                            case "포스터": 
+                                document.querySelector(".photo").innerHTML = '<img src="'+ seti[x] +'" alt="포스터">';
+                                break;
+                            // 2. 제목넣기
+                            case "제목":
+                                document.querySelector(".tit").innerText = "제목: "+seti[x];
+                                break;
+                            // 3. 개요넣기
+                            case "개요":
+                                document.querySelector(".sum").innerText = "장르: "+seti[x];
+                                break;
+                            // 4. 감독넣기
+                            case "감독":
+                                document.querySelector(".dir").innerText = "감독: "+seti[x];
+                                break;
+                            // 5. 출연넣기
+                            case "출연":
+                                document.querySelector(".act").innerText = "배우: "+seti[x];
+                                break;
+                    
+                        } ////// switch case 문 /////
+
+                        // 영화 한마디 넣기
+                        // for of문을 사용해서 문자데이터 한 글자씩 span태그로 싸서 해당요소에 넣는다!
+                        if(x==="문구"){
+
+                        }///////////// if 문 //////
 
 
-            }////// for of 문 ////////////////
+
+                    } ///////////// for in 문 /////
+
+
+                }; ////// click 이벤트 함수 /////
+
+
+            } ////// for of 문 ////////////////
 
 
 
 
-        });///////////////// 로드구역 ////////////////////////
+        }); ///////////////// 로드구역 ////////////////////////
         /////////////////////////////////////////////////////
 
         /* 
             ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
              [ 객체를 위한 for in 문 ]
+               : ★ for ...in // 객체 순환
+
                - 구문
                  for(변수 in 객체){구현코드}
 
@@ -123,9 +167,14 @@
                  : 객체의 개수만큼 순서대로 속성명과 속성값을 가져옴
                  : 변수는 객체의 속성명이다!
 
+             _________________________________________________________________________________
+
+              [ 비교 ]
+                · for ...of // 배열/컬렉션/문자데이터 값 순환
+                · for ...in // 객체 순환
+
             ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
         */
-        
     </script>
 </head>
 
