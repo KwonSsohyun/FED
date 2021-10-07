@@ -29,7 +29,7 @@
                 for of문 해석
                 : btn의 순서대로 특정요소 x를 가지고 for문 안으로 들어감.
             */
-            for(let x of btn){
+            for(let x of btn){ /* 컬렉션 돌린것 */
 
                 x.onclick = () => { /* 여기서는 ()=>{}; function 줄여쓰면 안된다. 화살표함수를 쓰면 윈도우대상을 읽어들인다.  */
                     let obj = event.currentTarget; /* ()=>{}; 쓰면 아까 윈도우 대상을 읽어들여서 this쓰면 언디파인드 나와서 let으로 대상을 잡고 (this.innerText) 를 obj를 입력 */
@@ -43,7 +43,7 @@
                     // 데이터 타겟 변수
                     let tg;
 
-                    // 2. 버튼별 데이터 구분하기
+                    // 2. 버튼별 데이터 구분하기 (배열이 들어갔다.)
                     switch(txt){
                         case "조제": tg = mv1; break;
                         case "원더 우먼 1984": tg = mv2; break;
