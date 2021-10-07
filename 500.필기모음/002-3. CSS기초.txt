@@ -20,7 +20,7 @@
    ---------------------------------------------------------------------------------
    2) 자손 선택자 : 띄어쓰기 (큰 의미의 자손들)
       ex) .cont div ->> <div class="rbxIn"> <div class="cbx bgi bg1"> 
-          ->> .cont 안에 있는 div는 다 선택되는것
+                    ->> .cont 안에 있는 div는 다 선택되는것
 
             <main class="cont ibx">
                 <section class="pt1 rbx">
