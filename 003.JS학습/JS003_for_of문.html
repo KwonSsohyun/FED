@@ -23,15 +23,17 @@
             // console.log("내용박스개수:"+minfo.length);
 
             // 버튼요소의 갯수만큼 클릭 셋팅하기!
-            // for(let i=0;i<btn.length;i++){코드}
-            // (let x of) : ~의 x
+            // for(let i=0;i<btn.length;i++){코드}     | (i는 시작)
+            // (let x of) : ~의 x   | (x는 미지수)
             /* 
                 for of문 해석
                 : btn의 순서대로 특정요소 x를 가지고 for문 안으로 들어감.
             */
             for(let x of btn){
 
-                x.onclick = function(){
+                x.onclick = () => { /* 여기서는 ()=>{}; function 줄여쓰면 안된다. 화살표함수를 쓰면 윈도우대상을 읽어들인다.  */
+                    let obj = event.currentTarget; /* ()=>{}; 쓰면 아까 윈도우 대상을 읽어들여서 this쓰면 언디파인드 나와서 let으로 대상을 잡고 (this.innerText) 를 obj를 입력 */
+                    console.log(obj.innerText); /* 아래서 onclick이런거 안주고, 텍스트를 읽어야 하니 "this"자기자신을 한다! : 클릭된 대상 */
 
                 }; //// 클릭함수 ////
 
