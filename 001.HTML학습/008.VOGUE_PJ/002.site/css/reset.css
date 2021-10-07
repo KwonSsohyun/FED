@@ -15,11 +15,10 @@ a{
     text-decoration: none;
 }
 img{
+    /* 이미지 링크시 서버에서 볼때 파란색 자동보더 없앰 */
     border: none;
-}
 
-
-/* 박스 이미지 하단간극 없애기 (약4px) */
-img{
+    /* 박스 이미지 하단간극 없애기 (약4px) */
     vertical-align: bottom; 
 }
+
