@@ -115,11 +115,11 @@ ________________________________________________________________________________
 
     [4] DOM으로 선택한 요소에 이벤트 적용하기
 
-        (1) 선택요소.on이벤트명 = function(){코드}
+        (1) 선택요소.on이벤트명 = function(){코드}   : on은속성명 (요소가 들어가면 지워지는데)
             예) document.getElementById("my")
                 .onmouseover = function(){코드};
 
-        (2) 선택요소.addEventListener(이벤트명, 함수)
+        (2) 선택요소.addEventListener(이벤트명, 함수)   : 강력한방법 (안지워짐)
             예) document.getElementById("my")
                 .addEventListener("mouseover",function(){코드});
 
@@ -136,11 +136,11 @@ ________________________________________________________________________________
 
         (1) load 이벤트를 사용함
             - window.onload = function(){코드}
-            
-            ※ window.onload 는 한 문서 안에 단 하나만 사용가능함!
-               - window.addEventListener("load",function(){코드})
-               - load 이벤트의 특성은 이미지, 동영상 등 모든 컨텐츠가
-                 페이지로 로드 될때까지 기다렸다가 끝나면 이벤트가 발생함
+              ※ window.onload 는 한 문서 안에 단 하나만 사용가능함! (여러개에서는 실행안됨)
+               
+            - window.addEventListener("load",function(){코드})
+            - load 이벤트의 특성은 이미지, 동영상 등 모든 컨텐츠가
+              페이지로 로드 될때까지 기다렸다가 끝나면 이벤트가 발생함
     
         (2) DOMContentLoaded 이벤트를 사용함
             - window.addEventListener("DOMContentLoaded",
