@@ -21,25 +21,43 @@
             // 각 서브를 가진 li 메뉴 : .smenu
             let menu = document.querySelectorAll(".smenu");
             // console.log("메뉴개수:"+menu.length);
-            
+
             // 마우스 오버/아웃 이벤트를 for of문으로 걸어보자!
-            for(let x of menu){ // x는 li.menu 의 각각의 요소 (1번 , 2번, 3번 이렇게 데려온다.)
-               
+            for (let x of menu) { // x는 li.menu 의 각각의 요소 (1번 , 2번, 3번 이렇게 데려온다.)
+
                 /*  뭘 잡은거냐면 Html의 ->> 각각 메뉴 타이틀 ->> 이거 잡힌거임
                     <li class="smenu">
                         <a href="">검색포털사이트</a>  */
 
                 // 1. 마우스 오버시
-                x.onmouseover = () => { /* let으로 했기에 안으로 전달됨 // ()=>{} var 쓰면 this써야 하는데 -> 이벤트 커런트 타겟 써야함 (일반 function쓰면 상관없음) */
+                x.onmouseover = () => {
+                    /* let으로 했기에 안으로 전달됨 // ()=>{} var 쓰면 this써야 하는데 -> 이벤트 커런트 타겟 써야함 (일반 function쓰면 상관없음) */
 
                     // 하위 div 선택
                     let tg = x.querySelector("div"); /* 좁혔다 폈다 하는건 div임 */
 
-                    // 1-1. 하위 div의 높이값 주가
-                    tg.style.height = "100px";
-                    tg.style.transition = "height .4s ease-out"; /* 높이값에 트랜지션 먹음 */
+                    // 하위 ol의 높이값 구하기
+                    let hv = x.querySelector("ol").offsetHeight; /* .offsetHeight : 높이값 알아오는 속성 */
+                    // console.log("높이값:"+hv);
 
+                    // + 하위 여백보정
+                    hv = hv + 10; /* 밑에 조금 떨어지게 하려고 추가로 조정해준다. +10px 더 늘어나게 해줌 */
 
+                    // 1-1. 하위 div의 높이값 주기
+                    tg.style.height = hv + "px"; /* 위에서 각각의 높이값을 구해오기때문에, 해당 hv입력해줌! */
+                    tg.style.transition = "height .4s ease-out"; /* 높이값을 줘야 트랜지션 먹음 - 높이값에 auto주면 안됨 */
+
+                }; ////// mouseover 이벤트 함수 ////
+
+                // 2. 마우스 아웃시
+                x.onmouseout = () => {
+                    /* let으로 했기에 안으로 전달됨 // ()=>{} var 쓰면 this써야 하는데 -> 이벤트 커런트 타겟 써야함 (일반 function쓰면 상관없음) */
+
+                    // 하위 div 선택
+                    let tg = x.querySelector("div"); /* 좁혔다 폈다 하는건 div임 */
+
+                    // 1-1. 하위 div의 높이값 0
+                    tg.style.height = "0px"; /* 트랜지션은 이미 위에서 있기때문에 안줘도 됨 */
 
                 }; ////// mouseover 이벤트 함수 ////
 
@@ -48,76 +66,136 @@
 
 
 
+            /* 
+           ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
+                [ 선택요소의 현재 크기, 위치값 알아오는  JS속성 : .offset ]
+                  1. 선택요소.offsetWidth : 가로값
+                  2. 선택요소.offsetHeight : 높이값
+                  3. 선택요소.offsetTop : top 위치값
+                  4. 선택요소.offsetLeft : left 위치값
 
-
-            /*
-            switch (txt) {
-                case "Google":
-                    url = "http://www.google.com";
-                    break;
-                case "Naver":
-                    url = "http://www.naver.com";
-                    break;
-                case "Daum":
-                    url = "http://www.daum.net";
-                    break;
-                case "Nate":
-                    url = "http://www.nate.com";
-                    break;
-                case "SK":
-                    url = "http://www.sktelecom.com";
-                    break;
-                case "KT":
-                    url = "http://www.kt.com";
-                    break;
-                case "Uplus":
-                    url = "http://www.uplus.co.kr";
-                    break;
-                case "CGV":
-                    url = "http://www.cgv.co.kr";
-                    break;
-                case "MEGABOX":
-                    url = "http://www.megabox.co.kr";
-                    break;
-                case "LOTTE CINEMA":
-                    url = "https://www.lottecinema.co.kr/NLCHS";
-                    break;
-                case "GMARKET":
-                    url = "http://www.gmarket.co.kr";
-                    break;
-                case "11번가":
-                    url = "http://www.11st.co.kr";
-                    break;
-                case "Auction":
-                    url = "http://www.auction.co.kr";
-                    break;
-                case "스토어팜":
-                    url = "https://shopping.naver.com/";
-                    break;
-                case "인터파크":
-                    url = "http://www.interpark.co.kr";
-                    break;
-                case "쿠팡":
-                    url = "http://www.coopang.co.kr";
-                    break;
-                case "Apple":
-                    url = "http://www.apple.com";
-                    break;
-                case "Samsung":
-                    url = "http://www.samsung.com";
-                    break;
-                case "넷마블":
-                    url = "http://www.netmarble.net";
-                    break;
-                case "넥슨":
-                    url = "https://www.nexon.com";
-                    break;
-                case "IMC":
-                    url = "http://www.imc.co.kr";
-                    break;
-            } ///// switch case문 ///// 
+            ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
             */
+
+
+            /// #div01의 서브메뉴 a요소를 클릭하면 해당주소로 새창열기
+            // 이벤트 대상 : .smenu ol a
+            // 이벤트 종류 : click
+            // 변경내용 : 클릭시 새창으로 사이트열기
+            let link = document.querySelectorAll(".smenu ol a");
+            // console.log("서브메뉴개수:"+link.length);
+
+            /// for of문으로 컬렉션의 개수만큼 반복해서 click 셋팅하기! (컬렉션 : html에 요소가 담겨있는 컬렉션)
+            /* 
+                [ html 컬렉션 참고 ]
+                https://www.w3schools.com/js/js_htmldom_collections.asp
+            */
+            for (let x of link) { // x는 각 a요소
+
+                x.onclick = () => {
+
+                    // 1. a요소 텍스트 읽어오기
+                    let txt = x.innerText;
+                    console.log(txt);
+
+                    // 2. 각 이동할 url 주소 셋팅하기
+                    //    url 주소 변수
+                    let url;
+                    // 분기를 switch case문으로! (분기 : 경우를 나눈다.)
+                    switch (txt) {
+                        case "Google":
+                            url = "http://www.google.com";
+                            break;
+                        case "Naver":
+                            url = "http://www.naver.com";
+                            break;
+                        case "Daum":
+                            url = "http://www.daum.net";
+                            break;
+                        case "Nate":
+                            url = "http://www.nate.com";
+                            break;
+                        case "SK":
+                            url = "http://www.sktelecom.com";
+                            break;
+                        case "KT":
+                            url = "http://www.kt.com";
+                            break;
+                        case "Uplus":
+                            url = "http://www.uplus.co.kr";
+                            break;
+                        case "CGV":
+                            url = "http://www.cgv.co.kr";
+                            break;
+                        case "MEGABOX":
+                            url = "http://www.megabox.co.kr";
+                            break;
+                        case "LOTTE CINEMA":
+                            url = "https://www.lottecinema.co.kr/NLCHS";
+                            break;
+                        case "GMARKET":
+                            url = "http://www.gmarket.co.kr";
+                            break;
+                        case "11번가":
+                            url = "http://www.11st.co.kr";
+                            break;
+                        case "Auction":
+                            url = "http://www.auction.co.kr";
+                            break;
+                        case "스토어팜":
+                            url = "https://shopping.naver.com/";
+                            break;
+                        case "인터파크":
+                            url = "http://www.interpark.co.kr";
+                            break;
+                        case "쿠팡":
+                            url = "http://www.coopang.co.kr";
+                            break;
+                        case "Apple":
+                            url = "http://www.apple.com";
+                            break;
+                        case "Samsung":
+                            url = "http://www.samsung.com";
+                            break;
+                        case "넷마블":
+                            url = "http://www.netmarble.net";
+                            break;
+                        case "넥슨":
+                            url = "https://www.nexon.com";
+                            break;
+                        case "IMC":
+                            url = "http://www.imc.co.kr";
+                            break;
+                    } ///// switch case문 ///// 
+
+                    // console.log(url);
+
+                    // 3. 페이지 이동하기 (새창)
+                    window.open().location.href = url;
+                    /* 
+                        window.open() : 새창열기
+                        --------------------------------------------------------------------
+                        location.href : 주소 : 페이지 이동하기 (이것만 적으면, 자신창에서 열림)
+                                        location -> 어떤 위치로 이동
+                    */
+                    
+
+
+
+                    return false;
+                    /*  ★ 
+                        함수를 나갈때 a링크 이동속성 ->> 작동하지 않도록 "false"를 리턴!
+                        false는 아무것도 하지마!!!
+                        호출한 곳으로 불꺼!!!! (a링크는 어디로 이동하는걸 하지마!!)
+                    */
+
+
+                }; //// click 이벤트 함수 ////
+
+            } ////// for of 문 //////////
+
+
 
 
 
@@ -154,7 +232,7 @@
             // 이벤트 종류: click
             // 이벤트 대상: .nbt
             // 변경 대상: #div01 ul
-            
+
 
 
             /// 랜덤생성 버튼 클릭시 새로운 li에 랜덤으로 img넣기
@@ -169,7 +247,7 @@
             // 이벤트대상: #div02 ul li
             // 변경대상: 이벤트대상
             // 변경내용: 변경대상 삭제하기
-            
+
 
 
             ///// 맨앞요소를 맨뒤로 이동하기 ////////////////////
@@ -183,7 +261,7 @@
             // 사용 메서드: appendChild(요소)
             // -> 기존요소를 선택하면 이동이 됨!
             /////////////////////////////////////////////////
-            
+
 
 
 
@@ -197,9 +275,9 @@
             // 넣을놈 - 마지막 li요소
             // 넣을놈전놈 - 맨처음 li요소
             //////////////////////////////////////////////////
-            
 
-            
+
+
 
 
         }); ///////// 로드구역 //////////////////////////////////////

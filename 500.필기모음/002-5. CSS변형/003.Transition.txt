@@ -41,3 +41,6 @@
 
   
     transition: height .6s ease-out;
+
+    auto = (height) = 내용만큼 늘어난다. 
+    auto = (width) = 블록일경우 끝까지 늘어난다.
