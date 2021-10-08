@@ -151,8 +151,42 @@
                 let obj = event.currentTarget; /* 화살표함수써서 event.currentTarget 쓴다. */
 
                 // 1. 선택값 가져오기 : option value 속성
-                let opt = obj.value;
-                console.log(opt);
+                let opt = obj.value; /* 이제 누르면 하나씩 ko, en .. 나옴 */
+                // console.log(opt);
+
+                // 2. 메뉴 변경하기
+                //    lang객체의 코드별 속성값을 가져온다!
+                let menu = lang[opt]["메뉴"];  /* 각 카테고리의 메뉴 나옴 */
+                // console.log(menu);
+
+                // 2-2. 메뉴의 개수만큼 메뉴 텍스트 바꾸기
+                //      대상 : #gnb a
+                let gnb = document.querySelectorAll("#gnb a");
+
+                // gnb 메뉴 순번변수
+                let gnum = 0;
+
+                // 메뉴 배열값의 개수만큼 for문을 돌린다!
+                for(let x of menu){ // x는 배열의 메뉴텍스트
+                    gnb[gnum].innerText = x;
+                    gnum++; // 1씩 증가
+                } ///// for of 문 /////
+
+
+                // 3. 회사정보 변경하기
+                //    대상 : #info address
+                document.querySelector("#info address")
+                .innerText = lang[opt]["주소"];
+
+
+                // 4. 메인 이미지 변경하기
+                //    이미지명이 같은 경로에 opt변수의 코드값과 같다! -> 이미지 경로 이름이 같아서임!
+                //    images/ko.jpg -> images/코드명.jpg
+                //    대상 : #cont img
+                document.querySelector("#cont img")
+                .setAttribute("src","images/"+opt+".jpg") /* setAttribute : 속성명 바꿔~ */
+
+
 
             }; /////////////////// change 이벤트 함수 /////////////
 
