@@ -147,11 +147,23 @@
             // 변경대상 : 메뉴, 이미지, 하단정보
 
             document.querySelector(".sel").onchange = ()=>{
-                // 화살표함수 this
+                // 화살표함수는 this를 못쓴다. 그래서 event.currentTarget로 정확하게 잡아주는 것.
                 let obj = event.currentTarget; /* 화살표함수써서 event.currentTarget 쓴다. */
+                /* ★ event.currentTarget; 을써서 ->> .sel 이 자신이 잡힌다.
+                    
+                    만약 화살표함수 안썻으면, 이걸 생략해도 됬었음.
+                    바로 아래 선택값을 this로 가져오면 됬었음.
+                    let opt = obj.value가 아니라 ->> " this.value " 이걸 써도 됨 (화살표함수 안쓰고, function(){}; 썼으면 말이다.)
+                */
 
-                // 1. 선택값 가져오기 : option value 속성
+                // 1. 선택값 가져오기 : option value 속성 
                 let opt = obj.value; /* 이제 누르면 하나씩 ko, en .. 나옴 */
+                /* 
+                   위에서 let obj = event.currentTarget; 을 써서 .sel 자기 자신을 지칭했고, 
+                   우린 그 아래 자식들을 잡아줘야하니 obj변수의 값을 잡아준다.
+                   다시말하지만, 화살표함수를 썼기에 this.value 가 아닌, 
+                   event.currentTarget;로 정확하게 본인자신을 지정해주고, 그것의 값이라고 다시 잡아주는것임
+                */
                 // console.log(opt);
 
                 // 2. 메뉴 변경하기
