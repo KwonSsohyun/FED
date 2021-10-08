@@ -104,51 +104,48 @@
         }
 
         /* 
+            ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
                 1. 선형그라데이션
 
-                1) 균등분할 그라데이션
-                background-image: 
-                    linear-gradient(방향, 색1,색2,색3,...);
-                - 방향: to top, to bottom, to right, to left
+                   1) 균등분할 그라데이션
+                      background-image: linear-gradient(방향, 색1,색2,색3,...);
+                      - 방향: to top, to bottom, to right, to left
 
-                2) 사용자 지정영역 그라데이션
-                background-image: 
-                    linear-gradient(방향, 색1 몇%,색2 몇%,색3 몇%,...);
-                - 색상 뒤에 한칸 띄어 %수치를 주면 색상영역조정됨
+                   2) 사용자 지정영역 그라데이션
+                      background-image: linear-gradient(방향, 색1 몇%,색2 몇%,색3 몇%,...);
+                      - 색상 뒤에 한칸 띄어 %수치를 주면 색상영역조정됨
 
-                3) 각도 지정 그라데이션
-                background-image: 
-                    linear-gradient(각도, 색1,색2,색3,...);
-                - 각도: 각도수치deg
+                   3) 각도 지정 그라데이션
+                      background-image: linear-gradient(각도, 색1,색2,색3,...);
+                      - 각도: 각도수치deg
+            _____________________________________________________________________________
 
                 2. 원형 그라데이션
 
-                1) 기본형: 중앙중심, 모양은 박스크기에 맞춤
-                background-image: 
-                    radial-gradient(색1,색2,색3,...);
-                - 시작색으로부터 중앙에서 시작됨
+                   1) 기본형: 중앙중심, 모양은 박스크기에 맞춤
+                      background-image: radial-gradient(색1,색2,색3,...);
+                      - 시작색으로부터 중앙에서 시작됨
 
-                2) 영역 지정형:
-                background-image: 
-                    radial-gradient(색1 몇%,색2 몇%,색3 몇%,...);
-                - 색 뒤에 한칸 띄고 %수치로 영역지정함
+                   2) 영역 지정형:
+                      background-image: radial-gradient(색1 몇%,색2 몇%,색3 몇%,...);
+                      - 색 뒤에 한칸 띄고 %수치로 영역지정함
 
-                3) 그라데이션 모양을 원형으로 사용할 경우:
-                background-image: 
-                    radial-gradient(circle,색1,색2,색3,...);
-                - circle 키워드를 첫번째에 사용함
+                   3) 그라데이션 모양을 원형으로 사용할 경우:
+                      background-image: radial-gradient(circle,색1,색2,색3,...);
+                      - circle 키워드를 첫번째에 사용함
 
-                4) 영역옵션 지정형: 중심점 변경
-                background-image: 
-                    radial-gradient(옵션 at 가로위치 세로위치,색1,색2,색3,...);
-                - 옵션4가지 : closest-side / farthest-side
-                            closest-corner / farthest-corner
-                            ___________________________________
-                            - closest는 중심점으로 좀더 모아진것
-                            - farthest는 중심점에서 멀리 퍼진것
-                            - side와 corner는 경계선과 끝부분옵션임
-                - 가로위치, 세로위치 (중심점) - 단위는 px / %
+                   4) 영역옵션 지정형: 중심점 변경
+                      background-image: radial-gradient(옵션 at 가로위치 세로위치,색1,색2,색3,...);
+                      - 옵션4가지 : closest-side / farthest-side
+                                   closest-corner / farthest-corner
+                            ____________________________________________________________
+                                   - closest는 중심점으로 좀더 모아진것
+                                   - farthest는 중심점에서 멀리 퍼진것
+                                   - side와 corner는 경계선과 끝부분옵션임
+                                   - 가로위치, 세로위치 (중심점) - 단위는 px / %
 
+            ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
              */
     </style>
 </head>
