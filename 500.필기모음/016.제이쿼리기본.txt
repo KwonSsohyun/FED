@@ -154,6 +154,7 @@
 
   5. 이벤트 메서드
      1) click(함수) - 클릭시 함수(function) 실행
+     
         예)
         .click(function(){////});
 
