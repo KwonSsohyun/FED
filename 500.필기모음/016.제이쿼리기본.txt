@@ -72,7 +72,7 @@
         JS는
         document.addEventListener("DOMContentLoaded",function(){//구현부//});
 
-        제이쿼리는
+        ★ ★ ★ 제이쿼리는
         $(function(){//구현부//});
 
         좀더 축약하면
