@@ -47,6 +47,22 @@ $(function(){
     // 대상 4 : 메시지 - .msg
     let msg = $(".msg");
 
+    // 좀비 태그 셋업
+    let mz1 = '<img src="images/mz1.png" alt"좀비1" class="mz">';
+    let mz2 = '<img src="images/mz2.png" alt"좀비2" class="mz">';
+    let zom = '<img src="images/zom.png" alt"좀비들" class="mz">';
+
+    // 주사기 태그 셋업
+    let inj = '<img src="images/inj.png" alt"주사기" class="inj">';
+
+    // 미니언즈 가로크기 보정값
+    // 윈도우 가로크기의 5%
+    let win5 = $(window).width()*0.05; /* 보이는 화면의 가로/세로 크기 구해옴 */
+    // console.log("가로크기5%:"+win5);
+    // width() 선택요소의 가로크기 구하기
+    // height() 선택요소의 세로크기 구하기
+    // -> 단위없는 px값
+
 
     ////////////////////////////////////////////////////
     // 2. 초기화 셋팅 ///////////////////////////////////
@@ -82,13 +98,22 @@ $(function(){
         // 1. 각 li요소에 글자 넣기(순번)
         $(ele).text(idx); /* text를 썼기에 글자 써짐  */ /* ele와 this 같아서 어느거써도 나옴 */
 
-        // 2. 좀비 넣기
+        // 2. 좀비+주사기 넣기 
         if(idx===9)
-            $(ele).append('<img src="images/mz1.png" alt"좀비1" class="mz">'); /* append 추가 */
+            $(ele).append(mz1); /* append 추가 */
         if(idx===7)
-            $(ele).append('<img src="images/mz2.png" alt"좀비2" class="mz">');
+            $(ele).append(mz2);
+        if(idx===1)
+            $(ele).append(zom);
+        if(idx===2)
+            $(ele).append(inj);
 
     }); ///////// each /////////////
+
+    // 2-3. 모든 좀비 숨기기
+    $(".mz").hide(); /* 알아서 갯수만큼 내부적으로 for문 돌아간거임 */
+    // 선택요소 여러개이면, for문을 돌듯이 모두 셋팅됨!
+
 
     ////////////////////////////////////////////////////
     // 3. 버튼별 순서대로 클릭 이벤트 함수 만들기 /////////
@@ -99,14 +124,21 @@ $(function(){
 
         console.log("들어가기 버튼!");
 
+        // 메시지 지우기
+        msg.fadeOut(200);
+        // fadeOut(시간) - opacity로 서서히 사라짐!
+
         // 이동할 빌딩 li의 위치정보 알아내기!
         // offset() 메서드 위치나 크기정보를 알려줌
         // offset().top - top값
         // offset().left - left값
 
         // 이동할 li 타겟 -> bd변수에 할당(.building li)
-        // let tg = bd.eq(); 
-        /* 몇번째 0부터 : eq(순번) */
+        let tg = bd.eq(8);  // 8번방  /* 몇번째 0부터 : eq(순번) */
+        let tval = tg.offset().top; // 화면에서의 top값
+        let lval = tg.offset().left + win5; // 화면에서의 left값 // win5는 미니언즈를 left값 보정함! (화면의 5%)
+        console.log(tval+"/"+lval);
+       
 
 
 
@@ -114,9 +146,9 @@ $(function(){
         // 미니언즈 이동하기
         // 대상 : .mi -> mi 변수에 할당!
         mi.animate({
-            top: "500px", /* 속성:값, */
-            left: "500px"
-        }, 2000);
+            top: tval+"px", /* 속성:값, */
+            left: lval+"px"
+        }, 1000);
 
         /* 
             [ animate 메서드 ]
