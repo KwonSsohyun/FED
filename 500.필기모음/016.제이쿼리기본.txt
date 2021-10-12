@@ -382,20 +382,14 @@
   7. 수치 리턴 메서드 
      : 선택요소의 위치, 크기 구하기
 
-  $(선택요소).offset()
-  - $(선택요소).offset().top : top값
-  - $(선택요소).offset().left : left값
+     1) $(선택요소).offset() : 선택요소의 설정값 읽어오기
+        - $(선택요소).offset().top : top값
+        - $(선택요소).offset().left : left값
 
-     1) offset()
-        : 선택요소의 설정값 읽어오기
-
-        - offset().top : top값
-        - offset().left : left값
-
-     2) width()
+     2) $(선택요소).width()
         : 선택요소의 width값 읽어오기
 
-     3) height()
+     3) $(선택요소).height()
         : 선택요소의 height값 읽어오기
 
 
