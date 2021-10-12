@@ -11,8 +11,8 @@
       2) Download 탭 선택
 
       3) jQuery 영역아래
-         ★ Download the compressed, production jQuery 3.6.0   ->> 눌러서 들어가서, "다른이름으로 저장" ->> jquery-3.6.0.min.js (88KB -> 용량 가볍다. compressed 압축된)
-            Download the uncompressed, development jQuery 3.6.0 ->>  jquery-3.6.0.js ->> "다른이름으로 링크 저장 "
+         ★ Download the "compressed", production jQuery 3.6.0   ->> 눌러서 들어가서, "다른이름으로 저장" ->> jquery-3.6.0.min.js (88KB -> 용량 가볍다. compressed 압축된)
+            Download the "uncompressed", development jQuery 3.6.0 ->>  jquery-3.6.0.js ->> "다른이름으로 링크 저장 "
 
          ▶ E:\MyGit\FED\004.jQuery학습\000.최신버전 -> 에 넣기
 
