@@ -82,6 +82,12 @@ $(function(){
         // 1. 각 li요소에 글자 넣기(순번)
         $(ele).text(idx); /* text를 썼기에 글자 써짐  */ /* ele와 this 같아서 어느거써도 나옴 */
 
+        // 2. 좀비 넣기
+        if(idx===9)
+            $(ele).append('<img src="images/mz1.png" alt"좀비1" class="mz">'); /* append 추가 */
+        if(idx===7)
+            $(ele).append('<img src="images/mz2.png" alt"좀비2" class="mz">');
+
     }); ///////// each /////////////
 
     ////////////////////////////////////////////////////
