@@ -68,7 +68,7 @@
      2) ★ 함수명 단축 : $()
            jQuery() ->> $()
 
-     3) 로드구역 설정
+     3) ★ ★ ★ 로드구역 설정 (밑에 있는 html이 다 그려진 다음 실행 - 코드가 밑에 있던 위에 있건 안전하다.)
         JS는
         document.addEventListener("DOMContentLoaded",function(){//구현부//});
 
