@@ -31,7 +31,7 @@
       4) 작업하는 파일 공간에 "js" 폴더에 붙혀넣는다. -> jquery-3.6.0.min.js
       5) main.js 새로 만든다.
 
-      6) html 에 다가 ▶ 제이쿼리가 위에 불려와야 사용가능함!
+      6) html에 <head>영역에 ▶ 제이쿼리가 위에 불려와야 사용가능함!
          <script src="js/jquery-3.6.0.min.js"></script>
          <script src="js/main.js"></script>
 
