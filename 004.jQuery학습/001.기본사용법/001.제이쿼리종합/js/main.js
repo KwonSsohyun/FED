@@ -72,7 +72,7 @@ $(function(){
         // 미니언즈 이동하기
         // 대상 : .mi -> mi 변수에 할당!
         mi.animate({
-            top: "500px",
+            top: "500px", /* 속성:값, */
             left: "500px"
         }, 2000);
 
