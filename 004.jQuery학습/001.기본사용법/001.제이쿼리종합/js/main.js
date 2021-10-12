@@ -1,34 +1,34 @@
 // 제이쿼리 기본 JS - main.js
 
 ////////////////////////////// 제이쿼리 로드구역 ////////////////////////////////
-$(function(){
+$(function () {
 
     /// 타이틀 오버시 글자색, 배경색 변경
     //  대상 : .tit (여러번 쓸거면 변수에 할당)
     let tit = $(".tit");
 
     //  mouseover() 메서드 - 오버시 함수연결
-    tit.mouseover(function(){
+    tit.mouseover(function () {
 
         // 변경대상 : .tit -> 나 자신 this 키워드
         $(this).css({
             color: "red",
             background: "yellow"
-        });///// css /////
+        }); ///// css /////
 
-    });/////// mouseover 시 ///////////////
+    }); /////// mouseover 시 ///////////////
 
     // 마우스 아웃시 원상복귀
     // mouseout(함수) - 마우스 아웃시 함수연결
-    tit.mouseout(function(){
+    tit.mouseout(function () {
 
         // 변경대상 : .tit -> 나 자신 this 키워드
         $(this).css({
             color: "yellow",
             background: "pink"
-        });///// css /////
+        }); ///// css /////
 
-    });/////// mouseout 시 ///////////////
+    }); /////// mouseout 시 ///////////////
 
 
     ////////////////////////////////////////////////////
@@ -57,7 +57,7 @@ $(function(){
 
     // 미니언즈 가로크기 보정값
     // 윈도우 가로크기의 5%
-    let win5 = $(window).width()*0.05; /* 보이는 화면의 가로/세로 크기 구해옴 */
+    let win5 = $(window).width() * 0.05; /* 보이는 화면의 가로/세로 크기 구해옴 */
     // console.log("가로크기5%:"+win5);
     // width() 선택요소의 가로크기 구하기
     // height() 선택요소의 세로크기 구하기
@@ -91,7 +91,7 @@ $(function(){
         
         - 이 메서드를 사용하면 for문을 안써도 됨!
     */
-    bd.each(function(idx,ele){
+    bd.each(function (idx, ele) {
 
         // console.log(idx);
 
@@ -99,13 +99,13 @@ $(function(){
         $(ele).text(idx); /* text를 썼기에 글자 써짐  */ /* ele와 this 같아서 어느거써도 나옴 */
 
         // 2. 좀비+주사기 넣기 
-        if(idx===9)
+        if (idx === 9)
             $(ele).append(mz1); /* append 추가 */
-        if(idx===7)
+        if (idx === 7)
             $(ele).append(mz2);
-        if(idx===1)
+        if (idx === 1)
             $(ele).append(zom);
-        if(idx===2)
+        if (idx === 2)
             $(ele).append(inj);
 
     }); ///////// each /////////////
@@ -119,65 +119,115 @@ $(function(){
     // 3. 버튼별 순서대로 클릭 이벤트 함수 만들기 /////////
     ////////////////////////////////////////////////////
 
-    // 3-1. '들어가기' 버튼
-    btns.first().click(function(){
+    // 3-1. '들어가기' 버튼 /////////////////
+    btns.first().click(function () {
 
         console.log("들어가기 버튼!");
 
-        // 자기자신 버튼 없애기
+        // 1. 자기자신 버튼 없애기
         $(this).slideUp(400); /* 접어지게 하는 것 */
 
-        // 메시지 지우기
+
+        // 2. 메시지 지우기
         msg.fadeOut(200);
         // fadeOut(시간) - opacity로 서서히 사라짐!
 
-        // 이동할 빌딩 li의 위치정보 알아내기!
-        // offset() 메서드 위치나 크기정보를 알려줌
-        // offset().top - top값
-        // offset().left - left값
+
+
+        // 3. 이동할 빌딩 li의 위치정보 알아내기!
+        /*  
+           offset() 메서드 위치나 크기정보를 알려줌
+           offset().top - top값
+           offset().left - left값 
+        */
 
         // 이동할 li 타겟 -> bd변수에 할당(.building li)
-        let tg = bd.eq(8);  // 8번방  /* 몇번째 0부터 : eq(순번) */
+        let tg = bd.eq(8); // 8번방  /* 몇번째 0부터 : eq(순번) */
         let tval = tg.offset().top; // 화면에서의 top값
         let lval = tg.offset().left + win5; // 화면에서의 left값 // win5는 미니언즈를 left값 보정함! (화면의 5%)
-        console.log(tval+"/"+lval);
-       
+        console.log(tval + "/" + lval);
 
 
-
-
-        // 미니언즈 이동하기
+        // 4. 미니언즈 이동하기
         // 대상 : .mi -> mi 변수에 할당!
+        // [animate 메서드]  animate({CSS설정},시간,이징,함수) 
         mi.animate({
-            top: tval+"px", /* 속성:값, */
-            left: lval+"px"
-        }, 1000,function(){ /* 콜백함수 (애니후 실행!) */
+            top: tval + "px",
+            /* 속성:값, */
+            left: lval + "px"
+        }, 1000, function () {
+            /* 콜백함수 (애니후 실행!) */
 
-            // 메시지 변경하기
+            // 5. 메시지 변경
+            // 메시지 요소
             msg
-            // 메시지 넣기
-            .text("와~! 아늑하다! 옆방으로 가보자!")
-            // 나타나기
-            .fadeIn(200);
+                // 메시지 넣기
+                .text("와~! 아늑하다! 옆방으로 가보자!")
+                // 나타나기
+                .fadeIn(200);
             // 한번 선택하고, 이어서 메서드를 계속 쓰는 방법을 "메서드 체인" 이라함!
             // 중간에 이어서 쓸땐, 세미콜론 없어야함!
-            
 
 
-        });///////////// animate ///////////////
+            // 6. 다음변경 버튼 보이기 (this를쓰면 function을 담고 있는 대상이 this 이 함수하고 연결된걸 봐야한다.(가장 가까이 잡고있는게 this로 잡힘) -> 여기서는 mi가 잡힘)
+            btns.eq(1).slideDown(400);
 
-        /* 
-            [ animate 메서드 ]
-              animate({CSS설정},시간,이징,함수) 
-            
-              - CSS 설정에 따라, 애니메이션 연출 메서드
-              - 시간 - 1/1000초 (단위없음)
-              - 이징 - 가속도
-              - 함수 - 애니후 실행코드 함수 (콜백함수)(뒤에서 호출한다해서 "콜백함수")
-        */
-        
+        }); ///////////// animate ///////////////
 
-    });////////////// 3-1 click //////////
+    }); ////////////// 3-1. '들어가기' 버튼 click //////////
+
+
+    // 3-2. '옆방으로!' 버튼 /////////////////
+    btns.eq(1).click(function () {
+        console.log("들어가기 버튼!");
+
+        // 1. 자기자신 버튼 없애기
+        $(this).slideUp(400); /* 접어지게 하는 것 */
+
+
+        // 2. 메시지 지우기
+        msg.fadeOut(200);
+        // fadeOut(시간) - opacity로 서서히 사라짐!
+
+
+
+        // 3. 이동할 빌딩 li의 위치정보 알아내기!
+        // 이동할 li 타겟 -> bd변수에 할당(.building li)
+        let tg = bd.eq(9); // 9번방  /* 몇번째 0부터 : eq(순번) */
+        let tval = tg.offset().top; // 화면에서의 top값
+        let lval = tg.offset().left + win5; // 화면에서의 left값 // win5는 미니언즈를 left값 보정함! (화면의 5%)
+        console.log(tval + "/" + lval);
+
+
+        // 4. 미니언즈 이동하기
+        // 대상 : .mi -> mi 변수에 할당!
+        // [animate 메서드]  animate({CSS설정},시간,이징,함수) 
+        mi.animate({
+            top: tval + "px",
+            /* 속성:값, */
+            left: lval + "px"
+        }, 1000, function () {
+            /* 콜백함수 (애니후 실행!) */
+
+            // 5. 메시지 변경
+            // 메시지 요소
+            msg
+                // 메시지 넣기
+                .text("악!;;; 좀비! 어서피하자!")
+                // 나타나기
+                .fadeIn(200);
+            // 한번 선택하고, 이어서 메서드를 계속 쓰는 방법을 "메서드 체인" 이라함!
+            // 중간에 이어서 쓸땐, 세미콜론 없어야함!
+
+
+            // 6. 다음변경 버튼 보이기 (this를쓰면 function을 담고 있는 대상이 this 이 함수하고 연결된걸 봐야한다.(가장 가까이 잡고있는게 this로 잡힘) -> 여기서는 mi가 잡힘)
+            btns.eq(1).slideDown(400);
+
+
+        }); ///////////// animate ///////////////
+
+
+    }); ////////////// 3-2. '옆방으로!' 버튼 click //////////
 
 
 
