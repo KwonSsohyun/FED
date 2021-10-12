@@ -124,6 +124,9 @@ $(function(){
 
         console.log("들어가기 버튼!");
 
+        // 자기자신 버튼 없애기
+        $(this).slideUp(400); /* 접어지게 하는 것 */
+
         // 메시지 지우기
         msg.fadeOut(200);
         // fadeOut(시간) - opacity로 서서히 사라짐!
@@ -148,7 +151,7 @@ $(function(){
         mi.animate({
             top: tval+"px", /* 속성:값, */
             left: lval+"px"
-        }, 1000),function(){ /* 콜백함수 (애니후 실행!) */
+        }, 1000,function(){ /* 콜백함수 (애니후 실행!) */
 
             // 메시지 변경하기
             msg
@@ -161,7 +164,7 @@ $(function(){
             
 
 
-        };///////////// animate ///////////////
+        });///////////// animate ///////////////
 
         /* 
             [ animate 메서드 ]
