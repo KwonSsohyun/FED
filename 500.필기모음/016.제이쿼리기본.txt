@@ -31,13 +31,13 @@
       4) 작업하는 파일 안에 "js" 폴더 만들고, 내려받은 파일 넣는다. -> jquery-3.6.0.min.js
       5) 추가로 "js" 폴더 안에 "main.js" 새로 만든다.
 
-      6) "index.html"의 <head>영역에, 아래와 같이 작성 ▶ 제이쿼리가 위에 불려와야 사용가능함!
-         <script src="js/jquery-3.6.0.min.js"></script>
+      6) "index.html"의 <head>영역에, 아래와 같이 작성 
+         <script src="js/jquery-3.6.0.min.js"></script>  ▶ 제이쿼리가 위에 불려와야 사용가능함!
          <script src="js/main.js"></script>
 
       7) "main.js" 에 
-          제이쿼리 로드구역을 만든다.
-          $(function(){ //// });    -> jQB(제이쿼리 코드 블록)
+         ★ 제이쿼리 로드구역을 만든다.
+            $(function(){ //// });  ▶ jQB(제이쿼리 코드 블록)
 
       8) 제이쿼리 로드구역 안에서 이제 코딩을 시작하면 된다.
 
