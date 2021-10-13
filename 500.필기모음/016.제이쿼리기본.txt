@@ -306,11 +306,11 @@
                 완전혼합하면
                 ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
                  .animate({
-                     right: tg.width()*1.5+"px"
+                       right: tg.width()*1.5+"px"
                  },3000,"easeOutBounce",function(){
-                     mi.find("img").attr("src","images/mz1.png");
-                     msg.html("나도좀비!;;;<br>어서 치료주사를!");
-                     btns.eq(5).fadeIn(200);
+                       mi.find("img").attr("src","images/mz1.png");
+                       msg.html("나도좀비!;;;<br>어서 치료주사를!");
+                       btns.eq(5).fadeIn(200);
                  });
                 ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
             
