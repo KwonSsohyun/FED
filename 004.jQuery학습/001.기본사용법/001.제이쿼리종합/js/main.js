@@ -422,14 +422,17 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
                 // 주인공에게 달려들기 -> 타겟의 가로값의 1.5배
                 .animate({
                     right: tg.width()*1.5+"px"
-                },3000)
+                },3000,"easeOutBounce") /* 이징명이 정확해야함 */
                 /* 
                     [ 가속도 easing 주기 ]
                       jQuery UI를 "라이브러리 아래" 추가함! 
                       ▶ https://jqueryui.com/easing/ -> 이징기능
 
-                      이징미리보기
-
+                      이징미리보기 : 구글에서 "easing" 검색
+                      ▶ https://easings.net/ko
+                      
+                      가속도 뿐만 아니라
+                      드래그 / 드롭, 달력, 아코디언, 이징, 컬러애니 등 다양하다.  
                       jQuery UI는 제이쿼리 원본개발자들이 추가개발하여 배포한 플러그인이다!
                       
                       다운로드
@@ -437,10 +440,21 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
                       2) Quick Downloads 에 있는 "Stable" 클릭하면
                       3) jquery-ui-1.13.0 내려받아진다.
                       4) 압축풀고 보면, "jquery-ui.min.js" 해당 파일만 복사  
-                      5) E:\MyGit\FED\004.jQuery학습\001.기본사용법\001.제이쿼리종합\js 붙혀넣고
-                      6) Html 스크립트에 넣는다.
+                      5) E:\MyGit\FED\004.jQuery학습\001.기본사용법\001.제이쿼리종합\js ->> 붙혀넣고
+                      6) Html <script> 넣는다.
                          <script src="js/jquery-3.6.0.min.js"></script>   
                          <script src="js/jquery-ui.min.js"></script>   ->>> 붙혀넣는다.
+
+                      7) 이제 가속도 주고 싶은데에서 가서, 
+                         구글 검색한 것중에 easing괜찮은거 이름 그대로 복붙
+                         (이징명이 정확해야함!)
+
+                      ex)  .animate({
+                                right: tg.width()*1.5+"px"
+                           },3000,"easeInQuint")
+
+                           ->> "easeInQuint" 줌!
+                               easeOutBounce 등등 다른거 줘도됨~
                 */
 
               }, 4000); ///// 타임아웃 /////
