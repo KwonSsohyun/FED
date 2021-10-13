@@ -449,7 +449,9 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
                     [ 가속도 easing 주기 ]
 
                       jQuery UI를 "라이브러리 아래" 추가함! 
-                      ▶ https://jqueryui.com/easing/ -> 이징기능
+                      
+                      이징기능
+                      ▶ https://jqueryui.com/easing/ 
 
                       이징미리보기 : 구글에서 "easing" 검색
                       ▶ https://easings.net/ko
