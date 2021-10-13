@@ -434,6 +434,11 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
                         ex) 
                         mi.find("img").attr("src","images/mz1.png");
                         -> src 이미지 소스를 바꿈
+                        ->> html에 가서 보면 
+                            <div class="mi">
+                                <img src="images/m1.png" alt="미니언즈">
+                            이 해당 이미지가
+                            m1.png ->>> mz1.png 바꿈!
                     */
                     
 
