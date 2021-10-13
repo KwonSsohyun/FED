@@ -654,6 +654,79 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
 
 
 
+    // 3-9. '헬기를 호출!' 버튼 /////////////////
+    btns.last().click(function () {
+        console.log("헬기를 호출! 버튼!");
+
+        // 1. 자기자신 버튼 없애기
+        $(this).slideUp(400); /* ★★★ slideUp은 제이쿼리 자체 문법이기에, $로 옷 입히는 것임 */
+
+        // 2. 메시지 지우기
+        msg.fadeOut(200);
+
+        // 3. 이동할 빌딩 li의 위치정보 알아내기!
+        // 이동할 li 타겟 -> bd변수에 할당(.building li)
+        let tg = bd.eq(0); // 0번방  /* 몇번째 0부터 : eq(순번) */
+        let tval = tg.offset().top; // 화면에서의 top값
+        let lval = tg.offset().left + win5; // 화면에서의 left값 // win5는 미니언즈를 left값 보정함! (화면의 5%)
+        console.log(tval + "/" + lval);
+
+
+        // 4. 미니언즈 이동하기
+        // 대상 : .mi -> mi 변수에 할당!
+        // [animate 메서드]  animate({CSS설정},시간,이징,함수) 
+        mi.animate({
+            top: tval + "px",
+            left: lval + "px"
+        }, 1000, function () { /* 1초뒤에 -> 콜백함수 (애니후 실행!) */
+
+            // 메시지 보이기
+            msg.text("도와줘요~!!!").fadeIn(200);
+
+            // 좀비들 최종추적!!!
+            // 좀비는? bd.eq(1) 1번방에 있는 좀비들
+            bd.eq(1).find(".mz").fadeIn(200,function(){ // 콜백함수 (애니 후 실행)
+
+                // 좀비들 움직이기
+                // this키워드 === bd.eq(1).find(".mz")
+                $(this).animate({
+                    right: tg.width()*1.3 + "px"
+                    // li하나의 width크기의 1.3배만큼 right에서 이동
+                }, 5000); //// animate //////
+
+                // 헬기 등장
+                $(".heli").animate({
+                    left: "20%"
+                }, 2000, function(){// 콜백함수(애니후)
+                    // 주인공이 헬기에 탄 이미지로 변경!
+                    $(this).attr("src","images/heli2.png");
+
+                    // 주인공 지우기 (헬기에 탔으니까)
+                    mi.hide(); /* display:none 처리! */
+                })
+                .delay(1000) // 1초 지연
+                .animate({
+                    // 조금 이동하기
+                    left:"70%"
+                },2000, function(){// 콜백함수(애니후)
+                    // 헬기조정사 좀비로 바뀐 이미지 변경!
+                    $(this).attr("src","images/heli3.png");
+                }) /// animate ////
+                .animate({// 마지막 화면밖으로 10초간 천천히 나감 (10000 = 10초)
+                    left: "100%"
+                }, 10000) 
+
+            });/////////// fadeIn ////////////////////
+
+
+
+
+        }); ///////////// animate ///////////////
+
+    }); ////////////// 3-9. '헬기를 호출!' 버튼 click //////////
+
+
+
 
 
 
