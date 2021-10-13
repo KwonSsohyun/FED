@@ -38,11 +38,21 @@ body {
     transition: 3s ease-in; /* 처음에만 천천히 */
 
 }
+
+
+
 /* .tit에 .on을 주면 값 변경하기 -> 브라우저열고 타이틀 영역 선택해서 "on" 붙히면 떨어진다. class="tit on" */
-.tit.on{
+.tit.on{ /* .tit이고 동시에 .on이라는 것 ->> ★★★★★ 같은 한요소에 여러개가 있을때 붙혀서 표기한다. 예시) div#my ★★★★★*/
     top : 50%;
     transform: translateX(-50%) rotate(45deg);
 }
+/* 두번째 변경 -> 브라우저열고 타이틀 영역 선택해서 "on2" 붙히면 떨어진다. class="tit on on2" */
+.tit.on2{
+    top : 95%;
+    transform: translateX(-50%) rotate(6deg);
+}
+
+
 
 .building {
     position: absolute;
