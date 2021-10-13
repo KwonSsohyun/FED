@@ -428,8 +428,8 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
                     // 애니 후 주인공 이미지 변경하기
                     mi.find("img").attr("src","images/mz1.png");
                     /* 
-                        attr (속성명,값) - 선택요소의 속성 바꾸기 
-                        attr(속성명) - 선택요소의 속성값 가져오기
+                        attr(속성명,값) - 선택요소의 속성 "바꾸기"
+                        attr(속성명) - 선택요소의 속성값 "가져오기"
 
                         ex) 
                         mi.find("img").attr("src","images/mz1.png");
