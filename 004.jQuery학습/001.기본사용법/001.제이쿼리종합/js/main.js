@@ -466,8 +466,10 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
                            <script src="js/jquery-3.6.0.min.js"></script>   
                            <script src="js/jquery-ui.min.js"></script>  ->>> 붙혀넣는다.
 
-                        7) 이제 가속도 주고 싶은데에서 가서, 
-                           구글 검색한 것중에 easing 괜찮은거보고 이름 그대로 복붙!
+                        7) 이제서야 우리는 가속도 이징을 적용해 줄 수 있다!
+                           https://easings.net/ko 에 들어가서,
+                           easing 괜찮은거보고 맘에 들면 이징명 이름 복사해서
+                           가속도 주고 싶은데에서 가서, 이징명 그대로 복붙!
                            (이징명이 정확해야함!)
 
                         ex)  .animate({
