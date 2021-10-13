@@ -400,7 +400,50 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
                   .fadeIn(200,()=>{msg.text("무.");}) /* 200,()=>{} : 시간,이징,함수*/
                   .delay(1500).fadeIn(200,()=>{msg.text("무.서.");})  /* .delay 쓰려고 fadeIn씀(또 나오게하고 한 설정함) */
                   .delay(1500).fadeIn(200,()=>{msg.text("무.서.워...");});
-              }, 1000); /* 1초 후 안에 {///} 내용 나옴 */
+                  /* 
+                    msg요소 뒤에 delay와 fadeIn 애니메이션을 이어서 하면
+                    순서대로 msg에 애니메이션이 쌓여서 하나씩 실행된다!
+                    (이것을 애니메이션 큐에 쌓인다고 함!) 
+
+                    큐(Queue)는 브라우저 프로그램 실행 메모리 저장소
+                    
+                */
+              }, 1000); /* 1초 후 안에 {///} 내용 나옴 *///// 타임아웃 /////
+
+              // 6. 아랫층 좀비 올라와서 달려들기!
+              setTimeout(() => {
+                
+                // 좀비는? -> 7번방의 좀비
+                bd.eq(7).find(".mz")
+                // 윗층으로 올라오기 -> 타겟의 높이만큼(li 하나높이)
+                .animate({
+                    top: -tg.height() + "px" /* -tg.height() : -tg의 높이값 구해와 // -는 올라가야 하니까 기준의 위니까 마이너스 */
+                },500)
+                // 주인공에게 달려들기 -> 타겟의 가로값의 1.5배
+                .animate({
+                    right: tg.width()*1.5+"px"
+                },3000)
+                /* 
+                    [ 가속도 easing 주기 ]
+                      jQuery UI를 "라이브러리 아래" 추가함! 
+                      ▶ https://jqueryui.com/easing/ -> 이징기능
+
+                      이징미리보기
+
+                      jQuery UI는 제이쿼리 원본개발자들이 추가개발하여 배포한 플러그인이다!
+                      
+                      다운로드
+                      1) https://jqueryui.com/download/
+                      2) Quick Downloads 에 있는 "Stable" 클릭하면
+                      3) jquery-ui-1.13.0 내려받아진다.
+                      4) 압축풀고 보면, "jquery-ui.min.js" 해당 파일만 복사  
+                      5) E:\MyGit\FED\004.jQuery학습\001.기본사용법\001.제이쿼리종합\js 붙혀넣고
+                      6) Html 스크립트에 넣는다.
+                         <script src="js/jquery-3.6.0.min.js"></script>   
+                         <script src="js/jquery-ui.min.js"></script>   ->>> 붙혀넣는다.
+                */
+
+              }, 4000); ///// 타임아웃 /////
 
         }); ///////////// animate ///////////////
 
