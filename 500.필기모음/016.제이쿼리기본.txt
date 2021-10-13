@@ -319,7 +319,7 @@
                          만약 트랜지션이 있으면 오작동이 일어남!!!
                          $(".inj").animate({
                               transition: ".5s ease-out 1s", 
-                         XXXXXXXXXXXXXXXXX 안된다!!! XXXXXXXXXXXXXXXXXXXXX 
+                         XXXXXXXXXXXXXXXXX 안된다!!! XXXXXXXXXXXXXXXXXXXX
             ------------------------------------------------------------------------             
             ※ 주의 : transform은 animate 지원불가!
                       ->> css의 transition설정으로 애니메이션 할것!
