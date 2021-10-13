@@ -447,6 +447,7 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
                 ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
                     [ 가속도 easing 주기 ]
+
                       jQuery UI를 "라이브러리 아래" 추가함! 
                       ▶ https://jqueryui.com/easing/ -> 이징기능
 
@@ -467,7 +468,7 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
                         5) E:\MyGit\FED\004.jQuery학습\001.기본사용법\001.제이쿼리종합\js ->> 폴더 안에 붙혀넣고
                         6) 해당 작업하고 있는 HTML <head> 영역 안에
                            <script src="js/jquery-3.6.0.min.js"></script>   
-                           <script src="js/jquery-ui.min.js"></script>  ->>> 붙혀넣는다.
+                           <script src="js/jquery-ui.min.js"></script>  ->>> 붙혀넣는다. (jQuery UI를 "라이브러리 아래" 추가함!)
 
                         7) 이제서야 우리는 가속도 이징을 적용해 줄 수 있다!
                            https://easings.net/ko 에 들어가서,
