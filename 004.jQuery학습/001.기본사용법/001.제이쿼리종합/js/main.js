@@ -422,7 +422,21 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
                 // 주인공에게 달려들기 -> 타겟의 가로값의 1.5배
                 .animate({
                     right: tg.width()*1.5+"px"
-                },3000,"easeOutBounce") /* 이징명이 정확해야함 */
+                },3000,"easeOutBounce",function(){ /* 이징명이 정확해야함 */
+
+                    // 애니 후 주인공 이미지 변경하기
+                    mi.find("img").attr("src","images/mz1.png");
+                    /* 
+                        attr (속성명,값) - 선택요소의 속성 바꾸기 
+                        attr(속성명) - 선택요소의 속성값 가져오기
+
+                        ex) 
+                        mi.find("img").attr("src","images/mz1.png");
+                        -> src 이미지 소스를 바꿈
+                    */
+                    
+
+                });
                 /* 
                     [ 가속도 easing 주기 ]
                       jQuery UI를 "라이브러리 아래" 추가함! 

@@ -9,7 +9,20 @@
 
       + 제이쿼리 라이브러리 CDN(Content Delivery Network)
         : 네트워크 라이브러리를 불러올 수 있다.
-          예) 구글링크 -> 참고 Get01_jQ.html
+
+          1) 제이쿼리 홈페이지 > 다운로드 들어온다.
+          2) 페이지 내려보면 "linkUsing jQuery with a CDN" 이 보인다.
+          3) Other CDNs ->> "Google CDN" 클릭
+          4) 3.x snippet: 아래에
+             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+             보인다. 이것을 복사한다.
+
+          5) 해당 작업하고 있는 HTML <head>에 
+             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+             붙혀넣는다.
+
+
+          예) 구글링크 ->> 참고 Get01_jQ.html
               https://developers.google.com/speed/libraries#jquery
 
          ---------------------------------------------------------------------------------------------------------------
