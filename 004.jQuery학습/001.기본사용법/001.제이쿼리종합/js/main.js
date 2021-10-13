@@ -440,6 +440,13 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
                             이 해당 이미지가
                             m1.png ->>> mz1.png 바꿈!
                     */
+
+
+                    // 메시지 변경하기
+                    msg.html("나도좀비!;;;<br>어서 치료주사를!");
+
+                    // 다음버튼 보이기
+                    btns.eq(5).fadeIn(200);
                     
 
                 });
@@ -449,7 +456,7 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
                     [ 가속도 easing 주기 ]
 
                       jQuery UI를 "라이브러리 아래" 추가함! 
-                      
+
                       이징기능
                       ▶ https://jqueryui.com/easing/ 
 
@@ -493,6 +500,73 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
         }); ///////////// animate ///////////////
 
     }); ////////////// 3-5. '무서우니 윗층으로!' 버튼 click //////////
+
+
+
+    // 3-6. '치료주사방으로!' 버튼 /////////////////
+    btns.eq(5).click(function () {
+        console.log("치료주사방으로!! 버튼!");
+
+        // 1. 자기자신 버튼 없애기
+        $(this).slideUp(400); /* ★★★ slideUp은 제이쿼리 자체 문법이기에, $로 옷 입히는 것임 */
+
+        // 2. 메시지 지우기
+        msg.fadeOut(200);
+
+        // 3. 이동할 빌딩 li의 위치정보 알아내기!
+        // 이동할 li 타겟 -> bd변수에 할당(.building li)
+        let tg = bd.eq(2); // 2번방  /* 몇번째 0부터 : eq(순번) */
+        let tval = tg.offset().top; // 화면에서의 top값
+        let lval = tg.offset().left + win5; // 화면에서의 left값 // win5는 미니언즈를 left값 보정함! (화면의 5%)
+        console.log(tval + "/" + lval);
+
+
+        // 4. 미니언즈 이동하기
+        // 대상 : .mi -> mi 변수에 할당!
+        // [animate 메서드]  animate({CSS설정},시간,이징,함수) 
+        mi.animate({
+            top: tval + "px",
+            left: lval + "px"
+        }, 1000, function () { /* 1초뒤에 -> 콜백함수 (애니후 실행!) */
+
+            // 1. 주사기 돌기! (주사기는 하나뿐)
+            /* 
+                ※ 주의 : transform은 animate 지원불가!
+                          ->> css의 transition설정으로 애니메이션 할것!
+            */
+           /* 
+                주사기 태그 셋업
+                let inj = '<img src="images/inj.png" alt"주사기" class="inj">';
+                if (idx === 2)
+                    $(ele).append(inj);
+                ->> 위에서 주사기 이미지 셋팅 다 줬음.
+           */
+            $(".inj").css({
+                transform:"rotate(-150deg)",
+                transition: ".5s ease-out 1s", // 속시이지 (지연시간 1초)
+                zIndex: "9999" //주인공 보다 위!
+            }); ////////////// css ////////////
+
+            // 주사 놓은 후 (1.5초 후) 다시 미니언즈2 (후유증)
+            setTimeout(() => {
+
+                // 미니언즈 이미지 변경하기
+                mi.find("img").attr("src","images/m2.png");
+
+                // 주사기 없애기
+                $(".inj").remove(); /* 주사기 이미지 자체가 사라짐! src="images/inj.png" */
+                /* 
+                    remove()
+                    : 선택요소 삭제하기
+                */
+
+            }, 1500); ////// 타임아웃 ////////
+
+
+
+        }); ///////////// animate ///////////////
+
+    }); ////////////// 3-6. '치료주사방으로!' 버튼 click //////////
 
 
 
