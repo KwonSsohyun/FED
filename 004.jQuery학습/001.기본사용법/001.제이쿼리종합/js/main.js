@@ -616,6 +616,44 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
 
 
 
+    // 3-8. '1번방으로!' 버튼 /////////////////
+    btns.eq(7).click(function () {
+        console.log("1번방으로! 버튼!");
+
+        // 1. 자기자신 버튼 없애기
+        $(this).slideUp(400); /* ★★★ slideUp은 제이쿼리 자체 문법이기에, $로 옷 입히는 것임 */
+
+        // 2. 메시지 지우기
+        msg.fadeOut(200);
+
+        // 3. 이동할 빌딩 li의 위치정보 알아내기!
+        // 이동할 li 타겟 -> bd변수에 할당(.building li)
+        let tg = bd.eq(3); // 3번방  /* 몇번째 0부터 : eq(순번) */
+        let tval = tg.offset().top; // 화면에서의 top값
+        let lval = tg.offset().left + win5; // 화면에서의 left값 // win5는 미니언즈를 left값 보정함! (화면의 5%)
+        console.log(tval + "/" + lval);
+
+
+        // 4. 미니언즈 이동하기
+        // 대상 : .mi -> mi 변수에 할당!
+        // [animate 메서드]  animate({CSS설정},시간,이징,함수) 
+        mi.animate({
+            top: tval + "px",
+            left: lval + "px"
+        }, 1000, function () { /* 1초뒤에 -> 콜백함수 (애니후 실행!) */
+
+            // 메시지 보이기
+            msg.text("어서 윗층으로 가자!").fadeIn(200);
+
+            // 다음버튼 보이기
+            btns.eq(7).fadeIn(200);
+
+        }); ///////////// animate ///////////////
+
+    }); ////////////// 3-8. '1번방으로!' 버튼 click //////////
+
+
+
 
 
 
