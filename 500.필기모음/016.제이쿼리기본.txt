@@ -317,7 +317,9 @@
 
             ※ 주의사항 : 애니메이션을 할 대상에 트랜지션(변화과정을 보여줘라 : 속시이지) 설정하지 말아야 한다!
                          만약 트랜지션이 있으면 오작동이 일어남!!!
-                         
+                         $(".inj").animate({
+                              transition: ".5s ease-out 1s", 
+                         XXXXXXXXXXXXXXXXX 안된다!!! XXXXXXXXXXXXXXXXXXXXX 
             ------------------------------------------------------------------------             
             ※ 주의 : transform은 animate 지원불가!
                       ->> css의 transition설정으로 애니메이션 할것!
@@ -585,7 +587,8 @@
 
 
        비교) 
-       JS 기본 내장함수 
+       JS 기본 내장함수 (자바스크립트는 자바스크립트만 쓰고, 제이쿼리는 제이쿼리써야한다. 
+                        선택자, 메서드 혼용안된다. 오류난다.)
        · classList.add(클래스명)
        · classList.remove(클래스명)
        · classList.toggle(클래스명)
