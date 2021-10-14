@@ -7,6 +7,16 @@
 @import url(common.css);
 
 
+/* 1. 서브타이틀 */
+.stit{
+    font-family: 'Pistilli', sans-serif;
+    font-size: 50px;
+    padding: 40px 0 20px; /* 위40px 양쪽0 아래20px */
+    text-align: center;
+    font-weight: normal;
+}
+
+
 /* 개별 배경 이미지 셋업 */
 .bg1-1{
     background-image: url(../images/fashion/cont1-1a.jpg);
