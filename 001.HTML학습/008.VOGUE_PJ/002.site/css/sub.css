@@ -7,13 +7,31 @@
 @import url(common.css);
 
 
-/* 1. 서브타이틀 */
+/* 1. 서브 타이틀 */
 .stit{
     font-family: 'Pistilli', sans-serif;
     font-size: 50px;
     padding: 40px 0 20px; /* 위40px 양쪽0 아래20px */
     text-align: center;
     font-weight: normal;
+}
+
+/* 2. 서브 메뉴 (LNB-Local Navigation Bar) */
+.lnb{
+    padding: 5px 0 50px; /* 위5px 양쪽0 아래50px */
+}
+.lnb ul{
+    display: flex; /* 플렉스박스 : 블록임(블록성질 인데 옆으로 흐르게하는 셋업) */
+    justify-content: center; /* 가로컨텐츠 중앙 */
+}
+.lnb li{
+    margin: 0 10px; /* 양쪽마진 10px */
+}
+
+.lnb a{
+    font-family: 'NanumBarunGothic', sans-serif;
+    font-size: 18px;
+    color: #333;
 }
 
 
