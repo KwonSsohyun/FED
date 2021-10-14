@@ -236,6 +236,7 @@
 /* 로고 */
 #top.on .logo{
     position: absolute;
+    left: 0; /* 부모는? #top - 겉박스가 기준! */
 }
 /* 로고 이미지 */
 #top.on .logo img{
@@ -244,7 +245,7 @@
 }
 /* GNB */
 #top.on .gnb{
-    
+
 }
 
 
@@ -316,7 +317,7 @@
 
 }
     
-/* 스크롤 이동 
+/* 스크롤 이동 (스크롤 내려서 화면 맨 아래로 내렸을때, top버튼 누르면 부드럽게 창이 올라가져서 보이는것)
    참고자료 : robot.html (scroll-behavior: smooth;)
 */
 
