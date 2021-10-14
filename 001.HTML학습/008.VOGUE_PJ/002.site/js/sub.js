@@ -43,9 +43,9 @@ pm = pm.split("?")[1].split("=")[1]
     ★ split으로 자르면 "배열" 에 담긴다! 그 중에 1을 선택한것임 
 
     ▶ 콘솔로 찍어서보면
-       ['cat', 'people']
+       ['cat', 'runway']
        0: "cat"
-       1: "people"
+       1: "runway"
        length: 2
 
        이렇게 찍히는 것을 볼 수 있다.
