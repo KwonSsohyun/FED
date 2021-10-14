@@ -265,3 +265,20 @@
 .blink li:last-child a{
     font-weight: bold;
 }
+
+
+/* 위로가기 버튼 */
+.tbtn{
+    position: fixed;
+    bottom: 0;
+    right: 75px;
+    width: 48px;
+    height: 35px;
+    text-align: center; /* 가로중앙 */
+    line-height: 35px; /* 세로중앙 */
+    background-color: #333;
+    border-radius: 4px 4px 0 0; /* 둥근모서리 : 왼쪽 위 -> 오른쪽 위 -> 오른쪽 아래 -> 왼쪽 아래 */
+    color: #fff;
+    z-index: 999;
+
+}
