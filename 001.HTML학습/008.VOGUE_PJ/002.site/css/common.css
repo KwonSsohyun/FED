@@ -255,12 +255,21 @@
 /* GNB */
 #top.on .gnb{
     font-size: 14px;
+    box-sizing: border-box;
+    padding: 0 107px; /* 양쪽 패딩을 줘서, 로고에 닿기 전에 줄바꿈 (로고 사이즈를 고려한 107px) */
+}
+/* 최대유지 한계치를 준거다. */
+#top.on .gnb ul{
+    max-width: 631px;
 }
 #top.on .li{
     margin: 0 20px;
 }
 #top.on .li a{
     color: #333;
+}
+#top.on .li a:hover{
+    color: #f00;
 }
 
 
