@@ -1,7 +1,8 @@
 /// 보그코리아 서브페이지 JS - sub.js ///
 
+/* (((jQB 밖에 있기때문에 html읽기도 전에 불러오짐))) */
 
-// 파라미터 받기 ▶ get방식으로 데이터 받기 (jQB 밖에 있기때문에 html읽기도 전에 불러오짐)
+// 파라미터 받기 ▶ get방식으로 데이터 받기 
 let pm = location.href;
 /* 
     location.href 을 이퀄 오른쪽에 쓰면 
