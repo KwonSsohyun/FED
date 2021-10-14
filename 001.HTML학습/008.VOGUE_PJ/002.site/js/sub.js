@@ -52,7 +52,7 @@ pm = pm.split("?")[1].split("=")[1]
        각각의 카테고리 해당이름이 필요한것이니
     ▶ 1번을 선택할 것. 
     
-    참고자료 JS007.html -> split[ 문자 자르기 함수 ]  보면된다.
+    ▷ 참고자료 JS007.html -> split[ 문자 자르기 함수 ]  보면된다.
 */
 /* 
     http://172.17.38.209:5500/001.HTML%ED%95%99%EC%8A%B5/008.VOGUE_PJ/002.site/sub.html?cat=runway
