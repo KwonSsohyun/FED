@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회전하는 폰!</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100%; /* 보이는 화면 채우기 */
+        }
+        .ip{
+            position: relative;
+            top: 20%; /* body 부모기준 % */
+            width: 200px;
+            height: 400px;
+            /* outline: 2px solid red; */
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+
+            /* ★ 3D설정 ★ */
+            transform-style: preserve-3d;
+            transform: rotateX(10deg) rotateY(30deg); /* 처음보일때 평면으로 보이면 3D처럼 안보이기 때문에 돌려서 3D처럼 보이게 한거임 */
+        }
+
+
+        /* ★ 각면 공통 ★ */
+        .ip li{
+            position: absolute;   
+            width: 200px;
+            height: 400px;
+            background-color: #fff; /* 투명한 영역은 나머지 영역에 비쳐서 보여서 배경 깔아줌 */
+
+            /* 이미지 설정을 여기서 하고, 아래서 이미지만 url넣는다. */
+            background-repeat: no-repeat; 
+            background-size: 100% 100%;
+        }
+
+
+        /* 앞면 */
+        .ip li:first-child{
+            background-image: url(./images/ip01.png); /* background-image로 안쓰면, 기본값으로 덮어써버린다. background 로 설정하면 말이다. */
+            transform: translateZ(10px); /* Z축으로 앞쪽으로 10px민다. */
+        }
+        /* 왼쪽면 */
+        .ip li:nth-child(2){
+            left: -10px; /* 밖으로 내보낼려고 */
+            width: 20px; /* 이건 폭이 좁으니까 각면 공통에서 준걸 다시 주기 위해 20px로 덮어씀 */
+            background-image: url(./images/ip04.png); 
+            transform: rotateY(-90deg); /* 옆면으로 돌림 */
+        }
+        /* 오른쪽면 */
+        .ip li:nth-child(3){
+            right: -10px; /* 밖으로 내보낼려고 */
+            width: 20px; /* 이건 폭이 좁으니까 각면 공통에서 준걸 다시 주기 위해 20px로 덮어씀 */
+            background-image: url(./images/ip03.png);
+            transform: rotateY(90deg); /* 옆면으로 돌림 */
+        }
+        /* 윗면 */
+        .ip li:nth-child(4){
+            top: -10px; /* 윗면 top */
+            height: 20px; /* 윗면사이즈에 맞게 사이즈 조절 */
+            background-image: url(./images/ip06.png);
+            transform: rotateX(-90deg); /* 윗면으로 돌림 */
+        }
+        /* 아랫면 */
+        .ip li:nth-child(5){
+            bottom: -10px; /* 아랫면 bottom */
+            height: 20px; /* 윗면사이즈에 맞게 사이즈 조절 */
+            background-image: url(./images/ip05.png);
+            transform: rotateX(90deg); /* 아랫면으로 돌림 */
+        }
+        /* 뒷면 */
+        .ip li:last-child{
+            background-image: url(./images/ip02.png);
+            transform: translateZ(-10px) rotateY(180deg);  /* 이미지 뒤짚기위해 rotateY(180deg) */
+        }
+
+
+        .ip-ani{
+            /* 애니메이션 : 이시이지반방마 */
+            animation: ipAni 2s ease-in-out 1s 2 alternate; 
+                    /* 이름 시간 이징 지연시간 반복횟수 대체경로 */
+        }
+        /* 키프레임 */
+        @keyframes ipAni {
+            to{
+                transform: rotateX(10deg) rotateY(-330deg);
+                /* 
+                    transform: rotateX(10deg) rotateY(30deg); ->> 위에서 .ip 설정한 초기보이는 값
+
+                    ▶ y축만 회전함
+
+                    ▶ x축방향은 10도는 그대로 유지
+
+                    ▶ y축방향은 30도 나가 있고 반대 방향으로 한바퀴
+                       회전하므로 -360도+30도= -330도
+                */
+            }
+        } /* 키프레임 */
+
+    </style>
+</head>
+<body>
+    
+    <ul class="ip ip-ani">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+</body>
+</html>
