@@ -20,32 +20,37 @@
         /* 큐브 */
         .cube{
             position: absolute;
-            top: calc(50% - 150px);
+            top: calc(50% - 150px); /* 설정한 300px 반인 150px */
             left: calc(50% - 150px);
             /* calc(%수치 - 특정px)
             CSS의 고유계산함수임(주의:빼기기호 앞뒤공백필수!) */
             width: 300px;
             height: 300px;
-            outline: 2px solid #000;
+            /* outline: 2px solid #000; */ /* 기준 위치를 알려고 표시해둠 */
 
             /* 3無 */
             margin: 0;
             padding: 0;
             list-style: none;
 
-            /* 
-                [ 입체로 설정하기! ]
-                - 입체로 설정할 요소의 부모박스에 아래와 같이
-                설정한다!
+            /*  
+                ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
-                transform-style: preserve-3d
+                 [ 입체로 설정하기! ]
+                   - 입체로 설정할 요소의 부모박스에 아래와 같이 설정한다!
 
-                - 기본값은 flat 즉, 2D
-                - preserve-3d 는 3D 전환설정!
+                   transform-style: preserve-3d
+
+                   - 기본값은 flat 즉, 2D
+                   - preserve-3d 는 3D 전환설정!
+
+                ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
             */
-            /* transform-style: preserve-3d; */
+
+            transform-style: preserve-3d; /* 3D 변환해줌 */
             
-            /* 입체를 잘보기위해 x축,y축으로 약간회전해 놓는다 */
+            /* 입체를 잘보기위해 x축,y축으로 약간회전해 놓는다 : 그래야 3d한게 보이니까 */
+            transform: rotateX(10deg) rotateY(30deg);
 
         }
 
@@ -55,62 +60,67 @@
             /* 부모? .cube */
             width: 100%;
             height: 100%;
-            opacity: 0.7;/* 반투명 */
+            opacity: 0.7; /* 반투명 */
         }
 
         /* 큐브 각면 셋팅 */
         /* 1. 앞면 */
         .cube>li:nth-child(1){
             background-color: red;
-            
-            /* 화면방향으로 li크기의 절반만큼 이동함 */
+            transform: translateZ(150px); /* 위에서 3D 설정을 했고(transform-style: preserve-3d;) ->> 여기서는 축 변환 */
+            /* 화면방향으로 li크기의 절반만큼 이동함 : 300px로 위에서 설정했기때문에 150px이면 절반 */
         }
         /* 2. 오른쪽면 */
         .cube>li:nth-child(2){
-            /* background-color: green; */
-            
+            background-color: green;
+            transform: rotateY(90deg) translateZ(150px); /* 90도 돌림 -> 150px로 보낸다. */
+            /* Y축 회전하고, Z축 이동해야 원하는 결과가 나옴!!!! (-90도면 왼쪽으로 가고, 90도면 오른쪽으로 간다.) */
+
             /* 화면방향으로 li크기의 절반만큼 이동함 */
         }
         /* 3. 뒷면 */
         .cube>li:nth-child(3){
-            /* background-color: orange; */
-            
+            background-color: orange;
+            transform: rotateY(180deg) translateZ(150px); /* 90도 x 2 = 180도 (뒷면) */
             /* 화면방향으로 li크기의 절반만큼 이동함 */
         }
         /* 4. 왼쪽면 */
         .cube>li:nth-child(4){
-            /* background-color: yellow; */
-            
+            background-color: yellow;
+            transform: rotateY(-90deg) translateZ(150px); /* -90도는 왼쪽 */
             /* 화면방향으로 li크기의 절반만큼 이동함 */
         }
         /* 5. 윗면 */
         .cube>li:nth-child(5){
-            /* background-color: blue; */
-            
+            background-color: blue;
+            transform: rotateX(90deg) translateZ(150px); /* 이번엔 윗면이니까 X축!!! > 90도! */
             /* 화면방향으로 li크기의 절반만큼 이동함 */
         }
         /* 6. 아랫면 */
         .cube>li:nth-child(6){
-            /* background-color: purple; */
-            
+            background-color: purple;
+            transform: rotateX(-90deg) translateZ(150px); /* 이번엔 아랫면이니까 X축!!! > -90도! */
             /* 화면방향으로 li크기의 절반만큼 이동함 */
         }
 
         /* 애니호출class */
         .cube-ani{
             /* 애니메이션: 이시이지반방마 */
-            
+            animation: rolling 5s linear infinite;
         }
 
         /* 큐브회전 애니메이션 키프레임 */
         @keyframes rolling {
             to{
-                
+                transform: rotateX(370deg) rotateY(-330deg);
                 /* 
-                    x축방향은 10도 나가 있고 같은 방향으로 한바퀴
-                    회전하므로 360도+10도=370도
-                    y축방향은 30도 나가 있고 반대 방향으로 한바퀴
-                    회전하므로 -360도+30도=-330도
+                    transform: rotateX(10deg) rotateY(30deg); ->> 위에서 설정한 초기보이는 값
+
+                    ▶ x축방향은 10도 나가 있고 같은 방향으로 한바퀴
+                       회전하므로 360도+10도=370도
+
+                    ▶ y축방향은 30도 나가 있고 반대 방향으로 한바퀴
+                       회전하므로 -360도+30도=-330도
                 */
             }
         } /* 키프레임 */
@@ -119,7 +129,7 @@
 </head>
 <body>
 
-    <ul class="cube cube-ani">
+    <ul class="cube cube-ani"> <!-- 육면체니까 li 6개 -->
         <li></li>
         <li></li>
         <li></li>
