@@ -5,8 +5,11 @@
 // 파라미터 받기 ▶ get방식으로 데이터 받기 
 let pm = location.href;
 /* 
-    location.href 을 이퀄 오른쪽에 쓰면 
-    url을 읽어옴
+    [ 코드 풀이 ]
+      = location.href; ▶ 오른쪽에 적었으니 URL 읽어오고
+      let pm ▶ 변수에 할당
+    
+      ※ location.href 을 이퀄 오른쪽에 쓰면, url을 읽어옴
 */
 
 
