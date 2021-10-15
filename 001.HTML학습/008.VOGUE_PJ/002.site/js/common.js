@@ -77,7 +77,7 @@ $(function(){//////// jQB (제이쿼리 코드블록) //////////////////
             
             scSts = 0; // 한번밖에 못들어옴! (1이 0으로 바꿨기 때문에.)
             console.log("실행1"); /* 스크롤 100px 내려왔을때 - 작은 GNB 영역 보이는 상태 */
-            tm.addClass("on")
+            tm.addClass("on") // common.css에서 설정한 on 상태가 추가되서 보임
 
        } /////////////// if ///////////
        else if(scTop < 100 && scSts === 0 ) { // 스크롤 위치가 100px 미만이고, scSts값이 0이면 들어올 수 있음
@@ -88,7 +88,7 @@ $(function(){//////// jQB (제이쿼리 코드블록) //////////////////
 
             scSts = 1; // 한번밖에 못들어옴! (0을 1로 바꿈!)
             console.log("실행2"); /* 처음에 GNB 영역 다 보이는 상태 */
-            tm.removeClass("on")
+            tm.removeClass("on") // common.css에서 설정한 on 상태가 제거되서 안보임
        } /////////////// else //////
 
 
@@ -99,14 +99,14 @@ $(function(){//////// jQB (제이쿼리 코드블록) //////////////////
            scSts2 = 0; // 한번만 쓰려고 값 바꿈!
            console.log("탑버튼 보여!");
 
-           tbtn.show(); 
+           tbtn.show(); // 탑버튼 보임
 
        } ///////////// if //////////
        else if(scTop < 300 && scSts2 === 0 ){ // 스크롤 위치가 300px 미만이고, scSts2값이 0이면 들어올 수 있음
            scSts2 = 1; // 한번만 쓰려고 값 바꿈!
            console.log("탑버튼 숨겨!");
 
-           tbtn.hide(); 
+           tbtn.hide(); // 탑버튼 숨김
        } ///////////// else if //////////
 
 
