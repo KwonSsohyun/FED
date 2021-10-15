@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Door - CSS3 : 3D Perspective Animation</title>
+    <title>Open Door - CSS3 : 3D Perspective Animation</title> <!-- perspective(원근법) -->
     <style>
         /* 웹폰트 CDN */
         @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
@@ -44,25 +44,33 @@
             margin: 0 auto;/* 마영오! */
             background: url(./images/seashore.jpg) no-repeat center/auto 100%;
 
-            /* 
-                [ 3D 원근설정 ]
-                1. 셋팅위치 : 3D원근설정을 할 대상의 부모박스에 셋팅
-                2. 설정방법:
-                perspective: 수치;
-                - 수치는 px단위로 숫자가 클수록 소실점이 먼것이므로
-                각도가 작아짐(이 거리는 기준점에서 소실점까지의 거리)
+            /*  ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+                 [ 3D 원근설정 ]
+                   1. 셋팅위치 : 3D원근설정을 할 대상의 "부모박스"에 셋팅
+                   2. 설정방법:
+                      perspective: 수치;
+                      - 수치는 px단위로 숫자가 클수록 소실점이 먼것이므로
+                        각도가 작아짐(이 거리는 기준점에서 소실점까지의 거리)
+                        200px 이렇게 하면 눈에서 가까이 있는 것처럼 보임 (수치가 작아질수록)
+
+                ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
              */
              
-             /* 여기에 코딩! */
+             perspective: 480px;
 
-            /* 
-                [ 뷰포인트(관찰자위치) 위치변경옵션 ]
-                perspective-origin: 가로 세로;
-                - 가로값: left, center, right (x축변경일 경우)
-                - 세로값: top, center, bottom (y축변경일 경우)
-                - 두 값 중 회전축에 따라 한 값만 쓸 수 있고
-                복합일 경우 2가지 값을 같이 셋팅할 수 있다
-                - % 사용가능(예: 50%는 중앙)
+            /*  ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ 
+
+                 [ 뷰포인트(관찰자위치) 위치변경옵션 ] : 눈 시점 위치
+                   perspective-origin: 가로 세로;
+
+                   - 가로값: left, center, right (x축변경일 경우)
+                   - 세로값: top, center, bottom (y축변경일 경우)
+                   - 두 값 중 회전축에 따라 한 값만 쓸 수 있고
+                     복합일 경우 2가지 값을 같이 셋팅할 수 있다
+                   - % 사용가능 (예: 50%는 정중앙)
+
+                ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
              */
 
              /* 애니메이션: 이시이지반방마 */
@@ -88,11 +96,11 @@
             transform: rotateY(50deg);
             transform-origin: left;
             /* 
-                회전기준축 변경하기
-                transform-origin: 가로 세로;
-                - 가로값: right, center, left
-                - 세로값: top, center, bottom
-                - 정해지지 않은 값: px, %도 가능함
+                [ 회전기준축 변경하기 ]
+                  transform-origin: 가로 세로;
+                  - 가로값: right, center, left
+                  - 세로값: top, center, bottom
+                  - 정해지지 않은 값: px, %도 가능함
              */
             /* 애니메이션: 이시이지반방마 */
             animation: openDoor 2s ease-in-out infinite alternate;
@@ -173,14 +181,14 @@
             background: url(images/seashore.jpg) no-repeat center top/auto 200%;
             /*
             [ 3D 원근설정 ]
-            1. 셋팅위치: 3D원근설정을 할 대상의 부모박스에 셋팅
-            2. 설정방법:
-            perspective: 수치;
-            - 수치는 px단위로 숫자가 클수록
-            소실점이 먼것이므로 각도가 작아짐(기준점에서 소실점까지의 거리)
+              1. 셋팅위치: 3D원근설정을 할 대상의 부모박스에 셋팅
+              2. 설정방법
+                 perspective: 수치;
+                 - 수치는 px단위로 숫자가 클수록
+                   소실점이 먼것이므로 각도가 작아짐(기준점에서 소실점까지의 거리)
             */
             
-            /* 여기에 코딩! */
+            perspective: 200px;
 
         }
 
@@ -196,12 +204,13 @@
             text-align: center;/* 글자중앙 */
             writing-mode: vertical-lr;
             /* 
-                글자진행방향 설정 속성
-                writing-mode:
-                옵션값
-                horizontal-tb 가로방향글자 위에서 아래로(기본값)
-                vertical-rl 세로방향글자 오른쪽에서 왼쪽으로
-                vertical-lr 세로방향글자 왼쪽에서 오른쪽으로
+                [ 글자진행방향 설정 속성 ] : 세로로 글써지는 (조선시대처럼)
+                  writing-mode:
+                  
+                  옵션값
+                  horizontal-tb 가로방향글자 위에서 아래로(기본값)
+                  vertical-rl 세로방향글자 오른쪽에서 왼쪽으로
+                  vertical-lr 세로방향글자 왼쪽에서 오른쪽으로
              */
 
             padding: 0 30px;
@@ -215,11 +224,11 @@
             /*회전기준변경하기*/
             transform-origin: top;
             /*
-            회전기준선 변경하기
-            transform-origin: 가로 세로;
-            - 가로값: right, center, left
-            - 세로값: top, center, bottom
-            - 정해지지 않은값 px, %도 사용가능
+              [ 회전기준선 변경하기 ]
+                transform-origin: 가로 세로;
+                - 가로값: right, center, left
+                - 세로값: top, center, bottom
+                - 정해지지 않은값 px, %도 사용가능
             */
             transition: .4s;
         }
