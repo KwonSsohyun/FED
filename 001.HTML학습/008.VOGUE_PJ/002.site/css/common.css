@@ -260,7 +260,7 @@
 }
 /* 최대유지 한계치를 준거다. */
 #top.on .gnb ul{
-    max-width: 631px;
+    max-width: 716px;
 }
 #top.on .li{
     margin: 0 20px;
