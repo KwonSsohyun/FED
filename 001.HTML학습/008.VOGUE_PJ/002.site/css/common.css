@@ -334,7 +334,7 @@
     /* 트랜지션 : 속시이지 */
     transition: .3s;
 
-    display: none;
+    display: none; /* 안보이게 처리함 */
 }
 
 /* 탑버튼 마우스 오버시 */
