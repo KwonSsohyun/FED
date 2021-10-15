@@ -332,8 +332,8 @@
     z-index: 999;
 
     /* 트랜지션 : 속시이지 */
-    transition: .3s;
-
+    transition: background-color .3s; /* 특정속성에만 한정지어주면 해결 background-color을 앞에 붙힘 */
+    /* common.js에서 "2. 상단이동버튼 보이기 숨기기" 에서 tbtn.fadeIn(300); 꿈뻑액박나던거 해결함*/
     display: none; /* 안보이게 처리함 */
 }
 
