@@ -9,6 +9,7 @@
             margin: 0;
             padding: 0;
             height: 100%; /* 보이는 화면 채우기 */
+            overflow: hidden; /* 화면글자 넘치는 것 숨기기(넘치는 요소 숨기기), 스크롤없앰 */
         }
         .ip{
             position: relative;
@@ -81,7 +82,7 @@
 
         .ip-ani{
             /* 애니메이션 : 이시이지반방마 */
-            animation: ipAni 2s ease-in-out 1s 2 alternate; 
+            animation: ipAni 2s ease-in-out .5s 2 alternate; 
                     /* 이름 시간 이징 지연시간 반복횟수 대체경로 */
         }
         /* 키프레임 */
@@ -101,10 +102,80 @@
             }
         } /* 키프레임 */
 
+        /* 흘러가는 글자박스 */
+        .ftxt{
+            position: absolute;
+            top: 5%;
+            left: 0;
+            width: 200%; /* 잡혀있는 화면의 2배 */
+
+            display: flex; /* 흐르게 했다. */
+
+
+            /* 애니메이션 : 이시이지반방마 */
+            animation: flowAni 10s linear infinite;
+            /*  from -> to 상태를 계속 반복함
+            
+                여기에  left: 0;인 처음보이는 상태가 나오고
+                끝인 키프레인 준 to안에
+                left: -100%; 마지막 끝나는 지점이 보여지고
+                반복임 
+            */
+        }
+
+        /* 아랫쪽 글자박스 */
+        .ft2{
+            top: auto; /* ★ 설정값 초기화! 꼭 해야함!!!! 
+                             .ftxt에 설정한 top: 5%; 이미잡혀있기때문에 ->> auto가 초기화 설정이므로 해야 bottom이 먹는다.*/
+            bottom: 5%; /* 새로운값 설정 */
+        }
+
+        .tbx{
+            flex: 1; /* 1:1 비율 */
+            display: flex; /* 아래 자식요소 flex */
+        }
+        
+        /* 글자박스 */
+        .tbx span{
+            display: block;
+            flex: 1;
+            text-align: center;
+
+            font-size: 3.5vw;
+            font-weight: bold;
+            white-space: nowrap; /* 창을 줄였을때, 글자 2줄 안되게 하는 설정 */
+            color: #ccc;
+        }
+
+        /* 흘러가는 글자 키프레임 */
+        @keyframes flowAni {
+            to{
+                left: -100%; /* 정확하게 1세트가 끝난것!!!! (끝에 딱 붙게 하고 ->> 다시 0으로 설정하면 처음시작점으로 간다.) */
+            }
+        }
+
     </style>
 </head>
 <body>
-    
+
+    <!-- 흘러가는 글자 -->
+    <div class="ftxt">
+        <div class="tbx">
+            <span>iPhone 2021</span>
+            <span>iPhone 2021</span>
+            <span>iPhone 2021</span>
+            <span>iPhone 2021</span>
+        </div>
+        <div class="tbx">
+            <span>iPhone 2021</span>
+            <span>iPhone 2021</span>
+            <span>iPhone 2021</span>
+            <span>iPhone 2021</span>
+        </div>
+    </div>
+
+
+    <!-- 회전하는 폰 -->
     <ul class="ip ip-ani">
         <li></li>
         <li></li>
@@ -114,5 +185,22 @@
         <li></li>
     </ul>
 
+
+    <!-- 흘러가는 글자 -->
+    <div class="ftxt ft2">
+        <div class="tbx">
+            <span>iPhone 2021</span>
+            <span>iPhone 2021</span>
+            <span>iPhone 2021</span>
+            <span>iPhone 2021</span>
+        </div>
+        <div class="tbx">
+            <span>iPhone 2021</span>
+            <span>iPhone 2021</span>
+            <span>iPhone 2021</span>
+            <span>iPhone 2021</span>
+        </div>
+    </div>
+    
 </body>
 </html>
