@@ -17,24 +17,24 @@
 		
 		//친척네집
 		$("div").click(function(e){
-			e.stopPropagation();//★★★★★★버블링차단!
+			e.stopPropagation();//★★★★★★ 버블링차단!
 			$(this).css({backgroundColor:"green"});
 		});///// click ////////////
 		
 		//엄마집
 		$("p").click(function(e){
 			$(this).css({backgroundColor:"yellow"});
-			return false;//★★★★★★버블링차단!(JS기법-최하단)
+			return false;//★★★★★★ 버블링차단!(JS기법-최하단)
 		});///// click ////////////
 		
 		//아들방
 		$("a").click(function(e){
-			e.stopPropagation();//★★★★★★버블링차단!(jQuery기법)
+			e.stopPropagation();//★★★★★★ 버블링차단!(jQuery기법)
 			$(this).css({backgroundColor:"red"});
 		});///// click ////////////
 		
 		/*
-			[ 이벤트 흐름 ] : 이벤트 버블링
+			[ 이벤트 흐름 ] : 이벤트 버블링 (버블이 부풀어올라오니까)
 
 			1. 캡쳐단계 : 최상위 부모요소로부터 말단요소까지 내려감
 
