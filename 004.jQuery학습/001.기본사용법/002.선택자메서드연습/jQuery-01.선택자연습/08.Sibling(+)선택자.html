@@ -17,7 +17,7 @@
 
             // 클릭된 요소 => this
             // 다음요소 => +li
-            $("+li",this)
+            $("+li",this) /* this키워드 안쓰고 -> $(".first+li")로쓰면 다 선택되면서 개개인이 움직이는게 아니라 통으로 됨 */
             .css({
                fontSize: "42px",
                marginLeft: "50px",

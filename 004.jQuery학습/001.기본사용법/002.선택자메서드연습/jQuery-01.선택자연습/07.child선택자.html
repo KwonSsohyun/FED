@@ -15,10 +15,12 @@
         console.log("클릭!");
 
         //미션수행
-        // $("#container>p")
-        $(">p",this) // this키워드를 사용한 직계선택법(꺽쇠사용!)
+        // $("#container>p") 
+        $(">p",this) // this키워드를 사용한 직계선택법(꺽쇠사용!) -> 바로 위에 #container>p 이것과 같은 뜻   
         // $(선택자,this)
         // -> 선택자에(>)를 쓰면 직계자식
+
+        //-> (this).find("p")  (this).child("p") 이런것도 한번씩 써봐라 어떤게 나오는지
         .css({
           background:"yellow",
           color:"green",
