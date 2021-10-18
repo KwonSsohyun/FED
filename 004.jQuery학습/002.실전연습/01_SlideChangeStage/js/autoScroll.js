@@ -162,21 +162,45 @@ $(function(){ //////// jQB (제이쿼리 코드블록) //////////////////
          /* 
             .test(navigator.userAgent)
             브라우저 정보 찍을때 쓴다. 
-            브라우저정보:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36 
+            ex) 브라우저정보:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36 라고 나옴
 
             ex) ("정보여부:"+/mm/i.test(mm))
                  쉽게 생각해서 /mm/ 이라는 글자가 (mm) 에 있으면 트루임
 
+            --------------------------------------------------------------------------------------------------------------------------------------------------
+            
+                 [ 코드풀이 ]
                  그러니까 여기서는 
-                 ▶ /Firefox/i.test(navigator.userAgent)
-                    (navigator.userAgent) 에서 브라우저 정보가 찍어서 보면
-                    브라우저정보:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0  ▶ 이렇게 브라우저 정보 나옴
-                    저 정보 맨 뒤에 Firefox/93.0 "파이어폭스"가 찍히니까
-                    /Firefox/ 문자가 (navigator.userAgent)에 보면 바로 위에서 말한대로 파이어폭스 문자 나오니까 true 임!!
+                 ▶▶ /Firefox/i.test(navigator.userAgent)
+                 ▷   (navigator.userAgent)는 콘솔창에서 보면 브라우저 정보가 찍혀져서 나온다.
+
+                      파이어폭스 브라우저에서 창 띄어서 콘솔창 보면
+                      브라우저정보:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0  ▶ 이렇게 브라우저 정보 나옴
+                      저 정보 맨 뒤에 Firefox/93.0 "파이어폭스"가 찍힌다.
+
+                 ▷   /Firefox/i : 대소문자구분없이(i의 뜻) Firefox라는 글자 찾아(/Firefox/ 의 뜻)
+
+                 ▶▶  최종적으로 정리하면
+                       /Firefox/ 문자가 (navigator.userAgent)에 보면 바로 위에서 말한대로 브라우저 정보내용 안에 파이어폭스 문자 나오니까 true 임!!
+
+                       파이어폭스만 >> 정보여부:true 
+                       나머지 브라우저는 >> 정보여부:false니까 (왜냐? 뒤에 Firefox라고 안적혀있고 ▶ 브라우저정보:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36)
+                       자기 해당브라우저 워딩만 찍히기 때문에 파이어폭스 브라우저만 해당
+                       그래서 true 가 나오는 파이어폭스만 해당코드로 들어오고, 나머지는 false니까 아래로 걍 내려감
+
+                 ▶▶ 파이어폭스는 스크롤 + - 가 반대니까 이제 바꿔준다.     
+                      if(/Firefox/i.test(navigator.userAgent)){ 
+                          delta = -delta;
+                      }
+                      ▶ if문을 써서 위에서 설명한 해당사항이 되면
+                         delta 변수 값을 반대로 바꿔준다. (음수를 양수로 / 양수를 음수로)
+                         - × - = +
+                         + × + = +
+
+                         let delta = e.detail ? e.detail : e.wheelDelta; 위에서 delta 변수 정의해줌
+
+            --------------------------------------------------------------------------------------------------------------------------------------------------
          */
-         /* 파이어폭스만 >> 정보여부:true  
-            나머지 브라우저는 >> 정보여부:false가 콘솔창에 나온다. 
-            그래서 true 가 나오는 파이어폭스만 해당코드로 들어오고, 나머지는 false니까 아래로 걍 내려감 */
          /* 
             [ test() 정규식 메서드 ]
               정규식.test(값) -> 값에 정규식 문자가 있으면, true를 리턴함!
