@@ -7,6 +7,12 @@ html,body,ol,ul,h1,h2,h3,h4,p{
     margin: 0;
     padding: 0;
 }
+
+/* 가로 스크롤 숨기기 - 옆에 공간이 나오는 경우 막기 */
+html, body { /* html : 최고 부모 / body : 보이는 컨텐츠 최고 부모 */
+    overflow-x: hidden;
+}
+
 ol,ul{
     list-style: none;
 }

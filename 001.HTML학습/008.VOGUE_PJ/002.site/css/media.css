@@ -3,11 +3,12 @@
 
 /*/////////////////// 1024px 이하 ///////////////////*/
 @media only screen and (max-width:1024px) {
-    
+
     /* 컨텐츠 박스 타이틀 h2요소 */
     .cbx h2 {
-        font-size: 3vw; /* 보이는 화면의 가로의 3% */
-        padding: 5vw; 
+        font-size: 3vw;
+        /* 보이는 화면의 가로의 3% */
+        padding: 5vw;
         /* 
             보이는 화면기준 뷰포트 단위사용! vw  
             : 보이는 화면의 가로! -> vw
@@ -25,9 +26,9 @@
 
 /*/////////////////// 500px 이하 ///////////////////*/
 @media only screen and (max-width:500px) {
-    
+
     /* 1. 상단영역 고정 */
-    #top{
+    #top {
         position: fixed;
         top: 0;
         left: 0;
@@ -37,7 +38,8 @@
     }
 
     /* 2. 상단메뉴, GNB 메뉴 숨기기 */
-    .tmenu, .gnb {
+    .tmenu,
+    .gnb {
         display: none;
     }
 
@@ -45,27 +47,78 @@
     .logo {
         padding: 10px;
     }
+
     .logo img {
         width: 130px;
     }
 
     /* 4. 상단영역 - 최소높이 없앰 */
     .top {
-        min-height: auto; 
+        min-height: auto;
         /* 
             없앰이 auto : 최소설정(내용 만큼들어나) 
             0은 최소설정(내용만큼 늘어나) (의미가 없다)
             auto는 초기설정 하는것(기본설정) 아무값도 안준상태
         */
+        height: 55px;
+        /* 정확하게 밀려고 55px줌 */
     }
 
     /* 5. 모바일 전용버튼 보이기 */
     .mobtn {
-        display: block; 
+        display: block;
         /* 
             앱솔루트, fixed, span태그, 인라인태그도 블록으로 설정하면 보인다. 
         */
     }
+
+    /* 6. 컨텐츠박스 상단 밀기(상단메뉴에 덮이므로) */
+    .cont {
+        margin-top: 55px;
+        /* 상단메뉴 높이값 만큼 밀었음 : 마진이니까 위쪽으로 바깥으로 밀림 */
+    }
+
+    /* 7. 컨텐츠박스 3번째 안보이게 처리 */
+    /*    방법 : "flex : 1" 이었던걸 "0"으로 바꿔준다. (그러면 3개가 있던게 맨마지막 0을 주니까 나머지 2개가 알아서 화면의 반반 차지함) */
+    .pt2 .cbx:last-child {
+        flex: 0;
+    }
+
+    /* 8. 비율박스 비율변경 */
+    .pt1.rbx::before {
+        padding-top: 150%;
+    }
+    .pt2.rbx::before {
+        padding-top: 75%;
+    } 
+    /* 
+        해당 수치는 기본설정이 cover 중간에 맞춰서 채우기인데
+        %로 비율을 늘이다 보면은 다 보이는 크기가 나타남(위아래만 자르다가)
+        다 보이는 그 한계를 찾았음 
+        어떤 수치를 넘으면 양쪽을 자르기 시작
+    */
+    
+
+    /* 9. 컨텐츠 배경이미지 모바일용 변경 */
+    /* 1번 컨텐츠 */
+    .bg1 {
+        background-image: url(../images/cont1b.jpg);
+    }
+    /* 3번 컨텐츠 */
+    .bg5 {
+        background-image: url(../images/cont3b.jpg);
+    }
+    /* 5번 컨텐츠 */
+    .bg9 {
+        background-image: url(../images/cont5b.jpg);
+    }
+
+    /* 10. 컨텐츠 타이틀 변경 */
+    .cbx h2 {
+        font-size: 5vw;
+        padding: 5vw;
+    }
+
 
 }
 
@@ -74,20 +127,3 @@
 
 
 /*/////////////////// 500px 이하 ///////////////////*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
