@@ -203,7 +203,7 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
       e.preventDefault();
 
       // 모바일 메뉴 슬라이드 애니메이션
-      $("#mobx").slideToggle(600,"easeInOutQuint"); /* easeInOutQuint : 가속도 */
+      $("#mobx").slideToggle(600,"easeInOutQuint"); /* easeInOutQuint : 이징 */
       $("#top").toggleClass("hv");
       /* 
          toggleClass(클래스명)
@@ -218,7 +218,7 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
               토글(toggle)은 두가지 기능 겸하는 것을 말함 (slideUp / slideDown이 왔다갔다 함)
               
               확장
-              : toggle(시간,이징,함수) -> show / hide 전환
+              : toggle(시간,이징,함수) -> show / hide 왔다갔다 하는 것.
               : fadeToggle(시간,이징,함수) -> fadeIn / fadeOut 을 왔다갔다 하는 것.
                                              오파시티가 fadeIn (1 = 보이는것) -> fadeOut (0 = 투명)
 
@@ -236,7 +236,7 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
       e.preventDefault();
 
       // 검색창 보이기/숨기기 : slideToggle()
-      $(".mos").slideToggle(300,"easeOutQuint"); /* easeOutQuint : 가속도 */
+      $(".mos").slideToggle(300,"easeOutQuint"); /* easeOutQuint : 이징 */
 
 
    }); ////////////// click ////////////////
