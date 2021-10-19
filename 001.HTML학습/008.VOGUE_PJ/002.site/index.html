@@ -12,8 +12,16 @@
     <link rel="stylesheet" href="./css/main.css"> <!-- 내가 작성한 CSS를 아래쪽에 써야 같은 설정일 경우 우선적용 (덮어쓴다.) -->
     <link rel="stylesheet" href="./css/media.css">
     <!-- 미디어쿼리는 별도의 파일로 불러와야한다. (기존파일에 @import하면 적용하면 안됨!) 
-                                                        : 외부스타일시트 css에다가 미디어쿼리할때  "@media only screen and (max-width:500px)" 이런식으로 쓰는데
-                                                          그 외부스타일시트 안에 @쓰면 안된다. 그래서 외부로 미디어쿼리파일을 별도로 만든는 것 -->
+         : 이게 무슨 소리냐면 "main.css" 열어보면 ->> "외부CSS 합치기" 가 있다.
+           @import url(reset.css); @import url(core.css); @import url(common.css); ->> 이런식으로 외부 CSS를 "main.css"에서 합쳐서
+           "index.html" 에서 하나만 가져왔는다.
+           이때 외부 CSS합치기에 미디어쿼리 CSS(media.css)를 가져오면 오류가 난다는 뜻.
+           
+           뭐 "main.css" 맨밑에다가 "@media only screen and (max-width:500px)" 써도 되겠지만
+           누가 그렇게 쓰겠는가. 분리를 시키지.
+           ▶ "media.css" 폴더를 만들어서 거기서 미디어쿼리 코드를 작성한 후
+               Html 파일에 붙혀넣는다. (main.css) 아래에 붙혀넣는다.
+    -->
     <!-- [ 아이콘툴킷 : fontisto 사용함 ]
            적용예시 : https://www.fontisto.com/get-started
            아이콘 툴킷은 아래 "1-1-1. SNS 박스" ▶ class="fi fi-instagram" 식으로 클래스로 적용함 
