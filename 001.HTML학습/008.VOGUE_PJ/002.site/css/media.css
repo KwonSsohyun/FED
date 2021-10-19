@@ -32,10 +32,17 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 100vw; /* 보이는 화면의 가로 100% */
+      
+        overflow-y: scroll; 
         z-index: 9999;
-        background-color: #fff;
     }
+
+    /* #top에 높이값 100vh 적용 클래스 (햄버거 메뉴 클릭시) 여기서 미리 클래스 생성(html 안함) -> common.js 켜줌 */
+    #top.hv{
+        height: 100vh; /* 보이는 화면의 높이 100% */
+    }
+
 
     /* 2. 상단메뉴, GNB 메뉴 숨기기 */
     .tmenu,
@@ -54,6 +61,7 @@
 
     /* 4. 상단영역 - 최소높이 없앰 */
     .top {
+        position: relative; /********** 모바일 햄버거 메뉴 버튼의 부모자격! *********/
         min-height: auto;
         /* 
             없앰이 auto : 최소설정(내용 만큼들어나) 
@@ -62,6 +70,8 @@
         */
         height: 55px;
         /* 정확하게 밀려고 55px줌 */
+
+        background-color: #fff; /* 상단메뉴 배경흰색! */
     }
 
     /* 5. 모바일 전용버튼 보이기 */
