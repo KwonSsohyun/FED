@@ -108,17 +108,23 @@
     }
 
     /* 
+        padding-top: 75%; 거나 150%가 어떻게 나온 수치냐면?
+
         해당 수치는 기본설정이 cover 중간에 맞춰서 채우기인데
         %로 비율을 늘이다 보면은 다 보이는 크기가 나타남(위아래만 자르다가)
         다 보이는 그 한계를 찾았음 
         어떤 수치를 넘으면 양쪽을 자르기 시작
+
+        ▶ 이미지가 모가지가 잘라서 보이니, 그래서 이미지를 키우는건데
+           계속 키우다가, 갑자기 이미지가 확 커지는 그 단계가 있다. 
+           그 직전을 잡아서 수치 따서 작성한거임
     */
 
 
     /* 9. 컨텐츠 배경이미지 모바일용 변경 (메인+서브페이지) */
     /* 메인 1번 컨텐츠 */
     .bg1 {
-        background-image: url(../images/cont1b.jpg);
+        background-image: url(../images/cont1b.jpg); 
     }
 
     /* 메인 3번 컨텐츠 */
@@ -134,7 +140,7 @@
     /* 서브페이지 모바일용 이미지 변경 */
     /* fashion 서브페이지 */
     .fashion .bg1-1 {
-        background-image: url(../images/fashion/cont1-1b.jpg);
+        background-image: url(../images/fashion/cont1-1b.jpg); /* 1a/2a/3a 였던사항을 ctrl+h 로 드래그 해서 1b/2b/3b로 모두바꿈(모바일이미지가 b라서) */
     }
 
     .fashion .bg1-2 {

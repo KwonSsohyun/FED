@@ -219,7 +219,8 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
               
               확장
               : toggle(시간,이징,함수) -> show / hide 전환
-              : fadeToggle(시간,이징,함수) -> fadeIn / fadeOut 전환
+              : fadeToggle(시간,이징,함수) -> fadeIn / fadeOut 을 왔다갔다 하는 것.
+                                             오파시티가 fadeIn (1 = 보이는것) -> fadeOut (0 = 투명)
 
               ▷ 참고자료 : 004.jQuery학습\001.기본사용법\002.선택자메서드연습\jQuery-02.메서드연습 >> 45.slideDown_slideUp.html
       */
