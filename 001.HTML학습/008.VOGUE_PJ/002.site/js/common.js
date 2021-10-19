@@ -204,7 +204,7 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
 
       // 모바일 메뉴 슬라이드 애니메이션
       $("#mobx").slideToggle(600,"easeInOutQuint"); /* easeInOutQuint : 가속도 */
-      $("top").toggleClass("hv");
+      $("#top").toggleClass("hv");
       /* 
          toggleClass(클래스명)
          해당클래스가 없으면 넣고, 있으면 뺌!
