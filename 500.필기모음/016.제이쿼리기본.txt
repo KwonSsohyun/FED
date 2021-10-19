@@ -693,7 +693,13 @@
                + 추가로 넣은 on2가 먼저 설정한 on보다 늦게 나와야 하니까 (main.js와서 설정)
                  setTimeout(() => { 
                         tit.addClass("on2");
-                 }, 3000);
+                 }, 3000); 
+
+               ++ 상식!
+                  setInterval(함수,시간) -> 일정시간 간격으로 함수 호출해주는 것 (설정한 몇초 간격으로 계속 실행해)
+                  setTimeout -> 설정한 몇초 뒤 한번 실행
+                  ▷ 참고자료 : 004.jQuery학습\003.응용구현\Gurumi_PJ\js >> main.js
+                 
 
 
 
