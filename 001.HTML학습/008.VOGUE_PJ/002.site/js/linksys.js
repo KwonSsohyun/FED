@@ -39,10 +39,10 @@ $(function(){ ////////////// jQB (제이쿼리 코드블록) ///////////////////
 
 
     /// 2. GNB 메뉴 링크 연결하기
-    //     대상 : .gnb a
+    //     대상 : .gnb a + .mognb a (모바일용 gnb 포함!)
     //     이벤트 : click -> click() 메서드사용
     
-    $(".gnb a").click(function(e){ 
+    $(".gnb a, .mognb a").click(function(e){ 
         
         // 1. 기본 이동속성 막기
         /*    ★ a 기본속성이 아래로 조금이라도 스크롤내려서 메뉴같은거 누르면, 스크롤이 위로 자기맘대로 휙 올라간다. (기본이동속성 막기 -> 펑셩옆에 (e)쓰고 -> e.preventDefault(); */
