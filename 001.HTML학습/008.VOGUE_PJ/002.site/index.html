@@ -20,8 +20,9 @@
     <!-- 
          미디어쿼리는 별도의 파일로 불러와야한다. (기존파일에 @import하면 적용하면 안됨!) 
          : 이게 무슨 소리냐면 "main.css" 열어보면 ->> "외부CSS 합치기" 가 있다.
-           @import url(reset.css); @import url(core.css); @import url(common.css); ->> 이런식으로 외부 CSS를 "main.css"에서 합쳐서
+           @import url(reset.css);  @import url(core.css);  @import url(common.css); ->> 이런식으로 외부 CSS를 "main.css"에서 합쳐서
            "index.html" 에서 메인 CSS 하나만 가져왔다.
+           
            이때 "main.css"에서 외부 CSS합치기에 미디어쿼리 CSS(media.css)를 가져오면 오류가 난다는 뜻.
            
            뭐 "main.css" 맨밑에다가 "@media only screen and (max-width:500px)" 써도 되겠지만
