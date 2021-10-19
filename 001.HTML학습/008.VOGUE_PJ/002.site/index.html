@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>보그 코리아에 오신 것을 환영합니다!</title>
-    <link rel="shortcut icon" href="images/icon.jpg" type="image/x-icon"> <!-- 파비콘(favicon) 이미지 로고 : 탭메뉴 아이콘 넣기(.ico 확장자로 이미지 쓰기도 함)-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css"> <!-- 아이콘 툴킷 : 정해진 문자코드형식으로 적으면, 아이콘으로 보여지게 하는 것 -->
+    <link rel="shortcut icon" href="images/icon.jpg" type="image/x-icon">
+    <!-- 파비콘(favicon) 이미지 로고 : 탭메뉴 아이콘 넣기(.ico 확장자로 이미지 쓰기도 함)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css">
+    <!-- 아이콘 툴킷 : 정해진 문자코드형식으로 적으면, 아이콘으로 보여지게 하는 것 -->
     <link rel="stylesheet" href="./css/main.css"> <!-- 내가 작성한 CSS를 아래쪽에 써야 같은 설정일 경우 우선적용 (덮어쓴다.) -->
-    <link rel="stylesheet" href="./css/media.css"> <!-- 미디어쿼리는 별도의 파일로 불러와야한다. (기존파일에 @import하면 적용하면 안됨!) 
+    <link rel="stylesheet" href="./css/media.css">
+    <!-- 미디어쿼리는 별도의 파일로 불러와야한다. (기존파일에 @import하면 적용하면 안됨!) 
                                                         : 외부스타일시트 css에다가 미디어쿼리할때  "@media only screen and (max-width:500px)" 이런식으로 쓰는데
                                                           그 외부스타일시트 안에 @쓰면 안된다. 그래서 외부로 미디어쿼리파일을 별도로 만든는 것 -->
     <!-- [ 아이콘툴킷 : fontisto 사용함 ]
@@ -19,34 +23,39 @@
     <script src="js/linksys.js"></script>
     <script src="js/common.js"></script>
 </head>
+
 <body>
     <!-- /////////// 1. 상단 영역 /////////// -->
-    <div id="top"> <!-- 최고외곽박스(상단 최상위 부모박스) - 메뉴하단 그림자 주려고 id 줌 -->
+    <div id="top">
+        <!-- 최고외곽박스(상단 최상위 부모박스) - 메뉴하단 그림자 주려고 id 줌 -->
         <header class="top ibx">
+
             <!-- 1-1. 상단메뉴 -->
             <div class="tmenu">
-
-                 <!-- 1-1-1. SNS 박스 -->
-                 <div class="sns">
-                    <a href="#" class="fi fi-instagram"> <!-- 아이콘툴킷은 "클래스로!" 여기다가 적용함! --> <!-- 꾸미는 요소는 "common.css" 에서 설정함 -->
-                        <span class="ir">인스타그램</span>  <!-- a태그는 뭔가를 싸놓고 링크를 걸어놔야 하는 특성이 있기 때문에, span으로 설명적고 설명안보이게한다. : core.css에 .ir 설정함-->
+                <!-- 1-1-1. SNS 박스 -->
+                <div class="sns">
+                    <a href="#" class="fi fi-instagram">
+                        <!-- 아이콘툴킷은 "클래스로!" 여기다가 적용함! -->
+                        <!-- 꾸미는 요소는 "common.css" 에서 설정함 -->
+                        <span class="ir">인스타그램</span>
+                        <!-- a태그는 뭔가를 싸놓고 링크를 걸어놔야 하는 특성이 있기 때문에, span으로 설명적고 설명안보이게한다. : core.css에 .ir 설정함-->
                     </a>
                     <a href="#" class="fi fi-facebook">
-                        <span class="ir">페이스북</span> 
+                        <span class="ir">페이스북</span>
                     </a>
                     <a href="#" class="fi fi-twitter">
-                        <span class="ir">트위터</span> 
+                        <span class="ir">트위터</span>
                     </a>
                     <a href="#" class="fi fi-youtube-play">
-                        <span class="ir">유튜브</span> 
+                        <span class="ir">유튜브</span>
                     </a>
                     <a href="#">
-                        <span class="ir">카카오스토리</span> 
+                        <span class="ir">카카오스토리</span>
                     </a>
-                 </div>
+                </div>
 
-                 <!-- 1-1-2. 사이드 메뉴 -->
-                 <div class="sideMenu">
+                <!-- 1-1-2. 사이드 메뉴 -->
+                <div class="sideMenu">
                     <ul class="smbx">
                         <li>
                             <a href="#">SIDE MENU</a>
@@ -67,16 +76,20 @@
                             <a href="#">SUBSCRIBE</a>
                         </li>
                     </ul>
-                 </div>
-             </div>
+                </div>
+            </div>
+
             <!-- 1-2. 로고 박스 -->
-            <h1 class="logo"><!-- 큰 제목로고이기 때문에 h1도 블록태그이기 때문에 -->
+            <h1 class="logo">
+                <!-- 큰 제목로고이기 때문에 h1도 블록태그이기 때문에 -->
                 <a href="#">
                     <img src="./images/mlogo.png" alt="vogue logo">
                 </a>
-            </h1> 
+            </h1>
+
             <!-- 1-3. GNB 박스 -->
-            <nav class="gnb"><!-- nav도 블록태그 -->
+            <nav class="gnb">
+                <!-- nav도 블록태그 -->
                 <ul>
                     <li>
                         <a href="#">FASHION</a>
@@ -106,27 +119,133 @@
                     </li>
                 </ul>
 
-            </nav> 
+            </nav>
+
+            <!-- //// 써있으면 모바일용임 //// -->
+            <!-- //// 모바일용 햄버거버튼 //// --> 
+            <a href="#" class="mobtn hbtn fi fi-nav-icon">
+                <span class="ir">GNB button</span>
+            </a>
+            <!-- //// 모바일용 검색버튼 //// -->
+            <a href="#" class="mobtn sbtn fi fi-search">
+                <span class="ir">search</span>
+            </a>
 
         </header>
+    </div> <!-- #top 끝나는 부분 -->
+
+    <!-- //// 1.4.모바일 검색박스 //// -->
+    <div class="mos">
+        <div class="mwrap">
+            <!-- 입력창박스 -->
+            <div id="search">
+                <input type="text">
+            </div>
+            <!-- 검색버튼 -->
+            <button class="scbtn fi fi-search">
+                <span class="ir">돋보기검색아이콘</span>
+            </button>
+        </div>
     </div>
 
+    <!-- //// 1.5.모바일 전체메뉴 //// -->
+    <div id="mobx">
+        <!-- //// 1.5-1.모바일 GNB 메뉴 //// -->
+        <nav class="mognb">
+            <ul>
+                <li>
+                    <a href="#">FASHION</a>
+                </li>
+                <li>
+                    <a href="#">BEAUTY</a>
+                </li>
+                <li>
+                    <a href="#">LIVING</a>
+                </li>
+                <li>
+                    <a href="#">PEOPLE</a>
+                </li>
+                <li>
+                    <a href="#">VIDEO</a>
+                </li>
+                <li>
+                    <a href="#">RUNWAY</a>
+                </li>
+                <li>
+                    <a href="#">SHOPPING</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- //// 1.5-2.모바일 sns 메뉴 //// -->
+        <div class="mosns">
+            <a href="#" class="fi fi-instagram">
+                <span class="ir">인스타그램</span>
+            </a>
+            <a href="#" class="fi fi-facebook">
+                <span class="ir">페이스북</span>
+            </a>
+            <a href="#" class="fi fi-twitter">
+                <span class="ir">트위터</span>
+            </a>
+            <a href="#" class="fi fi-youtube-play">
+                <span class="ir">유튜브</span>
+            </a>
+            <a href="#">
+                <span class="ir">카카오스토리</span>
+            </a>
 
+        </div>
+        <!-- //// 1.5-3.매거진박스 //// -->
+        <figure class="magbox">
+            <!-- 잡지커버이미지 -->
+            <a class="mcover" href="#">
+                <img src="./images/cover.jpg" alt="보그표지">
+            </a>
+            <!-- 잡지설명 -->
+            <figcaption>
+                정기구독을 신청하면 최대 30% 할인혜택을 드립니다!
+            </figcaption>
+            <!-- 정기구독버튼 -->
+            <button class="magbtn">정기구독 신청</button>
+        </figure>
+
+        <!-- //// 하단링크박스 //// -->
+        <ul class="moblink">
+            <li>
+                <a href="#">회사소개 /</a>
+            </li>
+            <li>
+                <a href="#">광고 및 제휴 /</a>
+            </li>
+            <li>
+                <a href="#">
+                    <strong>개인정보 처리방침</strong>
+                </a>
+            </li>
+        </ul>
+    </div> 
+    <!-- //// 모바일용 메뉴 끝 //// -->
 
 
     <!-- /////////// 2. 메인 영역 /////////// -->
-    <div class="bgc"> <!-- bgc = 백그라운드 컬러 + 하단영역에도 클래스이름 같이줌 -->
+    <div class="bgc">
+        <!-- bgc = 백그라운드 컬러 + 하단영역에도 클래스이름 같이줌 -->
         <main class="cont ibx">
-            <section class="pt1 rbx"> <!-- rbx는 비율유지박스 설정한 css -->
-                <div class="rbxIn"> <!-- rbxIn 속박스 -->
-                    <div class="cbx bgi bg1"> <!-- cbx 컨텐츠(실제내용들어가는) 박스 (코어css설정)--> <!-- bgi : 이미지 꽉차게 들어가는 것 (코어css설정) --> 
+            <section class="pt1 rbx">
+                <!-- rbx는 비율유지박스 설정한 css -->
+                <div class="rbxIn">
+                    <!-- rbxIn 속박스 -->
+                    <div class="cbx bgi bg1">
+                        <!-- cbx 컨텐츠(실제내용들어가는) 박스 (코어css설정)-->
+                        <!-- bgi : 이미지 꽉차게 들어가는 것 (코어css설정) -->
                         <!-- bg1 : 각각 이미지 설정 (main.css설정) -->
-                            <h2>복싱과 맺은 모델 수주의 이야기</h2>
-                    </div> 
-                </div> 
+                        <h2>복싱과 맺은 모델 수주의 이야기</h2>
+                    </div>
+                </div>
             </section>
             <section class="pt2 rbx">
-                <div class="rbxIn"> <!-- bg2/3/4 : 각각의 들어갈 이미지 셋팅 (main.css설정) -->
+                <div class="rbxIn">
+                    <!-- bg2/3/4 : 각각의 들어갈 이미지 셋팅 (main.css설정) -->
                     <div class="cbx bgi bg2">
                         <h2>안현모,홍지민,강주은 써마지 더 리얼 인터뷰</h2>
                     </div> <!-- 옆으로 흐르게 설정 -->
@@ -139,16 +258,18 @@
                 </div>
             </section>
 
-            <section class="pt1 rbx"> <!-- pt1과 같은 형식이기 때문에 복붙! -->
-                <div class="rbxIn"> 
-                    <div class="cbx bgi bg5"> 
+            <section class="pt1 rbx">
+                <!-- pt1과 같은 형식이기 때문에 복붙! -->
+                <div class="rbxIn">
+                    <div class="cbx bgi bg5">
                         <h2>&lt;퀸스 갬빗&gt; 이후 엄청난 신작을 준비 중인 안야 테일러 조이</h2> <!-- &lt; → <  |  &gt; → > -->
-                    </div> 
-                </div> 
+                    </div>
+                </div>
             </section>
 
             <section class="pt2 rbx">
-                <div class="rbxIn"> <!-- pt2과 같은 형식이기 때문에 복붙! -->
+                <div class="rbxIn">
+                    <!-- pt2과 같은 형식이기 때문에 복붙! -->
                     <div class="cbx bgi bg6">
                         <h2>마리아 그라치아 치우리의 디올 크루즈 2022 컬렉션 쇼</h2>
                     </div> <!-- 옆으로 흐르게 설정 -->
@@ -161,16 +282,18 @@
                 </div>
             </section>
 
-            <section class="pt1 rbx"> <!-- pt1과 같은 형식이기 때문에 복붙! -->
-                <div class="rbxIn"> 
-                    <div class="cbx bgi bg9"> 
+            <section class="pt1 rbx">
+                <!-- pt1과 같은 형식이기 때문에 복붙! -->
+                <div class="rbxIn">
+                    <div class="cbx bgi bg9">
                         <h2>김여진이 감행하는 변화에 대하여</h2>
-                    </div> 
-                </div> 
+                    </div>
+                </div>
             </section>
 
             <section class="pt2 rbx">
-                <div class="rbxIn"> <!-- pt2과 같은 형식이기 때문에 복붙! -->
+                <div class="rbxIn">
+                    <!-- pt2과 같은 형식이기 때문에 복붙! -->
                     <div class="cbx bgi bg10">
                         <h2>모델 아이린이 선택한 여름 원피스 Best</h2>
                     </div> <!-- 옆으로 흐르게 설정 -->
@@ -184,7 +307,8 @@
             </section>
 
             <section class="pt2 rbx">
-                <div class="rbxIn"> <!-- pt2과 같은 형식이기 때문에 복붙! -->
+                <div class="rbxIn">
+                    <!-- pt2과 같은 형식이기 때문에 복붙! -->
                     <div class="cbx bgi bg13">
                         <h2>체커보드의 색다른 매력</h2>
                     </div> <!-- 옆으로 흐르게 설정 -->
@@ -211,7 +335,8 @@
             </div>
             <!-- 3-2. 회사주소 -->
             <address class="addr">
-                WWW.VOGUE.COM Ⓒ CONDÉNAST ASIA PACIFIC. INC. ALL RIGHTS RESERVED. VOGUE.COM KOREA IS OPERATED BY DOOSAN MAGAZINE.
+                WWW.VOGUE.COM Ⓒ CONDÉNAST ASIA PACIFIC. INC. ALL RIGHTS RESERVED. VOGUE.COM KOREA IS OPERATED BY DOOSAN
+                MAGAZINE.
             </address>
             <!-- 3-3. 하단링크 -->
             <ul class="blink">
@@ -239,6 +364,7 @@
     </a>
 
 
-    
+
 </body>
+
 </html>

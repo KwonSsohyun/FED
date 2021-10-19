@@ -12,43 +12,59 @@
 
 
 /************************************* 1. 상단 영역 *************************************/
-#top{
+#top {
     position: relative;
     z-index: 9999;
-    box-shadow: 0 0px 4px #c0c0c0; /* 메뉴하단 그림자 주려고! - 최대외곽박스(상단 최상위 부모박스) */
+    box-shadow: 0 0px 4px #c0c0c0;
+    /* 메뉴하단 그림자 주려고! - 최대외곽박스(상단 최상위 부모박스) */
     /* 박스 그림자 */
 }
-.top{
-    min-height: 206px; /* 최소높이 min으로 잡는다. : 206px잡고 있다가 내용늘어나면 늘어남!*/
+
+.top {
+    min-height: 206px;
+    /* 최소높이 min으로 잡는다. : 206px잡고 있다가 내용늘어나면 늘어남!*/
 }
+
 /* 1-1. 상단메뉴 //////////////////////////////////////////////////////////////////////*/
-.tmenu{
-    display: flex; /* 플렉스 박스 */
-    max-width: 970px; /* 최대 970px, 줄어들면 auto */
+.tmenu {
+    display: flex;
+    /* 플렉스 박스 */
+    max-width: 970px;
+    /* 최대 970px, 줄어들면 auto */
     height: 45px;
     margin: 0 auto;
 }
 
 /* 상단메뉴 하위 박스 등분할 */
-.tmenu>div{
-    flex:1; /* flex 등분할시 높이값은 자동채우기됨! (height:100%를 안해도됨) */
+.tmenu>div {
+    flex: 1;
+    /* flex 등분할시 높이값은 자동채우기됨! (height:100%를 안해도됨) */
 }
 
 /* 1-1-1. SNS 박스 //////////////////////////////////////////////////////////////////////*/
 /* sns박스 a */
-.sns a{
-    display: inline-block; /* 맨 마지막 카카오스토리 때문에 준것 *//* 디자인 적용위해! */
-    
+.sns a {
+    display: inline-block;
+    /* 맨 마지막 카카오스토리 때문에 준것 */
+    /* 디자인 적용위해! */
+
     width: 16px;
     height: 16px;
-    font-size: 16px; /* 안줘도 html상속된 사이즈는 16px 이다. */
-    text-align: center; /* 박스내의 인라인요소 가로중앙정렬 */
-    vertical-align: top; /* vertical : 수직  // top :위에 기준으로 */ /* 인라인요소간 세로정렬(top -> 윗줄정렬) */
-    line-height: 16px; /* 글자가 박스가 세로 중앙에 오도록 설정!!!! */
+    font-size: 16px;
+    /* 안줘도 html상속된 사이즈는 16px 이다. */
+    text-align: center;
+    /* 박스내의 인라인요소 가로중앙정렬 */
+    vertical-align: top;
+    /* vertical : 수직  // top :위에 기준으로 */
+    /* 인라인요소간 세로정렬(top -> 윗줄정렬) */
+    line-height: 16px;
+    /* 글자가 박스가 세로 중앙에 오도록 설정!!!! */
 
     /* 위치조정 */
-    margin-top: 15px; /* 아이콘 상단에 붙어있는 것, 아래로 떨어뜨리기 */
-    margin-right: 16px; /* 아이콘 간격 벌리기 */
+    margin-top: 15px;
+    /* 아이콘 상단에 붙어있는 것, 아래로 떨어뜨리기 */
+    margin-right: 16px;
+    /* 아이콘 간격 벌리기 */
 
     /* 트랜지션: 속시이지 */
     transition: opacity .2s;
@@ -56,105 +72,128 @@
 
 /* sns메뉴 클릭했을때 흐리게 하기 */
 /* a요소 마우스 오버시 */
-.sns a:hover{
+.sns a:hover {
     opacity: 0.8;
 }
 
 
 /* 트위터 아이콘 박스 - 너무커서 박스 바깥으로 나가서 설정 */
-.sns a.fi-twitter{
+.sns a.fi-twitter {
     font-size: 13px;
 }
+
 /* 유튜브 아이콘 박스 - 너무커서 박스 바깥으로 나가서 설정 */
-.sns a.fi-youtube-play{
+.sns a.fi-youtube-play {
     font-size: 11px;
 }
 
 /* 카카오스토리 이미지 넣기 */
 /* sns 마지막 a요소에 카스 이미지 넣기 */
-.sns a:last-child{
+.sns a:last-child {
     background: url(../images/sns_kakao.png) center/auto 100%;
 }
 
 
 
 /* 1-1-2. 사이드 메뉴 //////////////////////////////////////////////////////////////////////*/
-.sideMenu{
-    position: relative; /* 부모자격주고~ */
+.sideMenu {
+    position: relative;
+    /* 부모자격주고~ */
 }
+
 /* 사이드메뉴 내용 박스 */
-.smbx{
-    position: absolute; /* 부모는? .sideMenu */
-    right: 0; /* 오른쪽으로 붙힘 */
-    display: flex; /* 플렉스박스 */
+.smbx {
+    position: absolute;
+    /* 부모는? .sideMenu */
+    right: 0;
+    /* 오른쪽으로 붙힘 */
+    display: flex;
+    /* 플렉스박스 */
 }
+
 /* 구분선 넣기 */
-.smbx>li:first-child{
+.smbx>li:first-child {
     border-right: 1px solid #e5e5e5;
 }
+
 /* a 요소 - 손가락 포인터 만들기 */
-.smbx>li>a{
+.smbx>li>a {
     display: block;
-    padding: 0 13px; /* 간격주기 */
+    padding: 0 13px;
+    /* 간격주기 */
     line-height: 44px;
 
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Roboto', sans-serif;
     font-size: 12px;
     color: #747474;
 }
 
 /* 사이트메뉴 서브메뉴 */
-.smsub{
-    position: absolute; /* 젠트앱솔루트! */
+.smsub {
+    position: absolute;
+    /* 젠트앱솔루트! */
     width: 120px;
-    border: 1px solid #e5e5e5; /* .smbx>li:hover .smsub에 transition을 줘서 닫았을때 직선이 안보이는거임! -> .smsub에 transition을 주면 직선이 보이는것임 ㅠㅠ */
+    border: 1px solid #e5e5e5;
+    /* .smbx>li:hover .smsub에 transition을 줘서 닫았을때 직선이 안보이는거임! -> .smsub에 transition을 주면 직선이 보이는것임 ㅠㅠ */
     /* 원래는 박스에 보더나 패딩을 안주는게 좋긴함 왜냐하면? 닫았을때 깨끗하게 닫히는게 아니라 보더, 패딩 영역 틈새가 보이게 닫혀지니까욤 : 숨겨지고 싶을때 (보더나 패딩이 없어야 한다) */
-    box-sizing: border-box; /* 보더,패딩 포함 크기유지 박스 */
+    box-sizing: border-box;
+    /* 보더,패딩 포함 크기유지 박스 */
 
     opacity: 0;
     /* 투명하기 때문에 아래있어서 숨김 ->> 길가던 사람 몰라서 교통사고 생각하면됨 */
     height: 0;
-    overflow: hidden; /* 넘치는 li들을 숨김 */
-    /* display: none; */ /* display: none -> block으로 하면 트랜지션 안먹음 ->> 그래서 height: 0; / overflow: hidden; -> height: auto; */
-    
+    overflow: hidden;
+    /* 넘치는 li들을 숨김 */
+    /* display: none; */
+    /* display: none -> block으로 하면 트랜지션 안먹음 ->> 그래서 height: 0; / overflow: hidden; -> height: auto; */
+
 }
+
 /* 상위 메뉴에 마우스 오버시 서브메뉴 보이기 */
-.smbx>li:hover .smsub{
+.smbx>li:hover .smsub {
     opacity: 1;
-    height: auto; /* 내용만큼 늘어남 (기본값) - 트랜지션 안됨 특정크기가 아니라서*/
-    
+    height: auto;
+    /* 내용만큼 늘어남 (기본값) - 트랜지션 안됨 특정크기가 아니라서*/
+
     /* 트랜지션: 속시이지 */
-    transition: opacity .4s ease-in-out; /* 특정요소만 먹어라 opacity만 먹지만 여기서는 height: auto;가 있기에 안먹는다. */
+    transition: opacity .4s ease-in-out;
+    /* 특정요소만 먹어라 opacity만 먹지만 여기서는 height: auto;가 있기에 안먹는다. */
 }
-.smsub a{
+
+.smsub a {
     display: block;
     padding: 7px 10px;
 
     font-family: 'NanumBarunGothic', sans-serif;
     font-size: 12px;
-    color: #747474; /* 반복되는건 2숫자가 반복되면 1번만 쓰도록 허용해줌 333333 -> 333 */
+    color: #747474;
+    /* 반복되는건 2숫자가 반복되면 1번만 쓰도록 허용해줌 333333 -> 333 */
     background-color: #fff;
 
     /* 트랜지션: 속시이지 */
-    transition: all .2s ease-in-out; /* 오버시 양쪽 설정됨(상속됨) */
+    transition: all .2s ease-in-out;
+    /* 오버시 양쪽 설정됨(상속됨) */
 }
+
 /* a에 오버시 : 메뉴에 오버됬을때 */
-.smsub a:hover{
+.smsub a:hover {
     color: #333;
     background-color: #fafafa;
 }
 
 /* 첫번째 사이드 메뉴 마우스오버시 커서 모양 text로 바꾸기 */
 /* 참고 : https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor */
-.smbx>li:first-child>a{
+.smbx>li:first-child>a {
     cursor: text;
 }
 
 
 /* 1-2. 로고 박스 //////////////////////////////////////////////////////////////////////*/
-.logo{
-    text-align: center; /* h1이 블록요소니까 그 줄의 가운데와라~! : 글자,인라인요소 가로중앙*/
-    font-size: 100%; /* 기본 h1태그는 font-size:2em 으로 잡혀있음
+.logo {
+    text-align: center;
+    /* h1이 블록요소니까 그 줄의 가운데와라~! : 글자,인라인요소 가로중앙*/
+    font-size: 100%;
+    /* 기본 h1태그는 font-size:2em 으로 잡혀있음
     이것때문에 박스 높이가 조금 더 잡힌다.
     100%로 해주면 기본 글자크기 16px로 셋업되어서 높이값이 내용만큼 나온다! */
     /* 
@@ -166,8 +205,9 @@
         ↓↓↓↓↓↓↓↓
     */
 }
-.logo img{
-    vertical-align: bottom; 
+
+.logo img {
+    vertical-align: bottom;
     /*  ★★★★★★ 
         블록박스에 이미지를 넣은 경우 아래쪽에 약 4px 정도의 간극이 생긴다.
         이것을 없애려면 인라인 세로정렬 속성에 bottom 값으로 셋팅하면 해결된다!
@@ -177,8 +217,9 @@
 }
 
 /* 1-3. GNB 박스 //////////////////////////////////////////////////////////////////////*/
-.gnb{
-    min-height: 46px; /* 최소 46px 높이를 유지하다가 내용이 많아지면 높이값 늘어남! */
+.gnb {
+    min-height: 46px;
+    /* 최소 46px 높이를 유지하다가 내용이 많아지면 높이값 늘어남! */
 
     /* 글자설정 */
     font-family: 'Roboto Condensed', sans-serif;
@@ -186,165 +227,585 @@
     font-weight: 700;
     line-height: 46px;
 
-    margin-top: 7px; /* 아래로 조금 내림 */
+    margin-top: 7px;
+    /* 아래로 조금 내림 */
 }
 
 /* GNB 플렉스 박스 */
-.gnb>ul{
+.gnb>ul {
     display: flex;
     /* ★★★★★ 줄바꿈을 할 수 있도록 flex-wrap: wrap; ->> 속해있는 상단영역의 높이값을 .top{min-height: 206px;} 주면 줄였을때 보여지면서 떨어짐! */
-    flex-wrap: wrap; /* 줄바꿈 */
-    justify-content: center; /* 자식요소 가로 중앙정렬!!! */
+    flex-wrap: wrap;
+    /* 줄바꿈 */
+    justify-content: center;
+    /* 자식요소 가로 중앙정렬!!! */
 
-    max-width: 758px; /* 메뉴가 다 한줄에 보이는 값이 758px이라서 준거임 */
-    margin: 0 auto; /* 가로가운데 -> 가로 특정크기를 줘야 먹힌다. */
-    
+    max-width: 758px;
+    /* 메뉴가 다 한줄에 보이는 값이 758px이라서 준거임 */
+    margin: 0 auto;
+    /* 가로가운데 -> 가로 특정크기를 줘야 먹힌다. */
+
 }
+
 /* 리스트요소 간격주 */
-.gnb li{
-    margin: 0 23px; /* 양쪽마진 */
+.gnb li {
+    margin: 0 23px;
+    /* 양쪽마진 */
 }
 
 /* 검색아이콘 두껍게 하기 */
 /* 마지막 검색 li a요소 */
-.gnb li:last-child a{
+.gnb li:last-child a {
     width: 16px;
     height: 16px;
     font-weight: bold;
 }
 
 /* 링크 트랜지션 */
-.gnb a{
+.gnb a {
     transition: color .3s;
 }
 
 /* 마우스 오버시 글자색 */
-.gnb a:hover{
+.gnb a:hover {
     color: #f00;
 }
 
 
 /************************************** 슬림 상단영역 : #top에 .on을 준다! **************************************/
 /* 상단 고정하기 */
-#top.on{
+#top.on {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* fixed는 내용만큼 줄어드니까, width: 100% */
+    width: 100%;
+    /* fixed는 내용만큼 줄어드니까, width: 100% */
     background-color: #fff;
 }
 
 /* 속박스 */
-#top.on .top{
-    min-height: auto; /* 최소높이 없애기 */
+#top.on .top {
+    min-height: auto;
+    /* 최소높이 없애기 */
 }
+
 /* 상단메뉴 없애기 */
-#top.on .tmenu{
+#top.on .tmenu {
     display: none;
 }
+
 /* 로고 */
-#top.on .logo{
+#top.on .logo {
     position: absolute;
-    left: 0; /* 부모는? #top - 겉박스가 기준! */
+    left: 0;
+    /* 부모는? #top - 겉박스가 기준! */
 }
+
 /* 로고 이미지 */
-#top.on .logo img{
+#top.on .logo img {
     height: 26px;
     margin: 5px 0 0 7px;
 }
+
 /* GNB */
-#top.on .gnb{
+#top.on .gnb {
     font-size: 14px;
     box-sizing: border-box;
-    padding: 0 107px; /* 양쪽 패딩을 줘서, 로고에 닿기 전에 줄바꿈 (로고 사이즈를 고려한 107px) */
+    padding: 0 107px;
+    /* 양쪽 패딩을 줘서, 로고에 닿기 전에 줄바꿈 (로고 사이즈를 고려한 107px) */
 }
+
 /* 최대유지 한계치를 준거다. */
-#top.on .gnb ul{
+#top.on .gnb ul {
     max-width: 716px;
 }
-#top.on .li{
+
+#top.on .li {
     margin: 0 20px;
 }
-#top.on .li a{
+
+#top.on .li a {
     color: #333;
 }
-#top.on .li a:hover{
+
+#top.on .li a:hover {
     color: #f00;
 }
 
+/* 모바일 전용버튼 */
+.mobtn {
+    /* 공통 */
+    position: absolute;
+    /* 부모는? #top(모바일에서 fixed) */
+    width: 21px;
+    height: 21px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* 세로중앙이동 */
+    display: none;
+    /* 처음에 안보임 */
+}
+
+/* 모바일용 햄버거 버튼 */
+.hbtn {
+    left: 10px;
+    font-size: 15px;
+}
+
+/* 모바일용 검색버튼 */
+.sbtn {
+    right: 10px;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+/* 1.4. 모바일 검색박스 */
+.mos {
+    padding: 15px 30px;
+    background-color: #fff;
+    display: none;
+    /* 처음에 숨기기 */
+}
+
+/* 검색속박스 */
+.mwrap {
+    position: relative;
+    /* 부모자격 */
+    width: 100%;
+    height: 35px;
+    background-color: #000;
+}
+
+/* 검색입력창 - 부모박스의 크기에 따라 유동적인 박스 */
+#search {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 50px;
+    bottom: 9px;
+}
+
+/* 입력양식 */
+#search input {
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+}
+
+/* input박스는 일반 div박스와 다르기때문에 겉박스를 만들고
+채우기 형식으로 디자인함! */
+
+/* 검색버튼 */
+.scbtn {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 1.5. 모바일 전체메뉴박스 (#top의 하위자식으로 편성) */
+#mobx {
+    padding-left: 15px;
+    padding-top: 6px;
+    padding-bottom: 30px;
+    background-color: #fff;
+    display: none;
+    /* 처음에 안보임 */
+}
+
+/* 1.5-1.모바일 GNb */
+.mognb {
+    padding-left: 15px;
+}
+
+.mognb a {
+    font-family: "Roboto";
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 2;
+    color: #333;
+}
+
+/* 1.5-2. 모바일 SNS */
+.mosns {
+    margin-top: 24px;
+    margin-left: 13px;
+}
+
+/* sns박스 a */
+.mosns a {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    margin: 0 2px 10px;
+    font-size: 20px;
+    text-align: center;
+    /* 박스내의 인라인요소 가로중앙정렬 */
+    vertical-align: top;
+    /* 인라인 요소간 세로정렬(top-윗줄맞춤) */
+    line-height: 40px;
+    /* 보더가 2px내부에 포함되어서 2px뺀 높이와 같음! */
+    /* 글자가 박스 세로 중앙에 오도록 설정 */
+
+    /* 원형디자인 */
+    border: 1px solid #d2d2d2;
+    border-radius: 50%;
+    box-sizing: border-box;
+    /* 보더포함 */
+}
+
+/* 트위터 아이콘 박스 */
+.mosns a.fi-twitter {
+    font-size: 16px;
+    /* 가로크기가 16px에 맞게 글자크기조정 */
+}
+
+/* 유튜브 아이콘 박스 */
+.mosns a.fi-youtube-play {
+    font-size: 15px;
+    /* 가로크기가 16px에 맞게 글자크기조정 */
+}
+
+/* mosns 마지막 a요소에 카스아이콘 넣기 */
+.mosns a:last-child {
+    background: url(../images/sns_kakao.png) no-repeat center/auto 50%;
+}
+
+/* 1.5-3.매거진박스 */
+.magbox {
+    margin: 0;
+    padding: 10px 30px 0 15px;
+    font-family: 'NanumBarunGothic', sans-serif;
+}
+
+/* 잡지커버이미지 */
+.mcover img {
+    width: 100%;
+}
+
+/* 잡지설명 */
+.magbox figcaption {
+    font-size: 13px;
+    line-height: 2;
+    color: #222;
+}
+
+/* 정기구독버튼 */
+.magbtn {
+    font-size: 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    width: 100%;
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+/* 모바일 하단링크 */
+.moblink {
+    display: flex;
+    margin-left: 15px;
+    line-height: 3.5;
+    font-size: 15px;
+    letter-spacing: -1px;
+}
+
+.moblink li+li {
+    /* 2번째 li부터 */
+    padding-left: 7px;
+}
+
+.moblink a {
+    color: #222;
+}
+
+/************************************* 모바일 메뉴 영역 *************************************/
+/* 모바일 전용버튼 */
+.mobtn {
+    /* 공통 */
+    position: absolute;
+    /* 부모는? #top(모바일에서 fixed) */
+    width: 21px;
+    height: 21px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* 세로중앙이동 */
+    display: none;
+    /* 처음에 안보임 */
+}
+
+/* 모바일용 햄버거 버튼 */
+.hbtn {
+    left: 10px;
+    font-size: 15px;
+}
+
+/* 모바일용 검색버튼 */
+.sbtn {
+    right: 10px;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+/* 1.4. 모바일 검색박스 */
+.mos {
+    padding: 15px 30px;
+    background-color: #fff;
+    display: none;
+    /* 처음에 숨기기 */
+}
+
+/* 검색속박스 */
+.mwrap {
+    position: relative;
+    /* 부모자격 */
+    width: 100%;
+    height: 35px;
+    background-color: #000;
+}
+
+/* 검색입력창 - 부모박스의 크기에 따라 유동적인 박스 */
+#search {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 50px;
+    bottom: 9px;
+}
+
+/* 입력양식 */
+#search input {
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+}
+
+/* input박스는 일반 div박스와 다르기때문에 겉박스를 만들고
+채우기 형식으로 디자인함! */
+
+/* 검색버튼 */
+.scbtn {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 1.5. 모바일 전체메뉴박스 (#top의 하위자식으로 편성) */
+#mobx {
+    padding-left: 15px;
+    padding-top: 6px;
+    padding-bottom: 30px;
+    background-color: #fff;
+    display: none;
+    /* 처음에 안보임 */
+}
+
+/* 1.5-1.모바일 GNb */
+.mognb {
+    padding-left: 15px;
+}
+
+.mognb a {
+    font-family: "Roboto";
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 2;
+    color: #333;
+}
+
+/* 1.5-2. 모바일 SNS */
+.mosns {
+    margin-top: 24px;
+    margin-left: 13px;
+}
+
+/* sns박스 a */
+.mosns a {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    margin: 0 2px 10px;
+    font-size: 20px;
+    text-align: center;
+    /* 박스내의 인라인요소 가로중앙정렬 */
+    vertical-align: top;
+    /* 인라인 요소간 세로정렬(top-윗줄맞춤) */
+    line-height: 40px;
+    /* 보더가 2px내부에 포함되어서 2px뺀 높이와 같음! */
+    /* 글자가 박스 세로 중앙에 오도록 설정 */
+
+    /* 원형디자인 */
+    border: 1px solid #d2d2d2;
+    border-radius: 50%;
+    box-sizing: border-box;
+    /* 보더포함 */
+}
+
+/* 트위터 아이콘 박스 */
+.mosns a.fi-twitter {
+    font-size: 16px;
+    /* 가로크기가 16px에 맞게 글자크기조정 */
+}
+
+/* 유튜브 아이콘 박스 */
+.mosns a.fi-youtube-play {
+    font-size: 15px;
+    /* 가로크기가 16px에 맞게 글자크기조정 */
+}
+
+/* mosns 마지막 a요소에 카스아이콘 넣기 */
+.mosns a:last-child {
+    background: url(../images/sns_kakao.png) no-repeat center/auto 50%;
+}
+
+/* 1.5-3.매거진박스 */
+.magbox {
+    margin: 0;
+    padding: 10px 30px 0 15px;
+    font-family: 'NanumBarunGothic', sans-serif;
+}
+
+/* 잡지커버이미지 */
+.mcover img {
+    width: 100%;
+}
+
+/* 잡지설명 */
+.magbox figcaption {
+    font-size: 13px;
+    line-height: 2;
+    color: #222;
+}
+
+/* 정기구독버튼 */
+.magbtn {
+    font-size: 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    width: 100%;
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+/* 모바일 하단링크 */
+.moblink {
+    display: flex;
+    margin-left: 15px;
+    line-height: 3.5;
+    font-size: 15px;
+    letter-spacing: -1px;
+}
+
+.moblink li+li {
+    /* 2번째 li부터 */
+    padding-left: 7px;
+}
+
+.moblink a {
+    color: #222;
+}
 
 
 /************************************* 3. 하단영역 *************************************/
-.info{
-    min-height: 285px; /* 최소 285px 높이를 유지하다가, 내용이 많아지면 늘어남 */
+.info {
+    min-height: 285px;
+    /* 최소 285px 높이를 유지하다가, 내용이 많아지면 늘어남 */
     background-color: #000;
     box-sizing: border-box;
     padding: 70px;
     font-family: 'Roboto', 'NanumBarunGothic', sans-serif;
- 
+
 }
+
 /* 3-1. 하단로고 */
-.blogo{
+.blogo {
     text-align: center;
 }
 
 /* 3-2. 회사주소 */
-.addr{
-    font-style: normal; /* 이탤릭 해제 */
+.addr {
+    font-style: normal;
+    /* 이탤릭 해제 */
     text-align: center;
     font-size: 11px;
     color: #747474;
 
-    margin: 20px 0 10px; /* 위 20px, 양쪽 0, 아래 10px */
+    margin: 20px 0 10px;
+    /* 위 20px, 양쪽 0, 아래 10px */
 }
 
 /* 3-3. 하단링크 */
-.blink{
+.blink {
     display: flex;
-    flex-wrap: wrap; /* 창이 작아졌을때 줄바꿈(=컨텐츠 크기보다 작아지면) */
-    justify-content: center; /* 플렉스 가로방향 정렬 -> justify-content */
+    flex-wrap: wrap;
+    /* 창이 작아졌을때 줄바꿈(=컨텐츠 크기보다 작아지면) */
+    justify-content: center;
+    /* 플렉스 가로방향 정렬 -> justify-content */
 
 }
+
 /* 하단링크 a요소 */
-.blink a{
+.blink a {
     color: #747474;
     font-size: 13px;
     margin: 0 5px;
 }
+
 /* 마지막 li만 두껍게! */
-.blink li:last-child a{
+.blink li:last-child a {
     font-weight: bold;
 }
 
 
 /* 위로가기 버튼 */
-.tbtn{
+.tbtn {
     position: fixed;
     bottom: 0;
     right: 75px;
     width: 48px;
     height: 35px;
-    text-align: center; /* 가로중앙 */
-    line-height: 35px; /* 세로중앙 */
+    text-align: center;
+    /* 가로중앙 */
+    line-height: 35px;
+    /* 세로중앙 */
     background-color: #333;
-    border-radius: 4px 4px 0 0; /* 둥근모서리 : 왼쪽 위 -> 오른쪽 위 -> 오른쪽 아래 -> 왼쪽 아래 */
+    border-radius: 4px 4px 0 0;
+    /* 둥근모서리 : 왼쪽 위 -> 오른쪽 위 -> 오른쪽 아래 -> 왼쪽 아래 */
     color: #fff;
     z-index: 999;
 
     /* 트랜지션 : 속시이지 */
-    transition: background-color .3s; /* 특정속성에만 한정지어주면 해결 background-color을 앞에 붙힘 */
+    transition: background-color .3s;
+    /* 특정속성에만 한정지어주면 해결 background-color을 앞에 붙힘 */
     /* common.js에서 "2. 상단이동버튼 보이기 숨기기" 에서 tbtn.fadeIn(300); 꿈뻑액박나던거 해결함*/
-    display: none; /* 안보이게 처리함 */
+    display: none;
+    /* 안보이게 처리함 */
 }
 
 /* 탑버튼 마우스 오버시 */
-.tbtn:hover{
+.tbtn:hover {
     background-color: #f00;
 
 }
-    
+
 /* 스크롤 이동 (스크롤 내려서 화면 맨 아래로 내렸을때, top버튼 누르면 부드럽게 창이 올라가져서 보이는것)
    참고자료 : robot.html (scroll-behavior: smooth;)
 */
-
-
