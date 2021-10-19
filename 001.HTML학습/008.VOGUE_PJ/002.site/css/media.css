@@ -32,15 +32,17 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 100vw; /* 보이는 화면의 가로 100% */
-      
-        overflow-y: scroll; 
+        width: 100vw;
+        /* 보이는 화면의 가로 100% */
+
+        overflow-y: scroll;
         z-index: 9999;
     }
 
     /* #top에 높이값 100vh 적용 클래스 (햄버거 메뉴 클릭시) 여기서 미리 클래스 생성(html 안함) -> common.js 켜줌 */
-    #top.hv{
-        height: 100vh; /* 보이는 화면의 높이 100% */
+    #top.hv {
+        height: 100vh;
+        /* 보이는 화면의 높이 100% */
     }
 
 
@@ -61,7 +63,8 @@
 
     /* 4. 상단영역 - 최소높이 없앰 */
     .top {
-        position: relative; /********** 모바일 햄버거 메뉴 버튼의 부모자격! *********/
+        position: relative;
+        /********** 모바일 햄버거 메뉴 버튼의 부모자격! *********/
         min-height: auto;
         /* 
             없앰이 auto : 최소설정(내용 만큼들어나) 
@@ -71,7 +74,8 @@
         height: 55px;
         /* 정확하게 밀려고 55px줌 */
 
-        background-color: #fff; /* 상단메뉴 배경흰색! */
+        background-color: #fff;
+        /* 상단메뉴 배경흰색! */
     }
 
     /* 5. 모바일 전용버튼 보이기 */
@@ -98,30 +102,215 @@
     .pt1.rbx::before {
         padding-top: 150%;
     }
+
     .pt2.rbx::before {
         padding-top: 75%;
-    } 
+    }
+
     /* 
         해당 수치는 기본설정이 cover 중간에 맞춰서 채우기인데
         %로 비율을 늘이다 보면은 다 보이는 크기가 나타남(위아래만 자르다가)
         다 보이는 그 한계를 찾았음 
         어떤 수치를 넘으면 양쪽을 자르기 시작
     */
-    
 
-    /* 9. 컨텐츠 배경이미지 모바일용 변경 */
-    /* 1번 컨텐츠 */
+
+    /* 9. 컨텐츠 배경이미지 모바일용 변경 (메인+서브페이지) */
+    /* 메인 1번 컨텐츠 */
     .bg1 {
         background-image: url(../images/cont1b.jpg);
     }
-    /* 3번 컨텐츠 */
+
+    /* 메인 3번 컨텐츠 */
     .bg5 {
         background-image: url(../images/cont3b.jpg);
     }
-    /* 5번 컨텐츠 */
+
+    /* 메인 5번 컨텐츠 */
     .bg9 {
         background-image: url(../images/cont5b.jpg);
     }
+
+    /* 서브페이지 모바일용 이미지 변경 */
+    /* fashion 서브페이지 */
+    .fashion .bg1-1 {
+        background-image: url(../images/fashion/cont1-1b.jpg);
+    }
+
+    .fashion .bg1-2 {
+        background-image: url(../images/fashion/cont1-2b.jpg);
+    }
+
+    .fashion .bg1-3 {
+        background-image: url(../images/fashion/cont1-3b.jpg);
+    }
+
+    .fashion .bg2-1 {
+        background-image: url(../images/fashion/cont2-1b.jpg);
+    }
+
+    .fashion .bg2-2 {
+        background-image: url(../images/fashion/cont2-2b.jpg);
+    }
+
+    .fashion .bg2-3 {
+        background-image: url(../images/fashion/cont2-3b.jpg);
+    }
+
+    /* beauty 서브페이지 */
+    .beauty .bg1-1 {
+        background-image: url(../images/beauty/cont1-1b.jpg);
+    }
+
+    .beauty .bg1-2 {
+        background-image: url(../images/beauty/cont1-2b.jpg);
+    }
+
+    .beauty .bg1-3 {
+        background-image: url(../images/beauty/cont1-3b.jpg);
+    }
+
+    .beauty .bg2-1 {
+        background-image: url(../images/beauty/cont2-1b.jpg);
+    }
+
+    .beauty .bg2-2 {
+        background-image: url(../images/beauty/cont2-2b.jpg);
+    }
+
+    .beauty .bg2-3 {
+        background-image: url(../images/beauty/cont2-3b.jpg);
+    }
+
+    /* living 서브페이지 */
+    .living .bg1-1 {
+        background-image: url(../images/living/cont1-1b.jpg);
+    }
+
+    .living .bg1-2 {
+        background-image: url(../images/living/cont1-2b.jpg);
+    }
+
+    .living .bg1-3 {
+        background-image: url(../images/living/cont1-3b.jpg);
+    }
+
+    .living .bg2-1 {
+        background-image: url(../images/living/cont2-1b.jpg);
+    }
+
+    .living .bg2-2 {
+        background-image: url(../images/living/cont2-2b.jpg);
+    }
+
+    .living .bg2-3 {
+        background-image: url(../images/living/cont2-3b.jpg);
+    }
+
+    /* people 서브페이지 */
+    .people .bg1-1 {
+        background-image: url(../images/people/cont1-1b.jpg);
+    }
+
+    .people .bg1-2 {
+        background-image: url(../images/people/cont1-2b.jpg);
+    }
+
+    .people .bg1-3 {
+        background-image: url(../images/people/cont1-3b.jpg);
+    }
+
+    .people .bg2-1 {
+        background-image: url(../images/people/cont2-1b.jpg);
+    }
+
+    .people .bg2-2 {
+        background-image: url(../images/people/cont2-2b.jpg);
+    }
+
+    .people .bg2-3 {
+        background-image: url(../images/people/cont2-3b.jpg);
+    }
+
+    /* video 서브페이지 */
+    .video .bg1-1 {
+        background-image: url(../images/video/cont1-1b.jpg);
+    }
+
+    .video .bg1-2 {
+        background-image: url(../images/video/cont1-2b.jpg);
+    }
+
+    .video .bg1-3 {
+        background-image: url(../images/video/cont1-3b.jpg);
+    }
+
+    .video .bg2-1 {
+        background-image: url(../images/video/cont2-1b.jpg);
+    }
+
+    .video .bg2-2 {
+        background-image: url(../images/video/cont2-2b.jpg);
+    }
+
+    .video .bg2-3 {
+        background-image: url(../images/video/cont2-3b.jpg);
+    }
+
+    /* runway 서브페이지 */
+    .runway .bg1-1 {
+        background-image: url(../images/runway/cont1-1b.jpg);
+    }
+
+    .runway .bg1-2 {
+        background-image: url(../images/runway/cont1-2b.jpg);
+    }
+
+    .runway .bg1-3 {
+        background-image: url(../images/runway/cont1-3b.jpg);
+    }
+
+    .runway .bg2-1 {
+        background-image: url(../images/runway/cont2-1b.jpg);
+    }
+
+    .runway .bg2-2 {
+        background-image: url(../images/runway/cont2-2b.jpg);
+    }
+
+    .runway .bg2-3 {
+        background-image: url(../images/runway/cont2-3b.jpg);
+    }
+
+    /* shopping 서브페이지 */
+    .shopping .bg1-1 {
+        background-image: url(../images/shopping/cont1-1b.jpg);
+    }
+
+    .shopping .bg1-2 {
+        background-image: url(../images/shopping/cont1-2b.jpg);
+    }
+
+    .shopping .bg1-3 {
+        background-image: url(../images/shopping/cont1-3b.jpg);
+    }
+
+    .shopping .bg2-1 {
+        background-image: url(../images/shopping/cont2-1b.jpg);
+    }
+
+    .shopping .bg2-2 {
+        background-image: url(../images/shopping/cont2-2b.jpg);
+    }
+
+    .shopping .bg2-3 {
+        background-image: url(../images/shopping/cont2-3b.jpg);
+    }
+
+
+
+
+
 
     /* 10. 컨텐츠 타이틀 변경 */
     .cbx h2 {
@@ -130,18 +319,19 @@
     }
 
     /* 11. 하단 박스 */
-    .info{
+    .info {
         min-height: auto;
         padding: 40px;
     }
 
     /* 12. 하단 로고 */
-    .blogo img{
-        width: 200px; /* 보이는 화면의 가로 50%유지하고 싶으면 50vw */
+    .blogo img {
+        width: 200px;
+        /* 보이는 화면의 가로 50%유지하고 싶으면 50vw */
     }
 
     /* 13. 위로 이동버튼 */
-    .tbtn{
+    .tbtn {
         right: 15px;
         bottom: 100px;
     }
@@ -151,6 +341,28 @@
     .cbx:hover::after {
         border-width: 10px;
         /* 보더 두께만 변경 (초기에 설정한 값에서 달라지는게 두께만 달라지면 되니까 두께만 설정해준거임) */
+    }
+
+    /* 15. 서브페이지 서브 타이틀 */
+    .stit{
+        font-size: 9vw;
+        padding: 4vh 0 2vh;
+    }
+
+    /* 16. 서브페이지 lnb 메뉴 */
+    .lnb {
+        padding: 1vh 0 4vh;
+    }
+    .lnb a{
+        font-size: 4vw;
+    }
+
+    /* 17. 상단이동 탑버튼 오버시 원상으로 복귀 */
+    /*     모바일은 오버시 빨간색 색상이 필요없으므로, 필요시 기존 셋팅을 원래 셋팅으로 덮었는 방법밖에 없음! 
+           그래서 똑같이 호버시 하고 해야하는 색상으로 덮어써준다.
+    */
+    .tbtn:hover {
+        background-color: #333;
     }
 
 }

@@ -22,6 +22,7 @@
 }
 .lnb ul{
     display: flex; /* 플렉스박스 : 블록임(블록성질 인데 옆으로 흐르게하는 셋업) */
+    flex-wrap: wrap; /* 자동줄바꿈 */
     justify-content: center; /* 가로컨텐츠 중앙 */
 }
 .lnb li{
