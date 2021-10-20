@@ -4,9 +4,6 @@
 <meta charset="utf-8">
 
 <title>drag and drop 기능</title>
-<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="jquery-ui.min.js"></script>
-
 <style>
 	div.draggable {
 		float: left;
@@ -50,6 +47,58 @@
 		border: 2px dashed blue;
 	}
 </style>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="jquery-ui.min.js"></script> <!-- 제이쿼리 라이브러리(jquery-1.7.2.min.js) 아래에 제이쿼리 UI가 있어야(jquery-ui.min.js) 
+	                                                                 -> 드래그 & 드롭 기능을 사용할 수 있다! -->
+
+<script>
+	$(function(){ ///////////// jQB /////////////////////////////////////////////////////////////////
+
+		/* 
+			[ 드래그 기능 적용하기 ]
+			  제이쿼리 UI의 
+			  ▶ draggable() 메서드를 호출함
+
+			     position : relative 로 움직여진다는걸 볼 수 있다. (영향주지 않고 움직일 수 있다.(겹칠수도 있고))
+
+			     ▷ https://jqueryui.com/draggable/
+
+
+			[ 커서 모양 바꾸기 ] 
+			  추가옵션은 객체형식{} 으로 셋팅한다. 
+			  ex) draggable({ cursor: "move" });
+
+			  ▶ https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor
+
+		*/
+		// 대상 : .draggable
+		//        -> draggable() 메서드에 옵션은 객체형식{} 으로 셋팅함
+		$(".draggable").draggable({
+
+			cursor: "move", // 커서모양 "이동중" 표시로 변경
+			stack : ".draggable", // 드래그 대상 상위처리 (선택요소명)
+			opacity: 0.7 // 이동중 투명도 설정
+
+		});
+
+
+
+
+
+
+
+
+
+
+
+
+
+	}); /////////////////////////// jQB ////////////////////////////////////////////////////////////
+
+
+
+
+</script>
 
 </head>
 
