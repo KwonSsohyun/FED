@@ -253,7 +253,7 @@
             <!-- 2. 로그인 컨텐츠박스 -->
             <section class="scont">
                 <div id="login">
-                    <form action="process.php" method="POST" class="logF">
+                    <form action="process.php" method="POST" class="logF"> <!-- 아래서 입력한 내용들이 "process.php"로 날아간다. -->
                         <!-- 아이디박스 -->
                         <div class="minput">
                             <label for="mid">아이디</label>
@@ -266,7 +266,7 @@
                         </div>
                         <!-- 버튼영역 -->
                         <div class="btnbx">
-                            <input type="submit" id="sbtn" value="LOGIN">
+                            <input type="submit" id="sbtn" value="LOGIN"> <!-- submit : 싸서 보내는 역할 -->
                         </div>
     
                         <!-- 기타체크링크 -->
@@ -283,7 +283,35 @@
                 </div>
             </section>
 
+            <!-- 
+                    [ form 요소 ]
+                      : 입력된 데이터를 묶어서 서버로 전송하는 역할
 
+                      - action 속성 : 서버전송 페이지 주소
+                      - method 속성 : 전송방식 2가지 중 선택 (get/post)
+                                      ▶ get 방식은 url로 데이터로 전달하는 방식
+                                      ▶ post 방식은 페이지로 숨겨서 데이터를 전달하는 방식
+                                      ▷ 보안성은 post 방식이 좋다.
+
+                    [ input 요소 ]
+                      : 사용자가 입력할 수 있도록 입력양식을 제공하는 요소
+
+                      - type 속성 : 여러가지 입력양식을 선택함
+                                    1) text : 글자 입력
+                                    2) password : 비밀번호 입력 (쓰는게 보여지지 않도록 땡떙떙 감쳐지는것) (입력시 글자숨김)
+                                                  -> 비밀번호는 영역복사도 안됨!
+
+                                    3) radio : 라디오버튼 (보통 "단일 선택시" 사용) | ex) 남성 or 여성 선택
+                                    4) checkbox : 체크박스 버튼 (보통 "다중 선택시" 사용)
+
+                                    5) button : 버튼 형식의 입력폼 (날아가지는 않지만 기능을 줄수 있다.)
+
+                                    6) submit : form 요소의 입력값을 전송하는 기능
+                                                -> (form요소의 action 속성값에 셋팅된 페이지로 감!)
+                                                    여기서는 form action="process.php" 인 여기로 날아감
+
+
+             -->
 
     <!-- /////////// 3. 하단 영역 /////////// -->
     <div class="bgc">
