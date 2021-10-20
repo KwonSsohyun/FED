@@ -87,7 +87,7 @@
 
 		});
 
-		
+
 		// 1. 드래그가 시작될때 배경이미지 class로 변경하기
 		/*****************************************************  
 			[ 드래그 시작시 발생 이벤트 ]
@@ -123,7 +123,106 @@
 
 			$(this).removeClass("invert"); /* 위에서 css에서 설정한거 클래스 지우기 */
 
-		}); //////////// dragstart 함수 ////////////
+		}); //////////// dragstop 함수 ////////////
+
+
+		/// 드롭할때 발생하는 이벤트 처리하기 
+		/*****************************************************  
+			[ 드롭되는 요소처리 ]
+			  : droppable() 메서드 
+
+			  ▶ .droppable({ drop:function(evt, ui){} });
+                  이렇게가 하나의 세트!!
+				 
+				 (evt, ui) 
+				 evt : 이벤트 전달 변수
+				 ui : 드롭 관련 객체
+
+		******************************************************/
+		//  이벤트 대상 : .dropshow
+		$(".dropshow").droppable({ /* <div class="dropshow">에 각각의 <div class="draggable> 드롭됬을때  */
+
+			// 드롭처리 속성 -> drop:함수
+			/* 드롭을하면 drop:function > 펑셩 실행 */
+			drop:function(evt, ui){  
+				// evt : 이벤트전달변수 , ui : 드롭관련객체
+				// ->> 나는 드롭된 애를 가공할거기때문에 ui만 쓸거지만, 꼭 2개를 같이 써야함 : 규칙약속! (evt, ui)
+
+
+				// ★ 드롭된요소 -> ui.draggable  
+				//                 ※ 괄호가 뒤에 없기떄문에 속성 ui.draggable  /  있으면 메서드 draggable()
+				//                 ▶ 객체 자신을 선택하고 싶으면  >> ui만 단독으로는 쓸수는 없고, 뒤에 .draggable 붙혀야함
+				//                 ▷ ui. 점 뒤에 적을 수 있는게 여러개 있다. (ui만 단독 쓸수 없음)
+				let tg = ui.draggable;
+				/* 
+					[ 코드풀이 ]
+				      ".dropshow" 에 드롭된 그 아이를 지칭하는게
+					   그 자신인 ui.draggable 인것이다!!!!
+
+					   그래서 현재 .dropshow에 draggable클래스 를 막 집어넣으면
+					   여기서 draggable클래스는 <div class="draggable"> html안에 <body> 적혀있음
+					   그게 바로 걔가 tg로 담겼다는것.
+
+					   그니까 드롭할때마다 값이 다름 왜냐? 그 드롭된 애를 잡는거니까.
+				*/
+
+
+				// 1. 드롭된 요소의 이미지의 src를 읽어옴
+				let isrc = tg.find("img").attr("src");
+				// console.log("이미지경로:"+isrc);
+
+
+				// 2. 드롭영역의 배경이미지 변경하기
+				//    $(this) === $(".dropshow")
+				$(this).css({
+					backgroundImage : "url("+ isrc +")"
+				}); //////////// css ////////
+
+				// 3. 드롭된 요소의 자식 p태그의 글자 읽어오기
+				let dtxt = tg.find("p").text();
+				console.log("글자:"+dtxt);
+
+				// 4. 드롭영역에 글자넣기
+				$(this).text(dtxt + " 당첨~!!!");
+
+				// 5. 드롭된 요소 사라지게 하기
+				tg.hide();
+
+				// 6. 유투브 동영상 박스 넣기
+				$("body").append('<div id="mbox"></div>'); /* id 새로 생성하고 아래서 할당 */
+
+				// 동영상 박스요소 변수에 할당!
+				let mbox = $("#mbox");   /* 위에서 만드는것을 가져온거임 */
+
+				// 7. 동영상박스 CSS셋팅하기
+				mbox.css({
+					position : "fixed", /* 보이는 화면의 고정 */
+					top : "0",
+					left : "0",
+					width : "100%",
+					height : "100%",
+					zIndex : "999",
+					backgroundColor : "#000"
+				}); /////// css ///////////////
+
+				// 8. 동영상 박스에 유투브 iframe 넣기
+				mbox.html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/miSL86dtqis?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+				/* width="100%" height="100%" 수정  /  url주소 뒤에 "?autoplay=1" 붙힘 */
+
+				// 9. 동영상 박스 숨기고 1초후에 슬라이드 보이기
+				mbox.hide().delay(1000).slideDown(2000); /* .slideDown 이 애니메이션 기능 있어서 딜레이 쓸 수 있는거임 */
+
+
+
+
+
+			} //// drop /////////
+
+
+		}); /////////////// droppable ///////////////
+
+
+
 
 
 
