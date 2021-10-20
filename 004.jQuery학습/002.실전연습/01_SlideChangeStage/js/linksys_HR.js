@@ -69,8 +69,8 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
                보이는 화면에 (곱하기 1을 = pno) 하면 2번째 페이지일꺼고 ... 
                이걸 활용한것임
         */
-               let pos = $(window).height() * pno;  
-               // $(window).height() 윈도우 높이값
+               let pos = $(window).width() * pno;  
+               // $(window).width() 윈도우 가로값
        
                console.log("이동위치:"+pos);
        
@@ -81,7 +81,7 @@ $(function () { //////// jQB (제이쿼리 코드블록) //////////////////
                // 전체 스크롤 이동대상 : html,body 
                //                      ->> 두개 다 잡는게 브라우저 공통임!!!
                $("html,body").animate({
-                   scrollTop: pos + "px"
+                   scrollLeft: pos + "px"
                }, 800, "easeInOutQuint"); /* easeInOutQuint : 이징 가속도 */
 
 
