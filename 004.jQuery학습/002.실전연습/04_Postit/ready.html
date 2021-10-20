@@ -83,6 +83,7 @@
 
 			cursor: "move", // 커서모양 "이동중" 표시로 변경
 			stack : ".draggable", // 드래그 대상 상위처리 (선택요소명)
+			//                       : 나중에 제일 먼저 드래그 한게 맨 위로 올라옴
 			opacity: 0.7 // 이동중 투명도 설정
 
 		});
@@ -102,7 +103,8 @@
 
 			// console.log("드래그시작!");
 
-			$(this).addClass("invert"); /* 위에서 css에서 설정한거 넣은거임 css 에 div.invert 설정한 거 있음 그거 적용된거임 */
+			$(this).addClass("invert"); /* 위에서 css에서 설정한거 넣은거임 >> CSS 에 div.invert 설정한 거 있음 그거 적용된거임 */
+			// 그래서 드래그하면 노란색 포스트잇이 css에서 설정한 분홍색으로 색 바뀜
 
 		}); //////////// dragstart 함수 ////////////
 
@@ -121,7 +123,8 @@
 
 			// console.log("드래그시작!");
 
-			$(this).removeClass("invert"); /* 위에서 css에서 설정한거 클래스 지우기 */
+			$(this).removeClass("invert"); /* 위에서 css에서 설정한거 클래스 지우기
+			(드래그 멈추면 분홍색 포스트잇이 처음처럼 노란색으로 보임) */
 
 		}); //////////// dragstop 함수 ////////////
 
@@ -140,7 +143,7 @@
 
 		******************************************************/
 		//  이벤트 대상 : .dropshow
-		$(".dropshow").droppable({ /* <div class="dropshow">에 각각의 <div class="draggable> 드롭됬을때  */
+		$(".dropshow").droppable({ /* <div class="dropshow">에 드롭됬을때  */
 
 			// 드롭처리 속성 -> drop:함수
 			/* 드롭을하면 drop:function > 펑셩 실행 */
@@ -150,17 +153,19 @@
 
 
 				// ★ 드롭된요소 -> ui.draggable  
-				//                 ※ 괄호가 뒤에 없기떄문에 속성 ui.draggable  /  있으면 메서드 draggable()
+				//                 ※ 괄호가 뒤에 없기떄문에 속성 draggable  /  있으면 메서드 draggable()
 				//                 ▶ 객체 자신을 선택하고 싶으면  >> ui만 단독으로는 쓸수는 없고, 뒤에 .draggable 붙혀야함
-				//                 ▷ ui. 점 뒤에 적을 수 있는게 여러개 있다. (ui만 단독 쓸수 없음)
+				//                 ▷ ui. 점 뒤에 적을 수 있는게 여러개 있다. (단, ui만 단독 쓸수 없음)
 				let tg = ui.draggable;
 				/* 
 					[ 코드풀이 ]
-				      ".dropshow" 에 드롭된 그 아이를 지칭하는게
-					   그 자신인 ui.draggable 인것이다!!!!
+				      ".dropshow" 에 드롭된 그 아이를 지칭하는게 
+					   그 드롭된 아이의 자신인 ui.draggable 인것이다!!!!
 
-					   그래서 현재 .dropshow에 >> draggable 클래스된 애들을 집어넣으면 ex) 쇼핑몰자유이용권 / 롯데월드 등
-					   ->> 여기서 draggable클래스는 <div class="draggable"> html안에 <body> 적혀있음
+					   html안에 <body> 가서 보면,
+					   현재 <div class="dropshow">에 >> 
+					   <div class="draggable" 클래스된 애들을 집어넣으면  ex) 쇼핑몰자유이용권 / 롯데월드 등..
+					   
 					   예를들면 <div class="draggable" data-mv="BcZa8-pfC0M"> 인 롯떼월들 자유이용권을 끌어왔다면 그게 tg로 변수에 담긴것
 
 					   ▶ 그렇게 끌어온 드롭한 애가 그게 바로 걔가 tg로 담겼다는것.
@@ -191,10 +196,10 @@
 				tg.hide();
 
 				// 6. 유투브 동영상 박스 넣기
-				$("body").append('<div id="mbox"></div>'); /* id 새로 생성하고 아래서 할당 */
+				$("body").append('<div id="mbox"></div>'); /* 지금 여기서 id 새로 생성함, 그리고 아래서 할당 */
 
 				// 동영상 박스요소 변수에 할당!
-				let mbox = $("#mbox");   /* 위에서 만드는것을 가져온거임 */
+				let mbox = $("#mbox");   /* 위에서 새로 만드는것을 가져온거임 */
 
 				// 7. 동영상박스 CSS셋팅하기
 				mbox.css({
@@ -225,6 +230,8 @@
 
 				// 10. 닫기버튼 만들기! (html로 넣으면 위에서 넣은 아이프레임 사라지므로, 어펜드로 추가)
 				mbox.append('<a href="#" class="cbtn">×</a>');
+				/* 또 새로 생성함 > 이때 클래스도 추가함 아래서 변수로 쓸거기때문 
+				   그리고, a쓴이유는 클릭해야해서 닫기버튼이니 */
 
 				// 닫기버튼 변수할당 /* 바로 위에서 클래스 줬기때문에 변수에 넣을 수 있음 class="cbtn" */
 				let cbtn = $(".cbtn");
@@ -314,8 +321,9 @@
 	</div>
 
 	<!-- 
-		w3c에서 허용하는 새로운 속성은 data- 라는 시작명으로 작성하면 된다!
+		w3c에서 허용하는 "새로운 속성" 은 data- 라는 시작명으로 작성하면 된다!
 		-> data-내가지은이름="값"
+
 		예) data-myhouse="값"
 	 -->
 
