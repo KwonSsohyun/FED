@@ -59,7 +59,7 @@
    ▶ font-family: 'Roboto', sans-serif;
    ▶ font-family: 'Roboto Condensed', sans-serif;
 */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300&display=swap'); */
 
 /* Roboto체 */
 @font-face {
@@ -89,7 +89,7 @@
 /* 
    ▶ font-family: 'NanumBarunGothic', sans-serif;
 */
-@import url("https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css");
+/* @import url("https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css"); */
 
 @font-face {
     font-family: 'NanumBarunGothic';
@@ -122,14 +122,17 @@
          주소에 보면 @latest/ 뒤를 지우고, 그 뒤에 붙힌다.
          ▶ https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/NanumBarunGothicSubset.woff
 
+
        5) 주소창에 붙히면 다운을 받을 수 있다.
-       6) 받은 다음 
+       6) 받은 다음 E:\MyGit\FED\001.HTML학습\008.VOGUE_PJ\002.site >> "fonts"  
+          해당 폴더에 넣고
+
+       7) url ( //// ) 해당 폴더에 폰트파일경로 넣고
+
+       8) 맨처음 했던 @import url("https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css"); 
+          삭제 혹은 주석
 
 */
-
-
-
-
 
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -139,10 +142,6 @@
     font-family: 'NanumBarunGothic', sans-serif;
     font-family: 'Pistilli', sans-serif;
 */
-
-
-
-
 
 
 /* 공통 class ///////////////////////////////////////////////////////////////////*/
