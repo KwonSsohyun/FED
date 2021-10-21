@@ -356,6 +356,7 @@ $(function(){ //// jQB : 요소를 선택해서 쓸거니까 로딩해야된다�
 
         // 1. 현재 이벤트 대상 아이디 읽어오기
         let cid = $(this).attr("id");
+        /* #email1, #email2는 광범위하기 때문에 둘 중에 뭘 찍어오는지 */
         console.log("현재아이디:"+cid);
 
         // 2. 현재 입력된 값 읽어오기
@@ -363,14 +364,25 @@ $(function(){ //// jQB : 요소를 선택해서 쓸거니까 로딩해야된다�
         console.log("입력값:"+cv);
 
         // 3. 이메일 뒷주소 셋팅하기
-        let backeml = cid === "email1" ? seleml.val() : eml2.val();
+        let backeml = cid === ("email1" ? seleml.val() : eml2.val());
+        /* cid가 "email1"이냐? 
+           -> 맞으면 seleml.val() : 셀렉트박스 값
+           -> 틀리면 eml2.val() : 직접입력 값
+        */
+        /* 대상이 */
+        /* cid가 왜 있냐면 직접선택하는것을 찍었는지 선택하는 것을 찍었는지를 구분 */
         // 조건연산자로 선택박스값 또는 직접입력값을 할당한다!
         // 비? 집 : 놀이동산;  >>  "email1" ? seleml.val() : eml2.val();
 
         // 4. 선택박스의 선택값이 "free(직접입력)" 이면 이메일 뒷주소 변경
         if(seleml.val()==="free") backeml = eml2.val(); /* {} 생략한거임 {backeml = eml2.val()} */
         /* if만약에 free이면 eml2.val() 덮어쓰고, 
-           아니면 나가주시고요. 그래서 따로 else안씀 */
+           아니면 나가주시고요. 그래서 따로 else안씀 
+
+           셀렉트선택을 "free"로 하면 
+           backeml 변수의 값을 직접입력창 으로!
+           
+        */
 
         // 5. 이메일 전체주소 조합하기!
         let comp = eml1.val() +"@" + backeml;
