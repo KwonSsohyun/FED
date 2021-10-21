@@ -66,14 +66,38 @@
 
    [ ★★★ jQuery UI란 무엇인가? ]
      : jQuery UI는 제이쿼리 원본개발자들이 추가개발하여 배포한 플러그인이다!
+     
 
-     ++ 제이쿼리 UI는 데스크탑 브라우저 기준 모듈이므로 모바일에서 동일한 드래그앤 드롭 기능을 사용하기 위해서는
+     ++ 제이쿼리 UI는 데스크탑 브라우저 기준 모듈이므로 모바일에서 동일한 드래그앤 드롭 기능을 사용하기 위해서는 
         "touch-punch"(터치펀치)를 넣어준다! 
          이것은 데스크탑 이벤트를 모바일 이벤트로 전환해 주는 기능을 가진다!
          
+         ■ 언제써여? >> 보통 드래그 할때!
+
          ▶ 파일이름 : jquery-touch-punch.min.js
          ▶ 코드로 쓰는건 : <script src="./jquery-touch-punch.min.js"></script>
-         ▷ 참고자료 : E:\MyGit\FED\004.jQuery학습\002.실전연습\04_Postit >>  ready.html
+
+         ▷ 참고자료 : 004.jQuery학습\002.실전연습\04_Postit >>  ready.html
+                      ex) 
+                      $("html,body").on("mousemove mousedown mouseup",function(){
+
+                      ->> "mousemove mousedown mouseup" 만썼는데 원래는 
+
+                          ▶ 화면에서 마우스가 움직일때 이벤트는?
+                             mousemove (터치펀치 "모바일" 변경 -> touchmove)
+
+                          ▶ 화면에서 마우스가 내려갈때 이벤트는?
+                             mousedown (터치펀치 "모바일" 변경 -> touchstart)
+
+                          ▶ 화면에서 마우스가 올라올때 이벤트는?
+                             mouseup (터치펀치 "모바일" 변경 -> touchend)
+
+                          -> 이렇게 모바일에 적용되게 touchmove  touchstart  touchend 
+                             써야 하지만 안써도 되는게
+                             <script src="./jquery-touch-punch.min.js"></script> 상단에
+                             터치펀치 파일을 가져왔기에 번역이 되서 안써도 됨.
+                             "mousemove mousedown mouseup" 이걸 터치 안붙혀도 번역해준다는 뜻
+
 
      [ 기능종류 ]
        드래그 / 드롭, 달력, 아코디언, "이징", 컬러애니, 가속도 등
