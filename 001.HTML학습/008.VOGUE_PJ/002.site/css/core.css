@@ -3,6 +3,7 @@
 
 /* 웹폰트 ///////////////////////////////////////////////////////////////////*/
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300&display=swap');
 /* pistilli체 - pistilli "cdn" 라고 검색!
    ▶ font-family: 'Pistilli', sans-serif;
 */
@@ -60,7 +61,6 @@
    ▶ font-family: 'Roboto', sans-serif;
    ▶ font-family: 'Roboto Condensed', sans-serif;
 */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300&display=swap');
 
 /* Roboto체 */
 /* @font-face {
