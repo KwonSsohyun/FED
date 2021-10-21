@@ -2,33 +2,46 @@
 /* VOGUE PJ 공통 클래스, 웹폰트 CSS - core.css */
 
 /* 웹폰트 ///////////////////////////////////////////////////////////////////*/
-/* pistilli체 - pistilli "cdn" 라고 검색! */
-/* 
-   font-family: 'Pistilli', sans-serif;
+
+/* pistilli체 - pistilli "cdn" 라고 검색!
+   ▶ font-family: 'Pistilli', sans-serif;
 */
-@import url('http://fonts.cdnfonts.com/css/pistilli');
+
+/* @import url('http://fonts.cdnfonts.com/css/pistilli'); */
 
 /* 
-    CDN 방식으로 작업했었어도, 마지막엔 로컬로 폰트하는게 좋다. 
-    해당 url경로 눌러서 들어가서 복사하고 아래 붙힌다. ->> @import url('http://fonts.cdnfonts.com/css/pistilli');
+    < CDN 방식으로 작업했었어도, 마지막엔 로컬로 폰트하는게 좋다. >
+      1) 해당 url경로 눌러서 들어가서 복사하고 아래 붙힌다. ->> @import url('http://fonts.cdnfonts.com/css/pistilli');
 
-    해당 아래 붙히고  src: local('Pistilli'), url('https://fonts.cdnfonts.com/s/19251/Pistilli-Roman.woff') format('woff');
-    해당 url 또 눌러서 woff 포맷 다운!
+      2) 해당 복사한 사항 아래 붙히고,  
+         @font-face {
+            font-family: 'Pistilli';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Pistilli'), url('https://fonts.cdnfonts.com/s/19251/Pistilli-Roman.woff') format('woff');
+         }
 
-    파일탐색기에서 해당 경로로 들어가서
-    E:\MyGit\FED\001.HTML학습\008.VOGUE_PJ\002.site >> "fonts" 라는 새폴더 만들고
-    거기에 woff 포맷 집어넣기
+         -> src: local('Pistilli'), url('https://fonts.cdnfonts.com/s/19251/Pistilli-Roman.woff') 
+            해당 url 또 눌러서 woff 포맷 다운!
 
-    다음으로 아래 
-    @font-face {
-        font-family: 'Pistilli';
-        font-style: normal;
-        font-weight: 400;
-        src: local('Pistilli'), url( ////// ) format('woff');
-    }
+      3) 파일탐색기에서 해당 경로로 들어가서
+         E:\MyGit\FED\001.HTML학습\008.VOGUE_PJ\002.site >> "fonts" 
+         "fonts" 라는 새폴더 만든다.
+         -> 거기에 내려받은 woff 포맷 파일 집어넣기
 
-    -> 기존 url 지우고, local('Pistilli') 로컬도 지운다.
-    -> url ( //// ) 괄호 안에 아까 새폴더 폰츠 만든거 해당 Woff파일 경로 붙혀넣기.
+      4) 다음으로 아래 
+         @font-face {
+            font-family: 'Pistilli';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Pistilli'), url( ////// ) format('woff');
+         }
+
+         -> 기존 url 지우고(다운받은 파일 경로 넣으려고), local('Pistilli') 로컬도 지운다. 
+         -> url ( //// ) 괄호 안에 아까 새폴더 폰츠 만든거 해당 Woff파일 경로 붙혀넣기.
+
+      5) 이제 맨처음 썼던 @import url('http://fonts.cdnfonts.com/css/pistilli');
+         주석처리하거나 지워라.
  
 */
 @font-face {
@@ -38,23 +51,88 @@
     src: url(../fonts/Pistilli-Roman.woff) format('woff');
 }
 
-
+/* ///////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
 /* Roboto체 + Roboto Condensed체 */
 /* 
-   font-family: 'Roboto', sans-serif;
-   font-family: 'Roboto Condensed', sans-serif;
+   ▶ font-family: 'Roboto', sans-serif;
+   ▶ font-family: 'Roboto Condensed', sans-serif;
 */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300&display=swap');
+
+/* Roboto체 */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(../fonts/Roboto.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+
+  /* Roboto Condensed체 */
+  @font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(../fonts/Roboto.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////// */
 
 /* 나눔바른고딕 */
 /* 나눔바른고딕 "cdn" 라고 검색! */
 /* 
-   font-family: 'NanumBarunGothic', sans-serif;
+   ▶ font-family: 'NanumBarunGothic', sans-serif;
 */
 @import url("https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css");
 
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-weight: 400;
+    src: url(../fonts/NanumBarunGothicLightSubset.woff) format('woff'),
+   }
+
+/*  
+    < url 경로가 없으면??? >
+      1) @import url("https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css");
+      2) url 들어가서 보면 아까 위처럼 내려받을 수가 없다.
+      3) @font-face {
+            font-family: 'NanumBarunGothic';
+            font-weight: 300;
+            src: url(NanumBarunGothicLightSubset.eot);
+            src: url(NanumBarunGothicLightSubset.eot?#iefix) format('embedded-opentype'),
+                 url(NanumBarunGothicLightSubset.woff2) format('woff2'),
+                 url(NanumBarunGothicLightSubset.woff) format('woff'),
+                 url(NanumBarunGothicLightSubset.ttf) format('truetype');
+         }
+         URL 들어가서 해당하는 문자 확인한다.
+         보면 URL 주소가 없다는것을 볼 수 있다. ▶ 같은 위치에 있다는 뜻
+
+      4) https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css
+         해당 페이지에 상단에 보면 주소가 이렇게 되어있는데
+
+         3번 항목에 format('woff') 에 앞에 ▶ url(NanumBarunGothicLightSubset.woff) 
+         url ( /// ) ▶ 괄호 안에 값 복사해서
+
+         주소에 보면 @latest/ 뒤를 지우고, 그 뒤에 붙힌다.
+         ▶ https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/NanumBarunGothicSubset.woff
+
+       5) 주소창에 붙히면 다운을 받을 수 있다.
+       6) 받은 다음 
+
+*/
+
+
+
+
+
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////// */
 /* 
     font-family: 'Roboto', sans-serif;
     font-family: 'Roboto Condensed', sans-serif;
