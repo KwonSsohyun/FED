@@ -60,27 +60,27 @@
    ▶ font-family: 'Roboto', sans-serif;
    ▶ font-family: 'Roboto Condensed', sans-serif;
 */
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300&display=swap');
 
 /* Roboto체 */
-@font-face {
+/* @font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 300;
     font-display: swap;
     src: url(../fonts/Roboto.woff) format('woff');
     unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-  }
+  } */
 
   /* Roboto Condensed체 */
-  @font-face {
+/*   @font-face {
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 700;
     font-display: swap;
     src: url(../fonts/RobotoCondensed-Bold.woff) format('woff'); 
     unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-  }
+  } */
 
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////////// */
