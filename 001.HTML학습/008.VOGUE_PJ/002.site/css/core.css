@@ -8,6 +8,39 @@
 */
 @import url('http://fonts.cdnfonts.com/css/pistilli');
 
+/* 
+    CDN 방식으로 작업했었어도, 마지막엔 로컬로 폰트하는게 좋다. 
+    해당 url경로 눌러서 들어가서 복사하고 아래 붙힌다. ->> @import url('http://fonts.cdnfonts.com/css/pistilli');
+
+    해당 아래 붙히고  src: local('Pistilli'), url('https://fonts.cdnfonts.com/s/19251/Pistilli-Roman.woff') format('woff');
+    해당 url 또 눌러서 woff 포맷 다운!
+
+    파일탐색기에서 해당 경로로 들어가서
+    E:\MyGit\FED\001.HTML학습\008.VOGUE_PJ\002.site >> "fonts" 라는 새폴더 만들고
+    거기에 woff 포맷 집어넣기
+
+    다음으로 아래 
+    @font-face {
+        font-family: 'Pistilli';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Pistilli'), url( ////// ) format('woff');
+    }
+
+    -> 기존 url 지우고, local('Pistilli') 로컬도 지운다.
+    -> url ( //// ) 괄호 안에 아까 새폴더 폰츠 만든거 해당 Woff파일 경로 붙혀넣기.
+ 
+*/
+@font-face {
+    font-family: 'Pistilli';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/Pistilli-Roman.woff) format('woff');
+}
+
+
+
+
 /* Roboto체 + Roboto Condensed체 */
 /* 
    font-family: 'Roboto', sans-serif;
@@ -28,6 +61,8 @@
     font-family: 'NanumBarunGothic', sans-serif;
     font-family: 'Pistilli', sans-serif;
 */
+
+
 
 
 
