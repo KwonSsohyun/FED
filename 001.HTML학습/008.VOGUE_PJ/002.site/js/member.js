@@ -409,8 +409,8 @@ $(function(){ //// jQB : 요소를 선택해서 쓸거니까 로딩해야된다�
 
         else if(cv === "free"){
 
-            // 1. 직접입력창 보이기(fadeIn()) + 값초기화(val()) 
-            eml2.fadeIn(300).val("");
+            // 1. 직접입력창 보이기 fadeIn() + 값초기화 val("") + 커서가게 포커스 주기 focus() 
+            eml2.fadeIn(300).val("").focus();
 
             // 2. 이메일주소 만들기
             let comp = eml1.val() + "@" + eml2.val();
