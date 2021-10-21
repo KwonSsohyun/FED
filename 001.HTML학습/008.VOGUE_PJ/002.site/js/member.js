@@ -151,8 +151,28 @@ $(function(){ //// jQB : 요소를 선택해서 쓸거니까 로딩해야된다�
         }//// if문 : 빈값일때 ////////
 
         // 4. 아이디일때 검사하기 ///////////////////////
-        else if(cid === mid){
+        else if(cid === "mid"){
 
+            // 유효성 검사 결과
+            let res = vReg(cv,cid);
+            console.log("검사결과:"+res);
+
+            // 검사가 false일 경우 메시지 띄우기
+            if(!res){ // ! (NOT 연산자)로 결과 반대로!
+
+                $(this).siblings(".msg")
+                .text("영문자로 시작하는 6~20글자 영문자/숫자")
+                .removeClass("on"); // 글자색 변경 제거
+
+            } ////// if문 : 결과가 false 일때 ///
+
+            else {
+
+                $(this).siblings(".msg")
+                .text("훌륭한 아이디네요~!")
+                .addClass("on"); // 글자색 변경 class
+
+            } /// else문 : 결과가 true 일때 ///
 
         } /////// else if문 : 아이디일때 ////
 
