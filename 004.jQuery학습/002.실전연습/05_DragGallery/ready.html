@@ -95,9 +95,16 @@
 
             
             // 이동위치 한계설정 (무한정 다 끝까지 가서 이미지 사라지면 안되니까)
-            // 첫번째 한계선 : 화면 가로크기의 절반값
-            let fpt = $(window).width()/2;
+            // 첫번째 한계선 : 화면 가로크기의 3/1값
+            let fpt = $(window).width()/3;
             // first point : 첫번째 포인트 지점 (fpt)
+
+            // 마지막 한계선 : move박스 가로크기 - 화면 3/2
+            let lpt = move.width() - fpt*2;
+            /* 이미지 끝이 왼쪽으로 다 넘어가면 -값의 수치고 완전 다 끝으로 이미지가 모두 가버리면 화면 밖으로 나가버리니
+               화면의 절반에 있을때는 멈춰라 해서 빼기 화면 절반임 */
+            // last point 마지막 포인트 지점 (끝 절반이 보임!)
+            console.log("마지막포인트:"+lpt);
 
             /* 
                 ▶ 화면에서 마우스가 움직일때 이벤트는?
@@ -114,6 +121,27 @@
             $("html,body").on("mousemove mousedown mouseup",function(){
 
                 console.log("마우스움직여!");
+
+                // 1. 움직이는 박스의 left값
+                let mpos = move.offset().left;
+                // offset().left  현재 박스의 화면에서의 left값
+
+                console.log("현재left:"+mpos);
+
+                // 2. 처음한계값 체크 후 고정하기
+                if(mpos > fpt){
+                    // 첫번째 한계값에 고정하기
+                    move.css({
+                        left: fpt + "pt"
+                    });
+                } //// if //////
+
+                // 3. 마지막 한계값 체크 후 고정하기
+                else if(mpos < -lpt){
+                    move.css({
+                        left: -lpt + "px"
+                    }); ///// css ////
+                }
 
             }); //////////// mousemove ///////////
 
