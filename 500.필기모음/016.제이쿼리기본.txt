@@ -67,6 +67,14 @@
    [ ★★★ jQuery UI란 무엇인가? ]
      : jQuery UI는 제이쿼리 원본개발자들이 추가개발하여 배포한 플러그인이다!
 
+     ++ 제이쿼리 UI는 데스크탑 브라우저 기준 모듈이므로 모바일에서 동일한 드래그앤 드롭 기능을 사용하기 위해서는
+        "touch-punch"(터치펀치)를 넣어준다! 
+         이것은 데스크탑 이벤트를 모바일 이벤트로 전환해 주는 기능을 가진다!
+         
+         ▶ 파일이름 : jquery-touch-punch.min.js
+         ▶ 코드로 쓰는건 : <script src="./jquery-touch-punch.min.js"></script>
+         ▷ 참고자료 : E:\MyGit\FED\004.jQuery학습\002.실전연습\04_Postit >>  ready.html
+
      [ 기능종류 ]
        드래그 / 드롭, 달력, 아코디언, "이징", 컬러애니, 가속도 등
       
