@@ -27,7 +27,8 @@
       3) 파일탐색기에서 해당 경로로 들어가서
          E:\MyGit\FED\001.HTML학습\008.VOGUE_PJ\002.site >> "fonts" 
          "fonts" 라는 새폴더 만든다.
-         -> 거기에 내려받은 woff 포맷 파일 집어넣기
+         -> 거기에 내려받은 woff 포맷 파일 집어넣기 
+         ★ 파일명 띄어쓰기 하지 말것
 
       4) 다음으로 아래 
          @font-face {
@@ -77,7 +78,7 @@
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url(../fonts/RobotoCondensed-Bold.woff) format('woff');
+    src: url(../fonts/RobotoCondensed-Bold.woff) format('woff'); 
     unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
   }
 
