@@ -519,7 +519,19 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
 
 
             // 로그인페이지로 이동하기
-            location.href = "login.html";
+            // location.href = "login.html" -> 이걸로 쓰면 이전페이지로 회원가입했던 정보로 돌아가져서 안됨;
+            location.replace("login.html");
+            /* 
+                location.replace 는 뒤로가기시
+                history가 살아있어서 보안상 위험하다!
+
+                따라서 현재 페이지에 그대로 덮어쓰기로 위치 이동을 하는 방법을 쓴다.
+
+                ▶ location.replace(이동주소);
+                   -> 현재 페이지 history가 덮어써져서 사라진다.
+                      이전페이지 돌아가기 안된다.
+            
+            */
 
         } ///// if //////
 
