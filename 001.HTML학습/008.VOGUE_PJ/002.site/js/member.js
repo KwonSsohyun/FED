@@ -494,7 +494,7 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
 
         // 3. 입력창 blur 이벤트 발생시키기(전체검사)
         //    대상 : input[type=text][id!=email2][class!=search],input[type=password]
-        //    이벤트발생 메서드 : trigger(이벤트명) -> blur이벤트 발생!
+        //    이벤트발생 메서드 : trigger(이벤트명) -> blur이벤트 발생!(이벤트명을 똑같이 적어야 한다.)
         $("input[type=text][id!=email2][class!=search],input[type=password]")
             .trigger("blur"); /* 위에 똑같이 이미 만들어져있는( 이미 설정되있는 애가 발생) 블러함수를 트리거이벤트 반응해서 실행 */
             /* 
@@ -502,7 +502,7 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
                 : 강제로 이벤트 발생시키는 제이쿼리에서만 쓸 수 있는 메서드
                   위에서는 이벤트가 하나하나될때마다 됬는데, 
                   trigger를 적용하면 대상 한꺼번에 내부적으로 for문 돌린것처럼 
-                  순서대로 발생시킨다. (이벤트만 발생시킨다)
+                  순서대로 발생시킨다. (이벤트만 발생시킨다)(이벤트명을 똑같이 적어야 한다.)
             */
 
         console.log("통과여부" + pass);
