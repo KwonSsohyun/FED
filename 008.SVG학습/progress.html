@@ -20,6 +20,8 @@
 
         /* 펭수박스 */
         .pang{
+            position: relative;
+            /* .txt의 부모자격 */
             width: 200px;
             height: 200px;
             /* outline: 2px solid red; */
@@ -101,19 +103,89 @@
 
                      ▷ ex) stroke-dashoffset: 0%; -> 이런식으로 얘를 값을 조절해서 선을 보이고 숨기게 할 수 있음!!!!(아래서 설정)
             */
-            transition: stroke-dashoffset .7s ease-in-out;
+            transition: .1s linear;
+            /* 퍼센트증가에 따른 트랜지션 */
+            /* transition: stroke-dashoffset .7s ease-in-out; >> 기존 */
 
           
         }
 
         /* ★★★ 오버시 데쉬옵셋변경하기 */
-        .pang:hover .c1{ /* 펭수한테 마우스 오버하면 0인 선이 보이게됨~ 위에서 트랜지션 줘서 자연스럽게 보임 */
-            stroke-dashoffset: 0; /* 300% 이 0된거임 */
+        /* 펭수한테 마우스 오버하면 0인 선이 보이게됨~ 위에서 트랜지션 줘서 자연스럽게 보임 */
+        /* 300% 이 0된거임 */
+        /*   .pang:hover .c1{ 
+                stroke-dashoffset: 0; 
+        } */
+
+        /* 퍼센트 글자박스 */
+        .txt{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* 내 크기의 절반절반 - 정중앙이동 */
+            font-size: 5vw;
+            text-shadow: 2px 2px 2px #000;
+            color: #fff;
+        }
+
+        /* 버튼 */
+        #pbtn{
+            text-align: center;
+            font-size: 50px;
+        }
+        #pbtn button{
+            font-size: 50px;
         }
 
     </style>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script>
+
+        $(function(){ ////////// jQB /////////////////////
+
+            // 버튼클릭시 펭수 퍼센트 애니메이션 하기
+            // 이벤트대상 : #pbtn button
+            $("#pbtn button").click(function(){
+
+                // 퍼센트 증가함수 호출!
+                progFn();
+
+            }); ////// click /////////
+
+
+            // 퍼센트 박스
+            let ptxt = $(".ptxt");
+
+            ///////////////////////////////
+            // 퍼센트 증가 함수
+            ///////////////////////////////
+            let progFn = ()=>{
+                
+                // 퍼센트값 증가 //
+                // 1. 기존값 읽어오기
+                let pers = ptxt.text();
+
+                // 2. 기존값에 1증가
+                pers++;
+
+                // 3. 증가된 값 확면출력!
+                ptxt.text(pers);
+
+                // 4. 재귀호출 (함수자신을 다시호출!)
+                if(pers < 100){ // 100보다 작을때 호출!
+                    // 호출이 너무 빠르므로 setTimeout으로 시간조정
+                    setTimeout(() => {
+                        progFn();
+                    }, 50); 
+                }
+                
+
+
+            };//////// progFn 함수 ////////
+
+        }); ////////// jQB /////////////////////
+
+
 
     </script>
 </head>
@@ -121,7 +193,11 @@
 <body>
 
     <div class="pang">
-        <!-- svg 스테이지 -->
+        <!-- 숫자퍼센트 박스 -->
+        <span class="txt">
+            <b class="ptxt">0</b>%
+        </span>
+        <!-- svg 박스 -->
         <svg viewBox="0 0 200 200"> <!-- viewBox="0 0 200 200" ▶ 축소/확대할때 비율에 맞게 조절해줌 -->  
             <!-- viewBox="0 0 200 200" ▶ 형식 : viewBox="x축위치 y축위치 width크기 height크기" 
                  ▷ 참조 : E:\MyGit\FED\008.SVG학습 >> rect.html >> [ svg  축소확대용 속성 ]
@@ -162,9 +238,8 @@
                        stroke-width: 10; 을 줘서 원 안으로 5px 적용되고, 바깥으로 5px 되서
                        펭수박스 꽉차게 됬다. (외곽선때문에말이당)
              -->
-        </svg>
 
-        <!-- 
+            <!-- 
               [ svg 요소 ]
                 - svg를 그려주는 영영을 지정하는 요소
                   ex) 스크립트 구역 / 스타일 구역처럼 지정하는 것
@@ -180,14 +255,15 @@
                   4. 선 : line
                   5. 다각형 : polygon
                   6. 자유선 : path
+            -->
+        </svg>
 
-         -->
     </div>
 
-
-
-
-
+    <div id="pbtn">
+        <button>펭수퍼센트!</button>
+    </div>
+ 
 
 </body>
 
