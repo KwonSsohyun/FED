@@ -32,9 +32,10 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
 
                   왜냐?
                   이메일주소 직접입력은 제외해야함. (값이 없어서임. 이메일쪽에서 자체적 따로 체크)
+                  + 모바일검색 input 요소 제외 추가
 
                   ▶ 제외하기 위한 선택자
-                     input[type=text][id!=email2]
+                     input[type=text][id!=email2][class!=search]
                      -> != 선택연산자는 제이쿼리 전용 (아닌것)
 
 
@@ -43,7 +44,7 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
             
     */
 
-    $("input[type=text][id!=email2],input[type=password]")
+    $("input[type=text][id!=email2][class!=search],input[type=password]") /* 자꾸 걸려서 [class!=search] 추가함 */
         .blur(function () {
             /* 찍었다 빠졌을때 blur */
 
@@ -491,9 +492,9 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
 
 
         // 3. 입력창 blur 이벤트 발생시키기(전체검사)
-        //    대상 : input[type=text][id!=email2],input[type=password]
+        //    대상 : input[type=text][id!=email2][class!=search],input[type=password]
         //    이벤트발생 메서드 : trigger(이벤트명) -> blur이벤트 발생!
-        $("input[type=text][id!=email2],input[type=password]")
+        $("input[type=text][id!=email2][class!=search],input[type=password]")
             .trigger("blur");
 
         console.log("통과여부" + pass);
