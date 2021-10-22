@@ -16,8 +16,15 @@
           ▷ 참고 : https://www.w3schools.com/graphics/svg_intro.asp
 
 
+__________________________________________________________________________________
+
+
 [ SVG : Scalable Vector Graphic 축소확대가 가능한 이미지 ]
   -> svg파일은 코드로 구성되어 있다!
 
 
-  ▶ 참고자료예시 : E:\MyGit\FED\008.SVG학습
+  ▶ 참고자료예시 : FED\008.SVG학습
+
+  ▷ 펭수예제 : FED\008.SVG학습 >>  progress.html
+  ▷ svg분리호출 : FED\008.SVG학습 >> svgImg_xlink(svg분리호출).html 
+                  (원래분리하기 이전은 svgImg.html)
