@@ -88,6 +88,9 @@
             */
 
             stroke-dashoffset: 300%; /* stroke-dasharray: 300%; 와 똑같이 300주면, 공백부터 보임 (위에서 설정) */
+            /* 300% × X = 150%
+               X = 0.5         
+            */
             /* 
                 [ ★★★ 데쉬 옵셋 ]
                   : 데쉬어레이의 시작위치를 밀어주는 속성!
@@ -133,7 +136,7 @@
             text-align: center;
             font-size: 50px;
         }
-        #pbtn button{
+        #pbtn button, #sel{
             font-size: 50px;
         }
 
@@ -156,6 +159,12 @@
             // 퍼센트 박스
             let ptxt = $(".ptxt");
 
+            // svg circle 요소
+            let c1 = $(".c1");
+
+            // % 선택박스
+            let sel = $("#sel");
+
             ///////////////////////////////
             // 퍼센트 증가 함수
             ///////////////////////////////
@@ -169,15 +178,37 @@
                 pers++;
 
                 // 3. 증가된 값 확면출력!
-                ptxt.text(pers);
+                ptxt.text(pers); // 퍼센트값
 
-                // 4. 재귀호출 (함수자신을 다시호출!)
-                if(pers < 100){ // 100보다 작을때 호출!
+                // 4. 계산된 %에 맞게 svg 값 변경하기
+                /*    
+                      -> 계산원리 : 전체는 300%
+                                   예컨데 300% 값의 60%라면
+                                   >> 300 × 0.6 = 180%
+                         실제는 나머지 퍼센트를 밀어야함!
+                         즉 60%라면 100% - 60% = 40%
+                         결과적으로 300% × 0.4 = 120% 
+                */
+                
+                // 계산하기
+                let calc = 300 * (100 - pers) / 100;
+                // 계산법 : 전체옵션값 x (100% - 현재%) ÷ 100
+
+                c1.css({
+                    strokeDashoffset: calc + "%" /* 위에 calc뿌림 */
+                }); ////////// css /////
+
+
+                // 5. 재귀호출 (함수자신을 다시호출!)
+                //    ▶ sel.val() 은 퍼센트 선택값이다! (10,20,....,100)
+                if(pers < sel.val()){ // 100보다 작을때 호출!(제한을 둠 계속 호출이 안되게 제한안두면 홈페이지 다운됨)
+                    /* ex) (pers < 100) ▶ 여기서 숫자 100주면 100% 적용됨 */
+
                     // 호출이 너무 빠르므로 setTimeout으로 시간조정
-                    setTimeout(() => {
+                    setTimeout(() => { // 0.05초 뒤에 나를 호출해 (바로 100이 안나오게~)
                         progFn();
                     }, 50); 
-                }
+                } ///// if /////
                 
 
 
@@ -262,6 +293,19 @@
 
     <div id="pbtn">
         <button>펭수퍼센트!</button>
+        <select name="sel" id="sel">
+            <!-- option[value=$0]{$0%}*10 → 젠코딩 -->
+            <option value="10">10%</option>
+            <option value="20">20%</option>
+            <option value="30">30%</option>
+            <option value="40">40%</option>
+            <option value="50">50%</option>
+            <option value="60">60%</option>
+            <option value="70">70%</option>
+            <option value="80">80%</option>
+            <option value="90">90%</option>
+            <option value="100">100%</option>
+        </select>
     </div>
  
 
