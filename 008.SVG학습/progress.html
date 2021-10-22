@@ -18,12 +18,108 @@
             background-image: linear-gradient(to bottom, rgb(223, 219, 255), rgb(255, 204, 247), skyblue);
         }
 
+        /* 펭수박스 */
+        .pang{
+            width: 200px;
+            height: 200px;
+            /* outline: 2px solid red; */
+            margin: 100px auto;
+
+            background: url(./images/pang.jpg) no-repeat top/cover;
+            border-radius: 50%; /* 원 */
+        }
+
+        /* svg */
+        .pang svg{
+            width: 100%;
+            height: 100%;
+            /* 부모박스에 맞춤! */
+        }
+
+        /* circle */
+        .c1{
+            fill: none;
+            /* 채우기 - 기본색은 검정색 (transparent-투명, none-없음) */
+            stroke: blue; /* 선색(안쓰면 안나옴) */
+            stroke-width: 10; /* 선두께 안쓰면 1px, 단위없는 숫자는 px(단위 안써도됨) ex)10 === 10px */
+        }
+
     </style>
     <script src="js/jquery-3.3.1.min.js"></script>
-    
+    <script>
+
+    </script>
 </head>
 
 <body>
+
+    <div class="pang">
+
+        <svg> <!-- svg 스테이지 -->
+            <circle class="c1" cx="100" cy="100" r="95"></circle>
+            <!-- 
+                 [ 코드풀이 ]
+                   1) 우선 css영역인 <style> 영역 안에 설정해놓은
+                      펭수박스인 
+                        .pang{
+                            width: 200px;
+                            height: 200px;
+                        }
+                        ▶ 박스가 200px X 200px 있고,
+
+                    2) <svg>
+                         <circle class="c1" cx="100" cy="100" r="95"></circle>
+                         적어놓은걸 보면
+
+                         cx="100" ▶ 지름인 박스 200px에 -> 가운데 > 정중앙 (x축 중심)
+                         cy="100" ▶ 지름인 박스 200px에 -> 가운데 > 정중앙 (y축 중심)
+
+                         r="95" ▶ 반지름을 뜻함 ->> 100이 꽉차게 인데 >> 95여서 5가 여유로 남음
+
+                    3) CSS영역에 
+                       circle 인 class="c1" 에 효과준
+                        .c1{
+                            stroke-width: 10;
+                        }
+                        ▶ 외곽선 10px을 준건데,
+                           이게 원의 바깥외곽선 10px이 아닌
+                           원 외곽선을 봤을때 안쪽으로 5px + 바깥으로 5px이 적용된다.
+                           (이렇게 안쪽+바깥쪽 반반씩 먹혀서 외곽선 적용됨)
+
+                    4) 그래서 적용된걸 보면
+                       아까 반지름 r="95" 을 줘서 
+                       펭수박스 안에 꽉차지 않았는데 5px 여유공간이 남았는데
+                       stroke-width: 10; 을 줘서 원 안으로 5px 적용되고, 바깥으로 5px 되서
+                       펭수박스 꽉차게 됬다. (외곽선때문에말이당)
+
+             -->
+
+
+
+        </svg>
+
+        <!-- 
+              [ svg 요소 ]
+                - svg를 그려주는 영영을 지정하는 요소
+                  ex) 스크립트 구역 / 스타일 구역처럼 지정하는 것
+                
+              [ 종류별 svg요소 ]
+
+                  1. 원 : circle
+                     ▶ 속성 : cx(x축 중심), cy(y축 중심), r(반지름)
+
+
+
+
+
+
+         -->
+    </div>
+
+
+
+
+
 
 </body>
 
