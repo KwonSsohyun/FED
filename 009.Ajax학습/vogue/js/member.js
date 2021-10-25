@@ -515,6 +515,54 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
         // 4. 검사결과에 따라 메시지 보이기 및 처리
         if(pass){ // 통과시!
 
+
+            /* 
+                [ Ajax를 이용한 POST 방식으로 DB에 데이터 입력하기! ]
+                  AJAX = Async(싱크=동기) 
+                         Asynchronous JavaScript and XML의 약자
+
+                  - 비동기통신이란? 
+                    : 쉽게말해서 페이지가 새로고쳐지지 않고, 
+                      그대로 있으면서 일부분만 서버통신을 하는 것을 말한다!
+                
+                  - 제이쿼리는 POST방식으로 ajax를 할 수 있다!
+
+                [ POST 방식 Ajax 메서드 ]
+                  $.post(URL,data,cllback)
+                  $.post(전송할 페이지, 전송할 데이터, 전송후 실행함수)  
+            
+            */
+
+            $.post(
+                // 1. 전송할 페이지 
+                //    FED\009.Ajax학습\vogue\process >> "ins.php"
+                "process/ins.php",
+                
+                
+                // 2. 전송할 데이터 - {속성:값} > 객체형식
+                //    "ins.php" 파일열어서보면 ### 회원가입 입력처리 페이지 ### 에 적혀있음
+                {
+                    // 1.아이디
+                    "mid":$("mid").val(),
+                    // 2.비번
+                    "mpw":$("mpw").val(),
+                    // 3.이름
+                    "mnm":$("mnm").val(),
+                    // 4.성별
+                    
+                    // 5-1.이메일 앞주소
+                    // 5-2.이메일 뒷주소
+                    // 5-3.직접입력 이메일 뒷주소
+
+                }
+
+                
+                // 3. 전송후 실행함수
+
+
+
+            ); /////// post 메서드 //////
+
             // 메시지 띄우기
             alert("회원가입을 축하드립니다! 짝짝짝!");
             // 원래는 post 방식으로 DB에 회원정보 입력후
@@ -523,7 +571,7 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
 
             // 로그인페이지로 이동하기
             // location.href = "login.html" -> 이걸로 쓰면 이전페이지로 회원가입했던 정보로 돌아가져서 안됨;
-            location.replace("login.html");
+            location.replace("login.php");
             /* 
                 location.replace 는 뒤로가기시
                 history가 살아있어서 보안상 위험하다!
