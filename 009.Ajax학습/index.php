@@ -11,7 +11,7 @@
         /* 주석 */
         # 주석
 
-
+        // 변수
         // php변수는 문자앞에 $를 씀
         $link = "<a href='vogue/'>보그바로가기</a>"; 
         $link2 = "<a href='PHP_include'>인클루드</a>"; /* 확장자 없어도, 폴더명으로 인식함 */
@@ -28,6 +28,7 @@
         ▶ 이제 "보그바로가기" 누르면 보그제작한 페이지로 이동됨 
            http://creative103.dothome.co.kr/vogue/ ▶ 해당페이지로 이동됨 */
 
+           
         echo "<h2>$link2</h2>";
 
     
