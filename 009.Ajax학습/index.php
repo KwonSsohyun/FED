@@ -11,8 +11,18 @@
         /* 주석 */
         # 주석
 
+
+        // php변수는 문자앞에 $를 씀
+        $link = "<a href='vogue/'>보그바로가기</a>"; 
+
+
         // 화면출력 -> echo 메시지
-        echo "<h1>나의 첫 PHP페이지!</h1>";
+        echo "<h1>나의 첫 PHP페이지!</h1>"; 
+        /* http://creative103.dothome.co.kr/ ▶ 나옴 
+           http://creative103.dothome.co.kr/vogue/ ▶ 원래 이렇게 써야 나왔다.
+        */
+
+        echo "<h2>$link</h2>"; /* 변수 넣음 */
 
     
     ?>
