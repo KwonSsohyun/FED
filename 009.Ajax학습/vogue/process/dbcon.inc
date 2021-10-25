@@ -1,7 +1,7 @@
 <?php
 
 
-++ 연결 ++
+// DB연결 문자열 ///
 $servername = "localhost";  //DB서버명
 $username = "creative103";  //DB최고관리자권한
 $password = "r9357523!";  //root에는 비번이 없음
