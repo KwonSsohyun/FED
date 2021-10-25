@@ -116,7 +116,7 @@
 					$(".smenu",this).slideDown(400);
 				},
 				function(){ // out
-					$(".smenu",this).stop().slideUp(400);
+					$(".smenu",this).stop().slideUp(400); /* stop() 기본값인 stop(false,false) -> 시작하다가 마지막애니로 종료! */
 				}); ////// hover ///////
 
 				/// stop() 메서드
