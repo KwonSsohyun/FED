@@ -534,7 +534,7 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
 
             $.post(
                 // 1. 전송할 페이지 
-                //    FED\009.Ajax학습\vogue\process >> "ins.php"
+                //    ▶ FED\009.Ajax학습\vogue\process >> "ins.php"
                 "process/ins.php",
                 
                 
