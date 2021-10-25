@@ -32,7 +32,7 @@ $(function(){ ////////////// jQB (제이쿼리 코드블록) ///////////////////
     /// 1. 로고 클릭시 첫페이지로 가기
     //     대상 : .logo a
     $(".logo a").click(function(){
-        location.href = "index.html";
+        location.href = "index.php";
     }); /////////// click ///////////
 
 
@@ -96,18 +96,18 @@ $(function(){ ////////////// jQB (제이쿼리 코드블록) ///////////////////
         //    cat 이라는 키이름은 내가 지은것이다! (카테고리 줄여서 cat이라 지음)
         //    키=값으로 데이터를 맞추기 위함!
         if(mtxt !== "search") // ★ 검색이 아닐때만 이동! ★ (검색 누르면 이제 새창 이동안됨) : 여기 안에서 검색할거지 새창으로 이동할게 아니라서 설정함
-            location.href = "sub.html?cat="+mtxt;
+            location.href = "sub.php?cat="+mtxt;
             // 오른쪽에 적은 문자데이터값이 >>> 왼쪽으로 이동되서 페이지가 이동한다.
-            // 핵심은 왼쪽이 오른쪽으로 넘어온다. 괄호안쪽에서 먼저 실행한다. JS005.html 참조
+            // 핵심은 왼쪽이 오른쪽으로 넘어온다. 괄호안쪽에서 먼저 실행한다. JS005.php 참조
         /* 
-           http://172.17.38.209:5500/001.HTML%ED%95%99%EC%8A%B5/008.VOGUE_PJ/002.site/sub.html 
+           http://172.17.38.209:5500/001.php%ED%95%99%EC%8A%B5/008.VOGUE_PJ/002.site/sub.php 
            해당경로에서
-           ▶ "sub.html" 뒤에 쓰려고 쓴거임 ▶ "sub.html?cat="+mtxt;
-               참고자료 : 003.JS학습 > Get01.html
+           ▶ "sub.php" 뒤에 쓰려고 쓴거임 ▶ "sub.php?cat="+mtxt;
+               참고자료 : 003.JS학습 > Get01.php
         */
         /* 
           해당코드를 썼더니, 메인 카테고리 눌러보니 해당 카테고리명에 맞는 url 나옴
-          http://172.17.38.209:5500/001.HTML%ED%95%99%EC%8A%B5/008.VOGUE_PJ/002.site/sub.html?cat=people
+          http://172.17.38.209:5500/001.php%ED%95%99%EC%8A%B5/008.VOGUE_PJ/002.site/sub.php?cat=people
           ▶ cat=fashion / cat=beauty / cat=people ... 
         */
 
