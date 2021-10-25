@@ -568,7 +568,7 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
 
                 
                 // 3. 전송후 실행함수
-                //    ▶ FED\009.Ajax학습\vogue\process >> ins.php >> // 결과가 나온경우 처리 // 에 echo ok이런식으로 정함
+                //    ▶ FED\009.Ajax학습\vogue\process >> ins.php >> // 결과가 나온경우 처리 // ▶ echo ok 이런식으로 정함
                 function(res){ // res - 리턴된 결과값 받음!
 
                     /// 성공시! ///
