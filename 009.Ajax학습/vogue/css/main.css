@@ -1,0 +1,98 @@
+@charset "utf-8";
+/* VOGUE PJ 메인 CSS - main.css */
+
+/* 외부CSS 합치기 */
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+
+/************** 1. 상단영역 ***************/
+
+
+/* 메인 페이지 공통 디자인 (백그라운드 bg컬러) : 02. 메인영역 + 03. 하단영역 */
+.bgc{
+    background-color: #f9f9f9;
+}
+
+/*************** 2. 메인영역 ***************/
+.cont>div{
+    outline: 2px dashed red;
+}
+
+
+/* 1번 컨텐츠 */
+.bg1{
+    background-image: url(../images/cont1a.jpg);
+}
+
+/* 2번 컨텐츠 */
+.bg2{
+    background-image: url(../images/cont2-1.jpg);
+}
+.bg3{
+    background-image: url(../images/cont2-2.jpeg);
+}
+.bg4{
+    background-image: url(../images/cont2-3.jpg);
+}
+
+/* 3번 컨텐츠 */
+.bg5{
+    background-image: url(../images/cont3a.jpg);
+}
+
+/* 4번 컨텐츠 3개 */
+.bg6{
+    background-image: url(../images/cont4-1.jpg);
+}
+.bg7{
+    background-image: url(../images/cont4-2.jpg);
+}
+.bg8{
+    background-image: url(../images/cont4-3.jpg);
+}
+
+/* 5번 컨텐츠 */
+.bg9{
+    background-image: url(../images/cont5a.jpg);
+}
+
+/* 6번 컨텐츠 3개 */
+.bg10{
+    background-image: url(../images/cont6-1.png);
+}
+.bg11{
+    background-image: url(../images/cont6-2.jpg);
+}
+.bg12{
+    background-image: url(../images/cont6-3.png);
+}
+
+/* 7번 컨텐츠 3개 */
+.bg13{
+    background-image: url(../images/cont7-1.jpg);
+}
+.bg14{
+    background-image: url(../images/cont7-2.jpg);
+}
+.bg15{
+    background-image: url(../images/cont7-3.jpg);
+}
+
+
+
+
+
+
+/* 파트타입 1 - 이미지 1개 
+.pt1{
+    height: 724px; -> 비율설정 했기때문에 높이값 필요 없음
+}
+파트타입 2 - 이미지 3개 
+.pt2{
+    height: 650px; -> 비율설정 했기때문에 높이값 필요 없음
+}
+ */
+
+
