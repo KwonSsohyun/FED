@@ -1,11 +1,11 @@
 <?php
 
 
-++ 선생님것 연결 ++
-$servername = "112.175.184.75";  //DB서버명
-$username = "tombap8";  //DB최고관리자권한
-$password = "kangnam21!";  //root에는 비번이 없음
-$dbname = "tombap8";  //사용DB명
+++ 연결 ++
+$servername = "localhost";  //DB서버명
+$username = "creative103";  //DB최고관리자권한
+$password = "r9357523!";  //root에는 비번이 없음
+$dbname = "creative103";  //사용DB명
 
 /// DB서버와 연결하기 ///
 $conn = new mysqli(
