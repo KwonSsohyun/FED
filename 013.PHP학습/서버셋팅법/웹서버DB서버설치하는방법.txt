@@ -1,9 +1,9 @@
-웹서버와 DB서버 설치하기
+[ 웹서버와 DB서버 설치하기 ] 
 
-1. 구글에서 "xampp"를 검색
+  1. 구글에서 "xampp"를 검색
 
-2. https://www.apachefriends.org/download.html
-    사이트에서 window용으로 다운로드 받는다.
+  2. https://www.apachefriends.org/download.html
+     사이트에서 window용으로 다운로드 받는다.
 
 3. 다운 받은 파일을 실행하여  "next"를 클릭하면서 설치
 
