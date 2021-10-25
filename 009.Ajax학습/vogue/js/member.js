@@ -543,11 +543,11 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
                 //    "ins.php" 파일열어서보면 ### 회원가입 입력처리 페이지 ### 에 적혀있음
                 {
                     // 1.아이디
-                    "mid":$("mid").val(),
+                    "mid":$("#mid").val(),
                     // 2.비번
-                    "mpw":$("mpw").val(),
+                    "mpw":$("#mpw").val(),
                     // 3.이름
-                    "mnm":$("mnm").val(),
+                    "mnm":$("#mnm").val(),
 
                     // 4.성별
                     //   :(필터임) >> 라디오버튼을 가져가는데 네임이 젠이고, 체크된 값을 가져와라(여자남자 둘 중 하나를 사용자가 선택할거니까)
@@ -555,11 +555,11 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
                     "gen":$(":radio[name=gen]:checked").val(),
 
                     // 5-1.이메일 앞주소
-                    "email1":$("email1").val(),
+                    "email1":$("#email1").val(),
                     // 5-2.이메일 뒷주소
-                    "seleml":$("seleml").val(),
+                    "seleml":$("#seleml").val(),
                     // 5-3.직접입력 이메일 뒷주소
-                    "email2":$("email2").val()
+                    "email2":$("#email2").val()
 
                 },
 
