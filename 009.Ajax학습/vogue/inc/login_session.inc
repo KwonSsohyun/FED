@@ -104,7 +104,6 @@ session_start();
           transform: "translateX(-50%)",
           fontSize: "14px",
           fontWeight: "bold",
-          lineHeight:"50px",
           textAlign: "center",
           whiteSpace: "nowrap"
       }); ////// css //////////
