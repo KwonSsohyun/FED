@@ -7,6 +7,7 @@ $username = "creative103";  //DB최고관리자권한
 $password = "r9357523!";  //root에는 비번이 없음
 $dbname = "creative103";  //사용DB명
 
+
 /// DB서버와 연결하기 ///
 $conn = new mysqli(
     $servername,$username,$password,$dbname);
