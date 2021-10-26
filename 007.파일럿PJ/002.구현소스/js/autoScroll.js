@@ -174,7 +174,13 @@ $(function () { /// jQB ////////////////////////
 
             $("html,body").stop().animate({
                 scrollTop: pos + "px"
-            }, 1200, "easeOutQuint", pageAction);
+            }, 1200, "easeOutQuint");
+
+            // animate 콜백함수 아닌 바깥에서 호출하면
+            // 페이지액션이 출발과 동시에 작동된다!
+            // ex) }, 1200, "easeOutQuint"); -> 위 콜백함수로 하면 좀 나타나는게 느림
+            //     페이지와 동시에 보이게 하려면 콜백함수가 아닌 밖에 호출한다.
+            pageAction();
             /* 
                 , pageAction ▶ 함수 호출한거임
                 호출한 원본은 
