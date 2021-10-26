@@ -208,8 +208,9 @@ $(function () { ////////////// jQB (제이쿼리 코드블록) /////////////////
             해줘야 미리 끊어줄 수 있다~!
 
        외부함수면 함수자리에 호출할 수 있게 해줬다. (앗! on에서는 안되서 걍 다시 적음)
-       slide.on("dragstart", function () { ▷ 이것이 아닌,
+       ▷ slide.on("dragstart", function () { ▷ 이것이 아닌,
        ▶ slide.on("dragstart",clearAuto);  ▷ 이것이 안됨
+          ▶ setInterval, setTimeout 은 됨
     */
 
 
@@ -218,7 +219,7 @@ $(function () { ////////////// jQB (제이쿼리 코드블록) /////////////////
     // 이벤트 : dragstop -> 드래그가 끝났을때 (drag로만 하면 계속 값이 바뀌니, 드래그 멈췄을때만 값 나오게 하기)
     slide.on("dragstop", function () { // 슬라이드를 드래그해서 클릭 놓는 순간 펑셩 들어옴
 
-        
+
         // 자동넘기기 지우기
         clearAuto();
         /* 안정감을 위해서 여기서도 같이 줬다. 
