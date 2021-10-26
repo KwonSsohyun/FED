@@ -213,7 +213,6 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
 
                     $.ajax({ // 객체형식으로 보냄 {} // ▶ E:\MyGit\FED\009.Ajax학습\vogue\process >> "chkID.php"
                         
-
                         // 1. 전송할페이지
                         url: "process/chkID.php",
 
@@ -250,7 +249,7 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
                                 pass = false; /* 해줘야 async(어싱크) 먹는다. */
 
                             } ////// else ////
-                        },
+                        }, ////// success 함수 //////
                         
                         // 7. 실패처리
                         /*  
@@ -261,12 +260,10 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
                         */
                         error: function(xhr,status,error){
                             alert("연결실행실패"+error);
-                        }
+                        } //// error 함수 /////
                         
-                        
+
                     }); //////////// ajax 메서드 /////////////
-
-
 
                 } /// else문 : 결과가 true 일때 ///
 
