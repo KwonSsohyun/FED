@@ -264,6 +264,10 @@ $(function () { ////////////// jQB (제이쿼리 코드블록) /////////////////
                 // 광드래그 커버지우기
                 cover.hide(); /* 각각 이동후 지움 */
 
+                // 배너글자 등장함수 호출!
+                showTxt();
+                // 아랫쪽의 sno변경이 먼저 이루어짐!
+
 
             }); /////// animate ///////
 
@@ -360,6 +364,67 @@ $(function () { ////////////// jQB (제이쿼리 코드블록) /////////////////
             // console.log("블릿순번:"+sno);
 
         }; ///// chgIndic /////
+
+
+
+    // 배너등장 텍스트
+    let banTxt = [
+        "Men's Season <br> Collection",
+        "2021 Special <br> Collection",
+        "GongYoo <br> Collection",
+        "T-Shirt <br> Collection",
+        "Shoes <br> Collection",
+        "Wind Jacket <br> Collection"
+    ];
+
+
+
+    /////////////////// 배너글자 등장 함수 /////////////////////////////
+    //////////////////////////////////////////////////////////////////
+    let showTxt = () => {
+
+        console.log("슬라이드순번:"+sno);
+
+        // 0. 있을 수 있는 .btit박스 지우기!
+        $(".btit").remove();
+
+        // 1. 배너글자 박스넣기
+        //    대상 : .slide li (해당순번 li)
+        slide.find("li").eq(sno) /* slide li의 몇번째 */
+        .append('<h2 class="btit"></h2>'); /* 추가함 -> 클래스 btit 생성! */
+
+        // 2. 배너글자 박스 CSS -> 위에 새로생성한 btit 바로 쓴다.
+        $(".btit") // 주인공이 css 넣고, html도 바꾸겠다.
+        .css({
+
+            position : "absolute",
+            top : "50%",
+            left : "50%",
+            transform : "translate(-50%,-50%)",
+            font : "bold 4.5vmax Verdana", /* CSS > "015.뷰포트단위" : 가로세로중에 큰걸 기준한다. */
+            color : "#fff",
+            textShadow : "1px 1px 3px #777",
+            whiteSpace : "nowrap" /* 줄바꿈안됨 */
+
+        }) ///// css /////
+
+        // 3. 글자넣기 - 주인공에서 이어짐!
+        .html(banTxt[sno]); /* 위에서 banTxt 배열내용 sno순번에 맡게 들어감 */
+
+        /* 
+            배너글자 등장함수 호출!
+            showTxt();
+        
+        */
+
+
+
+
+    }; ///////////// showTxt 함수 ///////////////////////
+    ////////////////////////////////////////////////////
+
+
+
 
 
 
