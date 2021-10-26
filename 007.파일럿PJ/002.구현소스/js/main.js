@@ -211,6 +211,7 @@ $(function () { ////////////// jQB (제이쿼리 코드블록) /////////////////
        ▷ slide.on("dragstart", function () { ▷ 이것이 아닌,
        ▶ slide.on("dragstart",clearAuto);  ▷ 이것이 안됨
           ▶ setInterval, setTimeout 은 됨
+             .on에서 안된다는것
     */
 
 
