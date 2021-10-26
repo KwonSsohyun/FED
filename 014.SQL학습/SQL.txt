@@ -13,7 +13,7 @@ idate TIMESTAMP
 
 
 
-INSERT INTO `dramainfo`(`dname`, `actors`, `broad`, `gubun`, `stime`, `total`) VALUES ("Å¸ÀÎÀº Áö¿ÁÀÌ´Ù","ÀÓ½Ã¿Ï,ÀÌµ¿¿í","OCN","Åä,ÀÏ","10:30","10ºÎÀÛ")
+INSERT INTO `dramainfo`(`dname`, `actors`, `broad`, `gubun`, `stime`, `total`) VALUES ("íƒ€ì¸ì€ ì§€ì˜¥ì´ë‹¤","ì„ì‹œì™„,ì´ë™ìš±","OCN","í† ,ì¼","10:30","10ë¶€ì‘")
 
 
-INSERT INTO `dramainfo`(`dname`, `actors`, `broad`, `gubun`, `stime`, `total`) VALUES ("¿­¿©´üÀÇ ¼ø°£","¿Ë¼º¿ì,±èÇâ±â","JTBC","¿ù,È­","09:30","16ºÎÀÛ")
+INSERT INTO `dramainfo`(`dname`, `actors`, `broad`, `gubun`, `stime`, `total`) VALUES ("ì—´ì—¬ëŸì˜ ìˆœê°„","ì˜¹ì„±ìš°,ê¹€í–¥ê¸°","JTBC","ì›”,í™”","09:30","16ë¶€ì‘")
