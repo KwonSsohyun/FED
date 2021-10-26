@@ -98,7 +98,6 @@ session_start();
       $("#loginMsg").css({
           position: "absolute",
           width: "400px",
-          height: "50px",
           top: "5%",
           left: "50%",
           transform: "translateX(-50%)",
