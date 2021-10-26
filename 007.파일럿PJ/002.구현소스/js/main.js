@@ -401,7 +401,7 @@ $(function () { ////////////// jQB (제이쿼리 코드블록) /////////////////
             top : "50%",
             left : "50%",
             transform : "translate(-50%,-50%)",
-            font : "bold 4.5vmax Verdana", /* CSS > "015.뷰포트단위" : 가로세로중에 큰걸 기준한다. */
+            font : "bold 4.5vmax Verdana", /* CSS > "015.뷰포트단위" : 가로세로중에 큰걸 기준한다. >> 가로세로를 기준한 큰거의 화면의 4.5% */
             color : "#fff",
             textShadow : "1px 1px 3px #777",
             whiteSpace : "nowrap" /* 줄바꿈안됨 */
