@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/media.css">
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery-touch-punch.min.js"></script> <!-- 모바일일때 메인배너에 드래그 기능 넣은거 먹게 해줌 (터치펀치) -->
     <script src="js/autoScroll.js"></script>
     <script src="js/common.js"></script>
     <script src="js/main.js"></script>
@@ -28,16 +29,17 @@
             <nav class="gnb">
                 <ul>
                     <li class="bld">
-                        배너순번 li 숨기기
+                        배너순번 li 숨기기 <!-- 유의사항 : 첫번째 li가 안보이도록 있어서 페이지 순번과 정확히 일치함! (이건 0번부터 쓰려고) -->
+                        <!-- FED\007.파일럿PJ\002.구현소스\js >> "main.js" 위쪽에 적음 -->
                     </li>
                     <li>
-                        <a href="#men">MEN</a>
+                        <a href="#men">MEN</a> <!-- 실제로 상단메뉴바에 있는 1번 -->
                     </li>
                     <li>
-                        <a href="#women">WOMEN</a>
+                        <a href="#women">WOMEN</a> <!-- 실제로 상단메뉴바에 있는 2번 -->
                     </li>
                     <li>
-                        <a href="#style">STYLE</a>
+                        <a href="#style">STYLE</a> <!-- 실제로 상단메뉴바에 있는 3번 -->
                     </li>
                 </ul>
             </nav>
@@ -56,7 +58,7 @@
                 <!-- 
                     배경 동영상 : muted 소리없음, loop 반복재생
                 -->
-                <video src="images/disc2018.mp4" class="bgm" muted loop></video>
+                <video src="images/disc2018.mp4" class="bgm" muted loop></video> <!-- 설정 : FED\007.파일럿PJ\002.구현소스\js >> "common.js" -->
                 <!-- 전체메뉴 -->
                 <nav class="mlist">
                     <dl>
