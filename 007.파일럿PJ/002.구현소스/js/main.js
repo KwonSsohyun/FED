@@ -212,6 +212,11 @@ $(function () { ////////////// jQB (제이쿼리 코드블록) /////////////////
        ▶ slide.on("dragstart",clearAuto);  ▷ 이것이 안됨
           ▶ setInterval, setTimeout 은 됨
              .on에서 안된다는것
+       ex)
+       let aaa = () => {alert("나야나");};
+       slide.click(aaa); 
+       ▶ slide.click(aaa); ▷ 변수 넣어도 잘 나옴! 클릭하면 나야나 나옴!
+          그니까 .click은 되는데 .on 이 안되는것임
     */
 
 
