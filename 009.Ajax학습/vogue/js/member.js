@@ -583,7 +583,7 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
 
             /* 
                 [ Ajax를 이용한 POST 방식으로 DB에 데이터 입력하기! ]
-                  AJAX = Asynchronous JavaScript and XML의 약자
+                  AJAX = Asynchronous Javascript and XML의 약자
 
                   - 비동기통신이란? 
                     : 쉽게말해서 페이지가 새로고쳐지지 않고, 
@@ -592,7 +592,7 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
                   - 제이쿼리는 POST방식으로 ajax를 할 수 있다!
 
                 [ POST 방식 Ajax 메서드 ]
-                  $.post(URL,data,cllback)
+                  $.post(URL,data,callback)
                   $.post(전송할 페이지, 전송할 데이터, 전송후 실행함수)  
             
             */
