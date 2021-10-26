@@ -1,6 +1,5 @@
 /// 보그코리아 회원가입 페이지 JS - member.js ///
 
-const { error } = require("jquery");
 
 $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된다음에 해야하기 때문 /////////
 
