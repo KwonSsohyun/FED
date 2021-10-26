@@ -38,6 +38,11 @@
 </head>
 
 <body>
+    <!-- 로그인 세션처리 인클루드 -->
+    <?php include "inc/login_session.inc" ?>
+    <!-- ▶ FED\009.Ajax학습\vogue\inc >> "login_session.inc" -->
+
+
     <!-- /////////// 1. 상단 영역 /////////// -->
     <div id="top">
         <?php include "inc/top.inc" ?> <!-- 이렇게 안에 잘라낸 코딩 inc폴더 안에 작업한거 연결한다. -->
