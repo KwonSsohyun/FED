@@ -13,7 +13,7 @@
 .act{
     display: block; /* 트랜스폼 적용위해 블록으로!(인라인이 트랜스폼이 안됨) */
     /* a요소는 inline 으로 트랜스폼 적용이 안되므로! ▶ <a href="men.html" class="act"> >> <!-- 2-2.남자패션영역 참조 --> */
-    transform: rotate(25deg) translateY(50px);
+    transform: rotate(25deg) translateY(50px); /* translateY : y축으로 50px 이동 */
     transform-origin: left top; /* 돌리는 축 기준점 */
     opacity: 0;
     transition: all 1s ease-out;
