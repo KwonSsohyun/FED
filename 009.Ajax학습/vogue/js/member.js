@@ -648,7 +648,7 @@ $(function () { //// jQB : 요소를 선택해서 쓸거니까 로딩해야된�
                         // location.href = "login.html" -> 이걸로 쓰면 이전페이지로 회원가입했던 정보로 돌아가져서 안됨;
                         location.replace("login.php");
                         /* 
-                            location.replace 는 뒤로가기시
+                            location.href 는 뒤로가기시
                             history가 살아있어서 보안상 위험하다!
                             ▶ .replace()히스토리가 지워진다. (보안상 중요한 페이지면 이걸 씀)
 

@@ -1,0 +1,41 @@
+[ AJAX (Asynchronous Javascript And XML) ] 
+  AJAX란, JavaScript의 라이브러리중 하나이며, 
+  Asynchronous Javascript And Xml(비동기식 자바스크립트와 xml)의 약자이다. 
+  
+  브라우저가 가지고있는 XMLHttpRequest 객체를 이용해서 
+  전체 페이지를 새로 고치지 않고도 
+  페이지의 일부만을 위한 데이터를 로드하는 기법 이며 
+  JavaScript를 사용한 비동기 통신, 클라이언트와 서버간에 XML 데이터를 주고받는 기술이다.
+
+  즉, 쉽게 말하자면 자바스크립트를 통해서 서버에 데이터를 요청하는 것이다.
+
+  --------------------------------------------------------------------------------------
+
+
+[ Ajax를 이용한 POST 방식으로 DB에 데이터 입력하기! ]
+  AJAX = Asynchronous JavaScript and XML의 약자
+
+  - 비동기통신이란? 
+    : 쉽게말해서 페이지가 새로고쳐지지 않고, 
+      그대로 있으면서 일부분만 서버통신을 하는 것을 말한다!
+                
+  - 제이쿼리는 POST방식으로 ajax를 할 수 있다!
+
+
+[ POST 방식 Ajax 메서드 ]
+  $.post(URL,data,cllback)
+  ▶ $.post(전송할 페이지, 전송할 데이터, 전송후 실행함수)  
+
+
+                                          [ AJAX로 중복아이디 검사하기! ]
+                          1) POST 방식 처리 메서드
+                             - $.post(URL,data,callback)
+
+                          2) get 방식 처리 메서드
+                             - $.get(URL,callback)
+
+                          3) 위 2가지 유형 중 선택처리 메서드
+                             - $.ajax(전송할페이지, 전송방식, 보낼데이터, 전송할데이터타입, 비동기옵션, 성공처리, 실패처리)  
+
+
+    ▶ 참고자료 : FED\009.Ajax학습\vogue\js >> "member.js"
