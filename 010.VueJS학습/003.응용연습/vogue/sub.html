@@ -35,6 +35,18 @@
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/linksys.js"></script>
     <script src="js/common.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> <!-- 뷰JS 프레임워크 스텐드얼론 버전 가져오기 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script> <!-- 엑시오스 라이브러리 스텐드얼론 버전 가져오기 (★제이슨 불러오기★) -->
+    <!-- 
+        ※ 스텐드얼론(의존성없이 얘만 있으면 쓸수 있다. 별도의 설치가 필요없다는 뜻)
+        
+        https://rintiantta.github.io/jpub-vue/guide/chapter1.html#s04-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0 
+        ▶ 해당홈페이지에서 복붙해서 가져옴
+
+        ▶ vue.js / axios.min.js  ->> 2개 가져옴
+     -->
+
     <script src="js/sub.js"></script> <!-- sub페이지에만 들어간 js -->
 </head>
 
@@ -243,14 +255,55 @@
 
 
     <!-- /////////// 2. 메인 영역 /////////// -->
-    <div class="bgc">
+    <div class="bgc" id="cont"> <!-- ★★★★★ id="cont" >> 뷰제이에스 가상돔에 끌고갈거임(구성해서 한번에 때릴 모델) ★★★★★ -->
         <!-- bgc = 백그라운드 컬러 + 하단영역에도 클래스이름 같이줌 -->
-        <main class="cont ibx">
+        <main class="cont ibx" v-for="(v,i) in items.data" v-if="v.경로===catName"> <!-- ★★★★★★ 뷰제이에스 포문 ★★★★★ -->
             <!-- 1. 타이틀 -->
-            <h2 class="stit"></h2>
+            <h2 class="stit">
+                {{v.제목}} <!-- ★★★★★★ 뷰제이에스 ★★★★★ -->
+            </h2>
 
             <!-- 2. 서브메뉴(LNB-Local Navigation Bar) -->
             <nav class="lnb">
+                <ul v-if="v.메뉴!=='없음'">  
+                    <!-- 
+                          v-if="v.메뉴!=='없음'" 을 아래 li v-for옆에 안적은 이유
+                          if문은 따로 ol로 올려야 빈껍데기 없음 ol이 안보이고, li만보임 
+                          ▶ ul이나 ol 을 쓰려면 꼭 li를 써야 한다.
+                             근데 여기서 ol을 왜 안보이게 했냐면 ol만 쓰고 li 리스트 항목 없다고 li안쓰면 태그상에 문제가 생김
+                             그래서 ol이 사라지고 리스트가 없으면 li태그로 보이게 하는것임
+                             
+                             크게 ul이 싸고 있으니 li만써도 괜찮은것.           
+                    -->
+                    <li v-for="(m,i) in v.메뉴">
+                        {{m}}
+                    <!-- 
+                        위에 포문 안에 또 포문 -> 위의 v-for="(v,i) ▶ v를 써서 ▶ v.메뉴 
+    
+                        왜 "v.메뉴" / "v.제목" 이렇게 앞에 v를 붙혀서 쓰냐면
+                        ▶ v-for="(v,i) in items.data" 은
+    
+                           들어가서 보면 
+                           ▷ FED\010.VueJS학습\002.데이터연습 >> "real.json"
+                        ▶ "fashion" / "beauty" / "living" / "people" / "video" / "runway" / "shopping" 인 큰 뭉탱이를 지칭하는것
+    
+                        ▶ v는 이 각각 하나씩의 큰 카테고리를 지칭하는 거고
+                           i는 순번을 지칭하는거니
+    
+                           ▶▶ v.메뉴 >> "fashion" / "beauty" / "living" / "people" / "video" / "runway" / "shopping" 들의 각각의 메뉴가 보이는것. 
+                    -->
+                    <!-- 
+                          없음도 배열로 나와서 그건 안보이게 하려고
+                          v-if="" 씀 (if문)
+    
+                          ▶ v-if="v.메뉴!=='없음'
+                             만약에 v.메뉴의 값이 '없음'이 아니면 true
+                             이때 for문이 실행됨!
+    
+                             false이면 실행안됨.
+                    -->
+                    </li> 
+                </ul>
                 <!-- 아래를 주석처리한 것은 "sub.html" -> "2-2. 서브메뉴(LNB) 넣기" 셋팅함-->
                 <!--  <ul> 
                     <li>
