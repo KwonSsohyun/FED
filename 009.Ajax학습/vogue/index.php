@@ -39,7 +39,7 @@
 
 <body>
 
-    <!-- 로그인 세션처리 인클루드 -->
+    <!-- 로그인 세션처리 인클루드 (공통코드를 include한다. ▶ 만약 수정하면 해당inc만 수정한다.) -->
     <?php include "inc/login_session.inc" ?>
     <!-- ▶ FED\009.Ajax학습\vogue\inc >> "login_session.inc" 
             : 이제 로그인하면 상단에 ~님 환영합니다. 뜨고 상단작은 메뉴 로그아웃 뜸 
