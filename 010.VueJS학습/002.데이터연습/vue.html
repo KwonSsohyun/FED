@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue JS 데이터 바인딩 연습</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> <!-- 뷰JS 프레임워크 스텐드얼론 버전 가져오기 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script> <!-- 엑시오스 라이브러리 스텐드얼론 버전 가져오기 (★제이슨 불러오기★) -->
+    <!-- 
+        ※ 스텐드얼론(의존성없이 얘만 있으면 쓸수 있다.)
+        
+        https://rintiantta.github.io/jpub-vue/guide/chapter1.html#s04-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0 
+        ▶ 해당홈페이지에서 복붙해서 가져옴
+
+        ▶ vue.js / axios.min.js  ->> 2개 가져옴
+
+        ▶ 제이슨 
+           1) F1 ->> 기본설정 : 기본설정열기 (JSON) > 설정파일을 쓰고 있다는것을 보여주려고 튼거임
+           2) "test.json" 새파일 만든다.
+     -->
+
+    <script>
+          window.addEventListener("DOMContentLoaded",()=>{ 
+
+            console.log("로딩완료!");
+
+            new Vue({
+                el: "#app",
+                data: {
+                    // 제이슨파일 ▷ FED\010.VueJS학습\002.데이터연습 >> "test.json" 
+
+                    items: [] // json데이터 종류(빈배열형 셋팅)
+                },
+
+                // mounted 속성은 "읽어들여진"의 뜻으로 외부파일을 가져와서 셋팅하는 기능!
+                mounted: function(){
+
+                    // axios는 외부파일을 읽어올 수 있는 라이브러리
+                    axios.get("./test.json")
+                    .then(response => (this.items = response))
+                    /* 
+                        ▶ get() 메서드는 가져올 파일 경로를 셋팅함
+                        ▶ then() 메서드는 가져온 후 셋팅내용을 코딩함
+
+                        ▶ response => (this.items = response)
+        
+                           : 가져온 파일 내용을 response 변수로
+                             함수 내부에 전달하여 이 값을 Vue JS에
+                             셋팅된 this.items 
+                             즉, 현재 변수 items에 집어넣어라!
+
+                             ()=>{} 화살표함수 줄여쓴것
+                             {중괄호} 생략됬고, 
+                             this.items = response 이거를 묶어주려고 () 쓴거임
+                             오른쪽이 왼쪽으로 들어가니
+                             response 가 this.items 으로 들어간것.
+                    */
+                }
+
+            }); //////// Vue //////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          }); /////////////// 로딩구역 //////////////////////////////
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <h1>Vue JS 데이터 바인딩 연습</h1>
+    <div id="app">
+        <h2 v-for="(v,i) in items.data">
+           <span>{{v.no}}</span>. <span>{{v.title}}</span> 
+        </h2>
+        <!-- 
+             v-for 데이터 개수만큼 반복함 (포문같은거임)
+
+             ▶ 값 -> (v,i) in items.data
+                v는 실제값
+                i는 순번
+
+             ▶ in items.data 는 
+                넘어온 실제 데이터 전체 안에서 돈다.
+         -->
+         <!-- 
+              {{ }} 안에
+              json 에서 셋팅된 속성명을 사용함
+
+              제이슨파일 ▷ FED\010.VueJS학습\002.데이터연습 >> "test.json"
+          -->
+
+    </div>
+
+
+</body>
+</html>
