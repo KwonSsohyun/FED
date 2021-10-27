@@ -23,9 +23,10 @@
             new Vue({
                 el: "#app",
                 data: {
-                    // 제이슨파일 ▷ FED\010.VueJS학습\002.데이터연습 >> "test.json" 
+                    // 제이슨파일 ▷ FED\010.VueJS학습\002.데이터연습 >> "real.json" 
 
-                    items: {} // json데이터 종류(빈객체형 셋팅)
+                    items: {}, // json데이터 종류(빈객체형 셋팅)
+                    catName:"" // 빈문자
                 },
 
                 // mounted 속성은 "읽어들여진"의 뜻으로 외부파일을 가져와서 셋팅하는 기능!
@@ -79,29 +80,11 @@
 </head>
 <body>
     <h1>Vue JS 데이터 바인딩 연습</h1>
-    <div id="app">
-        <h2 v-for="(v,i) in items.data">
-           <span>{{v.no}}</span>. <span>{{v.title}}</span> 
-        </h2>
-        <!-- 
-             v-for 데이터 개수만큼 반복함 (포문돌린것처럼)
-
-             ▶ 값 -> (v,i) in items.data
-                v는 실제값
-                i는 순번
-
-             ▶ in items.data 는 
-                넘어온 실제 데이터 전체 안에서 돈다.
-         -->
-         <!-- 
-              {{ }} 안에
-              json 에서 셋팅된 속성명을 사용함
-
-              제이슨파일 ▷ FED\010.VueJS학습\002.데이터연습 >> "test.json"
-          -->
-
-    </div>
-
+    <ul id="app">
+        <li v-for="(v,i) in items.data"> <!-- items변수안에서 데이터를 가져와 그래서 한칸들어가서 .data -->
+            {{v.메뉴}}
+        </li>
+    </ul>
 
 </body>
 </html>

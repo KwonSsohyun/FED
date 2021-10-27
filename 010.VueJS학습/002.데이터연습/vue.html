@@ -80,7 +80,7 @@
 <body>
     <h1>Vue JS 데이터 바인딩 연습</h1>
     <div id="app">
-        <h2 v-for="(v,i) in items.data">
+        <h2 v-for="(v,i) in items.data"> <!-- items변수안에서 데이터를 가져와 그래서 한칸들어가서 .data -->
            <span>{{v.no}}</span>. <span>{{v.title}}</span> 
         </h2>
         <!-- 
