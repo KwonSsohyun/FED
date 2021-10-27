@@ -122,6 +122,38 @@ $(function () { /// jQB ////////////////////////////
       disableOnInteraction: false,
     }
 
+    /* 
+      https://swiperjs.com/demos#autoplay
+      1) 홈페이지 들어가서 맘에 드는 거 찾고,
+
+      2) 조금한 글씨로
+         "Open in new window" 클릭
+
+      3) 오른쪽 마우스 
+         "페이지 소스보기"
+
+      4) 그러면 코드가 쫙 나오는데
+         다 긁는게 아니라
+         쭉 내리면 <script> 구역 나오는데 
+         분석해서 필요한 소스 
+         같다 붙히면 된다.
+
+         ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+         
+          <!-- Initialize Swiper -->
+          <script>
+          var swiper = new Swiper(".mySwiper", {
+            pagination: {
+              el: ".swiper-pagination",
+            },
+          });
+          </script>
+      
+      
+    
+    
+    */
+
   }); //////// swiper /////
 
 
