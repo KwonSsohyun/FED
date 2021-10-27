@@ -133,9 +133,11 @@
         /* 지구회전 키프레임 */
         @keyframes earth {
             from {
-                transform: rotate(0deg) translateX(-250px) rotate(0deg);
+                transform: rotate(0deg) translateX(-250px) rotate(0deg); 
             }
-
+                /* from ▶ rotate(0deg) → to ▶rotate(360deg) 이것만 있으면 제자리에서 원이 빙빙 돌아가는데   */
+                /* from ▶ translateX(-250px) → to ▶translateX(-250px) 이것이 있기때문에 X축으로 이동을 해서 멀리서 빙빙 도는데   */
+                /* from ▶ rotate(0deg) → to ▶rotate(-360deg) 이것이 있기때문에 정방향으로 돌게 된다.   */
             to {
                 transform: rotate(360deg) translateX(-250px) rotate(-360deg);
             }
