@@ -26,7 +26,7 @@
                     // 제이슨파일 ▷ FED\010.VueJS학습\002.데이터연습 >> "real.json" 
 
                     items: {}, // json데이터 종류(빈객체형 셋팅)
-                    catName:"" // 빈문자
+                    catName:"fashion" // ▷ FED\010.VueJS학습\002.데이터연습 >> "real.json" 에 경로 각각 이름 가져옴 ex) catName:"fashion" 
                 },
 
                 // mounted 속성은 "읽어들여진"의 뜻으로 외부파일을 가져와서 셋팅하는 기능!
@@ -81,8 +81,54 @@
 <body>
     <h1>Vue JS 데이터 바인딩 연습</h1>
     <ul id="app">
-        <li v-for="(v,i) in items.data"> <!-- items변수안에서 데이터를 가져와 그래서 한칸들어가서 .data -->
-            {{v.메뉴}}
+        <li v-for="(v,i) in items.data" v-if="v.경로===catName"> <!-- items변수안에서 데이터를 가져와 그래서 한칸들어가서 .data -->
+            <!-- 
+                v-if="v.경로===catName"
+                v.경로의 값이 catName에 설정된 값과 같은 경우에만 li를 만들어라!
+                ex) 위에서 catName:"beauty" 을 뷰티라고 정했으면 브라우저 창에 뷰티만 나옴
+            -->
+            {{v.제목}}
+            <ol v-if="v.메뉴!=='없음'">  
+                <!-- 
+                      v-if="v.메뉴!=='없음'" 을 아래 li v-for옆에 안적은 이유
+                      if문은 따로 ol로 올려야 빈껍데기 없음 ol이 안보이고, li만보임 
+                      ▶ ul이나 ol 을 쓰려면 꼭 li를 써야 한다.
+                         근데 여기서 ol을 왜 안보이게 했냐면 ol만 쓰고 li 리스트 항목 없다고 li안쓰면 태그상에 문제가 생김
+                         그래서 ol이 사라지고 리스트가 없으면 li태그로 보이게 하는것임
+                         
+                         크게 ul이 싸고 있으니 li만써도 괜찮은것.           
+                -->
+                <li v-for="(m,i) in v.메뉴">
+                    {{m}}
+                <!-- 
+                    위에 포문 안에 또 포문 -> 위의 v-for="(v,i) ▶ v를 써서 ▶ v.메뉴 
+
+                    왜 "v.메뉴" / "v.제목" 이렇게 앞에 v를 붙혀서 쓰냐면
+                    ▶ v-for="(v,i) in items.data" 은
+
+                       들어가서 보면 
+                       ▷ FED\010.VueJS학습\002.데이터연습 >> "real.json"
+                    ▶ "fashion" / "beauty" / "living" / "people" / "video" / "runway" / "shopping" 인 큰 뭉탱이를 지칭하는것
+
+                    ▶ v는 이 각각 하나씩의 큰 카테고리를 지칭하는 거고
+                       i는 순번을 지칭하는거니
+
+                       ▶▶ v.메뉴 >> "fashion" / "beauty" / "living" / "people" / "video" / "runway" / "shopping" 들의 각각의 메뉴가 보이는것. 
+                -->
+                <!-- 
+                      없음도 배열로 나와서 그건 안보이게 하려고
+                      v-if="" 씀 (if문)
+
+                      ▶ v-if="v.메뉴!=='없음'
+                         만약에 v.메뉴의 값이 '없음'이 아니면 true
+                         이때 for문이 실행됨!
+
+                         false이면 실행안됨.
+                -->
+                </li> 
+            </ol>
+                
+            </ol>
         </li>
     </ul>
 
