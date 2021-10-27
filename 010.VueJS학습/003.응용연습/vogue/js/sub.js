@@ -126,7 +126,14 @@ $(function(){ ////////////// jQB (제이쿼리 코드블록) ///////////////////
                      오른쪽이 왼쪽으로 들어가니
                      response 가 this.items 으로 들어간것.
             */
-        }
+        },
+
+        methods : {
+            chgTit: function(tit){
+                document.querySelector("title").innerText =
+                tit + " | 보그 코리아 (Vogue Korea)";
+            } /// chaTit 함수 ////
+        } ///// methods ////
 
     }); //////// Vue //////////
 
