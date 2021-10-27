@@ -44,12 +44,19 @@
                              함수 내부에 전달하여 이 값을 Vue JS에
                              셋팅된 this.items 
                              즉, 현재 변수 items에 집어넣어라!
+                             ▷ then 바로뒤에 "response"는 ▷ (this.items = response) 해당 "response"로 들어가고 ▷ 이 "response"는 this.items 으로 들어감
 
                              ()=>{} 화살표함수 줄여쓴것
                              {중괄호} 생략됬고, 
                               ▶ 화살표 뒤에 중괄호 {} 없이 
                                  명령문 하나만 있으면
                                  그게 바로 return 문이다! 
+                              ▶ then(response => (this.items = response))
+                                 ▷ then(response => {return this.items = response}) -> { return //// } ▷ 생략됨
+                              ▶▶ 그러니까 리턴이니까 (this.items = response) 이게 리턴되서 ▶▶ then 으로 간다.
+                                   (this.items = response) 이렇게 소괄호로 묶은건 리턴될때 한덩이로 묶을라고 이다.
+
+
 
                              this.items = response 이거를 묶어주려고 () 쓴거임
                              오른쪽이 왼쪽으로 들어가니
