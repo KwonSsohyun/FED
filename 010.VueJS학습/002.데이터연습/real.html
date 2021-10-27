@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue JS 데이터 바인딩 연습</title>
+    <title>Vue JS 데이터 바인딩 연습2</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> <!-- 뷰JS 프레임워크 스텐드얼론 버전 가져오기 -->
     <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script> <!-- 엑시오스 라이브러리 스텐드얼론 버전 가져오기 (★제이슨 불러오기★) -->
     <!-- 
@@ -25,14 +25,14 @@
                 data: {
                     // 제이슨파일 ▷ FED\010.VueJS학습\002.데이터연습 >> "test.json" 
 
-                    items: [] // json데이터 종류(빈배열형 셋팅)
+                    items: {} // json데이터 종류(빈객체형 셋팅)
                 },
 
                 // mounted 속성은 "읽어들여진"의 뜻으로 외부파일을 가져와서 셋팅하는 기능!
                 mounted: function(){
 
                     // axios는 외부파일을 읽어올 수 있는 라이브러리
-                    axios.get("./test.json")
+                    axios.get("./real.json")
                     .then(response => (this.items = response))
                     /* 
                         ▶ get() 메서드는 가져올 파일 경로를 셋팅함
@@ -64,18 +64,6 @@
                 }
 
             }); //////// Vue //////////
-
-
-
-
-
-
-
-
-
-
-
-
 
 
           }); /////////////// 로딩구역 //////////////////////////////
